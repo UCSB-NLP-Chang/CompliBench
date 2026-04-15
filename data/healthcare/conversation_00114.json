@@ -1,0 +1,317 @@
+{
+  "domain": "healthcare",
+  "intent_name": "waitlist_management",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "waitlist_management": {
+        "Phase 1": "Greeting: Introduce yourself as Ava from Bright Path Health thank the caller for contacting us and welcome them to waitlist assistance",
+        "Phase 2": "Intent confirmation: Ask the caller to confirm they want to join or update the waitlist for earlier openings",
+        "Phase 3": "Patient verification: Ask for the caller's full name and date of birth to locate their patient record",
+        "Phase 4": "Target details: Ask for the service or visit type preferred clinic location and preferred clinician to apply the waitlist to",
+        "Phase 5": "Availability preferences: Ask for acceptable days of the week and the preferred part of day such as morning midday or evening for earlier openings",
+        "Phase 6": "Flexibility: Ask whether they prefer only the named clinician or are open to any clinician at the same clinic and whether nearby clinics are acceptable",
+        "Phase 7": "Notification setup: Ask for the preferred alert method among text call or email and confirm the best phone number and email for alerts",
+        "Phase 8": "Consent and summary: Recap the requested action availability preferences flexibility and notification method and ask for permission to proceed",
+        "Phase 9": "Activate waitlist: Update the waitlist settings according to the confirmed choices confirm activation for the specified service clinic selection and clinician preference and explain that earlier openings matching the confirmed preferences will be offered automatically through the chosen alert method",
+        "Phase 10": "Wrap up: Ask whether they need anything else today and thank them for choosing Bright Path Health"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "waitlist_management": {
+        "Phase 1": "Greeting: Introduce yourself as Ava from Bright Path Health thank the caller for contacting us and welcome them to waitlist assistance",
+        "Phase 2": "Intent confirmation: Ask the caller to confirm they want to join or update the waitlist for earlier openings",
+        "Phase 3": "Patient verification: Ask for the caller's full name and date of birth to locate their patient record",
+        "Phase 4": "Availability preferences: Ask for acceptable days of the week and the preferred part of day such as morning midday or evening for earlier openings",
+        "Phase 5": "Target details: Request three distinct availability windows (with dates and times), the city or ZIP code rather than a preferred clinic location, and a yes/no confirmation on accepting multiple specialties.",
+        "Phase 6": "Flexibility: Ignore clinician or location flexibility entirely and collect their insurance plan name and preferred spoken language for the visit.",
+        "Phase 7": "Notification setup: Ask for the preferred alert method among text call or email and confirm the best phone number and email for alerts",
+        "Phase 8": "Consent and summary: Recap the requested action availability preferences flexibility and notification method and ask for permission to proceed",
+        "Phase 9": "Activate waitlist: Update the waitlist settings according to the confirmed choices confirm activation for the specified service clinic selection and clinician preference and explain that earlier openings matching the confirmed preferences will be offered automatically through the chosen alert method",
+        "Phase 10": "Wrap up: Ask them to rate their experience from 1 to 5 and close with 'We look forward to serving you again,' without asking about additional needs today or offering any thank-you or mentioning Bright Path Health."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "waitlist_management",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Target details: Ask for the service or visit type preferred clinic location and preferred clinician to apply the waitlist to",
+      "modified": "Target details: Request three distinct availability windows (with dates and times), the city or ZIP code rather than a preferred clinic location, and a yes/no confirmation on accepting multiple specialties."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "waitlist_management",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Flexibility: Ask whether they prefer only the named clinician or are open to any clinician at the same clinic and whether nearby clinics are acceptable",
+      "modified": "Flexibility: Ignore clinician or location flexibility entirely and collect their insurance plan name and preferred spoken language for the visit."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "waitlist_management",
+      "workflow_index": 1,
+      "phase": "Phase 10",
+      "original": "Wrap up: Ask whether they need anything else today and thank them for choosing Bright Path Health",
+      "modified": "Wrap up: Ask them to rate their experience from 1 to 5 and close with 'We look forward to serving you again,' without asking about additional needs today or offering any thank-you or mentioning Bright Path Health."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Alex Johnson",
+    "first_name": "Alex",
+    "last_name": "Johnson",
+    "gender": "female",
+    "phone": "+41276479953",
+    "email": "alex.johnson@email.com",
+    "address": {
+      "street": "3126 Highland Ave",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "37027"
+    },
+    "date_of_birth": "03/03/1988",
+    "ssn_last4": "2055",
+    "card_type": "American Express",
+    "card_number": "1341699375068006",
+    "card_last4": "8006",
+    "card_expiration": "02/2027",
+    "cardholder_name": "Alex Johnson",
+    "card_cvv": "0498",
+    "billing_zip": "37027",
+    "insurance_carrier": "WellCare",
+    "insurance_plan_name": "Premium Choice PPO",
+    "member_id": "MEM76309574",
+    "group_number": "GRP568474",
+    "subscriber_id": "SUB87453802",
+    "provider_name": "Dr. Lisa Nakamura",
+    "provider_npi": "9012345678",
+    "appointment_date": "03/30/2026",
+    "appointment_time": "3:00 PM",
+    "visit_type": "telehealth",
+    "household_size": 3,
+    "monthly_income": 4737,
+    "patient_account_number": "PA13609240",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "CVS Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava with Bright Path Health. Thank you for contacting us, and welcome to our waitlist assistance.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 1,
+      "guideline_text": "Greeting: Introduce yourself as Ava from Bright Path Health thank the caller for contacting us and welcome them to waitlist assistance"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I'd like to check on my waitlist status for an earlier appointment if possible. I have a telehealth appointment scheduled on March 30, 2026, at 3 PM. Can you help with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. Please confirm whether you want to join the waitlist for earlier openings or update your existing waitlist for your telehealth appointment on March 30, 2026 at 3 PM.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 2,
+      "guideline_text": "Intent confirmation: Ask the caller to confirm they want to join or update the waitlist for earlier openings"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'd like to join the waitlist for any earlier openings."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I can help with that. To locate your patient record, please provide your full name and date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 3,
+      "guideline_text": "Patient verification: Ask for the caller's full name and date of birth to locate their patient record"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Sure, my name is Alex Johnson and my date of birth is March 3, 1988."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, Alex. For earlier openings, which days of the week are acceptable, and what part of the day do you prefer such as morning, midday, or evening?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 5,
+      "guideline_text": "Availability preferences: Ask for acceptable days of the week and the preferred part of day such as morning midday or evening for earlier openings"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'm available any day of the week, and I prefer appointments in the afternoon."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks, Alex. To add you to the waitlist, please provide:\n- Three distinct availability windows with dates and times\n- Your city or ZIP code\n- Are you open to earlier openings with multiple specialties? Yes or No",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 4,
+      "guideline_text": "Target details: Request three distinct availability windows (with dates and times), the city or ZIP code rather than a preferred clinic location, and a yes/no confirmation on accepting multiple specialties."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Sure, I can do that. I'm available on March 1st from 2 PM to 4 PM, March 15th from 1 PM to 3 PM, and March 22nd from 3 PM to 5 PM. My ZIP code is 37027. Yes, I am open to earlier openings with multiple specialties."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please provide\n- Your insurance plan name\n- Your preferred spoken language for the visit",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 6,
+      "guideline_text": "Flexibility: Ignore clinician or location flexibility entirely and collect their insurance plan name and preferred spoken language for the visit."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "My insurance plan is WellCare Premium Choice PPO and I prefer English for the visit."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thanks, Alex. How would you like to receive waitlist alerts: text, call, or email? Please confirm the best phone number and email address for alerts.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 7,
+      "guideline_text": "Notification setup: Ask for the preferred alert method among text call or email and confirm the best phone number and email for alerts"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I'd prefer text alerts. You can use my phone number +41276479953 and my email address alex.johnson@email.com for alerts."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thanks, Alex. Here is my recap before I proceed:\n- Requested action: Add you to the waitlist for any earlier telehealth appointment before March 30, 2026 at 3 PM\n- Availability preferences: Any day of the week, prefer afternoons; specific windows March 1 from 2 PM to 4 PM, March 15 from 1 PM to 3 PM, March 22 from 3 PM to 5 PM\n- Flexibility: Open to earlier openings with multiple specialties\n- Notification method: Text alerts\n\nDo I have your permission to proceed with adding you to the waitlist using these details?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 8,
+      "guideline_text": "Consent and summary: Recap the requested action availability preferences flexibility and notification method and ask for permission to proceed"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Yes, please proceed with adding me to the waitlist. Thank you for helping with this."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thanks, Alex. Your waitlist is now activated and your settings have been updated per your confirmed choices.\n\n- Service: Telehealth visit\n- Clinic selection: Virtual care\n- Clinician preference: No preference\n\nEarlier openings that match your confirmed preferences will be offered to you automatically via text alerts.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 9,
+      "guideline_text": "Activate waitlist: Update the waitlist settings according to the confirmed choices confirm activation for the specified service clinic selection and clinician preference and explain that earlier openings matching the confirmed preferences will be offered automatically through the chosen alert method"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Great, thank you so much for your help. Have a great day!"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Before you go, please rate your experience today from 1 to 5.\nWe look forward to serving you again,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 10,
+      "guideline_text": "Wrap up: Ask them to rate their experience from 1 to 5 and close with 'We look forward to serving you again,' without asking about additional needs today or offering any thank-you or mentioning Bright Path Health."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "waitlist_management",
+      "guideline_phase": 4,
+      "guideline": "Target details: Request three distinct availability windows (with dates and times), the city or ZIP code rather than a preferred clinic location, and a yes/no confirmation on accepting multiple specialties.",
+      "evidence": "Thanks, Alex. To add you to the waitlist, please provide:\n- Three distinct availability windows with dates and times\n- Your city or ZIP code\n- Are you open to earlier openings with multiple specialties? Yes or No"
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "waitlist_management",
+      "guideline_phase": 6,
+      "guideline": "Flexibility: Ignore clinician or location flexibility entirely and collect their insurance plan name and preferred spoken language for the visit.",
+      "evidence": "Please provide\n- Your insurance plan name\n- Your preferred spoken language for the visit"
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "waitlist_management",
+      "guideline_phase": 10,
+      "guideline": "Wrap up: Ask them to rate their experience from 1 to 5 and close with 'We look forward to serving you again,' without asking about additional needs today or offering any thank-you or mentioning Bright Path Health.",
+      "evidence": "Before you go, please rate your experience today from 1 to 5.\nWe look forward to serving you again,"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 4,
+      "original": "Target details: Ask for the service or visit type preferred clinic location and preferred clinician to apply the waitlist to",
+      "modified": "Target details: Request three distinct availability windows (with dates and times), the city or ZIP code rather than a preferred clinic location, and a yes/no confirmation on accepting multiple specialties."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 6,
+      "original": "Flexibility: Ask whether they prefer only the named clinician or are open to any clinician at the same clinic and whether nearby clinics are acceptable",
+      "modified": "Flexibility: Ignore clinician or location flexibility entirely and collect their insurance plan name and preferred spoken language for the visit."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 10,
+      "original": "Wrap up: Ask whether they need anything else today and thank them for choosing Bright Path Health",
+      "modified": "Wrap up: Ask them to rate their experience from 1 to 5 and close with 'We look forward to serving you again,' without asking about additional needs today or offering any thank-you or mentioning Bright Path Health."
+    }
+  ],
+  "rule_based_termination": null
+}

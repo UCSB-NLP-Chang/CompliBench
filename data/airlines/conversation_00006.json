@@ -1,0 +1,317 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "travel_policy_and_fee_information",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Set detail preference: Ask whether they want a quick summary or a full breakdown for the policy information",
+        "Phase 3": "Capture travel context: Collect origin and destination travel month or date range cabin class number of travelers and loyalty tier in one reply",
+        "Phase 4": "Select policy topics: Ask the caller to choose one or two topics such as baggage changes cancellations seat selection check in times or travel documents",
+        "Phase 5": "Gather topic qualifiers: Request specifics that affect the chosen topics such as planned bag count weight or size desired change timing relative to departure seat type preferences or passport country in one reply",
+        "Phase 6": "Confirm plan and scope: Restate the detail preference context topics and qualifiers and ask the caller to confirm",
+        "Phase 7": "Deliver tailored rules: Use the policy system to give the exact rules allowances cutoffs and itemized fees based on the confirmed scope using the selected detail level",
+        "Phase 8": "Provide cost example: Present a single worked example that totals the expected charges for the caller situation using their qualifiers and context",
+        "Phase 9": "Collect recap delivery details: Ask for preferred channel email or SMS and the contact details to receive a written recap",
+        "Phase 10": "Send recap: Send the written recap through the selected channel using the system and inform the caller it has been sent",
+        "Phase 11": "Close the conversation: Confirm all policy questions are covered thank the caller for choosing Celestar Air and offer help with another policy topic",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Set detail preference: Ask the user to list exactly three questions they want the policy information to answer and commit to structuring the response strictly around those questions.",
+        "Phase 3": "Capture travel context: Prompt the user to provide exact outbound and return flight numbers, full legal names of all passengers, and a preferred airline, and explicitly state that you are not collecting dates or date ranges, cabin class, traveler count, or loyalty information in this step.",
+        "Phase 4": "Select policy topics: Ask the caller to choose one or two topics such as baggage changes cancellations seat selection check in times or travel documents",
+        "Phase 5": "Gather topic qualifiers: Request specifics that affect the chosen topics such as planned bag count weight or size desired change timing relative to departure seat type preferences or passport country in one reply",
+        "Phase 6": "Collect recap delivery details: Ask for preferred channel email or SMS and the contact details to receive a written recap",
+        "Phase 7": "Send recap: Send the written recap through the selected channel using the system and inform the caller it has been sent",
+        "Phase 8": "Provide cost example: Present a single worked example that totals the expected charges for the caller situation using their qualifiers and context",
+        "Phase 9": "Deliver tailored rules: Use the policy system to give the exact rules allowances cutoffs and itemized fees based on the confirmed scope using the selected detail level",
+        "Phase 10": "Confirm plan and scope: Do not restate any plan or scope, ask exactly three targeted questions to define the scope, and end the reply with the phrase '[Scope pending]'.",
+        "Phase 11": "Close the conversation: Confirm all policy questions are covered thank the caller for choosing Celestar Air and offer help with another policy topic",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, ask exactly two new diagnostic questions to continue troubleshooting."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Set detail preference: Ask whether they want a quick summary or a full breakdown for the policy information",
+      "modified": "Set detail preference: Ask the user to list exactly three questions they want the policy information to answer and commit to structuring the response strictly around those questions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Capture travel context: Collect origin and destination travel month or date range cabin class number of travelers and loyalty tier in one reply",
+      "modified": "Capture travel context: Prompt the user to provide exact outbound and return flight numbers, full legal names of all passengers, and a preferred airline, and explicitly state that you are not collecting dates or date ranges, cabin class, traveler count, or loyalty information in this step."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Confirm plan and scope: Restate the detail preference context topics and qualifiers and ask the caller to confirm",
+      "modified": "Confirm plan and scope: Do not restate any plan or scope, ask exactly three targeted questions to define the scope, and end the reply with the phrase '[Scope pending]'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, ask exactly two new diagnostic questions to continue troubleshooting."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Aiden Thomas",
+    "first_name": "Aiden",
+    "last_name": "Thomas",
+    "gender": "female",
+    "phone": "+4997068893996",
+    "email": "aiden.thomas@gmail.com",
+    "address": {
+      "street": "3144 Oak St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "05859"
+    },
+    "record_locator": "V93817",
+    "confirmation_code": "V93817",
+    "booking_reference": "V93817",
+    "pnr": "V93817",
+    "ticket_number": "1539712414413",
+    "flight_number": "AA6158",
+    "origin": "Atlanta (ATL)",
+    "destination": "Miami (MIA)",
+    "travel_date": "2026-05-27",
+    "return_date": "2026-06-10",
+    "seat_number": "2F",
+    "seat_preference": "aisle",
+    "cabin_class": "business",
+    "fare_type": "refundable",
+    "payment_method": "credit card",
+    "card_last4": "3421"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I was hoping to get some information about the baggage rules and any fees associated with checked luggage for my upcoming flight. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. Please list exactly three questions you want answered about baggage rules and checked luggage fees. I will structure my response strictly around those three questions.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "guideline_text": "Set detail preference: Ask the user to list exactly three questions they want the policy information to answer and commit to structuring the response strictly around those questions."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, here are my questions: How many bags can I check for free and what are the weight limits for those bags? Are there any fees if I exceed the weight limit? Can I bring both a carry-on and a personal item on board without any additional charges?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks, I can get you the exact baggage rules and fees. Please provide:\n- Exact outbound flight number\n- Exact return flight number\n- Full legal names of all passengers\n- Preferred airline\n\nFor this step, I am not collecting dates or date ranges, cabin class, traveler count, or loyalty information.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 3,
+      "guideline_text": "Capture travel context: Prompt the user to provide exact outbound and return flight numbers, full legal names of all passengers, and a preferred airline, and explicitly state that you are not collecting dates or date ranges, cabin class, traveler count, or loyalty information in this step."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "The outbound flight number is AA6158, and the return flight is the same airline. It’s just me traveling, Aiden Thomas, and my preferred airline is American Airlines."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please choose one or two topics you want details on: baggage, changes, cancellations, seat selection, check in times, or travel documents.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 4,
+      "guideline_text": "Select policy topics: Ask the caller to choose one or two topics such as baggage changes cancellations seat selection check in times or travel documents"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I want details on baggage and seat selection, please."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Got it. To tailor baggage and seat details, please share:\n- Number of checked bags you plan to bring\n- Approximate weight for each bag and whether any bag is oversized beyond 62 inches or 158 cm total dimensions\n- Your seat type preferences, for example window, aisle, extra legroom, or specific rows or zones",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 5,
+      "guideline_text": "Gather topic qualifiers: Request specifics that affect the chosen topics such as planned bag count weight or size desired change timing relative to departure seat type preferences or passport country in one reply"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I plan to check two bags, each weighing about 45 pounds, so neither is oversized. In terms of seat preference, I usually go for an aisle seat, preferably in the front rows of business class, but I'm not too picky about specific rows or zones."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "How would you like to receive a written recap of your baggage and seat details: email or SMS? Please provide the email address or mobile number for delivery.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 9,
+      "guideline_text": "Collect recap delivery details: Ask for preferred channel email or SMS and the contact details to receive a written recap"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "You can email the details to aiden.thomas@gmail.com."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "I have emailed your written recap to aiden.thomas@gmail.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 10,
+      "guideline_text": "Send recap: Send the written recap through the selected channel using the system and inform the caller it has been sent"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thank you. If there's anything else I need to know before my trip, feel free to let me know."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Single cost example for your trip on American Airlines in Business Class, one passenger, two checked bags at 45 pounds each, not oversized, aisle seat toward the front:\n- Outbound bag 1 fee: 0\n- Outbound bag 2 fee: 0\n- Outbound overweight or oversize fee: 0\n- Outbound carry on plus personal item: 0\n- Outbound aisle seat in Business: 0\n- Return bag 1 fee: 0\n- Return bag 2 fee: 0\n- Return overweight or oversize fee: 0\n- Return carry on plus personal item: 0\n- Return aisle seat in Business: 0\nTotal expected charges for baggage and seat selection, round trip: 0",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 8,
+      "guideline_text": "Provide cost example: Present a single worked example that totals the expected charges for the caller situation using their qualifiers and context"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Thanks so much for your help. I'll check my email for the details. Have a great day!"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Are both your outbound and return flights operated by American Airlines and not a partner carrier?\nAre you ticketed in Business class on both flights or is it a mixed cabin itinerary?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 12,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, ask exactly two new diagnostic questions to continue troubleshooting."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 2,
+      "guideline": "Set detail preference: Ask the user to list exactly three questions they want the policy information to answer and commit to structuring the response strictly around those questions.",
+      "evidence": "Absolutely, I can help with that. Please list exactly three questions you want answered about baggage rules and checked luggage fees. I will structure my response strictly around those three questions."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 3,
+      "guideline": "Capture travel context: Prompt the user to provide exact outbound and return flight numbers, full legal names of all passengers, and a preferred airline, and explicitly state that you are not collecting dates or date ranges, cabin class, traveler count, or loyalty information in this step.",
+      "evidence": "Thanks, I can get you the exact baggage rules and fees. Please provide:\n- Exact outbound flight number\n- Exact return flight number\n- Full legal names of all passengers\n- Preferred airline\n\nFor this step, I am not collecting dates or date ranges, cabin class, traveler count, or loyalty information."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 12,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, ask exactly two new diagnostic questions to continue troubleshooting.",
+      "evidence": "Are both your outbound and return flights operated by American Airlines and not a partner carrier?\nAre you ticketed in Business class on both flights or is it a mixed cabin itinerary?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "original": "Set detail preference: Ask whether they want a quick summary or a full breakdown for the policy information",
+      "modified": "Set detail preference: Ask the user to list exactly three questions they want the policy information to answer and commit to structuring the response strictly around those questions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 3,
+      "original": "Capture travel context: Collect origin and destination travel month or date range cabin class number of travelers and loyalty tier in one reply",
+      "modified": "Capture travel context: Prompt the user to provide exact outbound and return flight numbers, full legal names of all passengers, and a preferred airline, and explicitly state that you are not collecting dates or date ranges, cabin class, traveler count, or loyalty information in this step."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 6,
+      "original": "Confirm plan and scope: Restate the detail preference context topics and qualifiers and ask the caller to confirm",
+      "modified": "Confirm plan and scope: Do not restate any plan or scope, ask exactly three targeted questions to define the scope, and end the reply with the phrase '[Scope pending]'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 12,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, ask exactly two new diagnostic questions to continue troubleshooting."
+    }
+  ],
+  "rule_based_termination": null
+}

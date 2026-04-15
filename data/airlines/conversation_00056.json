@@ -1,0 +1,221 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "file_service_complaint_or_feedback",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "file_service_complaint_or_feedback": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Experience overview: Invite the caller to briefly describe what happened and the key moment they want noted.",
+        "Phase 3": "Choose category: Ask the caller to specify whether this is a complaint, compliment, or general feedback.",
+        "Phase 4": "Event context details: Request the travel date, flight number, origin and destination, scheduled departure time window, seat or area, cabin, and any staff names involved.",
+        "Phase 5": "Impact rating: Ask the caller to rate the impact on a scale from 1 to 5 and note any immediate effects on the trip experience.",
+        "Phase 6": "Identity verification: Request full name and booking reference or Stratos Rewards number to link the feedback to the correct record.",
+        "Phase 7": "Contact preferences: Collect the email address, country code and phone number, and the preferred channel for updates.",
+        "Phase 8": "Summary confirmation: Recap the category, overview, event details, rating, and contact info and ask the caller to confirm everything is correct.",
+        "Phase 9": "Case creation and receipt: Submit the feedback in the system, generate the case reference number with the expected response timeframe, and provide these details to the caller.",
+        "Phase 10": "Appreciation and closure: Thank the caller for sharing their experience and inform them the case is logged and the interaction is complete.",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "file_service_complaint_or_feedback": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Begin with 'Apologies for the wait—please provide your full name, flight number, and travel date now.'",
+        "Phase 2": "Identity verification: Request full name and booking reference or Stratos Rewards number to link the feedback to the correct record.",
+        "Phase 3": "Contact preferences: Collect the email address, country code and phone number, and the preferred channel for updates.",
+        "Phase 4": "Choose category: Ask the caller to specify whether this is a complaint, compliment, or general feedback.",
+        "Phase 5": "Case creation and receipt: Submit the feedback in the system, generate the case reference number with the expected response timeframe, and provide these details to the caller.",
+        "Phase 6": "Summary confirmation: Recap the category, overview, event details, rating, and contact info and ask the caller to confirm everything is correct.",
+        "Phase 7": "Event context details: Instruct the user to paste the first three lines of their boarding pass and to provide their booking channel (app, web, or agent), luggage tag number, and preferred contact method, while explicitly avoiding any questions about travel date, flight number, origin or destination, scheduled departure time, seat or area, cabin, or staff names.",
+        "Phase 8": "Experience overview: Invite the caller to briefly describe what happened and the key moment they want noted.",
+        "Phase 9": "Impact rating: Ask the caller to rate the impact on a scale from 1 to 5 and note any immediate effects on the trip experience.",
+        "Phase 10": "Appreciation and closure: Thank the caller for sharing their experience and inform them the case is logged and the interaction is complete.",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted.: End the call by labeling the caller 'Priority: Low' and immediately disconnecting without any pleasantries or offers of help."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin with 'Apologies for the wait—please provide your full name, flight number, and travel date now.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Event context details: Request the travel date, flight number, origin and destination, scheduled departure time window, seat or area, cabin, and any staff names involved.",
+      "modified": "Event context details: Instruct the user to paste the first three lines of their boarding pass and to provide their booking channel (app, web, or agent), luggage tag number, and preferred contact method, while explicitly avoiding any questions about travel date, flight number, origin or destination, scheduled departure time, seat or area, cabin, or staff names."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 2,
+      "phase": "Phase 11",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End the call by labeling the caller 'Priority: Low' and immediately disconnecting without any pleasantries or offers of help."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Henry Sharma",
+    "first_name": "Henry",
+    "last_name": "Sharma",
+    "gender": "female",
+    "phone": "+33956683063",
+    "email": "henry.sharma@mail.com",
+    "address": {
+      "street": "8053 Jackson St",
+      "city": "Detroit",
+      "state": "MI",
+      "zip": "77958"
+    },
+    "record_locator": "60AM8J",
+    "confirmation_code": "60AM8J",
+    "booking_reference": "60AM8J",
+    "pnr": "60AM8J",
+    "ticket_number": "4595572643308",
+    "flight_number": "UA1301",
+    "origin": "Boston (BOS)",
+    "destination": "New York (JFK)",
+    "travel_date": "2026-06-18",
+    "return_date": "2026-07-01",
+    "seat_number": "27E",
+    "seat_preference": "middle",
+    "cabin_class": "economy",
+    "fare_type": "basic economy",
+    "payment_method": "debit card",
+    "card_last4": "1955"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Apologies for the wait—please provide your full name, flight number, and travel date now.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Begin with 'Apologies for the wait—please provide your full name, flight number, and travel date now.'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my name is Henry Sharma, and I'm traveling on flight UA1301 on June 18, 2026. I wanted to give some feedback regarding my experience, especially about the acceptance of service animals on board. Can you help with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks, Henry. I’ll transfer you to a human specialist who can handle feedback about service animal acceptance. One moment while I connect you now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Thank you, I'll wait."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you for waiting. I have connected you with a human specialist who handles service animal acceptance feedback. They will assist you from here.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Great, I appreciate the help."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "You are very welcome.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "file_service_complaint_or_feedback",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Begin with 'Apologies for the wait—please provide your full name, flight number, and travel date now.'",
+      "evidence": "Apologies for the wait—please provide your full name, flight number, and travel date now."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin with 'Apologies for the wait—please provide your full name, flight number, and travel date now.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 4,
+      "original": "Event context details: Request the travel date, flight number, origin and destination, scheduled departure time window, seat or area, cabin, and any staff names involved.",
+      "modified": "Event context details: Instruct the user to paste the first three lines of their boarding pass and to provide their booking channel (app, web, or agent), luggage tag number, and preferred contact method, while explicitly avoiding any questions about travel date, flight number, origin or destination, scheduled departure time, seat or area, cabin, or staff names."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 11,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End the call by labeling the caller 'Priority: Low' and immediately disconnecting without any pleasantries or offers of help."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "service_animal_or_emotional_support_animal",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 6
+  }
+}

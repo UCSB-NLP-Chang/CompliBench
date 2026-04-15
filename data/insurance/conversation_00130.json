@@ -1,0 +1,296 @@
+{
+  "domain": "insurance",
+  "intent_name": "policy_change",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "policy_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Authenticate Account Holder: Request the policy number and mailing ZIP code to open the policy",
+        "Phase 3": "Select Change Type: Ask the caller to specify one update they want performed such as address vehicle driver lienholder coverage deductible or contact preferences",
+        "Phase 4": "Set Effective Date: Ask for the desired effective date and require the caller to provide a specific calendar date in MM/DD/YYYY format",
+        "Phase 5": "Capture Core Inputs: Gather the data needed to execute the selected change including the item affected and the exact values to be added removed or modified",
+        "Phase 6": "Authorize Change: Request authorization to apply the specified change with the stated effective date and explicitly ask for a yes or no",
+        "Phase 7": "Choose Delivery Method: Ask how they want to receive the endorsement documents and confirmation such as email SMS or mail",
+        "Phase 8": "Confirm Update Completion: Complete the update then provide the endorsement reference number and state that documents will be sent within 24 hours using the selected delivery method",
+        "Phase 9": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "policy_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately say, 'For verification, please state your full name and date of birth.'",
+        "Phase 2": "Authenticate Account Holder: Request the policy number and mailing ZIP code to open the policy",
+        "Phase 3": "Set Effective Date: Ask for the desired effective date and require the caller to provide a specific calendar date in MM/DD/YYYY format",
+        "Phase 4": "Capture Core Inputs: Gather the data needed to execute the selected change including the item affected and the exact values to be added removed or modified",
+        "Phase 5": "Select Change Type: Do not ask for an update type; instead instruct the caller to provide their policy number and full name before anything else.",
+        "Phase 6": "Authorize Change: Apply the change immediately without requesting authorization or mentioning any effective date.",
+        "Phase 7": "Choose Delivery Method: Ask how they want to receive the endorsement documents and confirmation such as email SMS or mail",
+        "Phase 8": "Confirm Update Completion: Complete the update then provide the endorsement reference number and state that documents will be sent within 24 hours using the selected delivery method",
+        "Phase 9": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "policy_change",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately say, 'For verification, please state your full name and date of birth.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "policy_change",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Select Change Type: Ask the caller to specify one update they want performed such as address vehicle driver lienholder coverage deductible or contact preferences",
+      "modified": "Select Change Type: Do not ask for an update type; instead instruct the caller to provide their policy number and full name before anything else."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "policy_change",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Authorize Change: Request authorization to apply the specified change with the stated effective date and explicitly ask for a yes or no",
+      "modified": "Authorize Change: Apply the change immediately without requesting authorization or mentioning any effective date."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Casey Schmidt",
+    "first_name": "Casey",
+    "last_name": "Schmidt",
+    "gender": "female",
+    "phone": "+523397683507",
+    "email": "casey.schmidt@example.net",
+    "address": {
+      "street": "7566 Sunset Blvd",
+      "city": "Providence",
+      "state": "RI",
+      "zip": "48153"
+    },
+    "date_of_birth": "01/21/1979",
+    "ssn_last4": "9626",
+    "card_type": "Visa",
+    "card_number": "9971572474598802",
+    "card_last4": "8802",
+    "card_expiration": "01/2027",
+    "cardholder_name": "Casey Schmidt",
+    "card_cvv": "104",
+    "billing_zip": "48153",
+    "policy_number": "POL27749087",
+    "claim_number": "CLM2473707",
+    "policy_id": "PID71378952",
+    "claim_id": "CID4231105",
+    "member_id": "MEM78197723",
+    "subscriber_id": "SUB54864494",
+    "group_number": "GRP470240",
+    "reference_number": "REF19155413",
+    "id_number": "ID29471744",
+    "vehicle_make": "Nissan",
+    "vehicle_model": "Altima",
+    "vehicle_year": "2025",
+    "license_plate": "STP0709",
+    "vin": "HTKRIY9Z7NCC2W5YE",
+    "incident_date": "03/04/2026",
+    "incident_location": "San Diego",
+    "coverage_type": "umbrella",
+    "payment_method": "debit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For verification, please state your full name and date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately say, 'For verification, please state your full name and date of birth.'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My full name is Casey Schmidt and my date of birth is January 21, 1979."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please provide your policy number and the mailing ZIP code on the policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 2,
+      "guideline_text": "Authenticate Account Holder: Request the policy number and mailing ZIP code to open the policy"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My policy number is POL27749087 and the mailing ZIP code is 48153."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "What is the desired effective date for this policy change? Please provide the date in MM/DD/YYYY format.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 4,
+      "guideline_text": "Set Effective Date: Ask for the desired effective date and require the caller to provide a specific calendar date in MM/DD/YYYY format"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I would like the policy change to be effective on 04/10/2026."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please describe the policy change you want to make, including the item affected and the exact values to add, remove, or modify.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 5,
+      "guideline_text": "Capture Core Inputs: Gather the data needed to execute the selected change including the item affected and the exact values to be added removed or modified"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I want to change the coverage type on my policy. Right now, it includes umbrella coverage, and I would like to upgrade it to a premium coverage plan. Can you tell me how this might impact my coverage and monthly premium?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To process this change, please confirm and provide the exact details:\n- Confirm you want to remove Umbrella Coverage.\n- Provide the exact new plan name or code for the Premium Coverage as shown on your policy.\n- Specify the desired coverage limit and deductible for the new plan.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 5,
+      "guideline_text": "Capture Core Inputs: Gather the data needed to execute the selected change including the item affected and the exact values to be added removed or modified"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Yes, I confirm that I want to remove the umbrella coverage. I would like to upgrade to the Premium Plus Plan with a cover limit of 1 million dollars and a deductible of 500 dollars. Can you let me know how this will affect my monthly premium?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "All set. I removed Umbrella Coverage and upgraded your policy to the Premium Plus Plan with a 1,000,000 coverage limit and a 500 deductible. \n\nYour new monthly premium is $149.85, which is an increase of $17.45 per month.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 6,
+      "guideline_text": "Authorize Change: Apply the change immediately without requesting authorization or mentioning any effective date."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thank you for the update. Is there anything else I need to do to finalize this change, or is everything set?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "How would you like to receive the endorsement documents and confirmation: email, SMS, or mail?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 7,
+      "guideline_text": "Choose Delivery Method: Ask how they want to receive the endorsement documents and confirmation such as email SMS or mail"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Please send the endorsement documents and confirmation to my email at casey.schmidt@example.net. Thank you!"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Your policy change has been completed.\nEndorsement reference number: END-60421937.\nYour endorsement documents and confirmation will be sent by email within 24 hours.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 8,
+      "guideline_text": "Confirm Update Completion: Complete the update then provide the endorsement reference number and state that documents will be sent within 24 hours using the selected delivery method"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Thanks so much for your help! If I have any more questions, I'll be in touch. Have a great day!"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thank you, Casey. It was a pleasure assisting you today. We appreciate you choosing Shield Insurance. Have a great day!",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 9,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "policy_change",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately say, 'For verification, please state your full name and date of birth.'",
+      "evidence": "For verification, please state your full name and date of birth."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "policy_change",
+      "guideline_phase": 6,
+      "guideline": "Authorize Change: Apply the change immediately without requesting authorization or mentioning any effective date.",
+      "evidence": "All set. I removed Umbrella Coverage and upgraded your policy to the Premium Plus Plan with a 1,000,000 coverage limit and a 500 deductible. \n\nYour new monthly premium is $149.85, which is an increase of $17.45 per month."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately say, 'For verification, please state your full name and date of birth.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 3,
+      "original": "Select Change Type: Ask the caller to specify one update they want performed such as address vehicle driver lienholder coverage deductible or contact preferences",
+      "modified": "Select Change Type: Do not ask for an update type; instead instruct the caller to provide their policy number and full name before anything else."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 6,
+      "original": "Authorize Change: Request authorization to apply the specified change with the stated effective date and explicitly ask for a yes or no",
+      "modified": "Authorize Change: Apply the change immediately without requesting authorization or mentioning any effective date."
+    }
+  ],
+  "rule_based_termination": null
+}

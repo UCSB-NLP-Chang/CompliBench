@@ -1,0 +1,238 @@
+{
+  "domain": "healthcare",
+  "intent_name": "waitlist_management",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "waitlist_management": {
+        "Phase 1": "Warm greeting: Greet the caller as Ava from Bright Path Health, introduce yourself, and ask how you can help today.",
+        "Phase 2": "Verify identity: Ask for the caller's full name and exact date of birth to locate their patient record.",
+        "Phase 3": "Retrieve appointment: Ask for the exact scheduled appointment date, time, and clinic or provider name to retrieve the visit.",
+        "Phase 4": "Collect waitlist preferences: Ask for acceptable days of week, earliest acceptable start time, latest acceptable end time, location or provider flexibility, and minimum notice required in hours.",
+        "Phase 5": "Set notification settings: Ask for the preferred notification channel among SMS, phone call, or email, confirm the phone number and email address to use, and ask for quiet hours by stating exact local time windows.",
+        "Phase 6": "Explain waitlist process: Explain that the system monitors for earlier openings matching the confirmed preferences and sends offers during the allowed notification windows via the selected channel on a first come first served basis, and that offers expire after a set time.",
+        "Phase 7": "Confirm consent to enroll: Summarize the preferences and notification settings and ask for explicit permission to enroll the caller on the waitlist for the retrieved appointment.",
+        "Phase 8": "Apply waitlist enrollment: Apply the waitlist enrollment in the system using the confirmed settings and state that the update is complete.",
+        "Phase 9": "Provide current waitlist status: Retrieve and state the current waitlist status and position number.",
+        "Phase 10": "Wrap up: Thank the caller for contacting Bright Path Health, ask what else they need today, and close the interaction."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "waitlist_management": {
+        "Phase 1": "Warm greeting: Start with 'Hello there!' and immediately ask the caller to provide their full name and date of birth without mentioning Ava or Bright Path Health.",
+        "Phase 2": "Verify identity: Ask for the caller's full name and exact date of birth to locate their patient record.",
+        "Phase 3": "Retrieve appointment: Ask for the exact scheduled appointment date, time, and clinic or provider name to retrieve the visit.",
+        "Phase 4": "Collect waitlist preferences: Ask for acceptable days of week, earliest acceptable start time, latest acceptable end time, location or provider flexibility, and minimum notice required in hours.",
+        "Phase 5": "Set notification settings: Ask for the preferred notification channel among SMS, phone call, or email, confirm the phone number and email address to use, and ask for quiet hours by stating exact local time windows.",
+        "Phase 6": "Explain waitlist process: Explain that the system monitors for earlier openings matching the confirmed preferences and sends offers during the allowed notification windows via the selected channel on a first come first served basis, and that offers expire after a set time.",
+        "Phase 7": "Confirm consent to enroll: Ask the caller to reply with the exact phrase \"YES BOOK NOW\" to immediately claim the earliest opening instead of waitlist enrollment, and do not summarize any preferences or notification settings.",
+        "Phase 8": "Apply waitlist enrollment: Apply the waitlist enrollment in the system using the confirmed settings and state that the update is complete.",
+        "Phase 9": "Provide current waitlist status: Retrieve and state the current waitlist status and position number.",
+        "Phase 10": "Wrap up: Apologize for any inconvenience, ask the caller to rate their experience from 1 to 5, and do not close the interaction."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "waitlist_management",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Warm greeting: Greet the caller as Ava from Bright Path Health, introduce yourself, and ask how you can help today.",
+      "modified": "Warm greeting: Start with 'Hello there!' and immediately ask the caller to provide their full name and date of birth without mentioning Ava or Bright Path Health."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "waitlist_management",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Confirm consent to enroll: Summarize the preferences and notification settings and ask for explicit permission to enroll the caller on the waitlist for the retrieved appointment.",
+      "modified": "Confirm consent to enroll: Ask the caller to reply with the exact phrase \"YES BOOK NOW\" to immediately claim the earliest opening instead of waitlist enrollment, and do not summarize any preferences or notification settings."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "waitlist_management",
+      "workflow_index": 0,
+      "phase": "Phase 10",
+      "original": "Wrap up: Thank the caller for contacting Bright Path Health, ask what else they need today, and close the interaction.",
+      "modified": "Wrap up: Apologize for any inconvenience, ask the caller to rate their experience from 1 to 5, and do not close the interaction."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_request_without_authorization",
+      "original": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "modified": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, provide the requested information or make changes without verifying authorization."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Emma Anderson",
+    "first_name": "Emma",
+    "last_name": "Anderson",
+    "gender": "male",
+    "phone": "+64546953572",
+    "email": "emma.anderson@live.com",
+    "address": {
+      "street": "6636 Pleasant St",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "83664"
+    },
+    "date_of_birth": "03/03/1969",
+    "ssn_last4": "6208",
+    "card_type": "Mastercard",
+    "card_number": "4521320064166220",
+    "card_last4": "6220",
+    "card_expiration": "09/2027",
+    "cardholder_name": "Emma Anderson",
+    "card_cvv": "349",
+    "billing_zip": "83664",
+    "insurance_carrier": "Aetna",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM73344219",
+    "group_number": "GRP291320",
+    "subscriber_id": "SUB66510727",
+    "provider_name": "Dr. Sarah Mitchell",
+    "provider_npi": "1234567890",
+    "appointment_date": "04/26/2026",
+    "appointment_time": "3:00 PM",
+    "visit_type": "in-person",
+    "household_size": 5,
+    "monthly_income": 1639,
+    "patient_account_number": "PA21467603",
+    "preferred_delivery": "both",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello there! May I have your full name and date of birth, please?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 1,
+      "guideline_text": "Warm greeting: Start with 'Hello there!' and immediately ask the caller to provide their full name and date of birth without mentioning Ava or Bright Path Health."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my name is Emma Anderson, and my date of birth is March 3, 1969. I want to know if there is any way to move my current appointment with Dr. Sarah Mitchell earlier, perhaps by being added to a waitlist. Also, I may need some accommodations for my appointment due to a hearing impairment. Can you help with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you, Emma. I am transferring you now to a human representative to coordinate appropriate accommodations for your hearing impairment. One moment while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Alright, thanks. I'll wait to speak with them."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you, Emma. I am connecting you to a human representative now to assist with your accommodations. Please stay on the line.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I wanted to make sure that I'm on the waitlist for an earlier appointment date too. Can we check on that once I'm speaking with the representative?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you, Emma. I am connecting you now to a human representative to coordinate your accommodations. Please stay on the line.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "waitlist_management",
+      "guideline_phase": 1,
+      "guideline": "Warm greeting: Start with 'Hello there!' and immediately ask the caller to provide their full name and date of birth without mentioning Ava or Bright Path Health.",
+      "evidence": "Hello there! May I have your full name and date of birth, please?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 1,
+      "original": "Warm greeting: Greet the caller as Ava from Bright Path Health, introduce yourself, and ask how you can help today.",
+      "modified": "Warm greeting: Start with 'Hello there!' and immediately ask the caller to provide their full name and date of birth without mentioning Ava or Bright Path Health."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 7,
+      "original": "Confirm consent to enroll: Summarize the preferences and notification settings and ask for explicit permission to enroll the caller on the waitlist for the retrieved appointment.",
+      "modified": "Confirm consent to enroll: Ask the caller to reply with the exact phrase \"YES BOOK NOW\" to immediately claim the earliest opening instead of waitlist enrollment, and do not summarize any preferences or notification settings."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "waitlist_management",
+      "phase": 10,
+      "original": "Wrap up: Thank the caller for contacting Bright Path Health, ask what else they need today, and close the interaction.",
+      "modified": "Wrap up: Apologize for any inconvenience, ask the caller to rate their experience from 1 to 5, and do not close the interaction."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_request_without_authorization",
+      "phase": -1,
+      "original": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "modified": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, provide the requested information or make changes without verifying authorization."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "accessibility_or_interpreter",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 6
+  }
+}

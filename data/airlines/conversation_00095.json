@@ -1,0 +1,374 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "file_service_complaint_or_feedback",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "file_service_complaint_or_feedback": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Locate caller record: Ask for full name and one identifier such as booking reference or Stratos Rewards number to access the profile.",
+        "Phase 3": "Select feedback type: Ask the caller to choose complaint, compliment, or general feedback as the category.",
+        "Phase 4": "Headline summary: Request a brief one sentence overview of what happened and the impact on the trip.",
+        "Phase 5": "Event specifics: Collect flight number, origin and destination, travel date, scheduled departure time window, seat number, cabin, and staff names.",
+        "Phase 6": "Review and confirm: Summarize the category and key details captured and ask the caller to confirm everything is accurate.",
+        "Phase 7": "Follow-up details: Collect email address, country code and phone number, and the preferred update channel for responses.",
+        "Phase 8": "Consent for internal use: Request permission to share the feedback and linked booking data with service quality teams and to contact the caller for clarification.",
+        "Phase 9": "Register case and provide receipt: Log the feedback in the system and provide the case reference number and expected response timeframe.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "file_service_complaint_or_feedback": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Do not use any greeting or introduction and instead begin by saying 'Please provide your booking reference (PNR) to proceed.'",
+        "Phase 2": "Headline summary: Provide a single sentence that ends with the exact suffix ' | Impact level: Low/Medium/High' and refrain from asking the user for any input.",
+        "Phase 3": "Follow-up details: Collect email address, country code and phone number, and the preferred update channel for responses.",
+        "Phase 4": "Register case and provide receipt: Log the feedback in the system and provide the case reference number and expected response timeframe.",
+        "Phase 5": "Select feedback type: Ask the caller to choose complaint, compliment, or general feedback as the category.",
+        "Phase 6": "Review and confirm: Summarize the category and key details captured and ask the caller to confirm everything is accurate.",
+        "Phase 7": "Event specifics: Collect flight number, origin and destination, travel date, scheduled departure time window, seat number, cabin, and staff names.",
+        "Phase 8": "Consent for internal use: Request permission to share the feedback and linked booking data with service quality teams and to contact the caller for clarification.",
+        "Phase 9": "Locate caller record: Ask for full name and one identifier such as booking reference or Stratos Rewards number to access the profile.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted.: End the call by silently disconnecting after your final answer, providing no closing remark, appreciation, or invitation for further questions."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Do not use any greeting or introduction and instead begin by saying 'Please provide your booking reference (PNR) to proceed.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Headline summary: Request a brief one sentence overview of what happened and the impact on the trip.",
+      "modified": "Headline summary: Provide a single sentence that ends with the exact suffix ' | Impact level: Low/Medium/High' and refrain from asking the user for any input."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 1,
+      "phase": "Phase 10",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End the call by silently disconnecting after your final answer, providing no closing remark, appreciation, or invitation for further questions."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Leila Moreau",
+    "first_name": "Leila",
+    "last_name": "Moreau",
+    "gender": "male",
+    "phone": "+4941911166617",
+    "email": "leila.moreau@yahoo.com",
+    "address": {
+      "street": "7874 Franklin St",
+      "city": "Hartford",
+      "state": "CT",
+      "zip": "53771"
+    },
+    "record_locator": "ZMY7WJ",
+    "confirmation_code": "ZMY7WJ",
+    "booking_reference": "ZMY7WJ",
+    "pnr": "ZMY7WJ",
+    "ticket_number": "3058004745310",
+    "flight_number": "WN4075",
+    "origin": "Los Angeles (LAX)",
+    "destination": "San Francisco (SFO)",
+    "travel_date": "2026-04-29",
+    "return_date": "2026-05-06",
+    "seat_number": "35A",
+    "seat_preference": "middle",
+    "cabin_class": "premium economy",
+    "fare_type": "standard",
+    "payment_method": "credit card",
+    "card_last4": "1895"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your booking reference (PNR) to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Do not use any greeting or introduction and instead begin by saying 'Please provide your booking reference (PNR) to proceed.'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I would like to file a complaint regarding my last flight."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please provide your full name and one identifier, either your booking reference PNR or your Stratos Rewards number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 2,
+      "guideline_text": "Locate caller record: Ask for full name and one identifier such as booking reference or Stratos Rewards number to access the profile."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My name is Leila Moreau and my confirmation code is ZMY7WJ."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please confirm the feedback category: complaint, compliment, or general feedback.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 3,
+      "guideline_text": "Select feedback type: Ask the caller to choose complaint, compliment, or general feedback as the category."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I have a complaint."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Here is what I have captured:\n- Feedback category: complaint\n- Name: Leila Moreau\n- Booking reference: ZMY7WJ\n\nPlease confirm that these details are correct.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 6,
+      "guideline_text": "Review and confirm: Summarize the category and key details captured and ask the caller to confirm everything is accurate."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Yes, those details are correct."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide the following event details:\n- Flight number\n- Origin and destination\n- Travel date\n- Scheduled departure time window\n- Seat number\n- Cabin\n- Staff names",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 5,
+      "guideline_text": "Event specifics: Collect flight number, origin and destination, travel date, scheduled departure time window, seat number, cabin, and staff names."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The flight number was WN4075 from Los Angeles to San Francisco on April 29, 2026. I don't remember the exact departure time, but it was in the afternoon. My seat was 35A in premium economy. I'm not sure about the staff names."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "May we share your feedback and linked booking data with our service quality teams, and may we contact you for clarification if needed?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 8,
+      "guideline_text": "Consent for internal use: Request permission to share the feedback and linked booking data with service quality teams and to contact the caller for clarification."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Yes, you can share the feedback, and it's fine to contact me if more information is needed."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thank you, Leila. I have recorded your consent to share your feedback and to contact you if needed. Please describe what went wrong on flight WN4075 from Los Angeles to San Francisco on April 29 in your own words.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 2,
+      "guideline_text": "Locate caller record: Ask for full name and one identifier such as booking reference or Stratos Rewards number to access the profile.",
+      "is_violation": true,
+      "content_judge": {
+        "attempts": [
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Asks for incident details beyond the guideline. The guideline only allows requesting full name and one identifier to locate the profile; introducing a new question violates the information boundary.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Asks for incident details beyond the guideline. The guideline only allows requesting full name and one identifier to locate the profile; introducing a new question violates the information boundary.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Asks for incident details beyond the guideline. The guideline only allows requesting full name and one identifier to locate the profile; introducing a new question violates the information boundary."
+            },
+            "attempt_index": 0
+          },
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Asks for incident details, impact, resolution, and contact info beyond the guideline’s allow-listed fields (full name and one identifier).",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Asks for incident details, impact, resolution, and contact info beyond the guideline’s allow-listed fields (full name and one identifier).\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Asks for incident details, impact, resolution, and contact info beyond the guideline’s allow-listed fields (full name and one identifier)."
+            },
+            "attempt_index": 1
+          },
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Guideline allows only asking for full name and one identifier; reply adds unrelated content (consent recorded and incident description request), violating information boundary.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Guideline allows only asking for full name and one identifier; reply adds unrelated content (consent recorded and incident description request), violating information boundary.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Guideline allows only asking for full name and one identifier; reply adds unrelated content (consent recorded and incident description request), violating information boundary."
+            },
+            "attempt_index": 2
+          }
+        ],
+        "max_iters": 3,
+        "used": true,
+        "final_attempt_index": 2,
+        "final_is_compliant": false
+      }
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "The service was really disappointing. The flight attendants were not very attentive and seemed uninterested in assisting passengers. Additionally, there were issues with cleanliness, as the tray table at my seat was sticky and the cleanliness overall seemed neglected. I was quite disappointed considering the premium economy service."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please provide:\n- Email address\n- Country code and phone number\n- Preferred update channel",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 7,
+      "guideline_text": "Follow-up details: Collect email address, country code and phone number, and the preferred update channel for responses."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "My email address is leila.moreau@yahoo.com and my phone number is +4941911166617. I prefer to receive updates via email."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Case reference number: CS-20260307-9184\nExpected response timeframe: within 5 business days",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 9,
+      "guideline_text": "Register case and provide receipt: Log the feedback in the system and provide the case reference number and expected response timeframe."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Thank you, I'll be waiting for your follow-up."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: End the call by silently disconnecting after your final answer, providing no closing remark, appreciation, or invitation for further questions.",
+      "is_violation": true,
+      "content_judge": {
+        "attempts": [
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Should silently disconnect with no closing remark; reply says 'You're welcome.'",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Should silently disconnect with no closing remark; reply says 'You're welcome.'\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Should silently disconnect with no closing remark; reply says 'You're welcome.'"
+            },
+            "attempt_index": 0
+          }
+        ],
+        "max_iters": 3,
+        "used": true,
+        "final_attempt_index": 0,
+        "final_is_compliant": false
+      }
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "file_service_complaint_or_feedback",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Do not use any greeting or introduction and instead begin by saying 'Please provide your booking reference (PNR) to proceed.'",
+      "evidence": "Please provide your booking reference (PNR) to proceed."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "file_service_complaint_or_feedback",
+      "guideline_phase": 2,
+      "guideline": "Locate caller record: Ask for full name and one identifier such as booking reference or Stratos Rewards number to access the profile.",
+      "evidence": "Thank you, Leila. I have recorded your consent to share your feedback and to contact you if needed. Please describe what went wrong on flight WN4075 from Los Angeles to San Francisco on April 29 in your own words."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "file_service_complaint_or_feedback",
+      "guideline_phase": 10,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: End the call by silently disconnecting after your final answer, providing no closing remark, appreciation, or invitation for further questions.",
+      "evidence": ""
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Do not use any greeting or introduction and instead begin by saying 'Please provide your booking reference (PNR) to proceed.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 4,
+      "original": "Headline summary: Request a brief one sentence overview of what happened and the impact on the trip.",
+      "modified": "Headline summary: Provide a single sentence that ends with the exact suffix ' | Impact level: Low/Medium/High' and refrain from asking the user for any input."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 10,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End the call by silently disconnecting after your final answer, providing no closing remark, appreciation, or invitation for further questions."
+    }
+  ],
+  "rule_based_termination": null
+}

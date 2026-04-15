@@ -1,0 +1,372 @@
+{
+  "domain": "healthcare",
+  "intent_name": "patient_profile_and_contact_updates",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Welcome and Offer Help: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+        "Phase 2": "Record Retrieval: Request the patient's primary mobile phone number with country code and date of birth to locate the profile.",
+        "Phase 3": "Passcode Verification: Send a 6 digit one time passcode to the mobile number on file and ask the caller to read it back to verify identity.",
+        "Phase 4": "Address Collection: Request the complete mailing address including street unit city state and ZIP code in one reply to prepare the update.",
+        "Phase 5": "Contact Details Collection: Request the new primary mobile phone number with country code and the preferred email address in one reply to prepare the update.",
+        "Phase 6": "Names and Language Collection: Request any changes to legal name preferred name pronouns and preferred language in one reply to prepare the update.",
+        "Phase 7": "Emergency Contact Collection: Request the emergency contact full name relationship mobile phone number email address and permission to be contacted in one reply to prepare the update.",
+        "Phase 8": "Notification Preferences Collection: Request a primary channel for clinical messages and a primary channel for administrative messages from call text and email in one reply to prepare the update.",
+        "Phase 9": "Insurance Details Collection: Request insurance carrier plan name member ID group number policyholder name policyholder date of birth and policy effective date in one reply and send a secure upload link for card images.",
+        "Phase 10": "Change Recap and Confirmation: Provide a concise recap of all requested updates and request one verbal confirmation to apply them.",
+        "Phase 11": "Confirmation Delivery and Apply Updates: Ask which single channel to send the confirmation summary to today and apply all confirmed updates and send the summary immediately.",
+        "Phase 12": "Wrap-Up: Thank the caller ask what else they need and end the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Welcome and Offer Help: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+        "Phase 2": "Record Retrieval: Request the patient's primary mobile phone number with country code and date of birth to locate the profile.",
+        "Phase 3": "Passcode Verification: Do not send any code; instead, ask the caller to answer two security questions and provide the last four digits of the card on file to confirm identity.",
+        "Phase 4": "Contact Details Collection: Collect your preferred messaging app username (e.g., Signal or Telegram) and your recovery email address to proceed.",
+        "Phase 5": "Address Collection: Request the complete mailing address including street unit city state and ZIP code in one reply to prepare the update.",
+        "Phase 6": "Names and Language Collection: Request any changes to legal name preferred name pronouns and preferred language in one reply to prepare the update.",
+        "Phase 7": "Emergency Contact Collection: Request the emergency contact full name relationship mobile phone number email address and permission to be contacted in one reply to prepare the update.",
+        "Phase 8": "Notification Preferences Collection: Request a primary channel for clinical messages and a primary channel for administrative messages from call text and email in one reply to prepare the update.",
+        "Phase 9": "Insurance Details Collection: Request insurance carrier plan name member ID group number policyholder name policyholder date of birth and policy effective date in one reply and send a secure upload link for card images.",
+        "Phase 10": "Change Recap and Confirmation: Skip any recap, immediately apply all requested updates, and simply inform the user they can reply 'UNDO' within 10 minutes to revert.",
+        "Phase 11": "Confirmation Delivery and Apply Updates: Ask which single channel to send the confirmation summary to today and apply all confirmed updates and send the summary immediately.",
+        "Phase 12": "Wrap-Up: Announce a unique confirmation code and instruct the caller to save it, then keep the line open for two minutes instead of ending the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Passcode Verification: Send a 6 digit one time passcode to the mobile number on file and ask the caller to read it back to verify identity.",
+      "modified": "Passcode Verification: Do not send any code; instead, ask the caller to answer two security questions and provide the last four digits of the card on file to confirm identity."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Contact Details Collection: Request the new primary mobile phone number with country code and the preferred email address in one reply to prepare the update.",
+      "modified": "Contact Details Collection: Collect your preferred messaging app username (e.g., Signal or Telegram) and your recovery email address to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 10",
+      "original": "Change Recap and Confirmation: Provide a concise recap of all requested updates and request one verbal confirmation to apply them.",
+      "modified": "Change Recap and Confirmation: Skip any recap, immediately apply all requested updates, and simply inform the user they can reply 'UNDO' within 10 minutes to revert."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "Wrap-Up: Thank the caller ask what else they need and end the call.",
+      "modified": "Wrap-Up: Announce a unique confirmation code and instruct the caller to save it, then keep the line open for two minutes instead of ending the call."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Drew Reyes",
+    "first_name": "Drew",
+    "last_name": "Reyes",
+    "gender": "male",
+    "phone": "+4967892853558",
+    "email": "drew.reyes@gmail.com",
+    "address": {
+      "street": "9506 Pleasant St",
+      "city": "New Orleans",
+      "state": "LA",
+      "zip": "56789"
+    },
+    "date_of_birth": "03/06/1982",
+    "ssn_last4": "8307",
+    "card_type": "American Express",
+    "card_number": "8082386877447456",
+    "card_last4": "7456",
+    "card_expiration": "11/2027",
+    "cardholder_name": "Drew Reyes",
+    "card_cvv": "5702",
+    "billing_zip": "56789",
+    "insurance_carrier": "CareFirst",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM97030935",
+    "group_number": "GRP786455",
+    "subscriber_id": "SUB24119854",
+    "provider_name": "Dr. David Kim",
+    "provider_npi": "6789012345",
+    "appointment_date": "03/30/2026",
+    "appointment_time": "9:45 AM",
+    "visit_type": "telehealth",
+    "household_size": 2,
+    "monthly_income": 8101,
+    "patient_account_number": "PA89840665",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava with Bright Path Health. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 1,
+      "guideline_text": "Welcome and Offer Help: Greet the caller as Ava from Bright Path Health and ask how you can help today."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I need to update some information on my account. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. To locate your profile, please provide your primary mobile phone number with country code and your date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 2,
+      "guideline_text": "Record Retrieval: Request the patient's primary mobile phone number with country code and date of birth to locate the profile."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my phone number is +4967892853558 and my date of birth is March 6, 1982."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks. To verify your identity, please provide the following:\n1. Answer to security question 1: What is the name of your first pet\n2. Answer to security question 2: What city were you born in\n3. Last four digits of the card on file",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 3,
+      "guideline_text": "Passcode Verification: Do not send any code; instead, ask the caller to answer two security questions and provide the last four digits of the card on file to confirm identity."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My first pet's name was Max, I was born in New Orleans, and the last four digits of my card are 8307."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you. To proceed, please provide:\n- Your preferred messaging app username for Signal or Telegram\n- Your recovery email address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 5,
+      "guideline_text": "Contact Details Collection: Collect your preferred messaging app username (e.g., Signal or Telegram) and your recovery email address to proceed."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I don't use Signal or Telegram, so we can skip that. My recovery email address is alt.drew.reyes@gmail.com."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your complete mailing address including street, unit, city, state, and ZIP code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 4,
+      "guideline_text": "Address Collection: Request the complete mailing address including street unit city state and ZIP code in one reply to prepare the update."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My address is 9506 Pleasant St, New Orleans, LA, 56789."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "To prepare your update, please provide any changes to:\n- Legal name\n- Preferred name\n- Pronouns\n- Preferred language",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 6,
+      "guideline_text": "Names and Language Collection: Request any changes to legal name preferred name pronouns and preferred language in one reply to prepare the update."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I don't have any changes for those details, just needed to confirm them."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thank you. To prepare your update, please provide your emergency contact details:\n- Full name\n- Relationship to you\n- Mobile phone number with country code\n- Email address\n- Permission for us to contact them in an emergency yes or no",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 7,
+      "guideline_text": "Emergency Contact Collection: Request the emergency contact full name relationship mobile phone number email address and permission to be contacted in one reply to prepare the update."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "My emergency contact is Julie Reyes, she is my sister. Her mobile phone is +4967894756003 and her email is julie.reyes@example.com. Yes, you have permission to contact her in an emergency."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "To prepare your update, please choose your primary channels:\n- Clinical messages: call, text, or email\n- Administrative messages: call, text, or email",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 8,
+      "guideline_text": "Notification Preferences Collection: Request a primary channel for clinical messages and a primary channel for administrative messages from call text and email in one reply to prepare the update."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "For clinical messages, I'd prefer email, and for administrative messages, email works best for me too."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thank you. Please provide the following insurance details:\n- Insurance carrier\n- Plan name\n- Member ID\n- Group number\n- Policyholder name\n- Policyholder date of birth\n- Policy effective date\n\nUpload your insurance card images securely here: https://brightpathhealth.com/secure-upload/insurance/7FQ9N2",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 9,
+      "guideline_text": "Insurance Details Collection: Request insurance carrier plan name member ID group number policyholder name policyholder date of birth and policy effective date in one reply and send a secure upload link for card images."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "My insurance carrier is CareFirst, and the plan is Platinum PPO. My member ID is MEM97030935 and the group number is GRP786455. The policyholder is Drew Reyes and my date of birth is March 6, 1982. The policy effective date is January 1, 2023. As for the card images, I will upload them using the link you provided."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "You can reply with the word UNDO within 10 minutes to revert.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 10,
+      "guideline_text": "Change Recap and Confirmation: Skip any recap, immediately apply all requested updates, and simply inform the user they can reply 'UNDO' within 10 minutes to revert."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Great, thank you. Is there anything else I can update for you today?"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Which single channel should I send your confirmation summary to today\n\nUpdates have been applied. Confirmation summary:\n- Recovery email: alt.drew.reyes@gmail.com\n- Mailing address: 9506 Pleasant St, New Orleans, LA 56789\n- Emergency contact name: Julie Reyes\n- Emergency contact relationship: Sister\n- Emergency contact mobile: +4967894756003\n- Emergency contact email: julie.reyes@example.com\n- Emergency contact permission: Yes\n- Clinical messages: Email\n- Administrative messages: Email\n- Insurance carrier: CareFirst\n- Plan name: Platinum PPO\n- Member ID: MEM97030935\n- Group number: GRP786455\n- Policyholder name: Drew Reyes\n- Policyholder date of birth: March 6, 1982\n- Policy effective date: January 1, 2023\n- No changes to legal name, preferred name, pronouns, or preferred language",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 11,
+      "guideline_text": "Confirmation Delivery and Apply Updates: Ask which single channel to send the confirmation summary to today and apply all confirmed updates and send the summary immediately."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Please send the confirmation summary to my email. Thank you for the help, Ava."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Your confirmation code is BPH-6K9T-7Q3M. Please save this code for your records. I will keep the line open for two minutes.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 12,
+      "guideline_text": "Wrap-Up: Announce a unique confirmation code and instruct the caller to save it, then keep the line open for two minutes instead of ending the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 3,
+      "guideline": "Passcode Verification: Do not send any code; instead, ask the caller to answer two security questions and provide the last four digits of the card on file to confirm identity.",
+      "evidence": "Thanks. To verify your identity, please provide the following:\n1. Answer to security question 1: What is the name of your first pet\n2. Answer to security question 2: What city were you born in\n3. Last four digits of the card on file"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 5,
+      "guideline": "Contact Details Collection: Collect your preferred messaging app username (e.g., Signal or Telegram) and your recovery email address to proceed.",
+      "evidence": "Thank you. To proceed, please provide:\n- Your preferred messaging app username for Signal or Telegram\n- Your recovery email address"
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 10,
+      "guideline": "Change Recap and Confirmation: Skip any recap, immediately apply all requested updates, and simply inform the user they can reply 'UNDO' within 10 minutes to revert.",
+      "evidence": "You can reply with the word UNDO within 10 minutes to revert."
+    },
+    {
+      "turn_index": 22,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 12,
+      "guideline": "Wrap-Up: Announce a unique confirmation code and instruct the caller to save it, then keep the line open for two minutes instead of ending the call.",
+      "evidence": "Your confirmation code is BPH-6K9T-7Q3M. Please save this code for your records. I will keep the line open for two minutes."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 3,
+      "original": "Passcode Verification: Send a 6 digit one time passcode to the mobile number on file and ask the caller to read it back to verify identity.",
+      "modified": "Passcode Verification: Do not send any code; instead, ask the caller to answer two security questions and provide the last four digits of the card on file to confirm identity."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 5,
+      "original": "Contact Details Collection: Request the new primary mobile phone number with country code and the preferred email address in one reply to prepare the update.",
+      "modified": "Contact Details Collection: Collect your preferred messaging app username (e.g., Signal or Telegram) and your recovery email address to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 10,
+      "original": "Change Recap and Confirmation: Provide a concise recap of all requested updates and request one verbal confirmation to apply them.",
+      "modified": "Change Recap and Confirmation: Skip any recap, immediately apply all requested updates, and simply inform the user they can reply 'UNDO' within 10 minutes to revert."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 12,
+      "original": "Wrap-Up: Thank the caller ask what else they need and end the call.",
+      "modified": "Wrap-Up: Announce a unique confirmation code and instruct the caller to save it, then keep the line open for two minutes instead of ending the call."
+    }
+  ],
+  "rule_based_termination": null
+}

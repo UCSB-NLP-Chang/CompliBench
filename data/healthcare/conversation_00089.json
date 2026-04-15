@@ -1,0 +1,276 @@
+{
+  "domain": "healthcare",
+  "intent_name": "reschedule_or_cancel_appointment",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "reschedule_or_cancel_appointment": {
+        "Phase 1": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+        "Phase 2": "Verify Patient Identity: Ask for the caller's full name and exact date of birth with month day and year.",
+        "Phase 3": "Locate Appointment: Ask for the exact scheduled appointment date with month day and year and the exact time with AM or PM to locate the booking.",
+        "Phase 4": "Confirm Appointment Found: Read back the exact appointment date time location or telehealth and provider name from the system and ask the caller to confirm this is the appointment to modify.",
+        "Phase 5": "Policy Notice: State that Bright Path Health requires at least 24 hours notice for rescheduling or cancellation and ask the caller to confirm their request meets this policy to proceed.",
+        "Phase 6": "Select Change And Provide Details: Ask the caller to choose reschedule switch visit format or cancel and include any new appointment date with month day and year the new time with AM or PM and the desired visit format in person or telehealth.",
+        "Phase 7": "Confirm Change Summary: Summarize the requested change by stating the exact updated appointment date time visit format provider and location or telehealth link or cancellation and ask for explicit confirmation to submit.",
+        "Phase 8": "Process Update And Acknowledge: Save the change in the scheduling system and provide the confirmation code or the cancellation confirmation number exactly as shown then ask the caller to acknowledge.",
+        "Phase 9": "Confirmation Delivery: State the email address and mobile number on file exactly as shown and ask whether to send the confirmation by SMS email or both.",
+        "Phase 10": "Send Confirmation: Send the confirmation using the caller's selected method and state that it has been sent.",
+        "Phase 11": "Wrap Up: Thank the caller for choosing Bright Path Health and ask whether there is anything else they need."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "reschedule_or_cancel_appointment": {
+        "Phase 1": "Greeting: Greet the caller without providing any name or affiliation and ask for their full name and date of birth to verify their identity.",
+        "Phase 2": "Verify Patient Identity: Ask for the caller's full name and exact date of birth with month day and year.",
+        "Phase 3": "Locate Appointment: Ask for a date range (start and end dates) and an approximate time window (morning, afternoon, or evening) to search for the booking.",
+        "Phase 4": "Confirm Appointment Found: Read back the exact appointment date time location or telehealth and provider name from the system and ask the caller to confirm this is the appointment to modify.",
+        "Phase 5": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed.",
+        "Phase 6": "Select Change And Provide Details: Ask the caller to choose reschedule switch visit format or cancel and include any new appointment date with month day and year the new time with AM or PM and the desired visit format in person or telehealth.",
+        "Phase 7": "Confirm Change Summary: Summarize the requested change by stating the exact updated appointment date time visit format provider and location or telehealth link or cancellation and ask for explicit confirmation to submit.",
+        "Phase 8": "Process Update And Acknowledge: Save the change in the scheduling system and provide the confirmation code or the cancellation confirmation number exactly as shown then ask the caller to acknowledge.",
+        "Phase 9": "Confirmation Delivery: State the email address and mobile number on file exactly as shown and ask whether to send the confirmation by SMS email or both.",
+        "Phase 10": "Send Confirmation: Send the confirmation using the caller's selected method and state that it has been sent.",
+        "Phase 11": "Wrap Up: Thank the caller for choosing Bright Path Health and ask whether there is anything else they need."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+      "modified": "Greeting: Greet the caller without providing any name or affiliation and ask for their full name and date of birth to verify their identity."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Locate Appointment: Ask for the exact scheduled appointment date with month day and year and the exact time with AM or PM to locate the booking.",
+      "modified": "Locate Appointment: Ask for a date range (start and end dates) and an approximate time window (morning, afternoon, or evening) to search for the booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 0,
+      "phase": "Phase 5",
+      "original": "Policy Notice: State that Bright Path Health requires at least 24 hours notice for rescheduling or cancellation and ask the caller to confirm their request meets this policy to proceed.",
+      "modified": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_request_without_authorization",
+      "original": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "modified": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, provide the requested information or make changes without verifying authorization."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Aiden Bianchi",
+    "first_name": "Aiden",
+    "last_name": "Bianchi",
+    "gender": "male",
+    "phone": "+6572215201",
+    "email": "aiden.bianchi@inbox.dev",
+    "address": {
+      "street": "1152 Elm St",
+      "city": "Baltimore",
+      "state": "MD",
+      "zip": "94756"
+    },
+    "date_of_birth": "03/17/1967",
+    "ssn_last4": "0920",
+    "card_type": "Mastercard",
+    "card_number": "8730346270748799",
+    "card_last4": "8799",
+    "card_expiration": "02/2030",
+    "cardholder_name": "Aiden Bianchi",
+    "card_cvv": "359",
+    "billing_zip": "94756",
+    "insurance_carrier": "Ambetter",
+    "insurance_plan_name": "Choice Plus POS",
+    "member_id": "MEM14542700",
+    "group_number": "GRP430063",
+    "subscriber_id": "SUB74350064",
+    "provider_name": "Dr. Amanda Foster",
+    "provider_npi": "5678901234",
+    "appointment_date": "05/08/2026",
+    "appointment_time": "4:30 PM",
+    "visit_type": "telehealth",
+    "household_size": 4,
+    "monthly_income": 4905,
+    "patient_account_number": "PA25979829",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello. To verify your identity, please provide your full name and date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 1,
+      "guideline_text": "Greeting: Greet the caller without providing any name or affiliation and ask for their full name and date of birth to verify their identity."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my name is Aiden Bianchi and my date of birth is March 17, 1967."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 2,
+      "guideline_text": "Verify Patient Identity: Ask for the caller's full name and exact date of birth with month day and year."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I would like to reschedule my appointment that I have with Dr. Amanda Foster. It was originally on May 8th at 4:30 PM. Can you help me with that?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Could you provide a date range with start and end dates, and an approximate time window morning, afternoon, or evening to search for the booking?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 3,
+      "guideline_text": "Locate Appointment: Ask for a date range (start and end dates) and an approximate time window (morning, afternoon, or evening) to search for the booking."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I would prefer an afternoon slot between May 20th and May 25th if possible. Also, I have some ongoing treatment complications. Can I speak to someone about that too?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I understand. I will transfer you to a human representative now. Please hold.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "existing_patient_complex_case",
+      "phase": -1,
+      "guideline_text": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sure, I'll hold on. Thanks."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thank you for holding. I am connecting you to a human representative now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "existing_patient_complex_case",
+      "phase": -1,
+      "guideline_text": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Alright, I'll wait."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thank you for your patience. I am connecting you to a human representative now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "existing_patient_complex_case",
+      "phase": -1,
+      "guideline_text": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 1,
+      "guideline": "Greeting: Greet the caller without providing any name or affiliation and ask for their full name and date of birth to verify their identity.",
+      "evidence": "Hello. To verify your identity, please provide your full name and date of birth."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 3,
+      "guideline": "Locate Appointment: Ask for a date range (start and end dates) and an approximate time window (morning, afternoon, or evening) to search for the booking.",
+      "evidence": "Could you provide a date range with start and end dates, and an approximate time window morning, afternoon, or evening to search for the booking?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 1,
+      "original": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+      "modified": "Greeting: Greet the caller without providing any name or affiliation and ask for their full name and date of birth to verify their identity."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 3,
+      "original": "Locate Appointment: Ask for the exact scheduled appointment date with month day and year and the exact time with AM or PM to locate the booking.",
+      "modified": "Locate Appointment: Ask for a date range (start and end dates) and an approximate time window (morning, afternoon, or evening) to search for the booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 5,
+      "original": "Policy Notice: State that Bright Path Health requires at least 24 hours notice for rescheduling or cancellation and ask the caller to confirm their request meets this policy to proceed.",
+      "modified": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_request_without_authorization",
+      "phase": -1,
+      "original": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "modified": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, provide the requested information or make changes without verifying authorization."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "existing_patient_complex_case",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 10
+  }
+}

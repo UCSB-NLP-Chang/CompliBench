@@ -1,0 +1,246 @@
+{
+  "domain": "healthcare",
+  "intent_name": "verify_appointment_details_and_notifications",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today",
+        "Phase 2": "Verify identity: Ask for the caller's full name and date of birth to access their record",
+        "Phase 3": "Confirm review: Ask the caller to confirm you will review the upcoming appointment details now",
+        "Phase 4": "Read details: Read the appointment date, start time with time zone, visit type, provider full name and credentials, and location name with full address exactly as stored, then ask the caller to confirm these details are correct",
+        "Phase 5": "Notification preference: State the notification delivery channels on file for this appointment and ask which ones to send now",
+        "Phase 6": "Send notifications: Send the selected notifications immediately using their associated delivery channels on file, state where each was sent and the expected delivery timeframe, and ask the caller to confirm the send details are acceptable",
+        "Phase 7": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting: Introduce yourself as Ava from Bright Path Health and, without asking how you can help today, request the caller’s date of birth and the primary reason for the call.",
+        "Phase 2": "Verify identity: Ask for the caller's full name and date of birth to access their record",
+        "Phase 3": "Confirm review: Ask the caller to confirm you will review the upcoming appointment details now",
+        "Phase 4": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation.",
+        "Phase 5": "Notification preference: State the notification delivery channels on file for this appointment and ask which ones to send now",
+        "Phase 6": "Send notifications: Send the selected notifications immediately using their associated delivery channels on file, state where each was sent and the expected delivery timeframe, and ask the caller to confirm the send details are acceptable",
+        "Phase 7": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call"
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today",
+      "modified": "Greeting: Introduce yourself as Ava from Bright Path Health and, without asking how you can help today, request the caller’s date of birth and the primary reason for the call."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Read details: Read the appointment date, start time with time zone, visit type, provider full name and credentials, and location name with full address exactly as stored, then ask the caller to confirm these details are correct",
+      "modified": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Hannah Ramirez",
+    "first_name": "Hannah",
+    "last_name": "Ramirez",
+    "gender": "female",
+    "phone": "+46753353000",
+    "email": "hannah.ramirez@mail.com",
+    "address": {
+      "street": "874 Spruce St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "24707"
+    },
+    "date_of_birth": "04/08/1995",
+    "ssn_last4": "5430",
+    "card_type": "Discover",
+    "card_number": "0567181332541770",
+    "card_last4": "1770",
+    "card_expiration": "07/2027",
+    "cardholder_name": "Hannah Ramirez",
+    "card_cvv": "944",
+    "billing_zip": "24707",
+    "insurance_carrier": "Independence Blue Cross",
+    "insurance_plan_name": "Silver HMO",
+    "member_id": "MEM20326334",
+    "group_number": "GRP768935",
+    "subscriber_id": "SUB52685885",
+    "provider_name": "Dr. Emily Chen",
+    "provider_npi": "3456789012",
+    "appointment_date": "03/21/2026",
+    "appointment_time": "12:45 PM",
+    "visit_type": "in-person",
+    "household_size": 4,
+    "monthly_income": 8016,
+    "patient_account_number": "PA68485536",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Rite Aid"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava from Bright Path Health. Please provide your date of birth and the primary reason for your call.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 1,
+      "guideline_text": "Greeting: Introduce yourself as Ava from Bright Path Health and, without asking how you can help today, request the caller’s date of birth and the primary reason for the call."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, my date of birth is April 8, 1995. I'm calling to confirm the details of my upcoming appointment. Could you provide the date, time, and who it's with?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you. To verify your identity, please provide your full name and confirm your date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 2,
+      "guideline_text": "Verify identity: Ask for the caller's full name and date of birth to access their record"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my name is Hannah Ramirez and my date of birth is April 8, 1995."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks, Hannah. Would you like me to review your upcoming appointment details now?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "guideline_text": "Confirm review: Ask the caller to confirm you will review the upcoming appointment details now"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, please."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, Hannah. Before I share the details, what is your preferred appointment date and time?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 4,
+      "guideline_text": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My appointment should be on March 21, 2026, at 12:45 PM."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Here are the notification delivery channels on file for this appointment: text message, email, and phone call. Which would you like me to send now?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 5,
+      "guideline_text": "Notification preference: State the notification delivery channels on file for this appointment and ask which ones to send now"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Could you please resend the details via email?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I have sent your appointment details via email to the address on file. It should arrive within 2 minutes. Please confirm that these send details are acceptable.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 6,
+      "guideline_text": "Send notifications: Send the selected notifications immediately using their associated delivery channels on file, state where each was sent and the expected delivery timeframe, and ask the caller to confirm the send details are acceptable"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thank you, I'll check my email. Is there anything else you need from me?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 7,
+      "guideline_text": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 1,
+      "guideline": "Greeting: Introduce yourself as Ava from Bright Path Health and, without asking how you can help today, request the caller’s date of birth and the primary reason for the call.",
+      "evidence": "Hello, this is Ava from Bright Path Health. Please provide your date of birth and the primary reason for your call."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 4,
+      "guideline": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation.",
+      "evidence": "Thanks, Hannah. Before I share the details, what is your preferred appointment date and time?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 1,
+      "original": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today",
+      "modified": "Greeting: Introduce yourself as Ava from Bright Path Health and, without asking how you can help today, request the caller’s date of birth and the primary reason for the call."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 4,
+      "original": "Read details: Read the appointment date, start time with time zone, visit type, provider full name and credentials, and location name with full address exactly as stored, then ask the caller to confirm these details are correct",
+      "modified": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation."
+    }
+  ],
+  "rule_based_termination": null
+}

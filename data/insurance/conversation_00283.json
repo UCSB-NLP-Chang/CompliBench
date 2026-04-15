@@ -1,0 +1,319 @@
+{
+  "domain": "insurance",
+  "intent_name": "request_policy_documents",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "request_policy_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range.",
+        "Phase 3": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it.",
+        "Phase 4": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+        "Phase 5": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system.",
+        "Phase 6": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call.",
+        "Phase 7": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "request_policy_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Begin without any greeting by saying \"For security, this call is being recorded,\" then ask the caller to confirm their full name and the last four digits of their SSN without introducing yourself.",
+        "Phase 2": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range.",
+        "Phase 3": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it.",
+        "Phase 4": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information.",
+        "Phase 5": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system.",
+        "Phase 6": "End the call politely, ensuring the caller feels valued and assisted.",
+        "Phase 7": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_policy_documents",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin without any greeting by saying \"For security, this call is being recorded,\" then ask the caller to confirm their full name and the last four digits of their SSN without introducing yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_policy_documents",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+      "modified": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "legal_tax_medical_advice_disclaimer",
+      "original": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "modified": "If the customer asks for legal, tax, or medical advice or determinations, transfer the call to a human agent immediately without providing any disclaimer or general policy information."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Rahul Kim",
+    "first_name": "Rahul",
+    "last_name": "Kim",
+    "gender": "male",
+    "phone": "+353001364096",
+    "email": "rahul.kim@gmail.com",
+    "address": {
+      "street": "2086 Main St",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "46521"
+    },
+    "date_of_birth": "05/21/1995",
+    "ssn_last4": "7091",
+    "card_type": "Discover",
+    "card_number": "8808367222541206",
+    "card_last4": "1206",
+    "card_expiration": "10/2027",
+    "cardholder_name": "Rahul Kim",
+    "card_cvv": "574",
+    "billing_zip": "46521",
+    "policy_number": "POL62609264",
+    "claim_number": "CLM1839032",
+    "policy_id": "PID88898124",
+    "claim_id": "CID2194682",
+    "member_id": "MEM30189298",
+    "subscriber_id": "SUB65976683",
+    "group_number": "GRP183665",
+    "reference_number": "REF77896924",
+    "id_number": "ID78824506",
+    "vehicle_make": "BMW",
+    "vehicle_model": "X5",
+    "vehicle_year": "2016",
+    "license_plate": "ESP0250",
+    "vin": "JXAYLZ1W77WMB9UX5",
+    "incident_date": "02/03/2026",
+    "incident_location": "Boston",
+    "coverage_type": "renters",
+    "payment_method": "debit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For security, this call is being recorded. Please confirm your full name and the last four digits of your SSN.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Begin without any greeting by saying \"For security, this call is being recorded,\" then ask the caller to confirm their full name and the last four digits of their SSN without introducing yourself."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Rahul Kim, and the last four digits of my SSN are 7091."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks, Rahul. Which documents do you need, is this for a policy or a claim, and what date range should we cover?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 2,
+      "guideline_text": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I need a copy of my renters policy documents, like the declarations page and any recent renewal notices. Can you email these to me at rahul.kim@gmail.com?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "To locate your account, please provide your policy number and the phone number associated with the account.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 3,
+      "guideline_text": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "The policy number is POL62609264 and my phone number is +353001364096."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Would you like delivery by email or SMS? To use your account’s existing contact information, reply with the exact phrase Use saved details.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 4,
+      "guideline_text": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "What is the maximum coverage amount on my renters policy?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "For privacy, please confirm whether you are the named insured on policy POL62609264 or an authorized representative with permission to receive policy details.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "guideline_text": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Yes, I am the named insured on this policy."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks, Rahul. I have emailed your renters policy declarations page and the recent renewal notices for policy POL62609264 to rahul.kim@gmail.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 5,
+      "guideline_text": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "What was the maximum coverage amount again on my policy?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Your renters policy maximum coverage amount is 50,000 dollars.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "guideline_text": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Can you please check and tell me the amount again?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Your renters policy maximum coverage amount is 50,000 dollars.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "repeated_question_no_response",
+      "phase": -1,
+      "guideline_text": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Could you please tell me the coverage amount once more?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Your renters policy maximum coverage amount is 50,000 dollars.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "repeated_question_no_response",
+      "phase": -1,
+      "guideline_text": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I'm ending the call now."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance, Rahul. I appreciate your time today. If you need anything else, we’re here to help. Have a great day. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 7,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Okay, goodbye."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "I have sent three documents: your renters policy declarations page, the renewal notice dated March 1 2024, and the renewal notice dated March 1 2023. Delivery method: email to rahul.kim@gmail.com. Thank you for calling Shield Insurance, Rahul. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 6,
+      "guideline_text": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_policy_documents",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Begin without any greeting by saying \"For security, this call is being recorded,\" then ask the caller to confirm their full name and the last four digits of their SSN without introducing yourself.",
+      "evidence": "For security, this call is being recorded. Please confirm your full name and the last four digits of your SSN."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_policy_documents",
+      "guideline_phase": 4,
+      "guideline": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information.",
+      "evidence": "Would you like delivery by email or SMS? To use your account’s existing contact information, reply with the exact phrase Use saved details."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin without any greeting by saying \"For security, this call is being recorded,\" then ask the caller to confirm their full name and the last four digits of their SSN without introducing yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 4,
+      "original": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+      "modified": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "legal_tax_medical_advice_disclaimer",
+      "phase": -1,
+      "original": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "modified": "If the customer asks for legal, tax, or medical advice or determinations, transfer the call to a human agent immediately without providing any disclaimer or general policy information."
+    }
+  ],
+  "rule_based_termination": null
+}

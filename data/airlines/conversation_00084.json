@@ -1,0 +1,287 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "book_new_flight_itinerary",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "book_new_flight_itinerary": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Stratos Rewards Lookup: Ask for Stratos Rewards phone or loyalty number to locate the account",
+        "Phase 3": "Confirm Trip Preferences: Ask for trip type and cabin class",
+        "Phase 4": "Collect Trip Details: Gather origin, destination, dates, and preferred time window for all segments",
+        "Phase 5": "Offer Flight Options: Present three flight options with flight number, times, duration, and cabin and ask the caller to choose one",
+        "Phase 6": "Collect Passenger Data: Gather traveler gender, date of birth, nationality, passport number, passport expiration date, first name, and last name",
+        "Phase 7": "Collect Contact Details: Gather email address, country code, and phone number and ask for preferred notification channels",
+        "Phase 8": "Check Baggage Needs: Ask how many bags will be checked per passenger and provide the baggage policy",
+        "Phase 9": "Present Fare Summary: Summarize flights, cabin class, ancillaries, major cancellation and change rules, and total price and ask for consent to proceed to payment",
+        "Phase 10": "Collect Payment: Gather card type, card number, expiration date, cardholder name, security code, and billing ZIP code",
+        "Phase 11": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "book_new_flight_itinerary": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Ask for the caller's full name and six-character booking code first, without offering any greeting.",
+        "Phase 2": "Confirm Trip Preferences: Ask for trip type and cabin class",
+        "Phase 3": "Collect Trip Details: Gather origin, destination, dates, and preferred time window for all segments",
+        "Phase 4": "Stratos Rewards Lookup: Collect the customer's last purchase receipt number, the store location, and their full name to locate the account, and explicitly state that phone and loyalty numbers will not be used.",
+        "Phase 5": "Offer Flight Options: Present three flight options with flight number, times, duration, and cabin and ask the caller to choose one",
+        "Phase 6": "Collect Passenger Data: Gather traveler gender, date of birth, nationality, passport number, passport expiration date, first name, and last name",
+        "Phase 7": "Check Baggage Needs: Ask how many bags will be checked per passenger and provide the baggage policy",
+        "Phase 8": "Collect Contact Details: Ask for the user's full postal address, their time zone, and a backup contact person's name, and explicitly state that you will not collect an email address, country code, phone number, or notification channel preferences.",
+        "Phase 9": "Present Fare Summary: Summarize flights, cabin class, ancillaries, major cancellation and change rules, and total price and ask for consent to proceed to payment",
+        "Phase 10": "Collect Payment: Gather card type, card number, expiration date, cardholder name, security code, and billing ZIP code",
+        "Phase 11": "Provide Booking Confirmation: Send only a temporary reservation hold ID and explicitly include the phrase 'ticketing is pending, not yet confirmed'.",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Ask for the caller's full name and six-character booking code first, without offering any greeting."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Stratos Rewards Lookup: Ask for Stratos Rewards phone or loyalty number to locate the account",
+      "modified": "Stratos Rewards Lookup: Collect the customer's last purchase receipt number, the store location, and their full name to locate the account, and explicitly state that phone and loyalty numbers will not be used."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Collect Contact Details: Gather email address, country code, and phone number and ask for preferred notification channels",
+      "modified": "Collect Contact Details: Ask for the user's full postal address, their time zone, and a backup contact person's name, and explicitly state that you will not collect an email address, country code, phone number, or notification channel preferences."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 11",
+      "original": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing",
+      "modified": "Provide Booking Confirmation: Send only a temporary reservation hold ID and explicitly include the phrase 'ticketing is pending, not yet confirmed'."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "passport_visa_or_immigration_issue",
+      "original": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "modified": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations, continue assisting within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Jamie Ali",
+    "first_name": "Jamie",
+    "last_name": "Ali",
+    "gender": "male",
+    "phone": "+31375155479",
+    "email": "jamie.ali@hotmail.com",
+    "address": {
+      "street": "1297 Maple Ave",
+      "city": "Jacksonville",
+      "state": "FL",
+      "zip": "73470"
+    },
+    "record_locator": "KHAFRN",
+    "confirmation_code": "KHAFRN",
+    "booking_reference": "KHAFRN",
+    "pnr": "KHAFRN",
+    "ticket_number": "8775368289718",
+    "flight_number": "WN3869",
+    "origin": "Chicago (ORD)",
+    "destination": "Seattle (SEA)",
+    "travel_date": "2026-05-28",
+    "return_date": "2026-06-10",
+    "seat_number": "28E",
+    "seat_preference": "aisle",
+    "cabin_class": "first",
+    "fare_type": "nonrefundable",
+    "payment_method": "debit card",
+    "card_last4": "8315"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your full name and six-character booking code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Ask for the caller's full name and six-character booking code first, without offering any greeting."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Jamie Ali and my booking code is KHAFRN."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "What type of trip would you like to book, one way or round trip?\nWhich cabin class do you prefer, economy, premium economy, business, or first?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 3,
+      "guideline_text": "Confirm Trip Preferences: Ask for trip type and cabin class"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'd like to book a round trip in business class. Can you check flight options from New York to London leaving on March 15 and returning on March 22?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please provide your preferred departure time window on March 15 from New York to London and your preferred return time window on March 22 from London to New York.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 4,
+      "guideline_text": "Collect Trip Details: Gather origin, destination, dates, and preferred time window for all segments"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I'd prefer a morning departure from New York and an afternoon return from London."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Here are three business class options. Please choose option 1, 2, or 3.\n\nOption 1\nOutbound flight number FL201. Departs 8:30 AM. Arrives 8:35 PM. Duration 7h05. Cabin Business.\nReturn flight number FL202. Departs 3:15 PM. Arrives 6:25 PM. Duration 8h10. Cabin Business.\n\nOption 2\nOutbound flight number FL215. Departs 9:10 AM. Arrives 9:20 PM. Duration 7h10. Cabin Business.\nReturn flight number FL216. Departs 2:55 PM. Arrives 6:20 PM. Duration 8h25. Cabin Business.\n\nOption 3\nOutbound flight number FL231. Departs 10:00 AM. Arrives 10:05 PM. Duration 7h05. Cabin Business.\nReturn flight number FL232. Departs 4:30 PM. Arrives 7:45 PM. Duration 8h15. Cabin Business.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 5,
+      "guideline_text": "Offer Flight Options: Present three flight options with flight number, times, duration, and cabin and ask the caller to choose one"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'd like to go with option 2, please. Also, I need to check whether my wheelchair will be safe during the flights because I'm worried about potential damage or loss."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Great choice. Would you like me to proceed to book option 2 under Jamie Ali with booking code KHAFRN?\nRegarding your wheelchair, we can add dedicated handling and assistance to your reservation. Is your wheelchair manual or powered?",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My wheelchair is powered, and I really need assurance that it will be handled safely. If it were to get damaged or lost, I would need the process for compensation or claims clarified."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I am transferring you now to a claims and accessibility specialist who can address wheelchair handling and compensation or claims. Please hold while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thank you, I'll wait."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thank you for your patience, Jamie. I am connecting you now with our claims and accessibility specialist, who will address safe handling for your powered wheelchair and explain compensation and claims if needed. They will assist you from here. We appreciate you choosing us. Have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 12,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Ask for the caller's full name and six-character booking code first, without offering any greeting.",
+      "evidence": "Please provide your full name and six-character booking code."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Ask for the caller's full name and six-character booking code first, without offering any greeting."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 2,
+      "original": "Stratos Rewards Lookup: Ask for Stratos Rewards phone or loyalty number to locate the account",
+      "modified": "Stratos Rewards Lookup: Collect the customer's last purchase receipt number, the store location, and their full name to locate the account, and explicitly state that phone and loyalty numbers will not be used."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 7,
+      "original": "Collect Contact Details: Gather email address, country code, and phone number and ask for preferred notification channels",
+      "modified": "Collect Contact Details: Ask for the user's full postal address, their time zone, and a backup contact person's name, and explicitly state that you will not collect an email address, country code, phone number, or notification channel preferences."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 11,
+      "original": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing",
+      "modified": "Provide Booking Confirmation: Send only a temporary reservation hold ID and explicitly include the phrase 'ticketing is pending, not yet confirmed'."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "passport_visa_or_immigration_issue",
+      "phase": -1,
+      "original": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "modified": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations, continue assisting within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

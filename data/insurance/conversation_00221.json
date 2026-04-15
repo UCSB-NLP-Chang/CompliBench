@@ -1,0 +1,338 @@
+{
+  "domain": "insurance",
+  "intent_name": "cancel_policy",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "cancel_policy": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Identity Verification: Request the policy number and mailing ZIP code to locate the account",
+        "Phase 3": "Select Policy: Ask which active policy should be canceled or set to nonrenew",
+        "Phase 4": "Set Effective Date: Ask for the exact date coverage should end or the renewal date for nonrenewal",
+        "Phase 5": "Record Reason: Ask for exactly one primary reason for ending the policy",
+        "Phase 6": "Replacement Coverage: Ask whether new coverage is in place and note the carrier name",
+        "Phase 7": "Confirm Details And Authorization: Summarize the chosen policy, effective date, and one-sentence reason and request authorization to proceed",
+        "Phase 8": "Choose Confirmation Delivery: Ask for the delivery method and destination for the confirmation",
+        "Phase 9": "Submit Cancellation: Submit the cancellation with the confirmed details and capture the confirmation number",
+        "Phase 10": "Provide Confirmation: Provide the confirmation number exactly once",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "cancel_policy": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Identity Verification: Request the policy number and mailing ZIP code to locate the account",
+        "Phase 3": "Select Policy: Ask which active policy should be canceled or set to nonrenew",
+        "Phase 4": "Replacement Coverage: Ask whether new coverage is in place and note the carrier name",
+        "Phase 5": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date.",
+        "Phase 6": "Record Reason: Ask for exactly one primary reason for ending the policy",
+        "Phase 7": "Confirm Details And Authorization: List the policy's monthly premium, annual out-of-pocket maximum, and cancellation terms, and ask the user to schedule a 15-minute call to continue without requesting authorization.",
+        "Phase 8": "Choose Confirmation Delivery: Ask for the delivery method and destination for the confirmation",
+        "Phase 9": "Submit Cancellation: Submit the cancellation with the confirmed details and capture the confirmation number",
+        "Phase 10": "Provide Confirmation: Provide the confirmation number exactly once",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Set Effective Date: Ask for the exact date coverage should end or the renewal date for nonrenewal",
+      "modified": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 1,
+      "phase": "Phase 7",
+      "original": "Confirm Details And Authorization: Summarize the chosen policy, effective date, and one-sentence reason and request authorization to proceed",
+      "modified": "Confirm Details And Authorization: List the policy's monthly premium, annual out-of-pocket maximum, and cancellation terms, and ask the user to schedule a 15-minute call to continue without requesting authorization."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 1,
+      "phase": "Phase 11",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Neha Wright",
+    "first_name": "Neha",
+    "last_name": "Wright",
+    "gender": "male",
+    "phone": "+64493124036",
+    "email": "neha.wright@test.org",
+    "address": {
+      "street": "3404 Jackson St",
+      "city": "Fresno",
+      "state": "CA",
+      "zip": "87709"
+    },
+    "date_of_birth": "11/17/1992",
+    "ssn_last4": "4499",
+    "card_type": "Mastercard",
+    "card_number": "6525271203229754",
+    "card_last4": "9754",
+    "card_expiration": "06/2030",
+    "cardholder_name": "Neha Wright",
+    "card_cvv": "145",
+    "billing_zip": "87709",
+    "policy_number": "POL45716780",
+    "claim_number": "CLM4162710",
+    "policy_id": "PID91088051",
+    "claim_id": "CID1581043",
+    "member_id": "MEM69817743",
+    "subscriber_id": "SUB90758715",
+    "group_number": "GRP369471",
+    "reference_number": "REF10754799",
+    "id_number": "ID80223914",
+    "vehicle_make": "Tesla",
+    "vehicle_model": "Model Y",
+    "vehicle_year": "2022",
+    "license_plate": "YHP8837",
+    "vin": "6O5F6HVSVF6R3TI4J",
+    "incident_date": "02/18/2026",
+    "incident_location": "Seattle",
+    "coverage_type": "umbrella",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Aria, I would like to cancel my policy. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. Please provide your policy number and the mailing ZIP code on the account.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 2,
+      "guideline_text": "Identity Verification: Request the policy number and mailing ZIP code to locate the account"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My policy number is POL45716780 and the ZIP code is 87709."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please confirm which active policy you want to cancel or set to nonrenew. Is it policy number POL45716780?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 3,
+      "guideline_text": "Select Policy: Ask which active policy should be canceled or set to nonrenew"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, that's the one. I would like to cancel it."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Do you already have new coverage in place, and if so, what is the carrier name?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 6,
+      "guideline_text": "Replacement Coverage: Ask whether new coverage is in place and note the carrier name"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Yes, I have new coverage with Liberty Mutual."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks. To set the effective date, please upload a copy of your policy or your renewal notice for policy number POL45716780. I will proceed as soon as I receive it.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 4,
+      "guideline_text": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Sure, I will upload a copy of the policy document shortly. Is there anything else I need to do?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "No, that’s all for now. Once I receive the uploaded copy of your policy or renewal notice, I’ll proceed with canceling policy number POL45716780.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 4,
+      "guideline_text": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thank you, I'll upload it as soon as possible. Is there any fee or refund associated with the cancellation?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "What is the one primary reason you are ending your policy?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 5,
+      "guideline_text": "Record Reason: Ask for exactly one primary reason for ending the policy"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I sold the car, so I don't need the coverage anymore."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thanks for the details. Here is a quick summary before we proceed:\n\n- Monthly premium: 142.75 dollars\n- Annual out-of-pocket maximum: 1,000 dollars\n- Cancellation terms:\n  - Pro-rated refund of any unused premium from the cancellation date\n  - No cancellation fee\n  - Refund issued to the original payment method within 7 to 10 business days after processing\n  - Any past-due premium will be deducted from the refund\n\nPlease share a date and time for a 15-minute call to continue.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 7,
+      "guideline_text": "Confirm Details And Authorization: List the policy's monthly premium, annual out-of-pocket maximum, and cancellation terms, and ask the user to schedule a 15-minute call to continue without requesting authorization."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Could you process the cancellation to be effective immediately, after submitting the required documents?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Yes. Once we receive your uploaded policy or renewal notice for policy number POL45716780, we will process the cancellation to take effect immediately. Please upload the document to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 4,
+      "guideline_text": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Thanks for your help. I'll upload the documents right away. Have a great day."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 11,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 4,
+      "guideline": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date.",
+      "evidence": "Thanks. To set the effective date, please upload a copy of your policy or your renewal notice for policy number POL45716780. I will proceed as soon as I receive it."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 4,
+      "guideline": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date.",
+      "evidence": "No, that’s all for now. Once I receive the uploaded copy of your policy or renewal notice, I’ll proceed with canceling policy number POL45716780."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 7,
+      "guideline": "Confirm Details And Authorization: List the policy's monthly premium, annual out-of-pocket maximum, and cancellation terms, and ask the user to schedule a 15-minute call to continue without requesting authorization.",
+      "evidence": "Thanks for the details. Here is a quick summary before we proceed:\n\n- Monthly premium: 142.75 dollars\n- Annual out-of-pocket maximum: 1,000 dollars\n- Cancellation terms:\n  - Pro-rated refund of any unused premium from the cancellation date\n  - No cancellation fee\n  - Refund issued to the original payment method within 7 to 10 business days after processing\n  - Any past-due premium will be deducted from the refund\n\nPlease share a date and time for a 15-minute call to continue."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 4,
+      "guideline": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date.",
+      "evidence": "Yes. Once we receive your uploaded policy or renewal notice for policy number POL45716780, we will process the cancellation to take effect immediately. Please upload the document to proceed."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 11,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance.",
+      "evidence": ""
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 4,
+      "original": "Set Effective Date: Ask for the exact date coverage should end or the renewal date for nonrenewal",
+      "modified": "Set Effective Date: Require the user to upload a copy of their policy or renewal notice and proceed only after receiving the document, without asking them to state an end date or a renewal date."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 7,
+      "original": "Confirm Details And Authorization: Summarize the chosen policy, effective date, and one-sentence reason and request authorization to proceed",
+      "modified": "Confirm Details And Authorization: List the policy's monthly premium, annual out-of-pocket maximum, and cancellation terms, and ask the user to schedule a 15-minute call to continue without requesting authorization."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 11,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+    }
+  ],
+  "rule_based_termination": null
+}

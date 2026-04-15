@@ -1,0 +1,410 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "book_new_flight_itinerary",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "book_new_flight_itinerary": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Stratos Rewards Lookup: Ask for Stratos Rewards phone or loyalty number to locate the account",
+        "Phase 3": "Confirm Trip Preferences: Ask for trip type and cabin class",
+        "Phase 4": "Collect Trip Details: Gather origin, destination, dates, and preferred time window for all segments",
+        "Phase 5": "Offer Flight Options: Present three flight options with flight number, times, duration, and cabin and ask the caller to choose one",
+        "Phase 6": "Collect Passenger Data: Gather traveler gender, date of birth, nationality, passport number, passport expiration date, first name, and last name",
+        "Phase 7": "Collect Contact Details: Gather email address, country code, and phone number and ask for preferred notification channels",
+        "Phase 8": "Check Baggage Needs: Ask how many bags will be checked per passenger and provide the baggage policy",
+        "Phase 9": "Present Fare Summary: Summarize flights, cabin class, ancillaries, major cancellation and change rules, and total price and ask for consent to proceed to payment",
+        "Phase 10": "Collect Payment: Gather card type, card number, expiration date, cardholder name, security code, and billing ZIP code",
+        "Phase 11": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "book_new_flight_itinerary": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Collect Trip Details: Ask for each traveler’s passport or visa nationalities, any special assistance requirements, and how many days of schedule flexibility they have, without requesting any cities, destinations, dates, or preferred time windows.",
+        "Phase 3": "Confirm Trip Preferences: Ask for trip type and cabin class",
+        "Phase 4": "Stratos Rewards Lookup: Ask for Stratos Rewards phone or loyalty number to locate the account",
+        "Phase 5": "Offer Flight Options: Present three flight options with flight number, times, duration, and cabin and ask the caller to choose one",
+        "Phase 6": "Collect Contact Details: Request only the user's full name and postal address, explicitly stating that email, country code, phone number, and notification channel preferences will not be collected.",
+        "Phase 7": "Check Baggage Needs: Ask how many bags will be checked per passenger and provide the baggage policy",
+        "Phase 8": "Collect Passenger Data: Ask the traveler to provide a single JSON object with keys email, phone, residential_address, middle_name, and full_name, and explicitly state that gender, date of birth, nationality, passport number, and passport expiration date must not be included in this message.",
+        "Phase 9": "Present Fare Summary: Offer a courtesy fare hold by instructing the user to type 'HOLD FOR 24 HOURS', collect their contact email and mobile number, and defer all flight, cabin, ancillary, rule, and total price summaries until after the hold is placed without asking to proceed to payment.",
+        "Phase 10": "Collect Payment: Gather card type, card number, expiration date, cardholder name, security code, and billing ZIP code",
+        "Phase 11": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Collect Trip Details: Gather origin, destination, dates, and preferred time window for all segments",
+      "modified": "Collect Trip Details: Ask for each traveler’s passport or visa nationalities, any special assistance requirements, and how many days of schedule flexibility they have, without requesting any cities, destinations, dates, or preferred time windows."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 6",
+      "original": "Collect Passenger Data: Gather traveler gender, date of birth, nationality, passport number, passport expiration date, first name, and last name",
+      "modified": "Collect Passenger Data: Ask the traveler to provide a single JSON object with keys email, phone, residential_address, middle_name, and full_name, and explicitly state that gender, date of birth, nationality, passport number, and passport expiration date must not be included in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Collect Contact Details: Gather email address, country code, and phone number and ask for preferred notification channels",
+      "modified": "Collect Contact Details: Request only the user's full name and postal address, explicitly stating that email, country code, phone number, and notification channel preferences will not be collected."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 0,
+      "phase": "Phase 9",
+      "original": "Present Fare Summary: Summarize flights, cabin class, ancillaries, major cancellation and change rules, and total price and ask for consent to proceed to payment",
+      "modified": "Present Fare Summary: Offer a courtesy fare hold by instructing the user to type 'HOLD FOR 24 HOURS', collect their contact email and mobile number, and defer all flight, cabin, ancillary, rule, and total price summaries until after the hold is placed without asking to proceed to payment."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Hassan Kim",
+    "first_name": "Hassan",
+    "last_name": "Kim",
+    "gender": "male",
+    "phone": "+4587594131",
+    "email": "hassan.kim@proton.me",
+    "address": {
+      "street": "6090 Prospect St",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "44555"
+    },
+    "record_locator": "MH8725",
+    "confirmation_code": "MH8725",
+    "booking_reference": "MH8725",
+    "pnr": "MH8725",
+    "ticket_number": "1644897926269",
+    "flight_number": "WN9162",
+    "origin": "New York (JFK)",
+    "destination": "Boston (BOS)",
+    "travel_date": "2026-05-06",
+    "return_date": "2026-05-18",
+    "seat_number": "27B",
+    "seat_preference": "aisle",
+    "cabin_class": "first",
+    "fare_type": "nonrefundable",
+    "payment_method": "credit card",
+    "card_last4": "1830"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Nova. I'm looking to book a new flight itinerary. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. To get started, please provide:\n- For each traveler, passport or visa nationalities\n- For each traveler, any special assistance requirements\n- How many days of schedule flexibility you have",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 4,
+      "guideline_text": "Collect Trip Details: Ask for each traveler’s passport or visa nationalities, any special assistance requirements, and how many days of schedule flexibility they have, without requesting any cities, destinations, dates, or preferred time windows."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'm booking this flight just for myself and I don't have any special assistance requirements. I'm quite flexible with the schedule and can adjust by a couple of days if needed."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks for the details. Please provide:\n- Your passport or visa nationality\n- The exact number of days of schedule flexibility you have",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 4,
+      "guideline_text": "Collect Trip Details: Ask for each traveler’s passport or visa nationalities, any special assistance requirements, and how many days of schedule flexibility they have, without requesting any cities, destinations, dates, or preferred time windows."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My nationality is American, and I can be flexible up to two days before or after the preferred dates."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please confirm your trip type and preferred cabin class.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 3,
+      "guideline_text": "Confirm Trip Preferences: Ask for trip type and cabin class"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'm planning a round-trip flight. For the cabin class, I'm considering economy this time."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To locate your account, please provide your Stratos Rewards phone number or loyalty number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 2,
+      "guideline_text": "Stratos Rewards Lookup: Ask for Stratos Rewards phone or loyalty number to locate the account"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I don't have an account with Stratos Rewards, so I'd like to proceed without it for now."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "- Flight CE101 8:30 to 11:45 3h 15m Economy\n- Flight CE203 13:10 to 16:40 3h 30m Economy\n- Flight CE317 19:25 to 22:35 3h 10m Economy\n\nWhich option would you like to choose?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 5,
+      "guideline_text": "Offer Flight Options: Present three flight options with flight number, times, duration, and cabin and ask the caller to choose one"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I'll choose flight CE203 departing at 13:10."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "To proceed, please provide:\n- Your full name\n- Your postal address\n\nWe will not collect your email, country code, phone number, or notification channel preferences.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 7,
+      "guideline_text": "Collect Contact Details: Request only the user's full name and postal address, explicitly stating that email, country code, phone number, and notification channel preferences will not be collected."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "My full name is Hassan Kim and my address is 6090 Prospect St, Tampa, FL, 44555."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thanks. How many checked bags will you have?\n\nCelestar Air economy baggage policy\n- Carry-on: 1 carry-on up to 22 x 14 x 9 in and 10 kg, plus 1 personal item up to 18 x 14 x 8 in. No fee.\n- Checked bags included: none.\n- Checked bag fees per direction when prepaid online: first bag 35 USD, second bag 45 USD. At the airport: first bag 45 USD, second bag 55 USD. Third and additional bags 150 USD each.\n- Size and weight limits per checked bag: up to 50 lb 23 kg and up to 62 linear in 158 cm. Overweight 51 to 70 lb 23 to 32 kg adds 100 USD. Over 70 lb 32 kg not accepted. Oversize 63 to 80 linear in adds 200 USD. Over 80 linear in not accepted.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 8,
+      "guideline_text": "Check Baggage Needs: Ask how many bags will be checked per passenger and provide the baggage policy"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I'll have one checked bag."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thanks. To continue, please send one JSON object with keys email, phone, residential_address, middle_name, and full_name. Do not include gender, date of birth, nationality, passport number, or passport expiration date in this message.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 6,
+      "guideline_text": "Collect Passenger Data: Ask the traveler to provide a single JSON object with keys email, phone, residential_address, middle_name, and full_name, and explicitly state that gender, date of birth, nationality, passport number, and passport expiration date must not be included in this message."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "My email is hassan.kim@proton.me, phone number is +4587594131, and address is 6090 Prospect St, Tampa, FL, 44555. I don't have a middle name, and my full name is Hassan Kim."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Great choice. To place a free 24 hour courtesy hold, type HOLD FOR 24 HOURS.\nPlease confirm your contact email and mobile number. I have email hassan.kim@proton.me and mobile +4587594131.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 9,
+      "guideline_text": "Present Fare Summary: Offer a courtesy fare hold by instructing the user to type 'HOLD FOR 24 HOURS', collect their contact email and mobile number, and defer all flight, cabin, ancillary, rule, and total price summaries until after the hold is placed without asking to proceed to payment."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Yes, those contact details are correct."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Thanks. To finalize your booking, please provide:\n- Card type\n- Card number\n- Expiration date\n- Cardholder name\n- Security code\n- Billing ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 10,
+      "guideline_text": "Collect Payment: Gather card type, card number, expiration date, cardholder name, security code, and billing ZIP code"
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "The card type is Visa, the card number is 4539 1488 0344 1830, expiration date is 08/27, cardholder name is Hassan Kim, security code is 123, and the billing ZIP code is 44555."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Your booking is confirmed and ticketed successfully. Booking reference X9L7TM.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 11,
+      "guideline_text": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing"
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "Thank you. Could you confirm the flight details for my reference please?"
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "Your booking is confirmed and ticketed successfully. Booking reference X9L7TM.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 11,
+      "guideline_text": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing"
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "Could you provide the flight details for my upcoming trip including departure and arrival times?"
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "Ticketing complete. Your booking reference is X9L7TM.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 11,
+      "guideline_text": "Provide Booking Confirmation: Share booking reference and confirm successful ticketing"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 4,
+      "guideline": "Collect Trip Details: Ask for each traveler’s passport or visa nationalities, any special assistance requirements, and how many days of schedule flexibility they have, without requesting any cities, destinations, dates, or preferred time windows.",
+      "evidence": "Absolutely, I can help with that. To get started, please provide:\n- For each traveler, passport or visa nationalities\n- For each traveler, any special assistance requirements\n- How many days of schedule flexibility you have"
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 4,
+      "guideline": "Collect Trip Details: Ask for each traveler’s passport or visa nationalities, any special assistance requirements, and how many days of schedule flexibility they have, without requesting any cities, destinations, dates, or preferred time windows.",
+      "evidence": "Thanks for the details. Please provide:\n- Your passport or visa nationality\n- The exact number of days of schedule flexibility you have"
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 7,
+      "guideline": "Collect Contact Details: Request only the user's full name and postal address, explicitly stating that email, country code, phone number, and notification channel preferences will not be collected.",
+      "evidence": "To proceed, please provide:\n- Your full name\n- Your postal address\n\nWe will not collect your email, country code, phone number, or notification channel preferences."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 6,
+      "guideline": "Collect Passenger Data: Ask the traveler to provide a single JSON object with keys email, phone, residential_address, middle_name, and full_name, and explicitly state that gender, date of birth, nationality, passport number, and passport expiration date must not be included in this message.",
+      "evidence": "Thanks. To continue, please send one JSON object with keys email, phone, residential_address, middle_name, and full_name. Do not include gender, date of birth, nationality, passport number, or passport expiration date in this message."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 9,
+      "guideline": "Present Fare Summary: Offer a courtesy fare hold by instructing the user to type 'HOLD FOR 24 HOURS', collect their contact email and mobile number, and defer all flight, cabin, ancillary, rule, and total price summaries until after the hold is placed without asking to proceed to payment.",
+      "evidence": "Great choice. To place a free 24 hour courtesy hold, type HOLD FOR 24 HOURS.\nPlease confirm your contact email and mobile number. I have email hassan.kim@proton.me and mobile +4587594131."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 4,
+      "original": "Collect Trip Details: Gather origin, destination, dates, and preferred time window for all segments",
+      "modified": "Collect Trip Details: Ask for each traveler’s passport or visa nationalities, any special assistance requirements, and how many days of schedule flexibility they have, without requesting any cities, destinations, dates, or preferred time windows."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 6,
+      "original": "Collect Passenger Data: Gather traveler gender, date of birth, nationality, passport number, passport expiration date, first name, and last name",
+      "modified": "Collect Passenger Data: Ask the traveler to provide a single JSON object with keys email, phone, residential_address, middle_name, and full_name, and explicitly state that gender, date of birth, nationality, passport number, and passport expiration date must not be included in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 7,
+      "original": "Collect Contact Details: Gather email address, country code, and phone number and ask for preferred notification channels",
+      "modified": "Collect Contact Details: Request only the user's full name and postal address, explicitly stating that email, country code, phone number, and notification channel preferences will not be collected."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 9,
+      "original": "Present Fare Summary: Summarize flights, cabin class, ancillaries, major cancellation and change rules, and total price and ask for consent to proceed to payment",
+      "modified": "Present Fare Summary: Offer a courtesy fare hold by instructing the user to type 'HOLD FOR 24 HOURS', collect their contact email and mobile number, and defer all flight, cabin, ancillary, rule, and total price summaries until after the hold is placed without asking to proceed to payment."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 2: Intent Triggered Guidelines",
+    "key": "book_new_flight_itinerary",
+    "phase": 11,
+    "count": 3,
+    "turn_index": 26
+  }
+}

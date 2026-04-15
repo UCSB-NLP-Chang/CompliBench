@@ -1,0 +1,293 @@
+{
+  "domain": "insurance",
+  "intent_name": "proof_of_insurance",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "proof_of_insurance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Authenticate Caller: Request policy number and mailing ZIP to access the account.",
+        "Phase 3": "Identify Coverage Item: Ask which vehicle or property the proof should reference and explicitly request the year and model if it is a vehicle.",
+        "Phase 4": "Choose Document Type: Ask whether they need an ID card or an insurance binder.",
+        "Phase 5": "Capture Recipient Details: Ask for the recipient or organization name the document is for.",
+        "Phase 6": "Choose Delivery Channel: Ask whether to send by email or SMS and collect the destination address or number.",
+        "Phase 7": "Confirm and Send: Recap exactly four details—the policy item, document type, recipient, and delivery details—and obtain explicit approval to send now, then send the document.",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "proof_of_insurance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Authenticate Caller: Request policy number and mailing ZIP to access the account.",
+        "Phase 3": "Choose Document Type: Request the policy number and the primary insured's full name to proceed, and do not mention or ask about an ID card or an insurance binder.",
+        "Phase 4": "Identify Coverage Item: Ask which vehicle or property the proof should reference and explicitly request the year and model if it is a vehicle.",
+        "Phase 5": "Capture Recipient Details: Ask for the recipient or organization name the document is for.",
+        "Phase 6": "Choose Delivery Channel: Ask whether to send by email or SMS and collect the destination address or number.",
+        "Phase 7": "Confirm and Send: Do not recap any details, instead instruct the user to reply with the exact phrase 'APPROVE AND HOLD' to authorize placing the document under manual review, and refrain from sending the document.",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "proof_of_insurance",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Choose Document Type: Ask whether they need an ID card or an insurance binder.",
+      "modified": "Choose Document Type: Request the policy number and the primary insured's full name to proceed, and do not mention or ask about an ID card or an insurance binder."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "proof_of_insurance",
+      "workflow_index": 1,
+      "phase": "Phase 7",
+      "original": "Confirm and Send: Recap exactly four details—the policy item, document type, recipient, and delivery details—and obtain explicit approval to send now, then send the document.",
+      "modified": "Confirm and Send: Do not recap any details, instead instruct the user to reply with the exact phrase 'APPROVE AND HOLD' to authorize placing the document under manual review, and refrain from sending the document."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "legal_tax_medical_advice_disclaimer",
+      "original": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "modified": "If the customer asks for legal, tax, or medical advice or determinations, transfer the call to a human agent immediately without providing any disclaimer or general policy information."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Morgan Romano",
+    "first_name": "Morgan",
+    "last_name": "Romano",
+    "gender": "male",
+    "phone": "+14899753470",
+    "email": "morgan.romano@icloud.com",
+    "address": {
+      "street": "2095 Church St",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "46308"
+    },
+    "date_of_birth": "01/10/1996",
+    "ssn_last4": "5565",
+    "card_type": "Discover",
+    "card_number": "3545457053961856",
+    "card_last4": "1856",
+    "card_expiration": "02/2027",
+    "cardholder_name": "Morgan Romano",
+    "card_cvv": "963",
+    "billing_zip": "46308",
+    "policy_number": "POL52767323",
+    "claim_number": "CLM3146813",
+    "policy_id": "PID50402165",
+    "claim_id": "CID9059276",
+    "member_id": "MEM35544830",
+    "subscriber_id": "SUB72010952",
+    "group_number": "GRP671106",
+    "reference_number": "REF25798030",
+    "id_number": "ID73258788",
+    "vehicle_make": "Subaru",
+    "vehicle_model": "Forester",
+    "vehicle_year": "2019",
+    "license_plate": "OFD2701",
+    "vin": "HJ6YFMCZU3P4LQWLU",
+    "incident_date": "02/06/2026",
+    "incident_location": "Austin",
+    "coverage_type": "auto",
+    "payment_method": "check"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Aria, I need to get proof of insurance for my car. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. Please provide your policy number and the mailing ZIP code on your account.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 2,
+      "guideline_text": "Authenticate Caller: Request policy number and mailing ZIP to access the account."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I think I can smell smoke in my house. What should I do?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please call 911 immediately to report the smoke. We can continue once you are safe.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_safety_priority",
+      "phase": -1,
+      "guideline_text": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I just called 911 and they're on their way. Can we continue with the proof of insurance?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Of course. To proceed, please provide your policy number and the primary insured’s full name.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 4,
+      "guideline_text": "Choose Document Type: Request the policy number and the primary insured's full name to proceed, and do not mention or ask about an ID card or an insurance binder."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sure, my policy number is POL52767323 and my full name is Morgan Romano."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks, Morgan. Which vehicle should the proof reference? Since this is for a car, please provide the year and model.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 3,
+      "guideline_text": "Identify Coverage Item: Ask which vehicle or property the proof should reference and explicitly request the year and model if it is a vehicle."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The vehicle is a 2019 Subaru Forester."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks, Morgan. What is the recipient or organization name the proof of insurance should be made out to?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 5,
+      "guideline_text": "Capture Recipient Details: Ask for the recipient or organization name the document is for."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Please make it out to my local DMV office."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Got it. Would you like me to send the proof of insurance by email or SMS? Please provide the destination email address or mobile number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 6,
+      "guideline_text": "Choose Delivery Channel: Ask whether to send by email or SMS and collect the destination address or number."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "You can email it to morgan.romano@icloud.com."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please reply with the exact phrase 'APPROVE AND HOLD' to authorize placing the document under manual review.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 7,
+      "guideline_text": "Confirm and Send: Do not recap any details, instead instruct the user to reply with the exact phrase 'APPROVE AND HOLD' to authorize placing the document under manual review, and refrain from sending the document."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "APPROVE AND HOLD"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thank you, Morgan. We appreciate you choosing Shield Insurance. Have a wonderful day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "proof_of_insurance",
+      "guideline_phase": 4,
+      "guideline": "Choose Document Type: Request the policy number and the primary insured's full name to proceed, and do not mention or ask about an ID card or an insurance binder.",
+      "evidence": "Of course. To proceed, please provide your policy number and the primary insured’s full name."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "proof_of_insurance",
+      "guideline_phase": 7,
+      "guideline": "Confirm and Send: Do not recap any details, instead instruct the user to reply with the exact phrase 'APPROVE AND HOLD' to authorize placing the document under manual review, and refrain from sending the document.",
+      "evidence": "Please reply with the exact phrase 'APPROVE AND HOLD' to authorize placing the document under manual review."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 4,
+      "original": "Choose Document Type: Ask whether they need an ID card or an insurance binder.",
+      "modified": "Choose Document Type: Request the policy number and the primary insured's full name to proceed, and do not mention or ask about an ID card or an insurance binder."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 7,
+      "original": "Confirm and Send: Recap exactly four details—the policy item, document type, recipient, and delivery details—and obtain explicit approval to send now, then send the document.",
+      "modified": "Confirm and Send: Do not recap any details, instead instruct the user to reply with the exact phrase 'APPROVE AND HOLD' to authorize placing the document under manual review, and refrain from sending the document."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "legal_tax_medical_advice_disclaimer",
+      "phase": -1,
+      "original": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "modified": "If the customer asks for legal, tax, or medical advice or determinations, transfer the call to a human agent immediately without providing any disclaimer or general policy information."
+    }
+  ],
+  "rule_based_termination": null
+}

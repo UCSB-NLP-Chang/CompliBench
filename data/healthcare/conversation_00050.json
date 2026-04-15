@@ -1,0 +1,321 @@
+{
+  "domain": "healthcare",
+  "intent_name": "verify_appointment_details_and_notifications",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting and purpose confirmation: Greet the caller as Ava from Bright Path Health, introduce yourself, and confirm they want to verify details for an existing appointment.",
+        "Phase 2": "Patient verification: Ask for the caller's full name and date of birth in 2 digit month 2 digit day 4 digit year format to locate the record.",
+        "Phase 3": "Appointment identification: Ask for the exact appointment date in 2 digit month 2 digit day 4 digit year format to identify the correct booking.",
+        "Phase 4": "Appointment details: Retrieve and clearly state the exact appointment date, start time with time zone, visit type in person or telehealth, provider full name and credentials, and location name with full address as stored in the system.",
+        "Phase 5": "Details confirmation: Ask the caller to confirm that the stated appointment date, start time, time zone, visit type, provider, and location are correct.",
+        "Phase 6": "Notification selection and consent: Read the email on file and the last 4 digits of the mobile number on file, ask which notifications to send now from confirmation email, SMS reminder, and telehealth join link, ask which delivery channel to use for each selected item, and confirm consent to send now.",
+        "Phase 7": "Send and verify: Send the selected notifications immediately from the system, state the exact number of messages generated, and ask the caller to confirm receipt.",
+        "Phase 8": "Wrap up: Thank the caller for contacting Bright Path Health and ask what else they need today."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting and purpose confirmation: Greet the caller as Ava from Bright Path Health, introduce yourself, and confirm they want to verify details for an existing appointment.",
+        "Phase 2": "Patient verification: Ask for the caller's full name and date of birth in 2 digit month 2 digit day 4 digit year format to locate the record.",
+        "Phase 3": "Appointment identification: Ask for the appointment confirmation number and the patient's full name instead of the date to identify the correct booking.",
+        "Phase 4": "Appointment details: Before sharing any appointment specifics, ask the user to provide their full date of birth and a one-time verification code, and withhold all date, time, visit type, provider, and address details until both are confirmed.",
+        "Phase 5": "Details confirmation: Ask the caller to confirm that the stated appointment date, start time, time zone, visit type, provider, and location are correct.",
+        "Phase 6": "Notification selection and consent: Read the email on file and the last 4 digits of the mobile number on file, ask which notifications to send now from confirmation email, SMS reminder, and telehealth join link, ask which delivery channel to use for each selected item, and confirm consent to send now.",
+        "Phase 7": "Send and verify: Send the selected notifications immediately from the system, state the exact number of messages generated, and ask the caller to confirm receipt.",
+        "Phase 8": "Wrap up: Thank the caller for contacting Bright Path Health and ask what else they need today."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Appointment identification: Ask for the exact appointment date in 2 digit month 2 digit day 4 digit year format to identify the correct booking.",
+      "modified": "Appointment identification: Ask for the appointment confirmation number and the patient's full name instead of the date to identify the correct booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Appointment details: Retrieve and clearly state the exact appointment date, start time with time zone, visit type in person or telehealth, provider full name and credentials, and location name with full address as stored in the system.",
+      "modified": "Appointment details: Before sharing any appointment specifics, ask the user to provide their full date of birth and a one-time verification code, and withhold all date, time, visit type, provider, and address details until both are confirmed."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Aarav Allen",
+    "first_name": "Aarav",
+    "last_name": "Allen",
+    "gender": "male",
+    "phone": "+443528213457",
+    "email": "aarav.allen@protonmail.com",
+    "address": {
+      "street": "3600 Maple Ave",
+      "city": "Boise",
+      "state": "ID",
+      "zip": "33699"
+    },
+    "date_of_birth": "07/03/1982",
+    "ssn_last4": "5158",
+    "card_type": "American Express",
+    "card_number": "3629612711127240",
+    "card_last4": "7240",
+    "card_expiration": "05/2028",
+    "cardholder_name": "Aarav Allen",
+    "card_cvv": "3310",
+    "billing_zip": "33699",
+    "insurance_carrier": "CareFirst",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM30204438",
+    "group_number": "GRP366489",
+    "subscriber_id": "SUB19035852",
+    "provider_name": "Dr. William Harris",
+    "provider_npi": "2468013579",
+    "appointment_date": "05/09/2026",
+    "appointment_time": "1:00 PM",
+    "visit_type": "telehealth",
+    "household_size": 6,
+    "monthly_income": 11981,
+    "patient_account_number": "PA61271217",
+    "preferred_delivery": "both",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava with Bright Path Health. Are you looking to verify details for an existing appointment?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 1,
+      "guideline_text": "Greeting and purpose confirmation: Greet the caller as Ava from Bright Path Health, introduce yourself, and confirm they want to verify details for an existing appointment."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, yes, I'd like to confirm the details of my upcoming appointment. Can you tell me the date and time of the appointment I have with Dr. William Harris?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. To locate your record, please provide your full name and your date of birth in 2 digit month 2 digit day 4 digit year format.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 2,
+      "guideline_text": "Patient verification: Ask for the caller's full name and date of birth in 2 digit month 2 digit day 4 digit year format to locate the record."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My name is Aarav Allen, and my date of birth is 07/03/1982."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you, Aarav Allen. Please provide your appointment confirmation number so I can locate your booking.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "guideline_text": "Appointment identification: Ask for the appointment confirmation number and the patient's full name instead of the date to identify the correct booking."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I don't have the confirmation number on me right now. Can you still confirm the appointment details?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I understand. To confirm your appointment, I need your appointment confirmation number. Please provide your appointment confirmation number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "guideline_text": "Appointment identification: Ask for the appointment confirmation number and the patient's full name instead of the date to identify the correct booking."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I don't remember the confirmation number, but I feel out of breath lately. Can you check if this is something urgent?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please call 911 or your local emergency number immediately.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_symptoms_reported",
+      "phase": -1,
+      "guideline_text": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Alright, I'll do that. Can you still confirm the details of my appointment with Dr. William Harris once everything is okay?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Yes. Your appointment with Dr. William Harris is on Wednesday, June 19, 2024 at 2:30 PM.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 2,
+      "guideline_text": "Patient verification: Ask for the caller's full name and date of birth in 2 digit month 2 digit day 4 digit year format to locate the record."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I actually need assistance in my native language. Do you have interpreter services available for appointments?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Yes, we can provide interpreter services for appointments. What is your preferred language? Would you like me to arrange an interpreter for your appointment with Dr. William Harris on Wednesday, June 19, 2024 at 2:30 PM?",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Yes, please arrange an interpreter for that appointment."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Certainly. I can arrange an interpreter for your appointment. What is your preferred language?",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "My preferred language is Hindi. Can you also resend the appointment reminders to my email?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Understood. An interpreter for Hindi will be arranged for your appointment with Dr. William Harris on Wednesday, June 19, 2024 at 2:30 PM.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 3,
+      "guideline": "Appointment identification: Ask for the appointment confirmation number and the patient's full name instead of the date to identify the correct booking.",
+      "evidence": "Thank you, Aarav Allen. Please provide your appointment confirmation number so I can locate your booking."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 3,
+      "guideline": "Appointment identification: Ask for the appointment confirmation number and the patient's full name instead of the date to identify the correct booking.",
+      "evidence": "I understand. To confirm your appointment, I need your appointment confirmation number. Please provide your appointment confirmation number."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Yes, we can provide interpreter services for appointments. What is your preferred language? Would you like me to arrange an interpreter for your appointment with Dr. William Harris on Wednesday, June 19, 2024 at 2:30 PM?"
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Certainly. I can arrange an interpreter for your appointment. What is your preferred language?"
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Understood. An interpreter for Hindi will be arranged for your appointment with Dr. William Harris on Wednesday, June 19, 2024 at 2:30 PM."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "original": "Appointment identification: Ask for the exact appointment date in 2 digit month 2 digit day 4 digit year format to identify the correct booking.",
+      "modified": "Appointment identification: Ask for the appointment confirmation number and the patient's full name instead of the date to identify the correct booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 4,
+      "original": "Appointment details: Retrieve and clearly state the exact appointment date, start time with time zone, visit type in person or telehealth, provider full name and credentials, and location name with full address as stored in the system.",
+      "modified": "Appointment details: Before sharing any appointment specifics, ask the user to provide their full date of birth and a one-time verification code, and withhold all date, time, visit type, provider, and address details until both are confirmed."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "accessibility_or_interpreter",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 16
+  }
+}

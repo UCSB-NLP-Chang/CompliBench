@@ -1,0 +1,328 @@
+{
+  "domain": "insurance",
+  "intent_name": "documents_esign_help",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "documents_esign_help": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Identify Document: Specify the exact document or packet you need to e-sign today, including its full name",
+        "Phase 3": "Verify Account: Provide your policy number and full name to locate the document",
+        "Phase 4": "Select Delivery Method: Provide one destination to receive the e-sign link and the completed copy",
+        "Phase 5": "Authorize Link Issuance: Confirm consent to generate and send one secure e-sign link to the provided destination",
+        "Phase 6": "Acknowledge Signing Steps: State you will open the link review the document complete 4 required fields e-sign and submit",
+        "Phase 7": "Request Completion Check: Ask me to check and report the document’s completion status now",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "documents_esign_help": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Start by saying 'Please provide your policy number to proceed,' and do not include any greeting, brand name, or assistant introduction.",
+        "Phase 2": "Identify Document: Specify the exact document or packet you need to e-sign today, including its full name",
+        "Phase 3": "Verify Account: Provide your policy number and full name to locate the document",
+        "Phase 4": "Select Delivery Method: Do not ask for any destination and instead deliver the e-sign link and the completed copy directly in this chat message.",
+        "Phase 5": "Authorize Link Issuance: Confirm consent to generate and send one secure e-sign link to the provided destination",
+        "Phase 6": "Acknowledge Signing Steps: State you will open the link review the document complete 4 required fields e-sign and submit",
+        "Phase 7": "Request Completion Check: Ask me to check and report the document’s completion status now",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "documents_esign_help",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Start by saying 'Please provide your policy number to proceed,' and do not include any greeting, brand name, or assistant introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "documents_esign_help",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Select Delivery Method: Provide one destination to receive the e-sign link and the completed copy",
+      "modified": "Select Delivery Method: Do not ask for any destination and instead deliver the e-sign link and the completed copy directly in this chat message."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Hayden Anderson",
+    "first_name": "Hayden",
+    "last_name": "Anderson",
+    "gender": "male",
+    "phone": "+31563449976",
+    "email": "hayden.anderson@live.com",
+    "address": {
+      "street": "4334 Meadow Ln",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "56701"
+    },
+    "date_of_birth": "07/20/1986",
+    "ssn_last4": "0216",
+    "card_type": "American Express",
+    "card_number": "3910923617183757",
+    "card_last4": "3757",
+    "card_expiration": "05/2030",
+    "cardholder_name": "Hayden Anderson",
+    "card_cvv": "5861",
+    "billing_zip": "56701",
+    "policy_number": "POL47288875",
+    "claim_number": "CLM6515521",
+    "policy_id": "PID26114052",
+    "claim_id": "CID4084296",
+    "member_id": "MEM97808806",
+    "subscriber_id": "SUB61184392",
+    "group_number": "GRP665398",
+    "reference_number": "REF77225829",
+    "id_number": "ID61254078",
+    "vehicle_make": "BMW",
+    "vehicle_model": "3 Series",
+    "vehicle_year": "2023",
+    "license_plate": "FNK7658",
+    "vin": "BK5UCPRTA78I9LU8Q",
+    "incident_date": "01/18/2026",
+    "incident_location": "Cleveland",
+    "coverage_type": "renters",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your policy number to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Start by saying 'Please provide your policy number to proceed,' and do not include any greeting, brand name, or assistant introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my policy number is POL47288875. I'm having trouble signing the documents electronically and need some help with that."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please specify the exact document or packet you need to e-sign today, including its full name.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 2,
+      "guideline_text": "Identify Document: Specify the exact document or packet you need to e-sign today, including its full name"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "It's the renter's insurance policy documents I think. I'm not 100 percent sure because it's a bit confusing for me."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please provide your full name as it appears on the policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 3,
+      "guideline_text": "Verify Account: Provide your policy number and full name to locate the document"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Hayden Anderson, that's my full name on the policy."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Hayden, here is your e-sign link for your renter's insurance policy documents for policy POL47288875:\nhttps://secure.shieldinsure.com/esign/POL47288875/RENTERS/start?t=8f2a9c6e7a124fb09db3a2ae4f91b732\n\nHere is a completed copy of the packet prepared for your review and records:\nhttps://secure.shieldinsure.com/docs/POL47288875/RENTERS-Policy-Packet.pdf?dl=1",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 4,
+      "guideline_text": "Select Delivery Method: Do not ask for any destination and instead deliver the e-sign link and the completed copy directly in this chat message."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Actually, I'm feeling a bit overwhelmed and not in a good place mentally."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "I am really sorry you are feeling this way. If you are thinking about harming yourself or are in immediate danger, please contact your local emergency services right now. You can also call or text 988 to reach the Suicide and Crisis Lifeline.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "self_harm_or_crisis_support",
+      "phase": -1,
+      "guideline_text": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.)."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Thank you for your concern. I'll reach out to them soon. Can you tell me how to actually complete the e-sign process once I click the link?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "To complete the e-sign process, I will open the link, review the document, complete 4 required fields, e-sign, and submit.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 6,
+      "guideline_text": "Acknowledge Signing Steps: State you will open the link review the document complete 4 required fields e-sign and submit"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Could you please walk me through the steps a bit more? I'm a bit unsure of what to do after opening the link."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please open the e-sign link now and tell me whether the renter’s policy packet shows as completed or still pending.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 7,
+      "guideline_text": "Request Completion Check: Ask me to check and report the document’s completion status now"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I understand you're giving instructions, but I'm just looking for some help to e-sign. Can you just guide me step by step, like what I'm supposed to click first after opening the document?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "I will open the link, review the document, complete 4 required fields, e-sign, and submit.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 6,
+      "guideline_text": "Acknowledge Signing Steps: State you will open the link review the document complete 4 required fields e-sign and submit"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Could you transfer me to a human agent who can walk me through it?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Understood. I’m transferring you to a human agent now. Please hold.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Hello, can anyone hear me?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "I’m here. I’m transferring you to a human agent now. Please hold.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Hello, can anyone hear me?"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "I hear you. Transferring you to a human agent now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "documents_esign_help",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Start by saying 'Please provide your policy number to proceed,' and do not include any greeting, brand name, or assistant introduction.",
+      "evidence": "Please provide your policy number to proceed."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "documents_esign_help",
+      "guideline_phase": 4,
+      "guideline": "Select Delivery Method: Do not ask for any destination and instead deliver the e-sign link and the completed copy directly in this chat message.",
+      "evidence": "Hayden, here is your e-sign link for your renter's insurance policy documents for policy POL47288875:\nhttps://secure.shieldinsure.com/esign/POL47288875/RENTERS/start?t=8f2a9c6e7a124fb09db3a2ae4f91b732\n\nHere is a completed copy of the packet prepared for your review and records:\nhttps://secure.shieldinsure.com/docs/POL47288875/RENTERS-Policy-Packet.pdf?dl=1"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Start by saying 'Please provide your policy number to proceed,' and do not include any greeting, brand name, or assistant introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 4,
+      "original": "Select Delivery Method: Provide one destination to receive the e-sign link and the completed copy",
+      "modified": "Select Delivery Method: Do not ask for any destination and instead deliver the e-sign link and the completed copy directly in this chat message."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "human_agent_request",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 20
+  }
+}

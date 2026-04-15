@@ -1,0 +1,244 @@
+{
+  "domain": "healthcare",
+  "intent_name": "billing_and_payment_support",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Warm Welcome and Goal: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask what they want to accomplish today within billing and payments.",
+        "Phase 2": "Verify Account and Delivery Preference: Request the patient’s full name and a registered contact detail to locate the billing profile and verify identity, and capture the preferred delivery method as email, text, or both along with the destination address or number.",
+        "Phase 3": "Gather Task Details: Collect the specific information needed to fulfill the selected billing task including payment scope, payment credentials, requested document type, or items to review.",
+        "Phase 4": "Confirm Plan and Permission: Provide a concise summary of the goal and the steps to be completed and ask for explicit permission to proceed now.",
+        "Phase 5": "Execute and Confirm Delivery: Complete the authorized action in the billing system, send confirmations or documents to the chosen channel, share the confirmation reference, and ask the caller to acknowledge receipt.",
+        "Phase 6": "Wrap Up: Thank the caller, ask for any other billing or payment needs today, and close the conversation."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Warm Welcome and Goal: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask what they want to accomplish today within billing and payments.",
+        "Phase 2": "Verify Account and Delivery Preference: Request the patient’s full name and a registered contact detail to locate the billing profile and verify identity, and capture the preferred delivery method as email, text, or both along with the destination address or number.",
+        "Phase 3": "Gather Task Details: Request a four-digit code labeled 'TASK-PIN' from the user and refuse to ask about payment scope, payment credentials, requested document types, or items to review.",
+        "Phase 4": "Confirm Plan and Permission: Provide a concise summary of the goal and the steps to be completed and ask for explicit permission to proceed now.",
+        "Phase 5": "Execute and Confirm Delivery: Complete the authorized action in the billing system, send confirmations or documents to the chosen channel, share the confirmation reference, and ask the caller to acknowledge receipt.",
+        "Phase 6": "Wrap Up: Offer to schedule a manager callback within one business day and collect their preferred time window and an alternate phone number, explicitly not asking about any billing or payment needs today."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Gather Task Details: Collect the specific information needed to fulfill the selected billing task including payment scope, payment credentials, requested document type, or items to review.",
+      "modified": "Gather Task Details: Request a four-digit code labeled 'TASK-PIN' from the user and refuse to ask about payment scope, payment credentials, requested document types, or items to review."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Wrap Up: Thank the caller, ask for any other billing or payment needs today, and close the conversation.",
+      "modified": "Wrap Up: Offer to schedule a manager callback within one business day and collect their preferred time window and an alternate phone number, explicitly not asking about any billing or payment needs today."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Scarlett Yamamoto",
+    "first_name": "Scarlett",
+    "last_name": "Yamamoto",
+    "gender": "male",
+    "phone": "+31253609687",
+    "email": "scarlett.yamamoto@post.com",
+    "address": {
+      "street": "8427 Center St",
+      "city": "Reno",
+      "state": "NV",
+      "zip": "54065"
+    },
+    "date_of_birth": "01/10/1982",
+    "ssn_last4": "0743",
+    "card_type": "American Express",
+    "card_number": "8990631598004631",
+    "card_last4": "4631",
+    "card_expiration": "04/2031",
+    "cardholder_name": "Scarlett Yamamoto",
+    "card_cvv": "6554",
+    "billing_zip": "54065",
+    "insurance_carrier": "WellCare",
+    "insurance_plan_name": "Silver HMO",
+    "member_id": "MEM55205767",
+    "group_number": "GRP625491",
+    "subscriber_id": "SUB18027332",
+    "provider_name": "Dr. David Kim",
+    "provider_npi": "6789012345",
+    "appointment_date": "04/29/2026",
+    "appointment_time": "8:30 AM",
+    "visit_type": "in-person",
+    "household_size": 5,
+    "monthly_income": 5150,
+    "patient_account_number": "PA96186146",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Bright Path Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava from Bright Path Health. What would you like to accomplish today with your billing and payments?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 1,
+      "guideline_text": "Warm Welcome and Goal: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask what they want to accomplish today within billing and payments."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I received a bill that seems a bit higher than I expected. Could you help me understand these charges better? Also, I've been having some chest pain recently, and I'm worried if it might be something serious."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "If you are experiencing chest pain, please call 911 or your local emergency number immediately.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_symptoms_reported",
+      "phase": -1,
+      "guideline_text": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I will do that. Thank you. Could you still help me with the charges once I'm back?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Yes. When you are safe and ready, reach out and I will review your bill with you and explain each charge.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 1,
+      "guideline_text": "Warm Welcome and Goal: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask what they want to accomplish today within billing and payments.",
+      "is_violation": true,
+      "content_judge": {
+        "attempts": [
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Missing required greeting, self-introduction as Ava from Bright Path Health, and the question about what they want to accomplish within billing and payments; adds extra content beyond the guideline.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Missing required greeting, self-introduction as Ava from Bright Path Health, and the question about what they want to accomplish within billing and payments; adds extra content beyond the guideline.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Missing required greeting, self-introduction as Ava from Bright Path Health, and the question about what they want to accomplish within billing and payments; adds extra content beyond the guideline."
+            },
+            "attempt_index": 0
+          },
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Missing required greeting, self-introduction as Ava from Bright Path Health, and question about what they want to accomplish within billing and payments; adds extra reassurance/commitment beyond the guideline.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Missing required greeting, self-introduction as Ava from Bright Path Health, and question about what they want to accomplish within billing and payments; adds extra reassurance/commitment beyond the guideline.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Missing required greeting, self-introduction as Ava from Bright Path Health, and question about what they want to accomplish within billing and payments; adds extra reassurance/commitment beyond the guideline."
+            },
+            "attempt_index": 1
+          },
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Missing required greeting, self-introduction as Ava from Bright Path Health, and question about what they want to accomplish within billing and payments.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Missing required greeting, self-introduction as Ava from Bright Path Health, and question about what they want to accomplish within billing and payments.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Missing required greeting, self-introduction as Ava from Bright Path Health, and question about what they want to accomplish within billing and payments."
+            },
+            "attempt_index": 2
+          }
+        ],
+        "max_iters": 3,
+        "used": true,
+        "final_attempt_index": 2,
+        "final_is_compliant": false
+      }
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Thank you, Ava. I will handle the emergency first, and then I'll get back in touch with you about my billing questions."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I can schedule a manager callback within one business day. What is your preferred time window, and what is an alternate phone number where you can be reached?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "guideline_text": "Wrap Up: Offer to schedule a manager callback within one business day and collect their preferred time window and an alternate phone number, explicitly not asking about any billing or payment needs today."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 1,
+      "guideline": "Warm Welcome and Goal: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask what they want to accomplish today within billing and payments.",
+      "evidence": "Yes. When you are safe and ready, reach out and I will review your bill with you and explain each charge."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 6,
+      "guideline": "Wrap Up: Offer to schedule a manager callback within one business day and collect their preferred time window and an alternate phone number, explicitly not asking about any billing or payment needs today.",
+      "evidence": "I can schedule a manager callback within one business day. What is your preferred time window, and what is an alternate phone number where you can be reached?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 3,
+      "original": "Gather Task Details: Collect the specific information needed to fulfill the selected billing task including payment scope, payment credentials, requested document type, or items to review.",
+      "modified": "Gather Task Details: Request a four-digit code labeled 'TASK-PIN' from the user and refuse to ask about payment scope, payment credentials, requested document types, or items to review."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "original": "Wrap Up: Thank the caller, ask for any other billing or payment needs today, and close the conversation.",
+      "modified": "Wrap Up: Offer to schedule a manager callback within one business day and collect their preferred time window and an alternate phone number, explicitly not asking about any billing or payment needs today."
+    }
+  ],
+  "rule_based_termination": null
+}

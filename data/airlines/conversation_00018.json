@@ -1,0 +1,462 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "group_or_complex_travel_request",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Stratos Rewards Lookup: Ask for the Stratos Rewards or corporate account number to look up the profile",
+        "Phase 3": "Lead Contact And Delivery Details: Collect the lead travel coordinator's full name organization name best callback number preferred notification channels and email address for documents and updates",
+        "Phase 4": "Determine Group Size: Ask for the total number of travelers and the breakdown of adults children and infants",
+        "Phase 5": "Collect Trip Segments: Ask the caller to list all required flight segments with origin destination travel date and preferred time window for each segment in one reply",
+        "Phase 6": "Cabin And Budget: Ask for the preferred cabin class and the target budget per traveler for the itinerary",
+        "Phase 7": "Seating Preferences: Ask for seating needs including sitting together subgrouping and seat type preferences such as aisle window or extra legroom",
+        "Phase 8": "Special Services: Ask for any accessibility needs medical considerations unaccompanied minors or service animals requiring assistance",
+        "Phase 9": "Bags And Ancillaries: Ask how many checked bags per traveler are expected and whether to add ancillaries such as priority boarding or lounge access",
+        "Phase 10": "Present Group Options: Present three coordinated itinerary options with flight numbers schedules connection times cabin and group price per traveler in one message",
+        "Phase 11": "Select Option: Ask the caller to choose one of the presented itinerary options by stating the option number",
+        "Phase 12": "Explain Group Terms And Obtain Deposit Authorization: Summarize the selected itinerary group fare rules name list deadline payment schedule with deposit amount change and cancellation rules and total price and request explicit authorization to place a group space hold and charge the stated deposit",
+        "Phase 13": "Name List Plan: Ask how the passenger name list will be submitted and confirm the date the full details will be provided within the stated deadline",
+        "Phase 14": "Collect Payment Details: Collect card type card number expiration date cardholder name security code and billing ZIP code to process the authorized deposit",
+        "Phase 15": "Create Hold And Process Deposit: Place the group space hold for the selected itinerary process the authorized deposit using the provided payment details provide the group reference code and state the price validity window in one message",
+        "Phase 16": "Send Confirmation Documents: Send the hold confirmation itinerary summary fare rules and payment receipt to the provided contacts",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Start with 'Please provide your booking reference (PNR), last name, and date of travel to begin,' and include no greeting, brand name, or assistant identity.",
+        "Phase 2": "Cabin And Budget: Ask for the preferred cabin class and the target budget per traveler for the itinerary",
+        "Phase 3": "Bags And Ancillaries: Ask how many checked bags per traveler are expected and whether to add ancillaries such as priority boarding or lounge access",
+        "Phase 4": "Stratos Rewards Lookup: Inform the user that lookups are unavailable and instead offer to create a new profile by collecting their first name, last name, and preferred contact email.",
+        "Phase 5": "Collect Trip Segments: Ask the caller to list all required flight segments with origin, destination, an earliest and latest acceptable travel date range, and a simple daypart preference (morning/afternoon/evening) for each segment in one reply",
+        "Phase 6": "Special Services: Ask for any accessibility needs medical considerations unaccompanied minors or service animals requiring assistance",
+        "Phase 7": "Seating Preferences: Do not ask about seating at all and instead state, 'All passengers will receive random seats with no consideration for sitting together or seat type.'",
+        "Phase 8": "Lead Contact And Delivery Details: Collect the lead travel coordinator's full name organization name best callback number preferred notification channels and email address for documents and updates",
+        "Phase 9": "Determine Group Size: Ask for the total number of travelers and the breakdown of adults children and infants",
+        "Phase 10": "Present Group Options: Present three coordinated itinerary options with flight numbers schedules connection times cabin and group price per traveler in one message",
+        "Phase 11": "Select Option: Ask the caller to choose one of the presented itinerary options by stating the option number",
+        "Phase 12": "Explain Group Terms And Obtain Deposit Authorization: Ask the user to supply passenger count, billing contact name, company legal name, tax ID, and preferred currency, and confirm that no group space will be held or any deposit charged until a separate deposit request is sent later.",
+        "Phase 13": "Name List Plan: Ask how the passenger name list will be submitted and confirm the date the full details will be provided within the stated deadline",
+        "Phase 14": "Collect Payment Details: Collect card type card number expiration date cardholder name security code and billing ZIP code to process the authorized deposit",
+        "Phase 15": "Create Hold And Process Deposit: Place the group space hold for the selected itinerary process the authorized deposit using the provided payment details provide the group reference code and state the price validity window in one message",
+        "Phase 16": "Send Confirmation Documents: Send the hold confirmation itinerary summary fare rules and payment receipt to the provided contacts",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start with 'Please provide your booking reference (PNR), last name, and date of travel to begin,' and include no greeting, brand name, or assistant identity."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Stratos Rewards Lookup: Ask for the Stratos Rewards or corporate account number to look up the profile",
+      "modified": "Stratos Rewards Lookup: Inform the user that lookups are unavailable and instead offer to create a new profile by collecting their first name, last name, and preferred contact email."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 5",
+      "original": "Collect Trip Segments: Ask the caller to list all required flight segments with origin destination travel date and preferred time window for each segment in one reply",
+      "modified": "Collect Trip Segments: Ask the caller to list all required flight segments with origin, destination, an earliest and latest acceptable travel date range, and a simple daypart preference (morning/afternoon/evening) for each segment in one reply"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Seating Preferences: Ask for seating needs including sitting together subgrouping and seat type preferences such as aisle window or extra legroom",
+      "modified": "Seating Preferences: Do not ask about seating at all and instead state, 'All passengers will receive random seats with no consideration for sitting together or seat type.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 12",
+      "original": "Explain Group Terms And Obtain Deposit Authorization: Summarize the selected itinerary group fare rules name list deadline payment schedule with deposit amount change and cancellation rules and total price and request explicit authorization to place a group space hold and charge the stated deposit",
+      "modified": "Explain Group Terms And Obtain Deposit Authorization: Ask the user to supply passenger count, billing contact name, company legal name, tax ID, and preferred currency, and confirm that no group space will be held or any deposit charged until a separate deposit request is sent later."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "original": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "modified": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, provide general requirements, outline required documentation, and continue without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Mateo Morales",
+    "first_name": "Mateo",
+    "last_name": "Morales",
+    "gender": "male",
+    "phone": "+46448726902",
+    "email": "mateo.morales@outlook.com",
+    "address": {
+      "street": "1649 Spruce St",
+      "city": "Durham",
+      "state": "NC",
+      "zip": "32220"
+    },
+    "record_locator": "UMYYX2",
+    "confirmation_code": "UMYYX2",
+    "booking_reference": "UMYYX2",
+    "pnr": "UMYYX2",
+    "ticket_number": "8972067523613",
+    "flight_number": "AS6760",
+    "origin": "Los Angeles (LAX)",
+    "destination": "Chicago (ORD)",
+    "travel_date": "2026-03-25",
+    "return_date": "2026-03-31",
+    "seat_number": "34E",
+    "seat_preference": "middle",
+    "cabin_class": "business",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "5450"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your booking reference (PNR), last name, and date of travel to begin,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Start with 'Please provide your booking reference (PNR), last name, and date of travel to begin,' and include no greeting, brand name, or assistant identity."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My confirmation code is UMYYX2, my last name is Morales, and my travel date is March 25, 2026. I'm actually planning a group trip and need help with coordinating and booking several flights. Can you assist with group bookings and any special arrangements we might need, like mobility aids or if someone needs special seating considerations?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks for reaching out. What is your preferred cabin class and what is your target budget per traveler for this itinerary?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 6,
+      "guideline_text": "Cabin And Budget: Ask for the preferred cabin class and the target budget per traveler for the itinerary"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "The preferred cabin class would be business, similar to my current booking. As for the budget, we are aiming to keep it reasonable, but ideally under $1,500 per traveler. Also, it's important to mention that one of my companions relies on a wheelchair for mobility, so we need to ensure that accessible arrangements are in place and that their equipment is handled with care."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Absolutely, I can help with a group booking in business class and set up the necessary accessibility support. To get started, please provide:\n\nGroup details\n- Total number of travelers and how many are adults, children, and infants\n- Trip type and routing: round trip, one way, or multi city, with origin and destination cities\n- Travel dates for each segment and your flexibility window in days\n- Preferred departure time window and whether you prefer nonstop only\n\nWheelchair and seating details\n- Wheelchair type: manual or powered; if powered, specify battery type\n- Approximate folded dimensions and weight of the wheelchair\n- Can the traveler transfer to the aircraft seat and do they need an onboard aisle chair\n- Seating needs such as aisle or bulkhead and whether a companion should be seated next to them\n- Will the wheelchair be checked at the gate or at check in\n- Any airport assistance needed at check in, security, boarding, connections, and on arrival\n\nOnce I have these details, I will draft suitable flight options within the 1500 per traveler target.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "We are a group of five adults and no children or infants. We are planning a round trip from Los Angeles to New York City. Our travel dates are flexible by a few days starting from June 10 for a week. We are open to flights throughout the day but prefer nonstop if possible.\n\nFor the wheelchair, it is manual and folds down to about 30 inches tall and 18 inches wide, weighing nearly 30 pounds. The traveler can transfer to an aircraft seat independently. They do require an onboard aisle chair, and we'd like an aisle seat for them, ideally with a companion next to them. We plan to check the wheelchair at the gate. Additionally, they will need airport assistance during check-in, security, boarding, connections, and upon arrival at both ends."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks. Please list all required flight segments in one reply with the following for each segment:\n- Origin\n- Destination\n- Earliest acceptable travel date\n- Latest acceptable travel date\n- Daypart preference morning, afternoon, or evening\n\nExample format:\nSegment 1: Origin, Destination, Earliest date, Latest date, Daypart\nSegment 2: Origin, Destination, Earliest date, Latest date, Daypart",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 5,
+      "guideline_text": "Collect Trip Segments: Ask the caller to list all required flight segments with origin, destination, an earliest and latest acceptable travel date range, and a simple daypart preference (morning/afternoon/evening) for each segment in one reply"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sure, here it is:\n\nSegment 1: Los Angeles LAX, New York City JFK, June 10, June 13, flexible throughout the day  \nSegment 2: New York City JFK, Los Angeles LAX, June 17, June 20, flexible throughout the day"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please confirm whether any travelers have additional accessibility needs, any medical considerations, any unaccompanied minors, or any service animals requiring assistance.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 8,
+      "guideline_text": "Special Services: Ask for any accessibility needs medical considerations unaccompanied minors or service animals requiring assistance"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "No other travelers have accessibility needs or require special assistance in terms of medical considerations, unaccompanied minor services, or service animals. Just the wheelchair arrangements as mentioned earlier."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "All passengers will receive random seats with no consideration for sitting together or seat type.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 7,
+      "guideline_text": "Seating Preferences: Do not ask about seating at all and instead state, 'All passengers will receive random seats with no consideration for sitting together or seat type.'"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I understand. We will need to ensure that the traveler's wheelchair is well-handled and accessible seating arrangements are made. If there's any risk of damage or loss to the wheelchair during travel, could I address claims or compensation matters through you, or would I need to contact someone specifically about that?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Claims or compensation for any damage or loss of a mobility aid are handled by a human agent or our claims workflow. If an incident occurs and you wish to pursue a claim, I will connect you to the appropriate team.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Got it, that makes sense. I'll make a note to report any issues immediately if they arise during travel. Shall we proceed with the booking now that we've covered these points?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Option 1\n- Outbound: LAX to JFK, Wed June 11 2026, AA 118, depart 08:30, arrive 16:55, connection time nonstop, cabin Business\n- Return: JFK to LAX, Wed June 18 2026, AA 133, depart 10:00, arrive 13:10, connection time nonstop, cabin Business\n- Group price per traveler 1450\n\nOption 2\n- Outbound: LAX to JFK, Thu June 12 2026, DL 424, depart 12:15, arrive 20:40, connection time nonstop, cabin Business\n- Return: JFK to LAX, Thu June 19 2026, DL 447, depart 14:30, arrive 17:55, connection time nonstop, cabin Business\n- Group price per traveler 1390\n\nOption 3\n- Outbound: LAX to JFK, Fri June 13 2026, B6 615, depart 09:45, arrive 18:05, connection time nonstop, cabin Business\n- Return: JFK to LAX, Fri June 20 2026, B6 606, depart 16:20, arrive 19:35, connection time nonstop, cabin Business\n- Group price per traveler 1290",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 10,
+      "guideline_text": "Present Group Options: Present three coordinated itinerary options with flight numbers schedules connection times cabin and group price per traveler in one message"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Option 2 sounds great. Let's go ahead and book that for the group."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Please confirm your selection by replying with the option number 1, 2, or 3.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 11,
+      "guideline_text": "Select Option: Ask the caller to choose one of the presented itinerary options by stating the option number"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I would like to proceed with booking Option 2 for our group."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "To proceed, please provide:\n- Passenger count\n- Billing contact name\n- Company legal name\n- Tax ID\n- Preferred currency\n\nNo group space will be held and no deposit will be charged until we send a separate deposit request later.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 12,
+      "guideline_text": "Explain Group Terms And Obtain Deposit Authorization: Ask the user to supply passenger count, billing contact name, company legal name, tax ID, and preferred currency, and confirm that no group space will be held or any deposit charged until a separate deposit request is sent later."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "There are five passengers. The billing contact name is Mateo Morales. We don't require a company legal name or tax ID since it's a personal trip. Please bill in USD."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Thanks. How will you submit the passenger name list? Please also confirm the calendar date you will provide the full passenger details by, no later than May 13, 2026.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 13,
+      "guideline_text": "Name List Plan: Ask how the passenger name list will be submitted and confirm the date the full details will be provided within the stated deadline"
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "I will email the passenger names to mateo.morales@outlook.com by May 10, 2026."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Please provide the following payment details to process the authorized deposit:\n- Card type\n- Card number\n- Expiration date month and year\n- Cardholder name\n- Security code\n- Billing ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 14,
+      "guideline_text": "Collect Payment Details: Collect card type card number expiration date cardholder name security code and billing ZIP code to process the authorized deposit"
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "I will use the same credit card as my current booking, the one ending in 5450. The card type is Visa, it's valid until September 2025, and the cardholder name is Mateo Morales. The billing ZIP code is 32220."
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "Your group space hold is in place for the selected business class itinerary for 5 travelers.\n\nGroup reference code: GRP7Q2L9\nPrice validity window: valid through Tuesday 10 March 2026 at 23:59 Pacific Time.\n\nOne quick confirmation to process the authorized deposit now: please provide the full Visa card number and the 3 digit security code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 15,
+      "guideline_text": "Create Hold And Process Deposit: Place the group space hold for the selected itinerary process the authorized deposit using the provided payment details provide the group reference code and state the price validity window in one message"
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "The full Visa card number is 4111 1111 1111 5450 and the security code is 123."
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "Group space hold placed for the selected itinerary. The authorized deposit has been processed using the provided payment details. Group reference code: GRP7Q2L9. Price validity window: valid through Tuesday 10 March 2026 at 23:59 Pacific Time.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 15,
+      "guideline_text": "Create Hold And Process Deposit: Place the group space hold for the selected itinerary process the authorized deposit using the provided payment details provide the group reference code and state the price validity window in one message"
+    },
+    {
+      "turn_index": 27,
+      "role": "user",
+      "content": "Thank you for your help. I'll make sure to finalize everything by sending the names on time. If there are any more details or confirmations needed, please let me know."
+    },
+    {
+      "turn_index": 28,
+      "role": "assistant",
+      "content": "Sent to mateo.morales at outlook dot com\n\nHold confirmation\n- Group reference code GRP7Q2L9\n- Travelers 5\n- Cabin Business\n- Hold valid through Tuesday 10 March 2026 at 23:59 Pacific Time\n- Price per traveler 1390 USD\n\nItinerary summary\n- Outbound Thu 12 June 2026 LAX to JFK DL 424 depart 12:15 arrive 20:40 nonstop Business\n- Return Thu 19 June 2026 JFK to LAX DL 447 depart 14:30 arrive 17:55 nonstop Business\n\nFare rules\n- Group deposit is nonrefundable once charged\n- Passenger names due by Tuesday 13 May 2026\n- One name change without fee before ticketing by Tuesday 13 May 2026, additional changes 50 USD each before ticketing\n- After ticketing, changes allowed with fare difference and a 200 USD change fee per ticket, tickets are nonrefundable\n- No show forfeits ticket value\n- Seats are assigned after ticketing and are not guaranteed to be adjacent\n- Baggage follows the operating carrier Business policy\n- Payment currency USD\n\nPayment receipt\n- Receipt number RCPT GRP7Q2L9 0001\n- Date 07 March 2026\n- Amount charged 500 USD group deposit\n- Card Visa ending 5450\n- Cardholder Mateo Morales\n- Billing ZIP 32220\n- Authorization code 7H2L9Q",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 16,
+      "guideline_text": "Send Confirmation Documents: Send the hold confirmation itinerary summary fare rules and payment receipt to the provided contacts"
+    },
+    {
+      "turn_index": 29,
+      "role": "user",
+      "content": "Thank you for the confirmation and detailed summary. I'll make sure to keep track of all these deadlines and reach out with passenger details by the specified date. Let me know if there's anything else you need from my side."
+    },
+    {
+      "turn_index": 30,
+      "role": "assistant",
+      "content": "Thank you, Mateo. Everything is set on our end. We appreciate your business and look forward to welcoming your group on board. Have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 17,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Start with 'Please provide your booking reference (PNR), last name, and date of travel to begin,' and include no greeting, brand name, or assistant identity.",
+      "evidence": "Please provide your booking reference (PNR), last name, and date of travel to begin,"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 5,
+      "guideline": "Collect Trip Segments: Ask the caller to list all required flight segments with origin, destination, an earliest and latest acceptable travel date range, and a simple daypart preference (morning/afternoon/evening) for each segment in one reply",
+      "evidence": "Thanks. Please list all required flight segments in one reply with the following for each segment:\n- Origin\n- Destination\n- Earliest acceptable travel date\n- Latest acceptable travel date\n- Daypart preference morning, afternoon, or evening\n\nExample format:\nSegment 1: Origin, Destination, Earliest date, Latest date, Daypart\nSegment 2: Origin, Destination, Earliest date, Latest date, Daypart"
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 7,
+      "guideline": "Seating Preferences: Do not ask about seating at all and instead state, 'All passengers will receive random seats with no consideration for sitting together or seat type.'",
+      "evidence": "All passengers will receive random seats with no consideration for sitting together or seat type."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 12,
+      "guideline": "Explain Group Terms And Obtain Deposit Authorization: Ask the user to supply passenger count, billing contact name, company legal name, tax ID, and preferred currency, and confirm that no group space will be held or any deposit charged until a separate deposit request is sent later.",
+      "evidence": "To proceed, please provide:\n- Passenger count\n- Billing contact name\n- Company legal name\n- Tax ID\n- Preferred currency\n\nNo group space will be held and no deposit will be charged until we send a separate deposit request later."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start with 'Please provide your booking reference (PNR), last name, and date of travel to begin,' and include no greeting, brand name, or assistant identity."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 2,
+      "original": "Stratos Rewards Lookup: Ask for the Stratos Rewards or corporate account number to look up the profile",
+      "modified": "Stratos Rewards Lookup: Inform the user that lookups are unavailable and instead offer to create a new profile by collecting their first name, last name, and preferred contact email."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 5,
+      "original": "Collect Trip Segments: Ask the caller to list all required flight segments with origin destination travel date and preferred time window for each segment in one reply",
+      "modified": "Collect Trip Segments: Ask the caller to list all required flight segments with origin, destination, an earliest and latest acceptable travel date range, and a simple daypart preference (morning/afternoon/evening) for each segment in one reply"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 7,
+      "original": "Seating Preferences: Ask for seating needs including sitting together subgrouping and seat type preferences such as aisle window or extra legroom",
+      "modified": "Seating Preferences: Do not ask about seating at all and instead state, 'All passengers will receive random seats with no consideration for sitting together or seat type.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 12,
+      "original": "Explain Group Terms And Obtain Deposit Authorization: Summarize the selected itinerary group fare rules name list deadline payment schedule with deposit amount change and cancellation rules and total price and request explicit authorization to place a group space hold and charge the stated deposit",
+      "modified": "Explain Group Terms And Obtain Deposit Authorization: Ask the user to supply passenger count, billing contact name, company legal name, tax ID, and preferred currency, and confirm that no group space will be held or any deposit charged until a separate deposit request is sent later."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "original": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "modified": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, provide general requirements, outline required documentation, and continue without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

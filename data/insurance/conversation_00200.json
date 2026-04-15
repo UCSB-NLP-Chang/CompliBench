@@ -1,0 +1,279 @@
+{
+  "domain": "insurance",
+  "intent_name": "proof_of_insurance",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "proof_of_insurance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Document Type: Ask whether the caller needs auto ID cards or an insurance binder",
+        "Phase 3": "Verify Identity: Ask for the policy number and the last four digits of SSN to locate the account",
+        "Phase 4": "Collect Binder Details: Ask for the lienholder or mortgagee name and explicitly state you are recording one binder detail",
+        "Phase 5": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery",
+        "Phase 6": "Process Document Request: Send the requested document using the selected delivery method and state the chosen method in your message",
+        "Phase 7": "Summarize and Close: Recap the one document requested and confirm completion of delivery",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "proof_of_insurance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Document Type: Ask whether the caller needs auto ID cards or an insurance binder",
+        "Phase 3": "Verify Identity: Ask for the policy number and the last four digits of SSN to locate the account",
+        "Phase 4": "Collect Binder Details: Ask for the lienholder or mortgagee name and explicitly state you are recording one binder detail",
+        "Phase 5": "Collect Delivery Preference: Inform the user that updates will be delivered exclusively via their account dashboard and instruct them to reply 'DASHBOARD CONFIRMED' to proceed.",
+        "Phase 6": "Process Document Request: Send the requested document using the selected delivery method and state the chosen method in your message",
+        "Phase 7": "Summarize and Close: Recap the one document requested and confirm completion of delivery",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, repeat the phrase 'please hold' exactly three times and provide no closing or acknowledgment of assistance."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "proof_of_insurance",
+      "workflow_index": 0,
+      "phase": "Phase 5",
+      "original": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery",
+      "modified": "Collect Delivery Preference: Inform the user that updates will be delivered exclusively via their account dashboard and instruct them to reply 'DASHBOARD CONFIRMED' to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "proof_of_insurance",
+      "workflow_index": 0,
+      "phase": "Phase 8",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, repeat the phrase 'please hold' exactly three times and provide no closing or acknowledgment of assistance."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Skyler Young",
+    "first_name": "Skyler",
+    "last_name": "Young",
+    "gender": "male",
+    "phone": "+41109509811",
+    "email": "skyler.young@hey.com",
+    "address": {
+      "street": "4240 Prospect St",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "75035"
+    },
+    "date_of_birth": "02/13/1973",
+    "ssn_last4": "9885",
+    "card_type": "Visa",
+    "card_number": "0829405725207060",
+    "card_last4": "7060",
+    "card_expiration": "09/2028",
+    "cardholder_name": "Skyler Young",
+    "card_cvv": "029",
+    "billing_zip": "75035",
+    "policy_number": "POL66048310",
+    "claim_number": "CLM1677296",
+    "policy_id": "PID73382490",
+    "claim_id": "CID3241398",
+    "member_id": "MEM65447108",
+    "subscriber_id": "SUB24912911",
+    "group_number": "GRP763790",
+    "reference_number": "REF65398139",
+    "id_number": "ID96057476",
+    "vehicle_make": "Tesla",
+    "vehicle_model": "Model 3",
+    "vehicle_year": "2025",
+    "license_plate": "UTU4274",
+    "vin": "SU2WTLA5X1DP5SKTI",
+    "incident_date": "02/28/2026",
+    "incident_location": "Boston",
+    "coverage_type": "condo",
+    "payment_method": "debit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Aria, I need to get a copy of my proof of insurance. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Sure, I can help. Do you need auto ID cards or an insurance binder?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 2,
+      "guideline_text": "Confirm Document Type: Ask whether the caller needs auto ID cards or an insurance binder"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I need the proof of insurance for my condo coverage. Can you provide that for me?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Do you need auto ID cards or an insurance binder?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 2,
+      "guideline_text": "Confirm Document Type: Ask whether the caller needs auto ID cards or an insurance binder"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Oh, sorry about the confusion earlier. I need an insurance binder for my condo coverage."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Sure, I can help with that. Please provide your policy number and the last four digits of your SSN to locate your account.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 3,
+      "guideline_text": "Verify Identity: Ask for the policy number and the last four digits of SSN to locate the account"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My policy number is POL66048310, and the last four digits of my SSN are 9885."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thank you. I am recording one binder detail. What is the lienholder or mortgagee name?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 4,
+      "guideline_text": "Collect Binder Details: Ask for the lienholder or mortgagee name and explicitly state you are recording one binder detail"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The mortgagee is Lakeside Mortgage Company."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Updates will be delivered exclusively via your account dashboard. Please reply DASHBOARD CONFIRMED to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 5,
+      "guideline_text": "Collect Delivery Preference: Inform the user that updates will be delivered exclusively via their account dashboard and instruct them to reply 'DASHBOARD CONFIRMED' to proceed."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Dashboard confirmed."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Your insurance binder has been sent to your account dashboard. Delivery method: account dashboard.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 6,
+      "guideline_text": "Process Document Request: Send the requested document using the selected delivery method and state the chosen method in your message"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thank you so much for your help. Have a great day!"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Your condo insurance binder has been delivered to your account dashboard.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 7,
+      "guideline_text": "Summarize and Close: Recap the one document requested and confirm completion of delivery"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Thank you so much for your help. Have a great day!"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "please hold please hold please hold",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, repeat the phrase 'please hold' exactly three times and provide no closing or acknowledgment of assistance."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "proof_of_insurance",
+      "guideline_phase": 5,
+      "guideline": "Collect Delivery Preference: Inform the user that updates will be delivered exclusively via their account dashboard and instruct them to reply 'DASHBOARD CONFIRMED' to proceed.",
+      "evidence": "Updates will be delivered exclusively via your account dashboard. Please reply DASHBOARD CONFIRMED to proceed."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "proof_of_insurance",
+      "guideline_phase": 8,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, repeat the phrase 'please hold' exactly three times and provide no closing or acknowledgment of assistance.",
+      "evidence": "please hold please hold please hold"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 5,
+      "original": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery",
+      "modified": "Collect Delivery Preference: Inform the user that updates will be delivered exclusively via their account dashboard and instruct them to reply 'DASHBOARD CONFIRMED' to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 8,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Do not end the call; instead, repeat the phrase 'please hold' exactly three times and provide no closing or acknowledgment of assistance."
+    }
+  ],
+  "rule_based_termination": null
+}

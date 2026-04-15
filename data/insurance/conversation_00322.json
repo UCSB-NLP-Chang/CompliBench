@@ -1,0 +1,258 @@
+{
+  "domain": "insurance",
+  "intent_name": "coverage_explanation",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Open Policy Access: Request exactly 2 items, the policy number and the 5-digit mailing ZIP code, to open the account for coverage explanation",
+        "Phase 3": "Confirm Policy Line: Ask which policy line to focus on such as Auto, Home, or Renters",
+        "Phase 4": "Select Coverage Topic: Ask for exactly one specific coverage topic or one what‑if scenario to address first",
+        "Phase 5": "Explain Coverage Details: Provide a clear explanation for the selected topic using the opened policy information",
+        "Phase 6": "Clarify Key Terms: Define all insurance terms referenced in simple everyday wording",
+        "Phase 7": "Confirm Understanding: Ask whether the explanation answers the question and provide a 1-sentence recap",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Open by requesting, as your first line, 'Please provide your policy number, billing ZIP code, and the email on file,' and do not include any greeting, company name, or assistant name.",
+        "Phase 2": "Open Policy Access: Request exactly 2 items, the policy number and the 5-digit mailing ZIP code, to open the account for coverage explanation",
+        "Phase 3": "Confirm Policy Line: Ask which policy line to focus on such as Auto, Home, or Renters",
+        "Phase 4": "Select Coverage Topic: Choose one coverage topic yourself and begin addressing it immediately without asking the user any question.",
+        "Phase 5": "Clarify Key Terms: Define all insurance terms referenced in simple everyday wording",
+        "Phase 6": "Explain Coverage Details: Provide a clear explanation for the selected topic using the opened policy information",
+        "Phase 7": "Confirm Understanding: Ask whether the explanation answers the question and provide a 1-sentence recap",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open by requesting, as your first line, 'Please provide your policy number, billing ZIP code, and the email on file,' and do not include any greeting, company name, or assistant name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Select Coverage Topic: Ask for exactly one specific coverage topic or one what‑if scenario to address first",
+      "modified": "Select Coverage Topic: Choose one coverage topic yourself and begin addressing it immediately without asking the user any question."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Skyler Martinez",
+    "first_name": "Skyler",
+    "last_name": "Martinez",
+    "gender": "female",
+    "phone": "+446214333844",
+    "email": "skyler.martinez@outlook.com",
+    "address": {
+      "street": "8011 Washington St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "31311"
+    },
+    "date_of_birth": "05/13/1969",
+    "ssn_last4": "7916",
+    "card_type": "Visa",
+    "card_number": "3801370849487618",
+    "card_last4": "7618",
+    "card_expiration": "05/2029",
+    "cardholder_name": "Skyler Martinez",
+    "card_cvv": "108",
+    "billing_zip": "31311",
+    "policy_number": "POL31691422",
+    "claim_number": "CLM2735378",
+    "policy_id": "PID90743588",
+    "claim_id": "CID4572628",
+    "member_id": "MEM22414349",
+    "subscriber_id": "SUB23973736",
+    "group_number": "GRP740857",
+    "reference_number": "REF96871878",
+    "id_number": "ID28443954",
+    "vehicle_make": "Nissan",
+    "vehicle_model": "Rogue",
+    "vehicle_year": "2024",
+    "license_plate": "REZ4039",
+    "vin": "H967UA6Z82ALBZAMU",
+    "incident_date": "01/17/2026",
+    "incident_location": "New York",
+    "coverage_type": "homeowners",
+    "payment_method": "check"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your policy number, billing ZIP code, and the email on file,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Open by requesting, as your first line, 'Please provide your policy number, billing ZIP code, and the email on file,' and do not include any greeting, company name, or assistant name."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my policy number is POL31691422, the billing ZIP code is 31311, and my email is skyler.martinez@outlook.com."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you for the policy number. Please provide your 5-digit mailing ZIP code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 2,
+      "guideline_text": "Open Policy Access: Request exactly 2 items, the policy number and the 5-digit mailing ZIP code, to open the account for coverage explanation"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I already mentioned it is 31311."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Which policy line would you like to focus on: Auto, Home, or Renters?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 3,
+      "guideline_text": "Confirm Policy Line: Ask which policy line to focus on such as Auto, Home, or Renters"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I'd like to focus on my homeowners policy. Could you explain what coverages and limits I have and what my deductible is?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Let’s start with Dwelling coverage.\n\n- What it protects: The structure of your home, including roof, walls, floors, built-in cabinetry and mechanical systems, plus attached structures like an attached garage or deck.\n- Covered causes of loss: Typically sudden and accidental events like fire, windstorm, hail, theft, vandalism, and burst pipes, subject to policy terms.\n- Not covered: Land, routine maintenance or wear and tear, and commonly excluded perils like flood or earthquake unless added by separate coverage.\n- How payouts work: Repairs or rebuilding are covered up to your Dwelling limit and subject to your deductible. Some policies pay at replacement cost, while others may factor depreciation if actual cash value applies.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 4,
+      "guideline_text": "Select Coverage Topic: Choose one coverage topic yourself and begin addressing it immediately without asking the user any question."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Got it. Can you also tell me if my policy covers personal property and if so, what the limits and deductible are for that?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Yes. Your homeowners policy includes personal property coverage.\n\n- Personal Property coverage limit: 200,000\n- Deductible for personal property claims: 1,000 per covered loss",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "guideline_text": "Explain Coverage Details: Provide a clear explanation for the selected topic using the opened policy information"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Could you tell me if my policy covers additional living expenses if my home becomes uninhabitable due to a covered loss and what the limit is for that?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Yes, your policy covers additional living expenses when your home is uninhabitable due to a covered loss.\n\nLimit: 80,000",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "guideline_text": "Explain Coverage Details: Provide a clear explanation for the selected topic using the opened policy information"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thanks for explaining. One more question, would my policy cover medical payments if someone got injured on my property? If so, what is the limit for that?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Yes. Your policy includes medical payments to others coverage.\nLimit: 5,000",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "guideline_text": "Explain Coverage Details: Provide a clear explanation for the selected topic using the opened policy information"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Open by requesting, as your first line, 'Please provide your policy number, billing ZIP code, and the email on file,' and do not include any greeting, company name, or assistant name.",
+      "evidence": "Please provide your policy number, billing ZIP code, and the email on file,"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 4,
+      "guideline": "Select Coverage Topic: Choose one coverage topic yourself and begin addressing it immediately without asking the user any question.",
+      "evidence": "Let’s start with Dwelling coverage.\n\n- What it protects: The structure of your home, including roof, walls, floors, built-in cabinetry and mechanical systems, plus attached structures like an attached garage or deck.\n- Covered causes of loss: Typically sudden and accidental events like fire, windstorm, hail, theft, vandalism, and burst pipes, subject to policy terms.\n- Not covered: Land, routine maintenance or wear and tear, and commonly excluded perils like flood or earthquake unless added by separate coverage.\n- How payouts work: Repairs or rebuilding are covered up to your Dwelling limit and subject to your deductible. Some policies pay at replacement cost, while others may factor depreciation if actual cash value applies."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open by requesting, as your first line, 'Please provide your policy number, billing ZIP code, and the email on file,' and do not include any greeting, company name, or assistant name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 4,
+      "original": "Select Coverage Topic: Ask for exactly one specific coverage topic or one what‑if scenario to address first",
+      "modified": "Select Coverage Topic: Choose one coverage topic yourself and begin addressing it immediately without asking the user any question."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 2: Intent Triggered Guidelines",
+    "key": "coverage_explanation",
+    "phase": 5,
+    "count": 3,
+    "turn_index": 12
+  }
+}

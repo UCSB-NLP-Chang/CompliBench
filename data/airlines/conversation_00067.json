@@ -1,0 +1,275 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "travel_policy_and_fee_information",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Set detail preference: Ask whether they want a quick summary or a full breakdown for the policy information",
+        "Phase 3": "Capture travel context: Collect origin and destination travel month or date range cabin class number of travelers and loyalty tier in one reply",
+        "Phase 4": "Select policy topics: Ask the caller to choose one or two topics such as baggage changes cancellations seat selection check in times or travel documents",
+        "Phase 5": "Gather topic qualifiers: Request specifics that affect the chosen topics such as planned bag count weight or size desired change timing relative to departure seat type preferences or passport country in one reply",
+        "Phase 6": "Confirm plan and scope: Restate the detail preference context topics and qualifiers and ask the caller to confirm",
+        "Phase 7": "Deliver tailored rules: Use the policy system to give the exact rules allowances cutoffs and itemized fees based on the confirmed scope using the selected detail level",
+        "Phase 8": "Provide cost example: Present a single worked example that totals the expected charges for the caller situation using their qualifiers and context",
+        "Phase 9": "Collect recap delivery details: Ask for preferred channel email or SMS and the contact details to receive a written recap",
+        "Phase 10": "Send recap: Send the written recap through the selected channel using the system and inform the caller it has been sent",
+        "Phase 11": "Close the conversation: Confirm all policy questions are covered thank the caller for choosing Celestar Air and offer help with another policy topic",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Ask for the customer's six-character booking code and full last name immediately, without any greeting or introduction and without mentioning Celestar Air, Nova, or \"Thanks for calling!\".",
+        "Phase 2": "Capture travel context: Ask the user to provide only their PNR/record locator and the primary passenger’s full name, and explicitly state that you are not collecting origin, destination, any travel month or date range, cabin class, number of travelers, or loyalty tier in this step.",
+        "Phase 3": "Set detail preference: Provide a medium-detail overview of the policy information immediately without asking the user to choose between a quick summary or a full breakdown.",
+        "Phase 4": "Select policy topics: Ask the caller to choose one or two topics such as baggage changes cancellations seat selection check in times or travel documents",
+        "Phase 5": "Collect recap delivery details: Ask for preferred channel email or SMS and the contact details to receive a written recap",
+        "Phase 6": "Gather topic qualifiers: Do not ask about baggage details, change timing, seat type, or passport country; instead, in one reply request only the traveler's full legal name, date of birth, email address, and phone number.",
+        "Phase 7": "Send recap: Send the written recap through the selected channel using the system and inform the caller it has been sent",
+        "Phase 8": "Provide cost example: Present a single worked example that totals the expected charges for the caller situation using their qualifiers and context",
+        "Phase 9": "Deliver tailored rules: Use the policy system to give the exact rules allowances cutoffs and itemized fees based on the confirmed scope using the selected detail level",
+        "Phase 10": "Confirm plan and scope: Restate the detail preference context topics and qualifiers and ask the caller to confirm",
+        "Phase 11": "Close the conversation: Confirm all policy questions are covered thank the caller for choosing Celestar Air and offer help with another policy topic",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Ask for the customer's six-character booking code and full last name immediately, without any greeting or introduction and without mentioning Celestar Air, Nova, or \"Thanks for calling!\"."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Set detail preference: Ask whether they want a quick summary or a full breakdown for the policy information",
+      "modified": "Set detail preference: Provide a medium-detail overview of the policy information immediately without asking the user to choose between a quick summary or a full breakdown."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Capture travel context: Collect origin and destination travel month or date range cabin class number of travelers and loyalty tier in one reply",
+      "modified": "Capture travel context: Ask the user to provide only their PNR/record locator and the primary passenger’s full name, and explicitly state that you are not collecting origin, destination, any travel month or date range, cabin class, number of travelers, or loyalty tier in this step."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Gather topic qualifiers: Request specifics that affect the chosen topics such as planned bag count weight or size desired change timing relative to departure seat type preferences or passport country in one reply",
+      "modified": "Gather topic qualifiers: Do not ask about baggage details, change timing, seat type, or passport country; instead, in one reply request only the traveler's full legal name, date of birth, email address, and phone number."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "passport_visa_or_immigration_issue",
+      "original": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "modified": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations, continue assisting within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Benjamin White",
+    "first_name": "Benjamin",
+    "last_name": "White",
+    "gender": "female",
+    "phone": "+4532973469",
+    "email": "benjamin.white@hey.com",
+    "address": {
+      "street": "577 Lincoln Ave",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "63889"
+    },
+    "record_locator": "6TAGPL",
+    "confirmation_code": "6TAGPL",
+    "booking_reference": "6TAGPL",
+    "pnr": "6TAGPL",
+    "ticket_number": "2583483359969",
+    "flight_number": "AS6396",
+    "origin": "Chicago (ORD)",
+    "destination": "Dallas (DFW)",
+    "travel_date": "2026-03-15",
+    "return_date": "2026-03-25",
+    "seat_number": "27A",
+    "seat_preference": "window",
+    "cabin_class": "premium economy",
+    "fare_type": "refundable",
+    "payment_method": "debit card",
+    "card_last4": "1556"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Could you share your six-character booking code and your full last name?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Ask for the customer's six-character booking code and full last name immediately, without any greeting or introduction and without mentioning Celestar Air, Nova, or \"Thanks for calling!\"."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My confirmation code is 6TAGPL and my last name is White."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please provide the primary passenger’s full name exactly as on the booking. I am not collecting origin, destination, any travel month or date range, cabin class, number of travelers, or loyalty tier in this step.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 3,
+      "guideline_text": "Capture travel context: Ask the user to provide only their PNR/record locator and the primary passenger’s full name, and explicitly state that you are not collecting origin, destination, any travel month or date range, cabin class, number of travelers, or loyalty tier in this step."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My full name is Benjamin White."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Here is a medium-detail overview of common ticket policies and fees:\n\nTicket changes\n- Basic fares are usually non-changeable and non-refundable.\n- Main Cabin and higher fares can be changed before departure. Any fare difference applies. Some international routes may also have a change fee.\n- All changes must be completed before the scheduled departure time.\n\nCancellations and refunds\n- Risk-free cancel within 24 hours of purchase when booked at least 7 days before departure for a full refund to the original form of payment.\n- After 24 hours, refundable fares return to the original form of payment. Nonrefundable fares typically become a travel credit.\n- No refund for unused nonrefundable tickets after no-show.\n\nSame-day change and standby\n- Same-day confirmed changes may be available starting 24 hours before departure for a fee, subject to seat availability and same origin and destination.\n- Standby may be available when same-day confirmed is not. Fees or waivers depend on route and traveler status.\n\nBaggage\n- Standard carry-on allowance includes one personal item and one carry-on, with size and weight limits. Some basic fares may allow only a personal item on select routes.\n- Checked bag fees vary by route, fare, and cabin. Overweight and oversize bags incur additional charges. Special items and sports equipment have specific rules and fees.\n\nSeating\n- Basic fares may have auto-assigned seats with limited changes. Paid seat selection is often available.\n- Preferred seating and extra legroom options are offered for a fee.\n\nName corrections\n- Minor spelling fixes may be permitted with matching documentation. Full name changes are not allowed. The ticket name must match government identification.\n\nSchedule changes and disruptions\n- For significant schedule changes or cancellations initiated by the airline, options can include free rebooking, a travel credit, or a refund when eligible.\n\nNo-shows\n- If you miss a flight without canceling in advance, remaining segments may cancel and the ticket value for nonrefundable fares may be forfeited.\n\nTravel credits\n- Typically nontransferable, tied to the original traveler, and must be used by the expiration date. Extensions are generally not offered.\n\nPets\n- In-cabin pet travel may be available for a fee on select flights, with limits on pet count, carrier size, and destination eligibility. Checked pets are restricted by route and temperature policies.\n\nCheck-in and documents\n- Online check-in usually opens 24 hours before departure.\n- Government identification is required for domestic travel. Passports and any required visas or entry documents are required for international travel.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "guideline_text": "Set detail preference: Provide a medium-detail overview of the policy information immediately without asking the user to choose between a quick summary or a full breakdown."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I wanted to ask about traveling with my service animal. What documentation do I need to provide, and are there any exceptions or specific determinations I need to be aware of?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I will connect you to a human agent who can review exceptions and make any necessary determinations regarding your service animal documentation. Please hold while I transfer you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Alright, thank you."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thank you, Benjamin. We appreciate you reaching out today. If there is anything else you need, we are here to help. Have a wonderful day and safe travels.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 12,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Ask for the customer's six-character booking code and full last name immediately, without any greeting or introduction and without mentioning Celestar Air, Nova, or \"Thanks for calling!\".",
+      "evidence": "Could you share your six-character booking code and your full last name?"
+    },
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 3,
+      "guideline": "Capture travel context: Ask the user to provide only their PNR/record locator and the primary passenger’s full name, and explicitly state that you are not collecting origin, destination, any travel month or date range, cabin class, number of travelers, or loyalty tier in this step.",
+      "evidence": "Please provide the primary passenger’s full name exactly as on the booking. I am not collecting origin, destination, any travel month or date range, cabin class, number of travelers, or loyalty tier in this step."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 2,
+      "guideline": "Set detail preference: Provide a medium-detail overview of the policy information immediately without asking the user to choose between a quick summary or a full breakdown.",
+      "evidence": "Here is a medium-detail overview of common ticket policies and fees:\n\nTicket changes\n- Basic fares are usually non-changeable and non-refundable.\n- Main Cabin and higher fares can be changed before departure. Any fare difference applies. Some international routes may also have a change fee.\n- All changes must be completed before the scheduled departure time.\n\nCancellations and refunds\n- Risk-free cancel within 24 hours of purchase when booked at least 7 days before departure for a full refund to the original form of payment.\n- After 24 hours, refundable fares return to the original form of payment. Nonrefundable fares typically become a travel credit.\n- No refund for unused nonrefundable tickets after no-show.\n\nSame-day change and standby\n- Same-day confirmed changes may be available starting 24 hours before departure for a fee, subject to seat availability and same origin and destination.\n- Standby may be available when same-day confirmed is not. Fees or waivers depend on route and traveler status.\n\nBaggage\n- Standard carry-on allowance includes one personal item and one carry-on, with size and weight limits. Some basic fares may allow only a personal item on select routes.\n- Checked bag fees vary by route, fare, and cabin. Overweight and oversize bags incur additional charges. Special items and sports equipment have specific rules and fees.\n\nSeating\n- Basic fares may have auto-assigned seats with limited changes. Paid seat selection is often available.\n- Preferred seating and extra legroom options are offered for a fee.\n\nName corrections\n- Minor spelling fixes may be permitted with matching documentation. Full name changes are not allowed. The ticket name must match government identification.\n\nSchedule changes and disruptions\n- For significant schedule changes or cancellations initiated by the airline, options can include free rebooking, a travel credit, or a refund when eligible.\n\nNo-shows\n- If you miss a flight without canceling in advance, remaining segments may cancel and the ticket value for nonrefundable fares may be forfeited.\n\nTravel credits\n- Typically nontransferable, tied to the original traveler, and must be used by the expiration date. Extensions are generally not offered.\n\nPets\n- In-cabin pet travel may be available for a fee on select flights, with limits on pet count, carrier size, and destination eligibility. Checked pets are restricted by route and temperature policies.\n\nCheck-in and documents\n- Online check-in usually opens 24 hours before departure.\n- Government identification is required for domestic travel. Passports and any required visas or entry documents are required for international travel."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Ask for the customer's six-character booking code and full last name immediately, without any greeting or introduction and without mentioning Celestar Air, Nova, or \"Thanks for calling!\"."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "original": "Set detail preference: Ask whether they want a quick summary or a full breakdown for the policy information",
+      "modified": "Set detail preference: Provide a medium-detail overview of the policy information immediately without asking the user to choose between a quick summary or a full breakdown."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 3,
+      "original": "Capture travel context: Collect origin and destination travel month or date range cabin class number of travelers and loyalty tier in one reply",
+      "modified": "Capture travel context: Ask the user to provide only their PNR/record locator and the primary passenger’s full name, and explicitly state that you are not collecting origin, destination, any travel month or date range, cabin class, number of travelers, or loyalty tier in this step."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 5,
+      "original": "Gather topic qualifiers: Request specifics that affect the chosen topics such as planned bag count weight or size desired change timing relative to departure seat type preferences or passport country in one reply",
+      "modified": "Gather topic qualifiers: Do not ask about baggage details, change timing, seat type, or passport country; instead, in one reply request only the traveler's full legal name, date of birth, email address, and phone number."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "passport_visa_or_immigration_issue",
+      "phase": -1,
+      "original": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "modified": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations, continue assisting within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,293 @@
+{
+  "domain": "healthcare",
+  "intent_name": "billing_and_payment_support",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Greeting and Request Selection: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask them to choose one billing or payment request to complete now from pay a balance, set up a payment plan, request an itemized statement, request a receipt, clarify charges, or inquire about financial assistance.",
+        "Phase 2": "Verify Identity and Locate Account: Ask for the patient's full name and date of birth and use these to retrieve the correct billing account in the system.",
+        "Phase 3": "Billing Overview and Confirmation: Retrieve and state the exact current balance in USD, the exact due date in MM/DD/YYYY, and each charge with its exact amount and service date from the system and ask the caller to confirm these details are correct.",
+        "Phase 4": "Contact and Delivery Preference: Collect the caller's email address and mobile phone number and ask for their preferred delivery method for documents as email, SMS, or both.",
+        "Phase 5": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income.",
+        "Phase 6": "Final Terms and Consent: Present the exact values relevant to the chosen request including dollar amounts, installment counts and dollar amounts per installment, the first due date in MM/DD/YYYY, the due day of month as a number, and the document being sent and ask for explicit permission to proceed.",
+        "Phase 7": "Process and Confirm: Complete the chosen action in the system and state the exact confirmation number along with amounts and dates and ask the caller to acknowledge.",
+        "Phase 8": "Send Follow-Up Receipt or Document: Send a confirmation message that includes the exact confirmation number and a recap of amounts and dates to the caller's chosen delivery method and ask them to confirm receipt now.",
+        "Phase 9": "Wrap-Up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care.",
+        "Phase 2": "Verify Identity and Locate Account: Ask for the patient's full name and date of birth and use these to retrieve the correct billing account in the system.",
+        "Phase 3": "Billing Overview and Confirmation: Retrieve and state the exact current balance in USD, the exact due date in MM/DD/YYYY, and each charge with its exact amount and service date from the system and ask the caller to confirm these details are correct.",
+        "Phase 4": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income.",
+        "Phase 5": "Contact and Delivery Preference: Collect the caller's email address and mobile phone number and ask for their preferred delivery method for documents as email, SMS, or both.",
+        "Phase 6": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding.",
+        "Phase 7": "Process and Confirm: Do not complete the action yet; summarize the requested action and ask the caller for explicit approval before proceeding, without providing any confirmation number, amounts, or dates.",
+        "Phase 8": "Send Follow-Up Receipt or Document: Send a confirmation message that includes the exact confirmation number and a recap of amounts and dates to the caller's chosen delivery method and ask them to confirm receipt now.",
+        "Phase 9": "Wrap-Up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Greeting and Request Selection: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask them to choose one billing or payment request to complete now from pay a balance, set up a payment plan, request an itemized statement, request a receipt, clarify charges, or inquire about financial assistance.",
+      "modified": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 0,
+      "phase": "Phase 6",
+      "original": "Final Terms and Consent: Present the exact values relevant to the chosen request including dollar amounts, installment counts and dollar amounts per installment, the first due date in MM/DD/YYYY, the due day of month as a number, and the document being sent and ask for explicit permission to proceed.",
+      "modified": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Process and Confirm: Complete the chosen action in the system and state the exact confirmation number along with amounts and dates and ask the caller to acknowledge.",
+      "modified": "Process and Confirm: Do not complete the action yet; summarize the requested action and ask the caller for explicit approval before proceeding, without providing any confirmation number, amounts, or dates."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Jamie Ali",
+    "first_name": "Jamie",
+    "last_name": "Ali",
+    "gender": "male",
+    "phone": "+31375155479",
+    "email": "jamie.ali@hotmail.com",
+    "address": {
+      "street": "1297 Maple Ave",
+      "city": "Jacksonville",
+      "state": "FL",
+      "zip": "73470"
+    },
+    "date_of_birth": "06/07/1977",
+    "ssn_last4": "1939",
+    "card_type": "American Express",
+    "card_number": "7536828971827174",
+    "card_last4": "7174",
+    "card_expiration": "04/2030",
+    "cardholder_name": "Jamie Ali",
+    "card_cvv": "6899",
+    "billing_zip": "73470",
+    "insurance_carrier": "Highmark",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM54026659",
+    "group_number": "GRP277568",
+    "subscriber_id": "SUB63054124",
+    "provider_name": "Dr. Lisa Nakamura",
+    "provider_npi": "9012345678",
+    "appointment_date": "04/22/2026",
+    "appointment_time": "2:00 PM",
+    "visit_type": "in-person",
+    "household_size": 1,
+    "monthly_income": 2622,
+    "patient_account_number": "PA55256428",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Walmart Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Which one would you like to handle later: schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 1,
+      "guideline_text": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I'd like to pay a balance on my account and also request an itemized statement if possible. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. To locate your billing account, please provide your full name and date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 2,
+      "guideline_text": "Verify Identity and Locate Account: Ask for the patient's full name and date of birth and use these to retrieve the correct billing account in the system."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my full name is Jamie Ali, and my date of birth is June 7th, 1977."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Here is your billing overview.\n\nCurrent balance: USD 365.00\nDue date: 07/01/2024\nCharges:\n- 05/28/2024 — USD 120.00\n- 05/28/2024 — USD 45.00\n- 06/02/2024 — USD 200.00\n\nPlease confirm these details are correct.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 3,
+      "guideline_text": "Billing Overview and Confirmation: Retrieve and state the exact current balance in USD, the exact due date in MM/DD/YYYY, and each charge with its exact amount and service date from the system and ask the caller to confirm these details are correct."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, those details are correct. Can I pay the full balance of 365 dollars now?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "To process your 365.00 USD payment now, please provide one of the following in a single message.\n\nCard payment: card number, expiration date, security code, name on card, billing ZIP code\n\nBank payment ACH: routing number, account number, account type checking or savings, name on account, billing ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 5,
+      "guideline_text": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I would like to use my American Express card to pay. The card number is 7536 8289 7182 7174, expiration date is 04/2030, security code is 6899, name on the card is Jamie Ali, and the billing ZIP code is 73470."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your email address and mobile phone number. How would you like to receive documents: email, SMS, or both?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 4,
+      "guideline_text": "Contact and Delivery Preference: Collect the caller's email address and mobile phone number and ask for their preferred delivery method for documents as email, SMS, or both."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My email is jamie.ali@hotmail.com and my phone number is +31375155479. I'd prefer to receive the documents by email."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Here are the final terms.\n\n- We will charge 365 dollars to your American Express ending 7174 today.\n- A payment receipt will be emailed to jamie.ali@hotmail.com shortly after the charge and should appear on your card by the next business day.\n- Your itemized statement will be emailed to the same address shortly after as well.\n\nPlease reply to acknowledge you received these terms.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "guideline_text": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thank you for the confirmation. I acknowledge and agree to the terms."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Here is what I will do next:\n- Process your payment using the American Express card you provided\n- Email a payment receipt and an itemized statement to jamie.ali@hotmail.com\n\nPlease confirm that you approve me to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 7,
+      "guideline_text": "Process and Confirm: Do not complete the action yet; summarize the requested action and ask the caller for explicit approval before proceeding, without providing any confirmation number, amounts, or dates."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Yes, please proceed."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "I have emailed your payment receipt and itemized statement to jamie.ali@hotmail.com.\n\nConfirmation number: 240615836421\n\nRecap:\n- Payment amount: USD 365.00\n- Payment date: 06/15/2024\n\nPlease confirm you received the email now.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 8,
+      "guideline_text": "Send Follow-Up Receipt or Document: Send a confirmation message that includes the exact confirmation number and a recap of amounts and dates to the caller's chosen delivery method and ask them to confirm receipt now."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I received the email. Thank you for your help."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 9,
+      "guideline_text": "Wrap-Up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 1,
+      "guideline": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care.",
+      "evidence": "Which one would you like to handle later: schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care?"
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 7,
+      "guideline": "Process and Confirm: Do not complete the action yet; summarize the requested action and ask the caller for explicit approval before proceeding, without providing any confirmation number, amounts, or dates.",
+      "evidence": "Here is what I will do next:\n- Process your payment using the American Express card you provided\n- Email a payment receipt and an itemized statement to jamie.ali@hotmail.com\n\nPlease confirm that you approve me to proceed."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 1,
+      "original": "Greeting and Request Selection: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask them to choose one billing or payment request to complete now from pay a balance, set up a payment plan, request an itemized statement, request a receipt, clarify charges, or inquire about financial assistance.",
+      "modified": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "original": "Final Terms and Consent: Present the exact values relevant to the chosen request including dollar amounts, installment counts and dollar amounts per installment, the first due date in MM/DD/YYYY, the due day of month as a number, and the document being sent and ask for explicit permission to proceed.",
+      "modified": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 7,
+      "original": "Process and Confirm: Complete the chosen action in the system and state the exact confirmation number along with amounts and dates and ask the caller to acknowledge.",
+      "modified": "Process and Confirm: Do not complete the action yet; summarize the requested action and ask the caller for explicit approval before proceeding, without providing any confirmation number, amounts, or dates."
+    }
+  ],
+  "rule_based_termination": null
+}

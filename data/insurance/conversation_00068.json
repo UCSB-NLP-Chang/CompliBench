@@ -1,0 +1,265 @@
+{
+  "domain": "insurance",
+  "intent_name": "documents_esign_help",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "documents_esign_help": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Identify Document: Specify the exact document or packet you need to e-sign today, including its full name",
+        "Phase 3": "Verify Account: Provide your policy number and full name to locate the document",
+        "Phase 4": "Select Delivery Method: Provide one destination to receive the e-sign link and the completed copy",
+        "Phase 5": "Authorize Link Issuance: Confirm consent to generate and send one secure e-sign link to the provided destination",
+        "Phase 6": "Acknowledge Signing Steps: State you will open the link review the document complete 4 required fields e-sign and submit",
+        "Phase 7": "Request Completion Check: Ask me to check and report the document’s completion status now",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "documents_esign_help": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Identify Document: Assume a generic \"default document\" will be signed and proceed without asking for or stating any specific document name or referencing that it is for today.",
+        "Phase 3": "Verify Account: Provide your policy number and full name to locate the document",
+        "Phase 4": "Select Delivery Method: Provide one destination to receive the e-sign link and the completed copy",
+        "Phase 5": "Authorize Link Issuance: Confirm consent to generate and send one secure e-sign link to the provided destination",
+        "Phase 6": "Acknowledge Signing Steps: State you will open the link review the document complete 4 required fields e-sign and submit",
+        "Phase 7": "Request Completion Check: Ask me to check and report the document’s completion status now",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted.: Finish by instructing the caller to consult the FAQ page and hang up without any closing courtesies or affirmations of support."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "documents_esign_help",
+      "workflow_index": 1,
+      "phase": "Phase 2",
+      "original": "Identify Document: Specify the exact document or packet you need to e-sign today, including its full name",
+      "modified": "Identify Document: Assume a generic \"default document\" will be signed and proceed without asking for or stating any specific document name or referencing that it is for today."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "documents_esign_help",
+      "workflow_index": 1,
+      "phase": "Phase 8",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Finish by instructing the caller to consult the FAQ page and hang up without any closing courtesies or affirmations of support."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Grace Taylor",
+    "first_name": "Grace",
+    "last_name": "Taylor",
+    "gender": "male",
+    "phone": "+394605925263",
+    "email": "grace.taylor@hey.com",
+    "address": {
+      "street": "2175 Willow Way",
+      "city": "Fresno",
+      "state": "CA",
+      "zip": "06564"
+    },
+    "date_of_birth": "01/18/1970",
+    "ssn_last4": "0539",
+    "card_type": "American Express",
+    "card_number": "0017761022950803",
+    "card_last4": "0803",
+    "card_expiration": "05/2028",
+    "cardholder_name": "Grace Taylor",
+    "card_cvv": "4072",
+    "billing_zip": "06564",
+    "policy_number": "POL26435977",
+    "claim_number": "CLM2475973",
+    "policy_id": "PID69894061",
+    "claim_id": "CID1125885",
+    "member_id": "MEM25304028",
+    "subscriber_id": "SUB62588602",
+    "group_number": "GRP774074",
+    "reference_number": "REF51278467",
+    "id_number": "ID79205306",
+    "vehicle_make": "BMW",
+    "vehicle_model": "X5",
+    "vehicle_year": "2018",
+    "license_plate": "UES6193",
+    "vin": "5T9N3EN71LV4JMY3V",
+    "incident_date": "02/03/2026",
+    "incident_location": "Fresno",
+    "coverage_type": "condo",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Aria, I'm having trouble with e-signing some documents. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. I will proceed with the default document for e‑signing.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 2,
+      "guideline_text": "Identify Document: Assume a generic \"default document\" will be signed and proceed without asking for or stating any specific document name or referencing that it is for today."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I haven't received an email with the document yet. Can you tell me how I can access it?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I can help with that. To locate your document, please provide your policy number and your full name as they appear on your policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 3,
+      "guideline_text": "Verify Account: Provide your policy number and full name to locate the document"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My policy number is POL26435977 and my full name is Grace Taylor."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, Grace. Please choose one delivery method for both the e-sign link and the completed copy and provide one destination:\n- One email address\n- One mobile number for text delivery",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 4,
+      "guideline_text": "Select Delivery Method: Provide one destination to receive the e-sign link and the completed copy"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Please send the e-sign link to my email address, grace.taylor@hey.com."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please confirm that you authorize me to generate and send one secure e-sign link to grace.taylor@hey.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 5,
+      "guideline_text": "Authorize Link Issuance: Confirm consent to generate and send one secure e-sign link to the provided destination"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Yes, I authorize you to send the e-sign link to my email."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I will open the link, review the document, complete 4 required fields, e-sign, and submit.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 6,
+      "guideline_text": "Acknowledge Signing Steps: State you will open the link review the document complete 4 required fields e-sign and submit"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Got it. I'll make sure to do that as soon as I receive the email. Thank you for your help."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please check the document now and tell me its completion status: completed, in progress, or not started.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 7,
+      "guideline_text": "Request Completion Check: Ask me to check and report the document’s completion status now"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Since I haven't received it yet, I would say it's not started at this point. I'll let you know once I receive it and complete the process."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please consult the Shield Insurance FAQ page for guidance on accessing and e-signing your document.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Finish by instructing the caller to consult the FAQ page and hang up without any closing courtesies or affirmations of support."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "documents_esign_help",
+      "guideline_phase": 2,
+      "guideline": "Identify Document: Assume a generic \"default document\" will be signed and proceed without asking for or stating any specific document name or referencing that it is for today.",
+      "evidence": "Absolutely, I can help with that. I will proceed with the default document for e‑signing."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "documents_esign_help",
+      "guideline_phase": 8,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Finish by instructing the caller to consult the FAQ page and hang up without any closing courtesies or affirmations of support.",
+      "evidence": "Please consult the Shield Insurance FAQ page for guidance on accessing and e-signing your document."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 2,
+      "original": "Identify Document: Specify the exact document or packet you need to e-sign today, including its full name",
+      "modified": "Identify Document: Assume a generic \"default document\" will be signed and proceed without asking for or stating any specific document name or referencing that it is for today."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 8,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Finish by instructing the caller to consult the FAQ page and hang up without any closing courtesies or affirmations of support."
+    }
+  ],
+  "rule_based_termination": null
+}

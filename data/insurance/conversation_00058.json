@@ -1,0 +1,284 @@
+{
+  "domain": "insurance",
+  "intent_name": "coverage_explanation",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters",
+        "Phase 3": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy",
+        "Phase 4": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal",
+        "Phase 5": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+        "Phase 6": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address",
+        "Phase 7": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures",
+        "Phase 8": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario",
+        "Phase 9": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Begin the call by instructing the caller to enter 1 for claims, 2 for billing, or 3 for quotes, without providing any greeting or introducing yourself.",
+        "Phase 2": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal",
+        "Phase 3": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters",
+        "Phase 4": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy",
+        "Phase 5": "Identify Coverage Question: Request a brief coverage scenario description instead of any questions and explicitly instruct the user not to include any questions.",
+        "Phase 6": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address",
+        "Phase 7": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario",
+        "Phase 8": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures",
+        "Phase 9": "Confirm Understanding: State that their question has been fully answered and that no clarification is needed, without asking any question, in exactly one sentence.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin the call by instructing the caller to enter 1 for claims, 2 for billing, or 3 for quotes, without providing any greeting or introducing yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+      "modified": "Identify Coverage Question: Request a brief coverage scenario description instead of any questions and explicitly instruct the user not to include any questions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 9",
+      "original": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+      "modified": "Confirm Understanding: State that their question has been fully answered and that no clarification is needed, without asking any question, in exactly one sentence."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Lucia Sato",
+    "first_name": "Lucia",
+    "last_name": "Sato",
+    "gender": "male",
+    "phone": "+12877010915",
+    "email": "lucia.sato@protonmail.com",
+    "address": {
+      "street": "2245 College Ave",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "72530"
+    },
+    "date_of_birth": "05/12/1983",
+    "ssn_last4": "3541",
+    "card_type": "American Express",
+    "card_number": "9991545553109485",
+    "card_last4": "9485",
+    "card_expiration": "05/2031",
+    "cardholder_name": "Lucia Sato",
+    "card_cvv": "0276",
+    "billing_zip": "72530",
+    "policy_number": "POL15755438",
+    "claim_number": "CLM8749323",
+    "policy_id": "PID98391409",
+    "claim_id": "CID9437711",
+    "member_id": "MEM48899717",
+    "subscriber_id": "SUB64179116",
+    "group_number": "GRP517386",
+    "reference_number": "REF41096648",
+    "id_number": "ID56612792",
+    "vehicle_make": "Honda",
+    "vehicle_model": "Civic",
+    "vehicle_year": "2021",
+    "license_plate": "XGA3476",
+    "vin": "G6QYVR198A3ZBD25M",
+    "incident_date": "02/14/2026",
+    "incident_location": "Cleveland",
+    "coverage_type": "life",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Enter 1 for claims, 2 for billing, or 3 for quotes.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Begin the call by instructing the caller to enter 1 for claims, 2 for billing, or 3 for quotes, without providing any greeting or introducing yourself."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I was hoping you could explain my current coverage to me a bit. Like, what are my limits and deductibles, and do I have any additional endorsements?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Happy to help. Which policy term should I reference, your current term or your upcoming renewal? I can look up either.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 4,
+      "guideline_text": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Let's go over my current term. I want to make sure I understand everything before making any decisions."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Which policy line would you like to review, such as Auto, Home, or Renters?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 2,
+      "guideline_text": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Could we start with my auto insurance coverage please? Would that cover me if I were in an accident while using a rental car?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "To review your auto coverage, please provide your policy number and the named insured’s date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 3,
+      "guideline_text": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sure, my policy number is POL15755438, and my date of birth is 05/12/1983."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please share a brief description of the auto coverage scenario you want reviewed. Do not include any questions.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "guideline_text": "Identify Coverage Question: Request a brief coverage scenario description instead of any questions and explicitly instruct the user not to include any questions."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "It would be helpful to know if I'm insured while using a rental car in case of an accident."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Which specific insured item should I reference for this review? Please provide the particular vehicle or the full property address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 6,
+      "guideline_text": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I need to speak with a human agent for further clarification on this. Can you transfer me to one please?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Absolutely. I will transfer you to a human agent now. Please hold while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thank you. I'll hold."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you for your patience, and for choosing Shield Insurance. An agent will be with you shortly. Have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Begin the call by instructing the caller to enter 1 for claims, 2 for billing, or 3 for quotes, without providing any greeting or introducing yourself.",
+      "evidence": "Enter 1 for claims, 2 for billing, or 3 for quotes."
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 5,
+      "guideline": "Identify Coverage Question: Request a brief coverage scenario description instead of any questions and explicitly instruct the user not to include any questions.",
+      "evidence": "Please share a brief description of the auto coverage scenario you want reviewed. Do not include any questions."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin the call by instructing the caller to enter 1 for claims, 2 for billing, or 3 for quotes, without providing any greeting or introducing yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "original": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+      "modified": "Identify Coverage Question: Request a brief coverage scenario description instead of any questions and explicitly instruct the user not to include any questions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 9,
+      "original": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+      "modified": "Confirm Understanding: State that their question has been fully answered and that no clarification is needed, without asking any question, in exactly one sentence."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,336 @@
+{
+  "domain": "insurance",
+  "intent_name": "cancel_policy",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "cancel_policy": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Identity Verification: Request the policy number and mailing ZIP code to locate the account",
+        "Phase 3": "Select Policy: Ask which active policy should be canceled or set to nonrenew",
+        "Phase 4": "Set Effective Date: Ask for the exact date coverage should end or the renewal date for nonrenewal",
+        "Phase 5": "Record Reason: Ask for exactly one primary reason for ending the policy",
+        "Phase 6": "Replacement Coverage: Ask whether new coverage is in place and note the carrier name",
+        "Phase 7": "Confirm Details And Authorization: Summarize the chosen policy, effective date, and one-sentence reason and request authorization to proceed",
+        "Phase 8": "Choose Confirmation Delivery: Ask for the delivery method and destination for the confirmation",
+        "Phase 9": "Submit Cancellation: Submit the cancellation with the confirmed details and capture the confirmation number",
+        "Phase 10": "Provide Confirmation: Provide the confirmation number exactly once",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "cancel_policy": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Start without any greeting by saying 'For security, enter your 5-digit ZIP code and the last four digits of your SSN now,' and do not introduce yourself.",
+        "Phase 2": "Identity Verification: Request the policy number and mailing ZIP code to locate the account",
+        "Phase 3": "Select Policy: Ask which active policy should be canceled or set to nonrenew",
+        "Phase 4": "Record Reason: Ask for exactly one primary reason for ending the policy",
+        "Phase 5": "Set Effective Date: Ask for the exact date coverage should end or the renewal date for nonrenewal",
+        "Phase 6": "Replacement Coverage: Ask whether new coverage is in place and note the carrier name",
+        "Phase 7": "Confirm Details And Authorization: Summarize the chosen policy, effective date, and one-sentence reason and request authorization to proceed",
+        "Phase 8": "Choose Confirmation Delivery: Ask for the delivery method and destination for the confirmation",
+        "Phase 9": "Submit Cancellation: Do not submit the cancellation; instead ask the user to provide a mandatory cancellation reason in the exact format 'REASON: <code>' and wait for that input.",
+        "Phase 10": "Provide Confirmation: Provide the confirmation number exactly once",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start without any greeting by saying 'For security, enter your 5-digit ZIP code and the last four digits of your SSN now,' and do not introduce yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 1,
+      "phase": "Phase 9",
+      "original": "Submit Cancellation: Submit the cancellation with the confirmed details and capture the confirmation number",
+      "modified": "Submit Cancellation: Do not submit the cancellation; instead ask the user to provide a mandatory cancellation reason in the exact format 'REASON: <code>' and wait for that input."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 1,
+      "phase": "Phase 11",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Scarlett Kim",
+    "first_name": "Scarlett",
+    "last_name": "Kim",
+    "gender": "male",
+    "phone": "+447135848766",
+    "email": "scarlett.kim@hotmail.com",
+    "address": {
+      "street": "738 Riverside Dr",
+      "city": "Memphis",
+      "state": "TN",
+      "zip": "76142"
+    },
+    "date_of_birth": "10/27/1968",
+    "ssn_last4": "2047",
+    "card_type": "Discover",
+    "card_number": "4140088119329001",
+    "card_last4": "9001",
+    "card_expiration": "01/2028",
+    "cardholder_name": "Scarlett Kim",
+    "card_cvv": "301",
+    "billing_zip": "76142",
+    "policy_number": "POL48040619",
+    "claim_number": "CLM7554597",
+    "policy_id": "PID33664504",
+    "claim_id": "CID9016254",
+    "member_id": "MEM67091592",
+    "subscriber_id": "SUB54524463",
+    "group_number": "GRP295032",
+    "reference_number": "REF83800035",
+    "id_number": "ID95757798",
+    "vehicle_make": "Tesla",
+    "vehicle_model": "Model 3",
+    "vehicle_year": "2025",
+    "license_plate": "NRY8835",
+    "vin": "WY75UCF2BPBKLBV4E",
+    "incident_date": "02/25/2026",
+    "incident_location": "Austin",
+    "coverage_type": "auto",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For security, enter your 5-digit ZIP code and the last four digits of your SSN now,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Start without any greeting by saying 'For security, enter your 5-digit ZIP code and the last four digits of your SSN now,' and do not introduce yourself."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My ZIP code is 76142 and the last four of my SSN are 2047."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please provide your policy number and confirm your mailing ZIP code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 2,
+      "guideline_text": "Identity Verification: Request the policy number and mailing ZIP code to locate the account"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My policy number is POL48040619 and the mailing ZIP code is 76142."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please confirm the policy to cancel or set to nonrenew: POL48040619.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 3,
+      "guideline_text": "Select Policy: Ask which active policy should be canceled or set to nonrenew"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, please cancel that policy for me."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "What is the one primary reason you are ending this policy?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 5,
+      "guideline_text": "Record Reason: Ask for exactly one primary reason for ending the policy"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I sold the car, so I no longer need the coverage."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide the exact date you want coverage to end. If you prefer nonrenewal instead, share the policy renewal date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 4,
+      "guideline_text": "Set Effective Date: Ask for the exact date coverage should end or the renewal date for nonrenewal"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I would like the coverage to end immediately."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Do you have new coverage in place now? If yes, please share the carrier name.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 6,
+      "guideline_text": "Replacement Coverage: Ask whether new coverage is in place and note the carrier name"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Yes, I already have new coverage with Allstate."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Here is the cancellation summary:\n- Policy: POL48040619\n- Effective date: June 15, 2024\n- Reason: You sold the car and no longer need coverage.\n\nDo you authorize me to proceed with this cancellation now?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 7,
+      "guideline_text": "Confirm Details And Authorization: Summarize the chosen policy, effective date, and one-sentence reason and request authorization to proceed"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Yes, I authorize you to proceed with the cancellation."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "How would you like to receive the cancellation confirmation, and where should I send it?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 8,
+      "guideline_text": "Choose Confirmation Delivery: Ask for the delivery method and destination for the confirmation"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "You can send the cancellation confirmation to my email, scarlett.kim@hotmail.com."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Please provide the mandatory cancellation reason in this exact format: REASON: <code>",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 9,
+      "guideline_text": "Submit Cancellation: Do not submit the cancellation; instead ask the user to provide a mandatory cancellation reason in the exact format 'REASON: <code>' and wait for that input."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "REASON: Sold the vehicle and no longer need the coverage."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "CNL74261534",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 10,
+      "guideline_text": "Provide Confirmation: Provide the confirmation number exactly once"
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Thank you. Is there anything else you need regarding your policy?"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 11,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Start without any greeting by saying 'For security, enter your 5-digit ZIP code and the last four digits of your SSN now,' and do not introduce yourself.",
+      "evidence": "For security, enter your 5-digit ZIP code and the last four digits of your SSN now,"
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 9,
+      "guideline": "Submit Cancellation: Do not submit the cancellation; instead ask the user to provide a mandatory cancellation reason in the exact format 'REASON: <code>' and wait for that input.",
+      "evidence": "Please provide the mandatory cancellation reason in this exact format: REASON: <code>"
+    },
+    {
+      "turn_index": 20,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 11,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance.",
+      "evidence": ""
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start without any greeting by saying 'For security, enter your 5-digit ZIP code and the last four digits of your SSN now,' and do not introduce yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 9,
+      "original": "Submit Cancellation: Submit the cancellation with the confirmed details and capture the confirmation number",
+      "modified": "Submit Cancellation: Do not submit the cancellation; instead ask the user to provide a mandatory cancellation reason in the exact format 'REASON: <code>' and wait for that input."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 11,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Terminate the call immediately without any closing remark, thanks, or offer of further assistance."
+    }
+  ],
+  "rule_based_termination": null
+}

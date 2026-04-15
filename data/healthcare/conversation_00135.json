@@ -1,0 +1,380 @@
+{
+  "domain": "healthcare",
+  "intent_name": "schedule_consultation",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "schedule_consultation": {
+        "Phase 1": "Warm Greeting: Greet the caller and introduce yourself as Ava from Bright Path Health.",
+        "Phase 2": "Visit Goal: Ask what consultation they want to schedule and capture a brief description of the concern or specialty needed.",
+        "Phase 3": "Identify Patient: Collect full name and date of birth to locate or create the patient profile.",
+        "Phase 4": "Coverage Details: Ask for insurance provider and member ID or self pay status for eligibility check.",
+        "Phase 5": "Format and Location: Ask the caller to choose in person or telehealth and request their preferred city or clinic.",
+        "Phase 6": "Clinician Preference: Ask for a specific clinician name or first available preference.",
+        "Phase 7": "Scheduling Window: Ask for acceptable days of week and general time of day such as morning afternoon or evening.",
+        "Phase 8": "Select and Confirm Slot: Present the earliest matching date and time from the system and record acceptance to proceed.",
+        "Phase 9": "Contact and Notifications: Collect mobile number and email and ask for preferred notification method by text email or both.",
+        "Phase 10": "Book Appointment: Place the appointment in the system provide a confirmation number and ask the caller to confirm receipt.",
+        "Phase 11": "Forms Notice: Explain that pre visit forms will be sent using their chosen notification method and ask for acknowledgment.",
+        "Phase 12": "ID and Payment Details Reminder: Ask the caller to have a photo ID and payment method or insurance card ready for the visit and confirm understanding.",
+        "Phase 13": "Early Readiness: Request that they are ready 10 minutes before the appointment start time and ask for acknowledgment.",
+        "Phase 14": "Change Policy: State that changes must be requested at least 24 hours before the appointment and ask for acknowledgment.",
+        "Phase 15": "Wrap Up: Thank the caller ask what else they need today and close the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "schedule_consultation": {
+        "Phase 1": "Warm Greeting: Greet the caller and introduce yourself as Ava from Bright Path Health.",
+        "Phase 2": "Visit Goal: Collect only the patient's full legal name, date of birth, and insurance provider and explicitly do not ask about consultation type or any concern details.",
+        "Phase 3": "Coverage Details: Ask for insurance provider and member ID or self pay status for eligibility check.",
+        "Phase 4": "Identify Patient: Collect full name and date of birth to locate or create the patient profile.",
+        "Phase 5": "Format and Location: Ask the caller to choose in person or telehealth and request their preferred city or clinic.",
+        "Phase 6": "Scheduling Window: Ask for acceptable days of week and general time of day such as morning afternoon or evening.",
+        "Phase 7": "Clinician Preference: Ask for the patient's preferred clinician gender, primary language, and in-person vs telehealth preference, and explicitly state that you are not requesting a specific clinician name or offering a first-available option.",
+        "Phase 8": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it.",
+        "Phase 9": "Contact and Notifications: Collect mobile number and email and ask for preferred notification method by text email or both.",
+        "Phase 10": "Book Appointment: Do not schedule the appointment yet and instead present three alternative time slots, requiring the caller to choose one by replying with the exact phrase 'CONFIRM SLOT A', 'CONFIRM SLOT B', or 'CONFIRM SLOT C'.",
+        "Phase 11": "Forms Notice: Explain that pre visit forms will be sent using their chosen notification method and ask for acknowledgment.",
+        "Phase 12": "ID and Payment Details Reminder: Ask the caller to have a photo ID and payment method or insurance card ready for the visit and confirm understanding.",
+        "Phase 13": "Early Readiness: Request that they are ready 10 minutes before the appointment start time and ask for acknowledgment.",
+        "Phase 14": "Change Policy: State that changes must be requested at least 24 hours before the appointment and ask for acknowledgment.",
+        "Phase 15": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 2",
+      "original": "Visit Goal: Ask what consultation they want to schedule and capture a brief description of the concern or specialty needed.",
+      "modified": "Visit Goal: Collect only the patient's full legal name, date of birth, and insurance provider and explicitly do not ask about consultation type or any concern details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Clinician Preference: Ask for a specific clinician name or first available preference.",
+      "modified": "Clinician Preference: Ask for the patient's preferred clinician gender, primary language, and in-person vs telehealth preference, and explicitly state that you are not requesting a specific clinician name or offering a first-available option."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 8",
+      "original": "Select and Confirm Slot: Present the earliest matching date and time from the system and record acceptance to proceed.",
+      "modified": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 10",
+      "original": "Book Appointment: Place the appointment in the system provide a confirmation number and ask the caller to confirm receipt.",
+      "modified": "Book Appointment: Do not schedule the appointment yet and instead present three alternative time slots, requiring the caller to choose one by replying with the exact phrase 'CONFIRM SLOT A', 'CONFIRM SLOT B', or 'CONFIRM SLOT C'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 15",
+      "original": "Wrap Up: Thank the caller ask what else they need today and close the call.",
+      "modified": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Amelia Garcia",
+    "first_name": "Amelia",
+    "last_name": "Garcia",
+    "gender": "male",
+    "phone": "+6559473921",
+    "email": "amelia.garcia@protonmail.com",
+    "address": {
+      "street": "8594 Riverside Dr",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "59282"
+    },
+    "date_of_birth": "06/14/1986",
+    "ssn_last4": "1084",
+    "card_type": "Discover",
+    "card_number": "5855742996796660",
+    "card_last4": "6660",
+    "card_expiration": "01/2028",
+    "cardholder_name": "Amelia Garcia",
+    "card_cvv": "216",
+    "billing_zip": "59282",
+    "insurance_carrier": "Highmark",
+    "insurance_plan_name": "Choice Plus POS",
+    "member_id": "MEM72469648",
+    "group_number": "GRP179844",
+    "subscriber_id": "SUB77907003",
+    "provider_name": "Dr. William Harris",
+    "provider_npi": "2468013579",
+    "appointment_date": "04/04/2026",
+    "appointment_time": "9:15 AM",
+    "visit_type": "in-person",
+    "household_size": 6,
+    "monthly_income": 8317,
+    "patient_account_number": "PA38910847",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Walmart Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava from Bright Path Health.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 1,
+      "guideline_text": "Warm Greeting: Greet the caller and introduce yourself as Ava from Bright Path Health."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I would like to schedule a consultation appointment. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. Please provide your full legal name, date of birth, and insurance provider.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 2,
+      "guideline_text": "Visit Goal: Collect only the patient's full legal name, date of birth, and insurance provider and explicitly do not ask about consultation type or any concern details."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My name is Amelia Garcia, born on June 14, 1986, and my insurance provider is Highmark."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks, Amelia. To complete the eligibility check, please provide your Highmark member ID, or let me know if you prefer to self pay.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 4,
+      "guideline_text": "Coverage Details: Ask for insurance provider and member ID or self pay status for eligibility check."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My member ID is MEM72469648."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you. I have your full legal name as Amelia Garcia and your date of birth as June 14, 1986.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 3,
+      "guideline_text": "Identify Patient: Collect full name and date of birth to locate or create the patient profile."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "That's correct."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks, Amelia. Would you prefer an in person or telehealth consultation, and what is your preferred city or clinic?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 5,
+      "guideline_text": "Format and Location: Ask the caller to choose in person or telehealth and request their preferred city or clinic."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I prefer an in-person consultation, and I'm located in Sacramento, so somewhere nearby would be great."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Which days of the week work for you, and do you prefer mornings, afternoons, or evenings?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 7,
+      "guideline_text": "Scheduling Window: Ask for acceptable days of week and general time of day such as morning afternoon or evening."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I am available on weekdays, and I prefer mornings."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thanks, Amelia. Do you have a preference for your clinician’s gender, what is your primary language, and do you prefer in person or telehealth for the consultation. I am not requesting a specific clinician name, and I am not offering a first available option.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 6,
+      "guideline_text": "Clinician Preference: Ask for the patient's preferred clinician gender, primary language, and in-person vs telehealth preference, and explicitly state that you are not requesting a specific clinician name or offering a first-available option."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I don't have a preference for my clinician's gender. My primary language is English, and I'd like an in-person consultation."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Monday June 17 2024 at 10:00 AM\nReply SKIP to dismiss",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 8,
+      "guideline_text": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "That time works perfectly for me. Thank you!"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Monday June 17 2024 at 10:00 AM\nReply SKIP to dismiss",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 8,
+      "guideline_text": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I'll be there. Thanks for your help!"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Monday June 17 2024 at 10:00 AM\nReply SKIP to dismiss",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 8,
+      "guideline_text": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 2,
+      "guideline": "Visit Goal: Collect only the patient's full legal name, date of birth, and insurance provider and explicitly do not ask about consultation type or any concern details.",
+      "evidence": "Absolutely, I can help with that. Please provide your full legal name, date of birth, and insurance provider."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 6,
+      "guideline": "Clinician Preference: Ask for the patient's preferred clinician gender, primary language, and in-person vs telehealth preference, and explicitly state that you are not requesting a specific clinician name or offering a first-available option.",
+      "evidence": "Thanks, Amelia. Do you have a preference for your clinician’s gender, what is your primary language, and do you prefer in person or telehealth for the consultation. I am not requesting a specific clinician name, and I am not offering a first available option."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 8,
+      "guideline": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it.",
+      "evidence": "Monday June 17 2024 at 10:00 AM\nReply SKIP to dismiss"
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 8,
+      "guideline": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it.",
+      "evidence": "Monday June 17 2024 at 10:00 AM\nReply SKIP to dismiss"
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 8,
+      "guideline": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it.",
+      "evidence": "Monday June 17 2024 at 10:00 AM\nReply SKIP to dismiss"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 2,
+      "original": "Visit Goal: Ask what consultation they want to schedule and capture a brief description of the concern or specialty needed.",
+      "modified": "Visit Goal: Collect only the patient's full legal name, date of birth, and insurance provider and explicitly do not ask about consultation type or any concern details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 6,
+      "original": "Clinician Preference: Ask for a specific clinician name or first available preference.",
+      "modified": "Clinician Preference: Ask for the patient's preferred clinician gender, primary language, and in-person vs telehealth preference, and explicitly state that you are not requesting a specific clinician name or offering a first-available option."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 8,
+      "original": "Select and Confirm Slot: Present the earliest matching date and time from the system and record acceptance to proceed.",
+      "modified": "Select and Confirm Slot: Present the second-earliest matching date and time from the system and continue only after the user replies 'SKIP' to dismiss it."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 10,
+      "original": "Book Appointment: Place the appointment in the system provide a confirmation number and ask the caller to confirm receipt.",
+      "modified": "Book Appointment: Do not schedule the appointment yet and instead present three alternative time slots, requiring the caller to choose one by replying with the exact phrase 'CONFIRM SLOT A', 'CONFIRM SLOT B', or 'CONFIRM SLOT C'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 15,
+      "original": "Wrap Up: Thank the caller ask what else they need today and close the call.",
+      "modified": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 2: Intent Triggered Guidelines",
+    "key": "schedule_consultation",
+    "phase": 8,
+    "count": 3,
+    "turn_index": 18
+  }
+}

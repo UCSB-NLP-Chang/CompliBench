@@ -1,0 +1,335 @@
+{
+  "domain": "healthcare",
+  "intent_name": "medical_records_request_and_release",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "medical_records_request_and_release": {
+        "Phase 1": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today",
+        "Phase 2": "Privacy Notice: State that you will handle protected health information and ask for permission to proceed",
+        "Phase 3": "Updates Channel: Ask for the preferred method for status updates and capture a contact detail to use for notifications",
+        "Phase 4": "Patient Identity: Collect the patient full legal name and date of birth",
+        "Phase 5": "Requestor Role: Ask for the caller relationship to the patient and confirm they have authority to act for the patient",
+        "Phase 6": "Records Direction: Ask the caller to choose the direction as personal copies outbound disclosure or inbound acquisition",
+        "Phase 7": "Recipient Details: Capture who should receive the records and the recipient organization or individual name",
+        "Phase 8": "Delivery Preference: Ask for the preferred way to deliver the records and capture the destination details that match the chosen method",
+        "Phase 9": "Records Holder: Capture who currently maintains the requested records and their contact details",
+        "Phase 10": "Records Selection: Ask which documents are needed and note any clinic or provider names that should be included",
+        "Phase 11": "Date Span: Ask for the exact start date and end date for the records to be released",
+        "Phase 12": "Sensitive Categories: Ask whether to include sensitive topics such as mental health substance use HIV or STD status and genetic information and record a clear yes or no for all",
+        "Phase 13": "Authorization and Purpose: Read the HIPAA disclosure record the caller full legal name as a verbal signature and record the stated purpose limited to this request",
+        "Phase 14": "Submit and Confirm: Create the records case share the confirmation code with the caller and send a recap to the chosen update channel",
+        "Phase 15": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need today and close the call"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "medical_records_request_and_release": {
+        "Phase 1": "Greeting: Greet the caller, introduce yourself as Sam from Bright Path Wellness, and do not ask how you can help today; instead, ask them to state their date of birth to verify identity first.",
+        "Phase 2": "Privacy Notice: State that you will handle protected health information and ask for permission to proceed",
+        "Phase 3": "Updates Channel: Ask for the preferred method for status updates and capture a contact detail to use for notifications",
+        "Phase 4": "Patient Identity: Collect the patient full legal name and date of birth",
+        "Phase 5": "Requestor Role: Verify only the patient’s date of birth and medical record number from the caller and continue without confirming any authority to act or relationship details.",
+        "Phase 6": "Delivery Preference: Ask the user to provide only their preferred delivery time window and explicitly do not request any destination details or a delivery method.",
+        "Phase 7": "Recipient Details: Capture who should receive the records and the recipient organization or individual name",
+        "Phase 8": "Records Direction: Ask the caller to choose the direction as personal copies outbound disclosure or inbound acquisition",
+        "Phase 9": "Records Holder: Capture who currently maintains the requested records and their contact details",
+        "Phase 10": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions.",
+        "Phase 11": "Records Selection: Do not ask which documents are needed; instead, state that you will retrieve the complete medical chart and that you will not record any clinic or provider names.",
+        "Phase 12": "Date Span: Ask for the exact start date and end date for the records to be released",
+        "Phase 13": "Authorization and Purpose: Read the HIPAA disclosure record the caller full legal name as a verbal signature and record the stated purpose limited to this request",
+        "Phase 14": "Submit and Confirm: Create the records case share the confirmation code with the caller and send a recap to the chosen update channel",
+        "Phase 15": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need today and close the call"
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today",
+      "modified": "Greeting: Greet the caller, introduce yourself as Sam from Bright Path Wellness, and do not ask how you can help today; instead, ask them to state their date of birth to verify identity first."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Requestor Role: Ask for the caller relationship to the patient and confirm they have authority to act for the patient",
+      "modified": "Requestor Role: Verify only the patient’s date of birth and medical record number from the caller and continue without confirming any authority to act or relationship details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 8",
+      "original": "Delivery Preference: Ask for the preferred way to deliver the records and capture the destination details that match the chosen method",
+      "modified": "Delivery Preference: Ask the user to provide only their preferred delivery time window and explicitly do not request any destination details or a delivery method."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 10",
+      "original": "Records Selection: Ask which documents are needed and note any clinic or provider names that should be included",
+      "modified": "Records Selection: Do not ask which documents are needed; instead, state that you will retrieve the complete medical chart and that you will not record any clinic or provider names."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "Sensitive Categories: Ask whether to include sensitive topics such as mental health substance use HIV or STD status and genetic information and record a clear yes or no for all",
+      "modified": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Liam Lee",
+    "first_name": "Liam",
+    "last_name": "Lee",
+    "gender": "female",
+    "phone": "+6502612020",
+    "email": "liam.lee@hey.com",
+    "address": {
+      "street": "2633 Main St",
+      "city": "Reno",
+      "state": "NV",
+      "zip": "34316"
+    },
+    "date_of_birth": "10/06/1971",
+    "ssn_last4": "4659",
+    "card_type": "Mastercard",
+    "card_number": "7628179197198469",
+    "card_last4": "8469",
+    "card_expiration": "10/2027",
+    "cardholder_name": "Liam Lee",
+    "card_cvv": "579",
+    "billing_zip": "34316",
+    "insurance_carrier": "Molina Healthcare",
+    "insurance_plan_name": "Bronze EPO",
+    "member_id": "MEM80499745",
+    "group_number": "GRP461182",
+    "subscriber_id": "SUB59855482",
+    "provider_name": "Dr. Brian O'Connor",
+    "provider_npi": "0123456789",
+    "appointment_date": "04/23/2026",
+    "appointment_time": "11:30 AM",
+    "visit_type": "in-person",
+    "household_size": 6,
+    "monthly_income": 6084,
+    "patient_account_number": "PA23062496",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "CVS Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Good afternoon. This is Sam from Bright Path Wellness. To verify your identity, please state your date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 1,
+      "guideline_text": "Greeting: Greet the caller, introduce yourself as Sam from Bright Path Wellness, and do not ask how you can help today; instead, ask them to state their date of birth to verify identity first."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, it's October 6th, 1971. I'm calling because I need to request copies of my medical records."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you. To assist with your request, we may handle your protected health information during this call. Do I have your permission to proceed?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 2,
+      "guideline_text": "Privacy Notice: State that you will handle protected health information and ask for permission to proceed"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Yes, you have my permission to proceed."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you. How would you like to receive status updates on your records request, such as phone call, text, or email? Please provide the best phone number or email to use for notifications.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 3,
+      "guideline_text": "Updates Channel: Ask for the preferred method for status updates and capture a contact detail to use for notifications"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Could you send the updates by text to my number 6502612020 please? Also, I was wondering if you have resources for those who might need disability accommodations or interpreter services when accessing medical records."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Yes, resources are available for disability accommodations and interpreter services. Updates will be sent by text to 6502612020. Would you like all records or a specific date range?",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I would like all my medical records from the last three years, please."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your full legal name as it appears on your government ID.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 4,
+      "guideline_text": "Patient Identity: Collect the patient full legal name and date of birth"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My full name is Liam Lee."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thank you, Liam Lee, born October 6, 1971.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 4,
+      "guideline_text": "Patient Identity: Collect the patient full legal name and date of birth"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I'm receiving ongoing treatment and had some complications after a procedure a while back. Could you make sure the records include all the relevant details?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "I’m sorry to hear about the complications. I will connect you with a human representative now to review your case and ensure the records include all relevant details. Please hold while I transfer you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "existing_patient_complex_case",
+      "phase": -1,
+      "guideline_text": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "All right, thank you."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? If not, thank you again and have a great day. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 15,
+      "guideline_text": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need today and close the call"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "medical_records_request_and_release",
+      "guideline_phase": 1,
+      "guideline": "Greeting: Greet the caller, introduce yourself as Sam from Bright Path Wellness, and do not ask how you can help today; instead, ask them to state their date of birth to verify identity first.",
+      "evidence": "Good afternoon. This is Sam from Bright Path Wellness. To verify your identity, please state your date of birth."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Yes, resources are available for disability accommodations and interpreter services. Updates will be sent by text to 6502612020. Would you like all records or a specific date range?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 1,
+      "original": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today",
+      "modified": "Greeting: Greet the caller, introduce yourself as Sam from Bright Path Wellness, and do not ask how you can help today; instead, ask them to state their date of birth to verify identity first."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 5,
+      "original": "Requestor Role: Ask for the caller relationship to the patient and confirm they have authority to act for the patient",
+      "modified": "Requestor Role: Verify only the patient’s date of birth and medical record number from the caller and continue without confirming any authority to act or relationship details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 8,
+      "original": "Delivery Preference: Ask for the preferred way to deliver the records and capture the destination details that match the chosen method",
+      "modified": "Delivery Preference: Ask the user to provide only their preferred delivery time window and explicitly do not request any destination details or a delivery method."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 10,
+      "original": "Records Selection: Ask which documents are needed and note any clinic or provider names that should be included",
+      "modified": "Records Selection: Do not ask which documents are needed; instead, state that you will retrieve the complete medical chart and that you will not record any clinic or provider names."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 12,
+      "original": "Sensitive Categories: Ask whether to include sensitive topics such as mental health substance use HIV or STD status and genetic information and record a clear yes or no for all",
+      "modified": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "rule_based_termination": null
+}

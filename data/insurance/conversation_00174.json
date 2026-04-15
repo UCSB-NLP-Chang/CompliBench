@@ -1,0 +1,327 @@
+{
+  "domain": "insurance",
+  "intent_name": "coverage_explanation",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters",
+        "Phase 3": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy",
+        "Phase 4": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal",
+        "Phase 5": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+        "Phase 6": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address",
+        "Phase 7": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures",
+        "Phase 8": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario",
+        "Phase 9": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately ask the caller to provide their full name, policy number, and the last four digits of their SSN before proceeding.",
+        "Phase 2": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy",
+        "Phase 3": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters",
+        "Phase 4": "Confirm Policy Term: Ask the user to provide the policy's start and end dates and state that you are unable to look up any term information on your end.",
+        "Phase 5": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address",
+        "Phase 6": "Identify Coverage Question: Request the user's policy number, insurer name, and state of residence to determine their coverage context instead of asking for a coverage question.",
+        "Phase 7": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario",
+        "Phase 8": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures",
+        "Phase 9": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately ask the caller to provide their full name, policy number, and the last four digits of their SSN before proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal",
+      "modified": "Confirm Policy Term: Ask the user to provide the policy's start and end dates and state that you are unable to look up any term information on your end."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+      "modified": "Identify Coverage Question: Request the user's policy number, insurer name, and state of residence to determine their coverage context instead of asking for a coverage question."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Isabella Park",
+    "first_name": "Isabella",
+    "last_name": "Park",
+    "gender": "male",
+    "phone": "+6576857718",
+    "email": "isabella.park@email.com",
+    "address": {
+      "street": "2685 Broadway",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "26236"
+    },
+    "date_of_birth": "10/09/1972",
+    "ssn_last4": "4151",
+    "card_type": "Visa",
+    "card_number": "2235778065391453",
+    "card_last4": "1453",
+    "card_expiration": "08/2027",
+    "cardholder_name": "Isabella Park",
+    "card_cvv": "866",
+    "billing_zip": "26236",
+    "policy_number": "POL68979251",
+    "claim_number": "CLM9918866",
+    "policy_id": "PID13543653",
+    "claim_id": "CID5713688",
+    "member_id": "MEM60565667",
+    "subscriber_id": "SUB48933350",
+    "group_number": "GRP631984",
+    "reference_number": "REF38522203",
+    "id_number": "ID76073191",
+    "vehicle_make": "Subaru",
+    "vehicle_model": "Forester",
+    "vehicle_year": "2020",
+    "license_plate": "TSO4975",
+    "vin": "5DVWPT0TGIHNWS7YK",
+    "incident_date": "02/11/2026",
+    "incident_location": "Los Angeles",
+    "coverage_type": "condo",
+    "payment_method": "credit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your full name, policy number, and the last four digits of your SSN.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately ask the caller to provide their full name, policy number, and the last four digits of their SSN before proceeding."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Isabella Park. The policy number is POL68979251, and the last four digits of my SSN are 4151."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please provide the date of birth of the named insured.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 3,
+      "guideline_text": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My date of birth is October 9, 1972."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Which policy line would you like to discuss: Auto, Home, or Renters?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 2,
+      "guideline_text": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Home insurance, please."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide your home policy start and end dates. I am unable to look up any term information on my end.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 4,
+      "guideline_text": "Confirm Policy Term: Ask the user to provide the policy's start and end dates and state that you are unable to look up any term information on your end."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "The start date is January 1, 2026, and the end date is January 1, 2027."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Which specific insured item does your question concern for your home policy?\nPlease provide the full property address for the insured home.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 6,
+      "guideline_text": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My condo at 2685 Broadway, Cleveland, OH 26236."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thank you. Please provide your insurer name and confirm your state of residence.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "guideline_text": "Identify Coverage Question: Request the user's policy number, insurer name, and state of residence to determine their coverage context instead of asking for a coverage question."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "My insurer is ABC Insurance, and I live in Ohio."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Example: Suppose your home policy has a 1,000 deductible and a 100,000 coverage limit. A covered water leak causes 12,000 in repairs. The claim payout is 12,000 minus the 1,000 deductible, which equals 11,000. Because this is under the 100,000 limit, the insurer pays 11,000 and you pay 1,000.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 8,
+      "guideline_text": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Got it. Can you explain if my policy covers damage from an earthquake?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Earthquake damage is excluded on a standard condo policy unless you added an earthquake endorsement or a separate earthquake policy. With the endorsement, your unit interiors and personal property are covered while the condo association handles the building shell. Claims use a percentage deductible, example 10 percent, and pay up to the endorsement limit, example 50,000, after the deductible. If your association issues an assessment due to quake damage, loss assessment coverage may help up to 10,000 when the assessment is for a covered earthquake.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 7,
+      "guideline_text": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Thanks for the explanation. Can you tell me if I have coverage for things like hail or windstorm damage?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Yes. For your condo policy, windstorm and hail are covered causes of loss.\n\n- Coverage: Interior fixtures, built-in finishes, and personal belongings are insured for direct wind or hail damage.\n- Limits: Building property coverage for your unit is up to 35,000, and personal property is covered up to its separate limit.\n- Deductibles and endorsements: A separate wind and hail deductible of 2 percent applies when that endorsement is on the policy; otherwise the all perils deductible of 1,000 applies. Loss assessment coverage may also respond to a covered wind or hail assessment.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 7,
+      "guideline_text": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Thank you for clearing that up. Can you tell me whether I have coverage for any type of water damage caused by things like plumbing or appliances?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Yes. Under your condo policy, sudden and accidental water discharge from plumbing or appliances is covered for your unit interiors and personal belongings.\n- Limit: Building property coverage for your unit interiors applies up to 35,000.\n- Deductible: The all perils deductible applies at 1,000 per covered water claim.\n- Endorsement: Water backup through sewers or drains requires an added endorsement and pays up to 10,000 under its sublimit.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 7,
+      "guideline_text": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately ask the caller to provide their full name, policy number, and the last four digits of their SSN before proceeding.",
+      "evidence": "Please provide your full name, policy number, and the last four digits of your SSN."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 4,
+      "guideline": "Confirm Policy Term: Ask the user to provide the policy's start and end dates and state that you are unable to look up any term information on your end.",
+      "evidence": "Please provide your home policy start and end dates. I am unable to look up any term information on my end."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 5,
+      "guideline": "Identify Coverage Question: Request the user's policy number, insurer name, and state of residence to determine their coverage context instead of asking for a coverage question.",
+      "evidence": "Thank you. Please provide your insurer name and confirm your state of residence."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Skip any greeting and immediately ask the caller to provide their full name, policy number, and the last four digits of their SSN before proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 4,
+      "original": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal",
+      "modified": "Confirm Policy Term: Ask the user to provide the policy's start and end dates and state that you are unable to look up any term information on your end."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "original": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+      "modified": "Identify Coverage Question: Request the user's policy number, insurer name, and state of residence to determine their coverage context instead of asking for a coverage question."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 2: Intent Triggered Guidelines",
+    "key": "coverage_explanation",
+    "phase": 7,
+    "count": 3,
+    "turn_index": 18
+  }
+}

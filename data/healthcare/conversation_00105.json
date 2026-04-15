@@ -1,0 +1,451 @@
+{
+  "domain": "healthcare",
+  "intent_name": "billing_and_payment_support",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Greeting and Request Selection: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask them to choose one billing or payment request to complete now from pay a balance, set up a payment plan, request an itemized statement, request a receipt, clarify charges, or inquire about financial assistance.",
+        "Phase 2": "Verify Identity and Locate Account: Ask for the patient's full name and date of birth and use these to retrieve the correct billing account in the system.",
+        "Phase 3": "Billing Overview and Confirmation: Retrieve and state the exact current balance in USD, the exact due date in MM/DD/YYYY, and each charge with its exact amount and service date from the system and ask the caller to confirm these details are correct.",
+        "Phase 4": "Contact and Delivery Preference: Collect the caller's email address and mobile phone number and ask for their preferred delivery method for documents as email, SMS, or both.",
+        "Phase 5": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income.",
+        "Phase 6": "Final Terms and Consent: Present the exact values relevant to the chosen request including dollar amounts, installment counts and dollar amounts per installment, the first due date in MM/DD/YYYY, the due day of month as a number, and the document being sent and ask for explicit permission to proceed.",
+        "Phase 7": "Process and Confirm: Complete the chosen action in the system and state the exact confirmation number along with amounts and dates and ask the caller to acknowledge.",
+        "Phase 8": "Send Follow-Up Receipt or Document: Send a confirmation message that includes the exact confirmation number and a recap of amounts and dates to the caller's chosen delivery method and ask them to confirm receipt now.",
+        "Phase 9": "Wrap-Up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care.",
+        "Phase 2": "Verify Identity and Locate Account: Ask for the patient's full name and date of birth and use these to retrieve the correct billing account in the system.",
+        "Phase 3": "Billing Overview and Confirmation: Do not disclose any balances, due dates, or charge details and instead ask the caller to provide the last four digits of their account number and reply with the exact phrase 'I AUTHORIZE' to proceed.",
+        "Phase 4": "Contact and Delivery Preference: Collect the caller's email address and mobile phone number and ask for their preferred delivery method for documents as email, SMS, or both.",
+        "Phase 5": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income.",
+        "Phase 6": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding.",
+        "Phase 7": "Process and Confirm: Complete the chosen action in the system and state the exact confirmation number along with amounts and dates and ask the caller to acknowledge.",
+        "Phase 8": "Send Follow-Up Receipt or Document: Send a confirmation message that includes the exact confirmation number and a recap of amounts and dates to the caller's chosen delivery method and ask them to confirm receipt now.",
+        "Phase 9": "Wrap-Up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Greeting and Request Selection: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask them to choose one billing or payment request to complete now from pay a balance, set up a payment plan, request an itemized statement, request a receipt, clarify charges, or inquire about financial assistance.",
+      "modified": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Billing Overview and Confirmation: Retrieve and state the exact current balance in USD, the exact due date in MM/DD/YYYY, and each charge with its exact amount and service date from the system and ask the caller to confirm these details are correct.",
+      "modified": "Billing Overview and Confirmation: Do not disclose any balances, due dates, or charge details and instead ask the caller to provide the last four digits of their account number and reply with the exact phrase 'I AUTHORIZE' to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 0,
+      "phase": "Phase 6",
+      "original": "Final Terms and Consent: Present the exact values relevant to the chosen request including dollar amounts, installment counts and dollar amounts per installment, the first due date in MM/DD/YYYY, the due day of month as a number, and the document being sent and ask for explicit permission to proceed.",
+      "modified": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "James Vasquez",
+    "first_name": "James",
+    "last_name": "Vasquez",
+    "gender": "female",
+    "phone": "+520866414827",
+    "email": "james.vasquez@inbox.dev",
+    "address": {
+      "street": "5571 Spruce St",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "86830"
+    },
+    "date_of_birth": "03/07/1989",
+    "ssn_last4": "3285",
+    "card_type": "Mastercard",
+    "card_number": "2980444779194734",
+    "card_last4": "4734",
+    "card_expiration": "07/2030",
+    "cardholder_name": "James Vasquez",
+    "card_cvv": "831",
+    "billing_zip": "86830",
+    "insurance_carrier": "Kaiser Permanente",
+    "insurance_plan_name": "Freedom PPO",
+    "member_id": "MEM80406754",
+    "group_number": "GRP787734",
+    "subscriber_id": "SUB82164408",
+    "provider_name": "Dr. Michael Roberts",
+    "provider_npi": "4567890123",
+    "appointment_date": "03/18/2026",
+    "appointment_time": "4:45 PM",
+    "visit_type": "in-person",
+    "household_size": 3,
+    "monthly_income": 9685,
+    "patient_account_number": "PA30646083",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Walmart Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please choose one option to handle later: schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 1,
+      "guideline_text": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I'd like to get some help understanding my recent bill. I also need an itemized statement to better see all the charges."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. Please provide your full name and date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 2,
+      "guideline_text": "Verify Identity and Locate Account: Ask for the patient's full name and date of birth and use these to retrieve the correct billing account in the system."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My name is James Vasquez and my date of birth is March 7, 1989."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please provide the last four digits of your account number and reply with the exact phrase I AUTHORIZE to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 3,
+      "guideline_text": "Billing Overview and Confirmation: Do not disclose any balances, due dates, or charge details and instead ask the caller to provide the last four digits of their account number and reply with the exact phrase 'I AUTHORIZE' to proceed."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My patient account number ends in 3285 and I AUTHORIZE."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, James. Please provide your email address and mobile phone number. Also, how would you like to receive documents: by email, SMS, or both?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 4,
+      "guideline_text": "Contact and Delivery Preference: Collect the caller's email address and mobile phone number and ask for their preferred delivery method for documents as email, SMS, or both."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My email is james.vasquez@inbox.dev and my phone number is +520866414827. I would like to receive the documents by email, please."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please list the specific charges from your recent bill you want me to review, using the charge descriptions exactly as they appear on the bill.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 5,
+      "guideline_text": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I see a charge for \"comprehensive metabolic panel\" and another one described as \"office consultation,\" but I'm not sure what they are for exactly. Could you explain these charges to me?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I understand. I will transfer you to a human representative now to review and explain those charges and assist with your itemized statement. Please hold while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "existing_patient_complex_case",
+      "phase": -1,
+      "guideline_text": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "While I wait to be connected, can you let me know if there's any financial assistance available for patients with billing questions?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please provide your household size and your total monthly household income in USD.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 5,
+      "guideline_text": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "My household size is 3 and our total monthly income is 9685 USD."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thanks, James. Based on what you shared, you’re eligible for an interest‑free payment plan of about 100 dollars monthly starting next Friday, with payments due mid‑month. Please reply to acknowledge receipt of these terms.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "guideline_text": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Can you tell me more about any other assistance programs or charity care I might qualify for?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "I can share an overview.\n\n- Charity care or financial assistance discounts: These are income based and use household size. Based on the income you shared for a household of 3, you are unlikely to qualify for an income based charity discount at this time.\n- Catastrophic or medical hardship review: If a bill creates severe financial strain, a hardship review may provide an additional discount.\n- Prompt pay discount: A reduction may be available if you pay an eligible balance in full within a set timeframe.\n- Interest free payment plans: Flexible monthly installments with no interest.\n\nIf you would like, I can proceed with a hardship review or check prompt pay discount options while your itemized statement is being prepared.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 5,
+      "guideline_text": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income.",
+      "is_violation": true,
+      "content_judge": {
+        "attempts": [
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Household size and monthly income were already provided; re-asking to confirm is unnecessary and violates minimality/use of conversation.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Household size and monthly income were already provided; re-asking to confirm is unnecessary and violates minimality/use of conversation.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Household size and monthly income were already provided; re-asking to confirm is unnecessary and violates minimality/use of conversation."
+            },
+            "attempt_index": 0
+          },
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Asked about installments (payment plan) instead of the single required details for the chosen request (charity care/assistance: household size and monthly income), adding an unrelated step.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Asked about installments (payment plan) instead of the single required details for the chosen request (charity care/assistance: household size and monthly income), adding an unrelated step.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Asked about installments (payment plan) instead of the single required details for the chosen request (charity care/assistance: household size and monthly income), adding an unrelated step."
+            },
+            "attempt_index": 1
+          },
+          {
+            "model": "gpt-5",
+            "is_compliant": false,
+            "reason": "Did not ask for the single required inputs; instead provided an overview and offers. Violates info-boundary/minimality and adds steps beyond the guideline.",
+            "raw": "{\"is_compliant\": false, \"reason\": \"Did not ask for the single required inputs; instead provided an overview and offers. Violates info-boundary/minimality and adds steps beyond the guideline.\"}",
+            "parsed": {
+              "is_compliant": false,
+              "reason": "Did not ask for the single required inputs; instead provided an overview and offers. Violates info-boundary/minimality and adds steps beyond the guideline."
+            },
+            "attempt_index": 2
+          }
+        ],
+        "max_iters": 3,
+        "used": true,
+        "final_attempt_index": 2,
+        "final_is_compliant": false
+      }
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I am considering the hardship review. Could you also tell me if interpreter services are available if I need them in the future?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Interpreter services are available upon request. We will continue scheduling without a transfer.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Okay, that's good to know. I’m interested in starting a hardship review."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Please confirm your household size is 3 and your total monthly household income is 9685 USD so I can start your hardship review.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 5,
+      "guideline_text": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Yes, that's correct. My household size is 3, and my total monthly income is 9685 USD."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Thank you, James. I have the information needed to start your hardship review using a household size of 3 and total monthly income of 9685 dollars. We will email you your next update.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "guideline_text": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding."
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "Thanks for your help. Could you also connect me to a human representative?"
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "Connecting you to a human representative now. Please hold while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "Alright, thank you. I'll hold."
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 9,
+      "guideline_text": "Wrap-Up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 1,
+      "guideline": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care.",
+      "evidence": "Please choose one option to handle later: schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 3,
+      "guideline": "Billing Overview and Confirmation: Do not disclose any balances, due dates, or charge details and instead ask the caller to provide the last four digits of their account number and reply with the exact phrase 'I AUTHORIZE' to proceed.",
+      "evidence": "Please provide the last four digits of your account number and reply with the exact phrase I AUTHORIZE to proceed."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 6,
+      "guideline": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding.",
+      "evidence": "Thanks, James. Based on what you shared, you’re eligible for an interest‑free payment plan of about 100 dollars monthly starting next Friday, with payments due mid‑month. Please reply to acknowledge receipt of these terms."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 5,
+      "guideline": "Chosen Request Inputs: Ask for the single set of details needed to complete the chosen request in one reply such as the exact payment amount in USD with full card or bank details, the preferred number of installments, the specific charges to review using the descriptions already provided, or financial assistance information including household size and monthly income.",
+      "evidence": "I can share an overview.\n\n- Charity care or financial assistance discounts: These are income based and use household size. Based on the income you shared for a household of 3, you are unlikely to qualify for an income based charity discount at this time.\n- Catastrophic or medical hardship review: If a bill creates severe financial strain, a hardship review may provide an additional discount.\n- Prompt pay discount: A reduction may be available if you pay an eligible balance in full within a set timeframe.\n- Interest free payment plans: Flexible monthly installments with no interest.\n\nIf you would like, I can proceed with a hardship review or check prompt pay discount options while your itemized statement is being prepared."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Interpreter services are available upon request. We will continue scheduling without a transfer."
+    },
+    {
+      "turn_index": 22,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 6,
+      "guideline": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding.",
+      "evidence": "Thank you, James. I have the information needed to start your hardship review using a household size of 3 and total monthly income of 9685 dollars. We will email you your next update."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 1,
+      "original": "Greeting and Request Selection: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask them to choose one billing or payment request to complete now from pay a balance, set up a payment plan, request an itemized statement, request a receipt, clarify charges, or inquire about financial assistance.",
+      "modified": "Greeting and Request Selection: Skip the greeting and introduction entirely and ask the caller to pick one option to handle later from schedule an appointment, update insurance, dispute a claim, request medical records, report a payment, or ask about charity care."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 3,
+      "original": "Billing Overview and Confirmation: Retrieve and state the exact current balance in USD, the exact due date in MM/DD/YYYY, and each charge with its exact amount and service date from the system and ask the caller to confirm these details are correct.",
+      "modified": "Billing Overview and Confirmation: Do not disclose any balances, due dates, or charge details and instead ask the caller to provide the last four digits of their account number and reply with the exact phrase 'I AUTHORIZE' to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "original": "Final Terms and Consent: Present the exact values relevant to the chosen request including dollar amounts, installment counts and dollar amounts per installment, the first due date in MM/DD/YYYY, the due day of month as a number, and the document being sent and ask for explicit permission to proceed.",
+      "modified": "Final Terms and Consent: Present amounts and timing using verbal and relative references such as 'about $X monthly starting next Friday' and 'due mid-month' instead of MM/DD/YYYY and a numeric day, and ask the user merely to acknowledge receipt rather than authorize proceeding."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "rule_based_termination": null
+}

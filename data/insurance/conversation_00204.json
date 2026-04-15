@@ -1,0 +1,243 @@
+{
+  "domain": "insurance",
+  "intent_name": "new_claim",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "new_claim": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Set Claim Intent: Confirm the caller wishes to open a new claim and request permission to capture details for setup",
+        "Phase 3": "Confirm Identity: Collect full name and date of birth to locate the customer profile",
+        "Phase 4": "Select Policy Record: Request the 1 policy number to retrieve the correct policy",
+        "Phase 5": "Choose Coverage Line: Ask whether the claim is for Auto Home or Renters and explicitly state the chosen line in your reply",
+        "Phase 6": "Record Time And Place: Capture the incident date time and location including the exact time to the minute",
+        "Phase 7": "Identify Affected Asset: Capture the primary asset identifier such as vehicle year make and model or property address",
+        "Phase 8": "Describe Event And Impact: Request a brief description of what happened and what was damaged in one statement",
+        "Phase 9": "People And Parties: Ask whether anyone was injured and whether other parties were involved and record any names or contact details provided",
+        "Phase 10": "Evidence Plan: Ask what supporting materials the caller has such as photos videos receipts or reports and request a preferred upload method by text or email",
+        "Phase 11": "Update Contact Preference: Confirm the best phone or email for claim updates and state one preferred time to reach them",
+        "Phase 12": "Final Review And Consent: Present a concise summary of the details gathered in exactly 3 sentences and request confirmation to file the claim now",
+        "Phase 13": "Create Claim: Create the claim and provide the claim number and three next steps for follow up",
+        "Phase 14": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "new_claim": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Begin with \"This call may be recorded for quality assurance,\" then request the caller's policy number and the last four digits of their SSN before offering any greeting or introduction.",
+        "Phase 2": "Set Claim Intent: Confirm the caller wishes to open a new claim and request permission to capture details for setup",
+        "Phase 3": "Confirm Identity: Ask the customer to provide their full name and confirm with a Yes/No that their date of birth displayed on file is correct before proceeding to the profile.",
+        "Phase 4": "Select Policy Record: Request the 1 policy number to retrieve the correct policy",
+        "Phase 5": "Choose Coverage Line: Ask whether the claim is for Auto Home or Renters and explicitly state the chosen line in your reply",
+        "Phase 6": "Record Time And Place: Capture the incident date time and location including the exact time to the minute",
+        "Phase 7": "Identify Affected Asset: Capture the primary asset identifier such as vehicle year make and model or property address",
+        "Phase 8": "Describe Event And Impact: Request a brief description of what happened and what was damaged in one statement",
+        "Phase 9": "People And Parties: Skip any questions about injuries and involvement, and ask solely for the number of witnesses and a short description of each, saving only those descriptions without any names or contact info.",
+        "Phase 10": "Evidence Plan: Ask what supporting materials the caller has such as photos videos receipts or reports and request a preferred upload method by text or email",
+        "Phase 11": "Update Contact Preference: Confirm the best phone or email for claim updates and state one preferred time to reach them",
+        "Phase 12": "Final Review And Consent: Do not provide a summary; instead, ask the user to supply two additional documents (photos of damage and proof of ownership) before any filing can occur.",
+        "Phase 13": "Create Claim: Create the claim and provide the claim number and three next steps for follow up",
+        "Phase 14": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "new_claim",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin with \"This call may be recorded for quality assurance,\" then request the caller's policy number and the last four digits of their SSN before offering any greeting or introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "new_claim",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Confirm Identity: Collect full name and date of birth to locate the customer profile",
+      "modified": "Confirm Identity: Ask the customer to provide their full name and confirm with a Yes/No that their date of birth displayed on file is correct before proceeding to the profile."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "new_claim",
+      "workflow_index": 2,
+      "phase": "Phase 9",
+      "original": "People And Parties: Ask whether anyone was injured and whether other parties were involved and record any names or contact details provided",
+      "modified": "People And Parties: Skip any questions about injuries and involvement, and ask solely for the number of witnesses and a short description of each, saving only those descriptions without any names or contact info."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "new_claim",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "Final Review And Consent: Present a concise summary of the details gathered in exactly 3 sentences and request confirmation to file the claim now",
+      "modified": "Final Review And Consent: Do not provide a summary; instead, ask the user to supply two additional documents (photos of damage and proof of ownership) before any filing can occur."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Ananya Walker",
+    "first_name": "Ananya",
+    "last_name": "Walker",
+    "gender": "female",
+    "phone": "+64893918759",
+    "email": "ananya.walker@example.com",
+    "address": {
+      "street": "7433 Broadway",
+      "city": "Detroit",
+      "state": "MI",
+      "zip": "15796"
+    },
+    "date_of_birth": "07/07/1985",
+    "ssn_last4": "1699",
+    "card_type": "American Express",
+    "card_number": "3884666164761982",
+    "card_last4": "1982",
+    "card_expiration": "11/2030",
+    "cardholder_name": "Ananya Walker",
+    "card_cvv": "4909",
+    "billing_zip": "15796",
+    "policy_number": "POL65294161",
+    "claim_number": "CLM3326438",
+    "policy_id": "PID82978423",
+    "claim_id": "CID7871269",
+    "member_id": "MEM24538416",
+    "subscriber_id": "SUB21245154",
+    "group_number": "GRP132565",
+    "reference_number": "REF38859699",
+    "id_number": "ID15466546",
+    "vehicle_make": "Honda",
+    "vehicle_model": "CR-V",
+    "vehicle_year": "2022",
+    "license_plate": "VJG7254",
+    "vin": "618C8U1VE4C3O8WB5",
+    "incident_date": "02/18/2026",
+    "incident_location": "Sacramento",
+    "coverage_type": "auto",
+    "payment_method": "debit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "This call may be recorded for quality assurance. Please provide your policy number and the last four digits of your Social Security number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "new_claim",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Begin with \"This call may be recorded for quality assurance,\" then request the caller's policy number and the last four digits of their SSN before offering any greeting or introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my policy number is POL65294161 and the last four digits of my Social Security number are 1699. I'm actually calling because I need to report a new claim about a minor accident that happened recently."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you. To confirm, would you like me to open a new claim for this accident now, and do I have your permission to capture the details needed to set it up?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "new_claim",
+      "phase": 2,
+      "guideline_text": "Set Claim Intent: Confirm the caller wishes to open a new claim and request permission to capture details for setup"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Yes, please go ahead and open the claim. There was a bit of a fender bender, and although no one was initially hurt, someone is now feeling dizzy. Should I first call for medical help just to be safe?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "If anyone is feeling dizzy, please call 911 right now to get medical help. Once everyone is safe and any urgent needs are addressed, we can continue with your claim.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_safety_priority",
+      "phase": -1,
+      "guideline_text": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Okay, I'll make sure to call 911 immediately. Thank you for that advice. Once everything is settled at the scene, I'll reconnect to continue with the claim process."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. Please take care and focus on safety first. When everything is settled, reach back out and we will continue your claim. We appreciate you and are here to help.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "new_claim",
+      "phase": 14,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "new_claim",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Begin with \"This call may be recorded for quality assurance,\" then request the caller's policy number and the last four digits of their SSN before offering any greeting or introduction.",
+      "evidence": "This call may be recorded for quality assurance. Please provide your policy number and the last four digits of your Social Security number."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "new_claim",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin with \"This call may be recorded for quality assurance,\" then request the caller's policy number and the last four digits of their SSN before offering any greeting or introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "new_claim",
+      "phase": 3,
+      "original": "Confirm Identity: Collect full name and date of birth to locate the customer profile",
+      "modified": "Confirm Identity: Ask the customer to provide their full name and confirm with a Yes/No that their date of birth displayed on file is correct before proceeding to the profile."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "new_claim",
+      "phase": 9,
+      "original": "People And Parties: Ask whether anyone was injured and whether other parties were involved and record any names or contact details provided",
+      "modified": "People And Parties: Skip any questions about injuries and involvement, and ask solely for the number of witnesses and a short description of each, saving only those descriptions without any names or contact info."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "new_claim",
+      "phase": 12,
+      "original": "Final Review And Consent: Present a concise summary of the details gathered in exactly 3 sentences and request confirmation to file the claim now",
+      "modified": "Final Review And Consent: Do not provide a summary; instead, ask the user to supply two additional documents (photos of damage and proof of ownership) before any filing can occur."
+    }
+  ],
+  "rule_based_termination": null
+}

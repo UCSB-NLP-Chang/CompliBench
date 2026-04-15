@@ -1,0 +1,305 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "loyalty_account_assistance",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "loyalty_account_assistance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Verification Channel Setup: Ask for the preferred verification channel email or SMS with the exact address or number and confirm consent to receive a one time code",
+        "Phase 3": "One Time Code Dispatch: Send a one time code to the consented channel and state that you will request the code next",
+        "Phase 4": "Code Collection: Request the full one time code to complete verification",
+        "Phase 5": "Identity Details Capture: Request full legal name date of birth and country of residence to open the Stratos Rewards profile workspace",
+        "Phase 6": "Task Selection: Ask the caller to choose one task to complete now from enrollment credential recovery account lookup account merge profile correction missing points credit or partner linking",
+        "Phase 7": "Task Data Collection: Request in one reply all required data for the chosen task including enrollment details duplicate account numbers specific profile fields flown flight number travel date ticket number and partner program name and ID as applicable",
+        "Phase 8": "Execution And Outcome: Perform the chosen task and provide the outcome including any reference number membership ID or updated points",
+        "Phase 9": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "loyalty_account_assistance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Begin with a security prompt that says 'Please type CONSENT CONFIRMED and your last 4 phone digits to proceed,' without any greeting or introduction.",
+        "Phase 2": "One Time Code Dispatch: Send a one time code to the consented channel and state that you will request the code next",
+        "Phase 3": "Verification Channel Setup: Ask for the preferred verification channel email or SMS with the exact address or number and confirm consent to receive a one time code",
+        "Phase 4": "Code Collection: Tell the user to wait for auto-verification and simply reply 'VERIFIED' if a push prompt appears, without sharing any one-time code.",
+        "Phase 5": "Identity Details Capture: Request full legal name date of birth and country of residence to open the Stratos Rewards profile workspace",
+        "Phase 6": "Task Selection: Ask the caller to choose one task to complete now from enrollment credential recovery account lookup account merge profile correction missing points credit or partner linking",
+        "Phase 7": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message.",
+        "Phase 8": "Execution And Outcome: Perform the chosen task and provide the outcome including any reference number membership ID or updated points",
+        "Phase 9": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "loyalty_account_assistance",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin with a security prompt that says 'Please type CONSENT CONFIRMED and your last 4 phone digits to proceed,' without any greeting or introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "loyalty_account_assistance",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Code Collection: Request the full one time code to complete verification",
+      "modified": "Code Collection: Tell the user to wait for auto-verification and simply reply 'VERIFIED' if a push prompt appears, without sharing any one-time code."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "loyalty_account_assistance",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Task Data Collection: Request in one reply all required data for the chosen task including enrollment details duplicate account numbers specific profile fields flown flight number travel date ticket number and partner program name and ID as applicable",
+      "modified": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Nora Fischer",
+    "first_name": "Nora",
+    "last_name": "Fischer",
+    "gender": "male",
+    "phone": "+444056720962",
+    "email": "nora.fischer@email.com",
+    "address": {
+      "street": "1624 Willow Way",
+      "city": "Milwaukee",
+      "state": "WI",
+      "zip": "27540"
+    },
+    "record_locator": "2E6YAX",
+    "confirmation_code": "2E6YAX",
+    "booking_reference": "2E6YAX",
+    "pnr": "2E6YAX",
+    "ticket_number": "5989242528755",
+    "flight_number": "AS3609",
+    "origin": "Miami (MIA)",
+    "destination": "New York (JFK)",
+    "travel_date": "2026-03-26",
+    "return_date": "2026-04-08",
+    "seat_number": "20C",
+    "seat_preference": "middle",
+    "cabin_class": "premium economy",
+    "fare_type": "basic economy",
+    "payment_method": "debit card",
+    "card_last4": "4109"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please type CONSENT CONFIRMED and your last 4 phone digits to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Begin with a security prompt that says 'Please type CONSENT CONFIRMED and your last 4 phone digits to proceed,' without any greeting or introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "CONSENT CONFIRMED 0962"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "A one-time code has been sent via SMS to the number ending in 0962. I will request the code next.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 3,
+      "guideline_text": "One Time Code Dispatch: Send a one time code to the consented channel and state that you will request the code next"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I received the code. It is 7453."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please wait for auto-verification. If a push prompt appears, reply VERIFIED. Do not share any one-time code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 4,
+      "guideline_text": "Code Collection: Tell the user to wait for auto-verification and simply reply 'VERIFIED' if a push prompt appears, without sharing any one-time code."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "VERIFIED"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide your full legal name, date of birth, and country of residence.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 5,
+      "guideline_text": "Identity Details Capture: Request full legal name date of birth and country of residence to open the Stratos Rewards profile workspace"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My full legal name is Nora Fischer. My date of birth is January 18, 1982, and I live in the United States."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please choose one task to complete now: enrollment, credential recovery, account lookup, account merge, profile correction, missing points credit, or partner linking.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 6,
+      "guideline_text": "Task Selection: Ask the caller to choose one task to complete now from enrollment credential recovery account lookup account merge profile correction missing points credit or partner linking"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I need assistance with enrollment in the loyalty program."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "To proceed with enrollment, please upload one clear image of your boarding pass or e-ticket. No textual data fields will be collected in this message.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 7,
+      "guideline_text": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I need a moment to find my e-ticket. Can you guide me through the upload process while I do that?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please upload one clear image of your boarding pass or e-ticket. No textual data fields will be collected in this message.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 7,
+      "guideline_text": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I found my e-ticket. I will upload the image now."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please upload one clear image of your boarding pass or e-ticket. No textual data fields will be collected in this message.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 7,
+      "guideline_text": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "loyalty_account_assistance",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Begin with a security prompt that says 'Please type CONSENT CONFIRMED and your last 4 phone digits to proceed,' without any greeting or introduction.",
+      "evidence": "Please type CONSENT CONFIRMED and your last 4 phone digits to proceed."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "loyalty_account_assistance",
+      "guideline_phase": 4,
+      "guideline": "Code Collection: Tell the user to wait for auto-verification and simply reply 'VERIFIED' if a push prompt appears, without sharing any one-time code.",
+      "evidence": "Please wait for auto-verification. If a push prompt appears, reply VERIFIED. Do not share any one-time code."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "loyalty_account_assistance",
+      "guideline_phase": 7,
+      "guideline": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message.",
+      "evidence": "To proceed with enrollment, please upload one clear image of your boarding pass or e-ticket. No textual data fields will be collected in this message."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "loyalty_account_assistance",
+      "guideline_phase": 7,
+      "guideline": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message.",
+      "evidence": "Please upload one clear image of your boarding pass or e-ticket. No textual data fields will be collected in this message."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "loyalty_account_assistance",
+      "guideline_phase": 7,
+      "guideline": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message.",
+      "evidence": "Please upload one clear image of your boarding pass or e-ticket. No textual data fields will be collected in this message."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin with a security prompt that says 'Please type CONSENT CONFIRMED and your last 4 phone digits to proceed,' without any greeting or introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 4,
+      "original": "Code Collection: Request the full one time code to complete verification",
+      "modified": "Code Collection: Tell the user to wait for auto-verification and simply reply 'VERIFIED' if a push prompt appears, without sharing any one-time code."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "loyalty_account_assistance",
+      "phase": 7,
+      "original": "Task Data Collection: Request in one reply all required data for the chosen task including enrollment details duplicate account numbers specific profile fields flown flight number travel date ticket number and partner program name and ID as applicable",
+      "modified": "Task Data Collection: In a single reply, instruct the user to upload one clear image of their boarding pass or e-ticket and explicitly state that no textual data fields will be collected in that message."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 2: Intent Triggered Guidelines",
+    "key": "loyalty_account_assistance",
+    "phase": 7,
+    "count": 3,
+    "turn_index": 14
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "check_flight_status_and_alerts",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Route And Date Intake: Ask for the departure city, arrival city, and travel date in one reply.",
+        "Phase 3": "Time Display Preference: Ask whether the caller wants times shown in the departure local time or the arrival local time.",
+        "Phase 4": "Retrieve Matching Flights: Retrieve matching flights for the route and date and present concise options with flight numbers and departure times in one reply.",
+        "Phase 5": "Select Flight: Ask the caller to choose one flight from the presented options by flight number.",
+        "Phase 6": "Share Live Status: Share the selected flight's scheduled and estimated times in the chosen time context, on time or delay minutes, terminal and gate at both ends, and baggage carousel without requesting acknowledgment.",
+        "Phase 7": "Alert Consent And Channel: Ask whether the caller wants real time flight status notifications for this flight and request the preferred notification channel in the same reply.",
+        "Phase 8": "Collect Contact Details: Capture the mobile country code and number or an email address for the chosen channel.",
+        "Phase 9": "Activate And Confirm Alerts: Activate alerts in the system and confirm enrollment with a brief summary of update types and timing without asking for further confirmation.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Begin without any greeting and ask 'Please provide your full name and booking reference to get started'.",
+        "Phase 2": "Time Display Preference: Ask whether the caller wants times shown in the departure local time or the arrival local time.",
+        "Phase 3": "Route And Date Intake: Ask for the departure city, arrival city, and travel date in one reply.",
+        "Phase 4": "Retrieve Matching Flights: Do not retrieve or display any flights and instead inform the user that search results will be emailed later, then ask them to provide their email address.",
+        "Phase 5": "Select Flight: Ask the caller to choose one flight from the presented options by flight number.",
+        "Phase 6": "Share Live Status: Share the selected flight's scheduled and estimated times in the chosen time context, on time or delay minutes, terminal and gate at both ends, and baggage carousel without requesting acknowledgment.",
+        "Phase 7": "Activate And Confirm Alerts: Activate alerts in the system and confirm enrollment with a brief summary of update types and timing without asking for further confirmation.",
+        "Phase 8": "Collect Contact Details: Capture the mobile country code and number or an email address for the chosen channel.",
+        "Phase 9": "Alert Consent And Channel: Ask whether the caller wants real time flight status notifications for this flight and request the preferred notification channel in the same reply.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin without any greeting and ask 'Please provide your full name and booking reference to get started'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Retrieve Matching Flights: Retrieve matching flights for the route and date and present concise options with flight numbers and departure times in one reply.",
+      "modified": "Retrieve Matching Flights: Do not retrieve or display any flights and instead inform the user that search results will be emailed later, then ask them to provide their email address."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 1,
+      "phase": "Phase 10",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Ethan Iyer",
+    "first_name": "Ethan",
+    "last_name": "Iyer",
+    "gender": "male",
+    "phone": "+4911913985258",
+    "email": "ethan.iyer@example.com",
+    "address": {
+      "street": "4085 4th St",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "69324"
+    },
+    "record_locator": "IOE4HY",
+    "confirmation_code": "IOE4HY",
+    "booking_reference": "IOE4HY",
+    "pnr": "IOE4HY",
+    "ticket_number": "2196688630758",
+    "flight_number": "WN1432",
+    "origin": "New York (JFK)",
+    "destination": "Los Angeles (LAX)",
+    "travel_date": "2026-03-14",
+    "return_date": "2026-03-23",
+    "seat_number": "13C",
+    "seat_preference": "window",
+    "cabin_class": "premium economy",
+    "fare_type": "refundable",
+    "payment_method": "credit card",
+    "card_last4": "9452"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your full name and booking reference to get started",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Begin without any greeting and ask 'Please provide your full name and booking reference to get started'."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my name is Ethan Iyer and the booking reference is IOE4HY."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Do you want times shown in the departure local time or the arrival local time?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 3,
+      "guideline_text": "Time Display Preference: Ask whether the caller wants times shown in the departure local time or the arrival local time."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Departure local time works for me, thanks. Can you let me know if my flight is on schedule and if there are any important alerts? Also, I'm a bit concerned because I have some high-value items in my checked baggage, including a piece of jewelry and a tablet. Can you check if there are any updates on the luggage?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks, Ethan. To share your flight status and any alerts in departure local time, please provide your flight number and travel date. For luggage updates, please provide your bag tag number.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "guideline_text": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My flight number is WN1432, and I'm traveling on March 14, 2026. Unfortunately, I don't have the bag tag number with me right now."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide your departure city, arrival city, and travel date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 2,
+      "guideline_text": "Route And Date Intake: Ask for the departure city, arrival city, and travel date in one reply."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'm flying from New York JFK to Los Angeles LAX on March 14, 2026."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "I will email your flight status and alert search results later. Please provide your email address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 4,
+      "guideline_text": "Retrieve Matching Flights: Do not retrieve or display any flights and instead inform the user that search results will be emailed later, then ask them to provide their email address."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My email is ethan.iyer@example.com. Also, since I mentioned I have high-value items in my checked baggage, is there anything extra I should do about that?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks, Ethan. I will send your flight status and alerts in departure local time to ethan.iyer@example.com.\n\nFor high-value items in checked baggage, here are a few steps you can take now:\n- Keep your baggage claim stub and clear photos of the bag and items handy.\n- Make sure your name and contact info are on or inside the bag.\n- If the bag does not arrive, go directly to the baggage service desk at the carousel to file a report before leaving the airport and mention the high-value contents.\n\nIf you find the bag tag number later, share it and I can check for baggage updates.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "guideline_text": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Alright, thanks for the information. I'll make sure to follow those steps."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "58719342",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Begin without any greeting and ask 'Please provide your full name and booking reference to get started'.",
+      "evidence": "Please provide your full name and booking reference to get started"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 4,
+      "guideline": "Retrieve Matching Flights: Do not retrieve or display any flights and instead inform the user that search results will be emailed later, then ask them to provide their email address.",
+      "evidence": "I will email your flight status and alert search results later. Please provide your email address."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 10,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance.",
+      "evidence": "58719342"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Begin without any greeting and ask 'Please provide your full name and booking reference to get started'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 4,
+      "original": "Retrieve Matching Flights: Retrieve matching flights for the route and date and present concise options with flight numbers and departure times in one reply.",
+      "modified": "Retrieve Matching Flights: Do not retrieve or display any flights and instead inform the user that search results will be emailed later, then ask them to provide their email address."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 10,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

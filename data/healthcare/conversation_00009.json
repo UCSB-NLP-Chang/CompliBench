@@ -1,0 +1,274 @@
+{
+  "domain": "healthcare",
+  "intent_name": "patient_profile_and_contact_updates",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Greeting and Offer Help: Greet the caller as Ava from Bright Path Health, introduce yourself, and ask how you can help today.",
+        "Phase 2": "Verify Patient Identity: Ask for the patient's full legal name and date of birth to locate the patient record.",
+        "Phase 3": "Confirm Record: Retrieve the patient profile and confirm the record by stating the full legal name and date of birth exactly as shown in the system and ask the caller to confirm.",
+        "Phase 4": "Collect Updates and Confirmation Channel: Ask the caller to provide all profile updates in one reply using this template—legal name; preferred name; pronouns; mobile phone with country code; email; full mailing address (street, unit, city, state, ZIP); emergency contact (full name, relationship, phone, permission to be contacted); communication preferences (call, text, email); insurance (carrier, plan, member ID, group number, policyholder name, policyholder date of birth, claims mailing address); confirmation channel for delivery of summary and upload link (choose text to mobile or email and include the destination); provide only the items to be changed and leave others blank except the confirmation channel and its destination which are required.",
+        "Phase 5": "Read Back and Confirm: Read back each field captured for update with the exact values and ask the caller to confirm to finalize the updates.",
+        "Phase 6": "Finalize and Send Confirmation: Apply the confirmed updates in the system, send the confirmation summary and a secure insurance card upload link via the confirmed channel and destination provided, note that a copy is available in the patient portal, and ask the caller to confirm receipt.",
+        "Phase 7": "Wrap-Up: Thank the caller, ask what else they need, and end the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Greeting and Offer Help: Start with a HIPAA privacy notice, explicitly avoid introducing yourself or asking 'how can I help today,' and direct the caller to choose an option by saying 'appointments,' 'refills,' or 'billing'.",
+        "Phase 2": "Verify Patient Identity: Ask for the patient's full legal name and date of birth to locate the patient record.",
+        "Phase 3": "Confirm Record: Retrieve the patient profile and confirm the record by stating the full legal name and date of birth exactly as shown in the system and ask the caller to confirm.",
+        "Phase 4": "Collect Updates and Confirmation Channel: Ask the caller to provide all profile updates in one reply using this template—legal name; preferred name; pronouns; mobile phone with country code; email; full mailing address (street, unit, city, state, ZIP); emergency contact (full name, relationship, phone, permission to be contacted); communication preferences (call, text, email); insurance (carrier, plan, member ID, group number, policyholder name, policyholder date of birth, claims mailing address); confirmation channel for delivery of summary and upload link (choose text to mobile or email and include the destination); provide only the items to be changed and leave others blank except the confirmation channel and its destination which are required.",
+        "Phase 5": "Read Back and Confirm: Read back each field captured for update with the exact values and ask the caller to confirm to finalize the updates.",
+        "Phase 6": "Finalize and Send Confirmation: Apply the confirmed updates in the system, send the confirmation summary and a secure insurance card upload link via the confirmed channel and destination provided, note that a copy is available in the patient portal, and ask the caller to confirm receipt.",
+        "Phase 7": "Wrap-Up: Confirm the caller’s email and shipping address, provide a new case reference number, explicitly say \"I will remain on the line to schedule a follow-up appointment,\" and do not ask what else they need or end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Greeting and Offer Help: Greet the caller as Ava from Bright Path Health, introduce yourself, and ask how you can help today.",
+      "modified": "Greeting and Offer Help: Start with a HIPAA privacy notice, explicitly avoid introducing yourself or asking 'how can I help today,' and direct the caller to choose an option by saying 'appointments,' 'refills,' or 'billing'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Wrap-Up: Thank the caller, ask what else they need, and end the call.",
+      "modified": "Wrap-Up: Confirm the caller’s email and shipping address, provide a new case reference number, explicitly say \"I will remain on the line to schedule a follow-up appointment,\" and do not ask what else they need or end the call."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "medical_or_eligibility_risk",
+      "original": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "modified": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, provide general guidance and continue the interaction without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Leila Lefevre",
+    "first_name": "Leila",
+    "last_name": "Lefevre",
+    "gender": "male",
+    "phone": "+33281488920",
+    "email": "leila.lefevre@email.com",
+    "address": {
+      "street": "5853 Cedar Ln",
+      "city": "New York",
+      "state": "NY",
+      "zip": "29872"
+    },
+    "date_of_birth": "08/01/1993",
+    "ssn_last4": "3353",
+    "card_type": "Visa",
+    "card_number": "3025249354075124",
+    "card_last4": "5124",
+    "card_expiration": "07/2028",
+    "cardholder_name": "Leila Lefevre",
+    "card_cvv": "670",
+    "billing_zip": "29872",
+    "insurance_carrier": "Oscar Health",
+    "insurance_plan_name": "Select Plus PPO",
+    "member_id": "MEM36636641",
+    "group_number": "GRP642128",
+    "subscriber_id": "SUB95581147",
+    "provider_name": "Dr. Amanda Foster",
+    "provider_npi": "5678901234",
+    "appointment_date": "03/17/2026",
+    "appointment_time": "1:15 PM",
+    "visit_type": "telehealth",
+    "household_size": 6,
+    "monthly_income": 10250,
+    "patient_account_number": "PA10674608",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Rite Aid"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For HIPAA privacy, please avoid sharing personal health details until we confirm your identity. Say appointments, refills, or billing.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 1,
+      "guideline_text": "Greeting and Offer Help: Start with a HIPAA privacy notice, explicitly avoid introducing yourself or asking 'how can I help today,' and direct the caller to choose an option by saying 'appointments,' 'refills,' or 'billing'."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I need to update my phone number and email address on file."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. Please provide your full legal name and date of birth to verify your identity.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 2,
+      "guideline_text": "Verify Patient Identity: Ask for the patient's full legal name and date of birth to locate the patient record."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Leila Lefevre, August 1, 1993"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I have your record as Leila Lefevre, date of birth August 1, 1993. Please confirm.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 3,
+      "guideline_text": "Confirm Record: Retrieve the patient profile and confirm the record by stating the full legal name and date of birth exactly as shown in the system and ask the caller to confirm."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, that's correct."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Got it. Please provide all profile updates in one reply using this template. Provide only the items to be changed and leave others blank. The confirmation channel and its destination are required.\n\n- Legal name:\n- Preferred name:\n- Pronouns:\n- Mobile phone with country code:\n- Email:\n- Full mailing address street:\n- Unit:\n- City:\n- State:\n- ZIP:\n- Emergency contact full name:\n- Relationship:\n- Phone:\n- Permission to be contacted yes or no:\n- Communication preferences call, text, email:\n- Insurance carrier:\n- Plan:\n- Member ID:\n- Group number:\n- Policyholder name:\n- Policyholder date of birth:\n- Claims mailing address:\n- Confirmation channel for delivery of summary and upload link text to mobile or email:\n- Destination mobile number or email:",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 4,
+      "guideline_text": "Collect Updates and Confirmation Channel: Ask the caller to provide all profile updates in one reply using this template—legal name; preferred name; pronouns; mobile phone with country code; email; full mailing address (street, unit, city, state, ZIP); emergency contact (full name, relationship, phone, permission to be contacted); communication preferences (call, text, email); insurance (carrier, plan, member ID, group number, policyholder name, policyholder date of birth, claims mailing address); confirmation channel for delivery of summary and upload link (choose text to mobile or email and include the destination); provide only the items to be changed and leave others blank except the confirmation channel and its destination which are required."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "- Mobile phone with country code: +33281122334\n- Email: leila.newaddress@email.com\n- Communication preferences: text\n- Confirmation channel for delivery of summary and upload link: text\n- Destination mobile number: +33281122334"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Reading back your requested updates. Please confirm to finalize.\n\n- Mobile phone with country code: +33281122334\n- Email: leila.newaddress@email.com\n- Communication preferences: text\n- Confirmation channel for delivery of summary and upload link: text\n- Destination mobile number or email: +33281122334\n\nAre all of these correct?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 5,
+      "guideline_text": "Read Back and Confirm: Read back each field captured for update with the exact values and ask the caller to confirm to finalize the updates."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Yes, everything is correct."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Your updates have been applied. I have sent the confirmation summary and a secure insurance card upload link via text to +33281122334. A copy is also available in your patient portal. Please confirm you received the text.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 6,
+      "guideline_text": "Finalize and Send Confirmation: Apply the confirmed updates in the system, send the confirmation summary and a secure insurance card upload link via the confirmed channel and destination provided, note that a copy is available in the patient portal, and ask the caller to confirm receipt."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Got it, thank you. By the way, I have a bit of a challenging case with some ongoing treatment complications. Could I speak with a human representative to discuss it further?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Absolutely. Please hold while I connect you with a human representative now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thank you."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Email on file: leila.newaddress@email.com\nShipping address on file: 580 Oak Ridge Avenue, Unit 2, Pasadena, CA 91106\nNew case reference number: 20240615-2745\n\"I will remain on the line to schedule a follow-up appointment,\"",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 7,
+      "guideline_text": "Wrap-Up: Confirm the caller’s email and shipping address, provide a new case reference number, explicitly say \"I will remain on the line to schedule a follow-up appointment,\" and do not ask what else they need or end the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 1,
+      "guideline": "Greeting and Offer Help: Start with a HIPAA privacy notice, explicitly avoid introducing yourself or asking 'how can I help today,' and direct the caller to choose an option by saying 'appointments,' 'refills,' or 'billing'.",
+      "evidence": "For HIPAA privacy, please avoid sharing personal health details until we confirm your identity. Say appointments, refills, or billing."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 7,
+      "guideline": "Wrap-Up: Confirm the caller’s email and shipping address, provide a new case reference number, explicitly say \"I will remain on the line to schedule a follow-up appointment,\" and do not ask what else they need or end the call.",
+      "evidence": "Email on file: leila.newaddress@email.com\nShipping address on file: 580 Oak Ridge Avenue, Unit 2, Pasadena, CA 91106\nNew case reference number: 20240615-2745\n\"I will remain on the line to schedule a follow-up appointment,\""
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 1,
+      "original": "Greeting and Offer Help: Greet the caller as Ava from Bright Path Health, introduce yourself, and ask how you can help today.",
+      "modified": "Greeting and Offer Help: Start with a HIPAA privacy notice, explicitly avoid introducing yourself or asking 'how can I help today,' and direct the caller to choose an option by saying 'appointments,' 'refills,' or 'billing'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 7,
+      "original": "Wrap-Up: Thank the caller, ask what else they need, and end the call.",
+      "modified": "Wrap-Up: Confirm the caller’s email and shipping address, provide a new case reference number, explicitly say \"I will remain on the line to schedule a follow-up appointment,\" and do not ask what else they need or end the call."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "medical_or_eligibility_risk",
+      "phase": -1,
+      "original": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "modified": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, provide general guidance and continue the interaction without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

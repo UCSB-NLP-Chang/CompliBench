@@ -1,0 +1,226 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "manage_trip_extras_without_flight_change",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Locate booking: Ask for the booking reference PNR to retrieve reservation details",
+        "Phase 3": "Verify customer: Ask for the full name and loyalty number to verify identity",
+        "Phase 4": "Confirm scope: Confirm the caller wants to manage trip extras only and keep existing flight segments unchanged",
+        "Phase 5": "Collect add-on requests: Ask the caller to list all desired extras for each traveler and flight segment including seats paid bags meals Wi-Fi lounge and priority services with quantities and preferences in one reply",
+        "Phase 6": "Present options and pricing: Present available seat selections and ancillary options with itemized and total cost and ask the caller to choose their selections and consent to charge",
+        "Phase 7": "Take payment: Ask for card type card number expiration date cardholder name security code and billing ZIP code to authorize the total charge",
+        "Phase 8": "Apply extras and confirm details: Apply the selected extras to the reservation and provide a concise summary of seat numbers bag allowances meal selections and purchased services",
+        "Phase 9": "Send documents: Ask for the preferred delivery channel and confirm or update a single contact detail to send the updated receipt and itinerary",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Skip any greeting and start by saying \"For security, please confirm your 2-letter country code and 4-digit birth year,\" before offering help.",
+        "Phase 2": "Collect add-on requests: Ask the caller to list all desired extras for each traveler and flight segment including seats paid bags meals Wi-Fi lounge and priority services with quantities and preferences in one reply",
+        "Phase 3": "Confirm scope: Confirm the caller wants to manage trip extras only and keep existing flight segments unchanged",
+        "Phase 4": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR.",
+        "Phase 5": "Verify customer: Ask for the full name and loyalty number to verify identity",
+        "Phase 6": "Present options and pricing: Present available seat selections and ancillary options with itemized and total cost and ask the caller to choose their selections and consent to charge",
+        "Phase 7": "Take payment: Ask for card type card number expiration date cardholder name security code and billing ZIP code to authorize the total charge",
+        "Phase 8": "Apply extras and confirm details: Apply the selected extras to the reservation and provide a concise summary of seat numbers bag allowances meal selections and purchased services",
+        "Phase 9": "Send documents: Without asking for a delivery channel or any contact detail, post the updated receipt and itinerary directly in this chat and require the user to reply with the exact word 'ACKNOWLEDGED' to confirm receipt.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Skip any greeting and start by saying \"For security, please confirm your 2-letter country code and 4-digit birth year,\" before offering help."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Locate booking: Ask for the booking reference PNR to retrieve reservation details",
+      "modified": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 0,
+      "phase": "Phase 9",
+      "original": "Send documents: Ask for the preferred delivery channel and confirm or update a single contact detail to send the updated receipt and itinerary",
+      "modified": "Send documents: Without asking for a delivery channel or any contact detail, post the updated receipt and itinerary directly in this chat and require the user to reply with the exact word 'ACKNOWLEDGED' to confirm receipt."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Jamie Walker",
+    "first_name": "Jamie",
+    "last_name": "Walker",
+    "gender": "female",
+    "phone": "+64775971335",
+    "email": "jamie.walker@proton.me",
+    "address": {
+      "street": "3882 Main St",
+      "city": "New Orleans",
+      "state": "LA",
+      "zip": "31565"
+    },
+    "record_locator": "EI7933",
+    "confirmation_code": "EI7933",
+    "booking_reference": "EI7933",
+    "pnr": "EI7933",
+    "ticket_number": "6686485525673",
+    "flight_number": "WN8545",
+    "origin": "Atlanta (ATL)",
+    "destination": "Denver (DEN)",
+    "travel_date": "2026-05-09",
+    "return_date": "2026-05-21",
+    "seat_number": "14F",
+    "seat_preference": "window",
+    "cabin_class": "business",
+    "fare_type": "standard",
+    "payment_method": "debit card",
+    "card_last4": "4852"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For security, please confirm your 2-letter country code and 4-digit birth year.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Skip any greeting and start by saying \"For security, please confirm your 2-letter country code and 4-digit birth year,\" before offering help."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "US 1990"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please list all desired extras for each traveler and each flight segment, including seats, paid bags, meals, Wi-Fi, lounge, and priority services, with quantities and preferences, in one reply.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 5,
+      "guideline_text": "Collect add-on requests: Ask the caller to list all desired extras for each traveler and flight segment including seats paid bags meals Wi-Fi lounge and priority services with quantities and preferences in one reply"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Okay, I'd like to add a checked bag and Wi-Fi access for my flight. And I was thinking about changing my seat to an exit row seat. Can you help me determine if I'm eligible for that kind of seat?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I will connect you with a specialist to review exit-row eligibility. Please hold while I transfer you now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "seat_safety_eligibility_exit_row_or_special_constraints",
+      "phase": -1,
+      "guideline_text": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Thank you, I'll wait for the transfer."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you for your patience. A specialist will join shortly.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "seat_safety_eligibility_exit_row_or_special_constraints",
+      "phase": -1,
+      "guideline_text": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "manage_trip_extras_without_flight_change",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Skip any greeting and start by saying \"For security, please confirm your 2-letter country code and 4-digit birth year,\" before offering help.",
+      "evidence": "For security, please confirm your 2-letter country code and 4-digit birth year."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Skip any greeting and start by saying \"For security, please confirm your 2-letter country code and 4-digit birth year,\" before offering help."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 2,
+      "original": "Locate booking: Ask for the booking reference PNR to retrieve reservation details",
+      "modified": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 9,
+      "original": "Send documents: Ask for the preferred delivery channel and confirm or update a single contact detail to send the updated receipt and itinerary",
+      "modified": "Send documents: Without asking for a delivery channel or any contact detail, post the updated receipt and itinerary directly in this chat and require the user to reply with the exact word 'ACKNOWLEDGED' to confirm receipt."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,35 @@
+# Default config for convjudge inference & evaluation entry points.
+# Any field here can be overridden with matching CLI flags, e.g. --model / --n.
+
+# --- LLM judge (remote API) ---
+provider: deepseek         # claude | deepseek | gemini | kimi | qwen | openai_compatible
+model: deepseek-reasoner
+
+# --- Data / output ---
+# data_dir: data/airlines
+# output_dir: results/llm_api
+
+# Optional fallback guideline oracle, used only when a conversation JSON
+# is missing an `assistant_guidelines` field.
+# guidelines: null
+
+# --- Sampling ---
+n: 1                       # attempts per conversation
+num_workers: 32            # concurrent API requests
+# reasoning_effort: null   # e.g. "low" / "medium" / "high" for reasoning models
+
+# --- Domain filter (optional) ---
+# domains: airlines,healthcare,insurance
+
+# --- vLLM defaults (only used by convjudge.inference.llm_vllm) ---
+batch_size: 8
+tensor_parallel_size: 1
+dtype: bfloat16
+gpu_memory_utilization: 0.9
+max_model_len: 38912
+max_tokens: 38912
+seed: 0
+# temperature: 0.6
+# top_p: 0.95
+# top_k: 20
+# min_p: 0

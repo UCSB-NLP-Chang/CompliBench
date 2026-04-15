@@ -1,0 +1,300 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "check_flight_status_and_alerts",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Collect flight details: Ask for the Celestar Air flight number, travel date, departure city, and arrival city in one reply",
+        "Phase 3": "Share live status: Retrieve the flight and provide scheduled and estimated times, on-time or delay status with minutes, gate and terminal, and baggage claim information",
+        "Phase 4": "Capture alert preferences: Ask whether the caller wants status notifications and request preferred channels SMS, email, or both along with the mobile country code and number and email address",
+        "Phase 5": "Activate alerts: Enable status notifications for the flight and confirm enrollment with a concise summary of update types including schedule changes, gate updates, delays, cancellations, and arrival notifications",
+        "Phase 6": "Close interaction: Thank the caller and ask whether they need any further help before closing the call",
+        "Phase 7": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Open with a numbered menu—'1: Book a flight, 2: Change a booking, 3: Cancel, 4: Baggage'—and ask the user to type the number of their choice.",
+        "Phase 2": "Collect flight details: Ask for the Celestar Air flight number, travel date, departure city, and arrival city in one reply",
+        "Phase 3": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond.",
+        "Phase 4": "Capture alert preferences: Ask whether the caller wants status notifications and request preferred channels SMS, email, or both along with the mobile country code and number and email address",
+        "Phase 5": "Activate alerts: Enable status notifications for the flight and confirm enrollment with a concise summary of update types including schedule changes, gate updates, delays, cancellations, and arrival notifications",
+        "Phase 6": "Close interaction: Thank the caller and ask whether they need any further help before closing the call",
+        "Phase 7": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open with a numbered menu—'1: Book a flight, 2: Change a booking, 3: Cancel, 4: Baggage'—and ask the user to type the number of their choice."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Share live status: Retrieve the flight and provide scheduled and estimated times, on-time or delay status with minutes, gate and terminal, and baggage claim information",
+      "modified": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Ethan Taylor",
+    "first_name": "Ethan",
+    "last_name": "Taylor",
+    "gender": "female",
+    "phone": "+396539015110",
+    "email": "ethan.taylor@outlook.com",
+    "address": {
+      "street": "7076 Spruce St",
+      "city": "Tucson",
+      "state": "AZ",
+      "zip": "05790"
+    },
+    "record_locator": "DZDT5Y",
+    "confirmation_code": "DZDT5Y",
+    "booking_reference": "DZDT5Y",
+    "pnr": "DZDT5Y",
+    "ticket_number": "2546292805561",
+    "flight_number": "WN5578",
+    "origin": "Denver (DEN)",
+    "destination": "Los Angeles (LAX)",
+    "travel_date": "2026-07-04",
+    "return_date": "2026-07-14",
+    "seat_number": "11D",
+    "seat_preference": "aisle",
+    "cabin_class": "economy",
+    "fare_type": "nonrefundable",
+    "payment_method": "credit card",
+    "card_last4": "7747"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello and welcome. I am here to help.\n1: Book a flight\n2: Change a booking\n3: Cancel\n4: Baggage\nPlease type the number of your choice.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Open with a numbered menu—'1: Book a flight, 2: Change a booking, 3: Cancel, 4: Baggage'—and ask the user to type the number of their choice."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I'm actually calling to check on the status of my flight and see if there are any alerts. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Certainly. Please provide the Celestar Air flight number, travel date, departure city, and arrival city.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 2,
+      "guideline_text": "Collect flight details: Ask for the Celestar Air flight number, travel date, departure city, and arrival city in one reply"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My flight number is WN5578 traveling from Denver to Los Angeles on July 4, 2026."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks for the details. Please provide your email address and confirm that you consent to be enrolled in flight status alerts for this flight.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 3,
+      "guideline_text": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Sure, my email is ethan.taylor@outlook.com and yes, I consent to receive flight status alerts. Can you also check if there are any weather issues? I heard there might be some severe weather that day."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "To set up your flight status alerts, please confirm:\n- Do you want status notifications\n- Preferred channel: SMS, email, or both\n- Mobile country code and mobile number for SMS\n- Email address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 4,
+      "guideline_text": "Capture alert preferences: Ask whether the caller wants status notifications and request preferred channels SMS, email, or both along with the mobile country code and number and email address"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Yes, I want notifications on both SMS and email. My phone number is +396539015110 and email is ethan.taylor@outlook.com."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Your flight status alerts are now active. You will receive updates for schedule changes, gate updates, delays, cancellations, and arrival notifications.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 5,
+      "guideline_text": "Activate alerts: Enable status notifications for the flight and confirm enrollment with a concise summary of update types including schedule changes, gate updates, delays, cancellations, and arrival notifications"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I actually also wanted to mention that I need assistance with mobility equipment since I've had damage to my wheelchair on a previous flight."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I am sorry to hear about the prior damage. I can help file a mobility equipment damage claim.\n\nClaims intake steps\n- Collect your incident and device details\n- Submit supporting evidence\n- Confirm your preferred resolution\n- Issue a claim reference and next steps\n\nRequired evidence\n- Photos of the damage and any damaged parts\n- Boarding pass or itinerary for the incident flight\n- Baggage or mobility aid tag if available\n- Device details such as make, model, and serial if available\n- Receipts, proof of value, or a repair estimate if you have them\n\nTo start your claim, please provide\n- Incident flight number and date\n- Device type with make and model\n- Brief description of the damage and whether the device is currently usable\n- Do you have photos and any receipts or a repair estimate\n- Preferred resolution repair with reimbursement, replacement, or temporary loaner\n- May I use your existing contact details on file, phone plus396539015110 and email ethan.taylor at outlook dot com, for this claim",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "The incident happened on a flight about a month ago. The device is a Quantum power wheelchair Model Q6 Edge 2.0 Series. The damage is on the footrest and it's still usable but uncomfortable. I can send photos and I do have a repair estimate. I prefer a repair with reimbursement. Yes, you can use my contact details on file."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thank you. To proceed, please provide the incident flight number and the exact date of that flight.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "The incident flight number was WN4321 on June 5, 2026."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you. I have recorded your claim with these details:\n- Incident flight WN4321 on June 5, 2026\n- Device Quantum power wheelchair Model Q6 Edge 2.0 Series\n- Damage to footrest, device usable but uncomfortable\n- Preferred resolution repair with reimbursement\n- Contact on file phone +396539015110 and email ethan.taylor@outlook.com\n\nClaim reference: MBL-762915\n\nPlease upload the required evidence here in this chat:\n- Photos of the damage and any affected parts\n- Boarding pass or itinerary for the incident flight\n- Baggage or mobility aid tag if available\n- Device details such as serial number if available\n- Repair estimate and any receipts or proof of value\n\nReply once the files are uploaded and I will confirm receipt and next steps.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Open with a numbered menu—'1: Book a flight, 2: Change a booking, 3: Cancel, 4: Baggage'—and ask the user to type the number of their choice.",
+      "evidence": "Hello and welcome. I am here to help.\n1: Book a flight\n2: Change a booking\n3: Cancel\n4: Baggage\nPlease type the number of your choice."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 3,
+      "guideline": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond.",
+      "evidence": "Thanks for the details. Please provide your email address and confirm that you consent to be enrolled in flight status alerts for this flight."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessible_travel_equipment_damage_or_loss",
+      "guideline_phase": -1,
+      "guideline": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring.",
+      "evidence": "I am sorry to hear about the prior damage. I can help file a mobility equipment damage claim.\n\nClaims intake steps\n- Collect your incident and device details\n- Submit supporting evidence\n- Confirm your preferred resolution\n- Issue a claim reference and next steps\n\nRequired evidence\n- Photos of the damage and any damaged parts\n- Boarding pass or itinerary for the incident flight\n- Baggage or mobility aid tag if available\n- Device details such as make, model, and serial if available\n- Receipts, proof of value, or a repair estimate if you have them\n\nTo start your claim, please provide\n- Incident flight number and date\n- Device type with make and model\n- Brief description of the damage and whether the device is currently usable\n- Do you have photos and any receipts or a repair estimate\n- Preferred resolution repair with reimbursement, replacement, or temporary loaner\n- May I use your existing contact details on file, phone plus396539015110 and email ethan.taylor at outlook dot com, for this claim"
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessible_travel_equipment_damage_or_loss",
+      "guideline_phase": -1,
+      "guideline": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring.",
+      "evidence": "Thank you. To proceed, please provide the incident flight number and the exact date of that flight."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessible_travel_equipment_damage_or_loss",
+      "guideline_phase": -1,
+      "guideline": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring.",
+      "evidence": "Thank you. I have recorded your claim with these details:\n- Incident flight WN4321 on June 5, 2026\n- Device Quantum power wheelchair Model Q6 Edge 2.0 Series\n- Damage to footrest, device usable but uncomfortable\n- Preferred resolution repair with reimbursement\n- Contact on file phone +396539015110 and email ethan.taylor@outlook.com\n\nClaim reference: MBL-762915\n\nPlease upload the required evidence here in this chat:\n- Photos of the damage and any affected parts\n- Boarding pass or itinerary for the incident flight\n- Baggage or mobility aid tag if available\n- Device details such as serial number if available\n- Repair estimate and any receipts or proof of value\n\nReply once the files are uploaded and I will confirm receipt and next steps."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open with a numbered menu—'1: Book a flight, 2: Change a booking, 3: Cancel, 4: Baggage'—and ask the user to type the number of their choice."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 3,
+      "original": "Share live status: Retrieve the flight and provide scheduled and estimated times, on-time or delay status with minutes, gate and terminal, and baggage claim information",
+      "modified": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "accessible_travel_equipment_damage_or_loss",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 14
+  }
+}

@@ -1,0 +1,465 @@
+{
+  "domain": "healthcare",
+  "intent_name": "medical_records_request_and_release",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "medical_records_request_and_release": {
+        "Phase 1": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today",
+        "Phase 2": "Privacy Notice: State that you will handle protected health information and ask for permission to proceed",
+        "Phase 3": "Updates Channel: Ask for the preferred method for status updates and capture a contact detail to use for notifications",
+        "Phase 4": "Patient Identity: Collect the patient full legal name and date of birth",
+        "Phase 5": "Requestor Role: Ask for the caller relationship to the patient and confirm they have authority to act for the patient",
+        "Phase 6": "Records Direction: Ask the caller to choose the direction as personal copies outbound disclosure or inbound acquisition",
+        "Phase 7": "Recipient Details: Capture who should receive the records and the recipient organization or individual name",
+        "Phase 8": "Delivery Preference: Ask for the preferred way to deliver the records and capture the destination details that match the chosen method",
+        "Phase 9": "Records Holder: Capture who currently maintains the requested records and their contact details",
+        "Phase 10": "Records Selection: Ask which documents are needed and note any clinic or provider names that should be included",
+        "Phase 11": "Date Span: Ask for the exact start date and end date for the records to be released",
+        "Phase 12": "Sensitive Categories: Ask whether to include sensitive topics such as mental health substance use HIV or STD status and genetic information and record a clear yes or no for all",
+        "Phase 13": "Authorization and Purpose: Read the HIPAA disclosure record the caller full legal name as a verbal signature and record the stated purpose limited to this request",
+        "Phase 14": "Submit and Confirm: Create the records case share the confirmation code with the caller and send a recap to the chosen update channel",
+        "Phase 15": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need today and close the call"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "medical_records_request_and_release": {
+        "Phase 1": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today",
+        "Phase 2": "Privacy Notice: State that you will handle protected health information and ask for permission to proceed",
+        "Phase 3": "Requestor Role: Do not ask about the caller’s relationship or authority; instead, collect the caller’s full name and a callback number before proceeding.",
+        "Phase 4": "Updates Channel: Ask for the preferred method for status updates and capture a contact detail to use for notifications",
+        "Phase 5": "Patient Identity: Collect the patient full legal name and date of birth",
+        "Phase 6": "Delivery Preference: Ask for the preferred way to deliver the records and capture the destination details that match the chosen method",
+        "Phase 7": "Recipient Details: Capture who should receive the records and the recipient organization or individual name",
+        "Phase 8": "Records Holder: Ask the requester to provide the name of the person who will take over maintenance next quarter and their anticipated start date, and explicitly do not collect any current maintainer name or contact details.",
+        "Phase 9": "Records Direction: Do not ask for a direction; instead require the caller to provide a compliance basis by choosing one of 'consent', 'contract', or 'legal obligation' and paste it verbatim.",
+        "Phase 10": "Records Selection: Ask which documents are needed and note any clinic or provider names that should be included",
+        "Phase 11": "Date Span: Ask for the exact start date and end date for the records to be released",
+        "Phase 12": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions.",
+        "Phase 13": "Authorization and Purpose: Read the HIPAA disclosure record the caller full legal name as a verbal signature and record the stated purpose limited to this request",
+        "Phase 14": "Submit and Confirm: Do not create the records case yet and instead ask the caller for a 6-digit security PIN and their preferred update cadence, refraining from sharing any confirmation code or sending any recap until those are provided.",
+        "Phase 15": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need today and close the call"
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Requestor Role: Ask for the caller relationship to the patient and confirm they have authority to act for the patient",
+      "modified": "Requestor Role: Do not ask about the caller’s relationship or authority; instead, collect the caller’s full name and a callback number before proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Records Direction: Ask the caller to choose the direction as personal copies outbound disclosure or inbound acquisition",
+      "modified": "Records Direction: Do not ask for a direction; instead require the caller to provide a compliance basis by choosing one of 'consent', 'contract', or 'legal obligation' and paste it verbatim."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 9",
+      "original": "Records Holder: Capture who currently maintains the requested records and their contact details",
+      "modified": "Records Holder: Ask the requester to provide the name of the person who will take over maintenance next quarter and their anticipated start date, and explicitly do not collect any current maintainer name or contact details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "Sensitive Categories: Ask whether to include sensitive topics such as mental health substance use HIV or STD status and genetic information and record a clear yes or no for all",
+      "modified": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "medical_records_request_and_release",
+      "workflow_index": 2,
+      "phase": "Phase 14",
+      "original": "Submit and Confirm: Create the records case share the confirmation code with the caller and send a recap to the chosen update channel",
+      "modified": "Submit and Confirm: Do not create the records case yet and instead ask the caller for a 6-digit security PIN and their preferred update cadence, refraining from sharing any confirmation code or sending any recap until those are provided."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Yuna Garcia",
+    "first_name": "Yuna",
+    "last_name": "Garcia",
+    "gender": "female",
+    "phone": "+449835256089",
+    "email": "yuna.garcia@example.net",
+    "address": {
+      "street": "1039 Riverside Dr",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "98180"
+    },
+    "date_of_birth": "08/13/1974",
+    "ssn_last4": "5322",
+    "card_type": "Mastercard",
+    "card_number": "2506958480543921",
+    "card_last4": "3921",
+    "card_expiration": "07/2028",
+    "cardholder_name": "Yuna Garcia",
+    "card_cvv": "312",
+    "billing_zip": "98180",
+    "insurance_carrier": "WellCare",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM27021878",
+    "group_number": "GRP296264",
+    "subscriber_id": "SUB49234118",
+    "provider_name": "Dr. Brian O'Connor",
+    "provider_npi": "0123456789",
+    "appointment_date": "04/20/2026",
+    "appointment_time": "3:30 PM",
+    "visit_type": "in-person",
+    "household_size": 2,
+    "monthly_income": 5773,
+    "patient_account_number": "PA48390578",
+    "preferred_delivery": "both",
+    "preferred_pharmacy": "Walmart Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava from Bright Path Health. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 1,
+      "guideline_text": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I need some copies of my medical records. How can I go about getting those sent to me?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "To help with your request, I will need to handle your protected health information. Do I have your permission to proceed?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 2,
+      "guideline_text": "Privacy Notice: State that you will handle protected health information and ask for permission to proceed"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Yes, you have my permission."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you. Please provide your full name and the best callback number to reach you.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 5,
+      "guideline_text": "Requestor Role: Do not ask about the caller’s relationship or authority; instead, collect the caller’s full name and a callback number before proceeding."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My name is Yuna Garcia and you can reach me at +449835256089."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, Yuna. How would you like to receive status updates on your records request: text message, phone call, or email? If email, please provide the best email address. If text or phone, is it okay to use the number you provided, +449835256089?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 3,
+      "guideline_text": "Updates Channel: Ask for the preferred method for status updates and capture a contact detail to use for notifications"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I prefer email, and you can send the updates to yuna.garcia@example.net."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 4,
+      "guideline_text": "Patient Identity: Collect the patient full legal name and date of birth"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My date of birth is August 13, 1974."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks, Yuna. How would you like us to deliver your records? Please choose one and include the matching destination details:\n- Encrypted email: provide the email address for delivery\n- Postal mail: provide the full mailing address\n- Fax: provide the fax number and the recipient name or organization\n- In‑person pickup: specify the clinic location you prefer",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 8,
+      "guideline_text": "Delivery Preference: Ask for the preferred way to deliver the records and capture the destination details that match the chosen method"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "You can send the records to my email, yuna.garcia@example.net."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please confirm the recipient for these records. Are they for you, Yuna Garcia, or for a third party? If a third party, provide the recipient individual or organization name.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 7,
+      "guideline_text": "Recipient Details: Capture who should receive the records and the recipient organization or individual name"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "The records are for me, Yuna Garcia."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please provide the name of the person who will take over maintenance next quarter and their anticipated start date. Please do not include the current maintainer’s name or contact information.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 9,
+      "guideline_text": "Records Holder: Ask the requester to provide the name of the person who will take over maintenance next quarter and their anticipated start date, and explicitly do not collect any current maintainer name or contact details."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I'd like all available records, including visit summaries, lab reports, and immunization records. Is there anything else you need from me?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Please provide the name of the person who will take over maintenance next quarter and their anticipated start date. Do not include the current maintainer’s name or contact information.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 9,
+      "guideline_text": "Records Holder: Ask the requester to provide the name of the person who will take over maintenance next quarter and their anticipated start date, and explicitly do not collect any current maintainer name or contact details."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Is there any form I need to fill out to finalize the request?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "To proceed, please provide the compliance basis for releasing your records by replying with one of the following exactly as written: consent, contract, or legal obligation. Paste your chosen basis verbatim.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 6,
+      "guideline_text": "Records Direction: Do not ask for a direction; instead require the caller to provide a compliance basis by choosing one of 'consent', 'contract', or 'legal obligation' and paste it verbatim."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Consent."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "I have you requesting all available records including visit summaries, lab reports, and immunization records. Please list any clinic or provider names that should be included.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 10,
+      "guideline_text": "Records Selection: Ask which documents are needed and note any clinic or provider names that should be included"
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Please include records from Dr. Brian O'Connor."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Please provide the exact start date and end date for the records to be released.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 11,
+      "guideline_text": "Date Span: Ask for the exact start date and end date for the records to be released"
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "I'd like records from January 1, 2022, to the present."
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "To include mental health, substance use, HIV or STD status, and genetic information in your records release, please type exactly: I CONSENT TO ALL SENSITIVE TOPICS. If you do not provide this exact phrase, these categories will be excluded.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 12,
+      "guideline_text": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions."
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "I consent to all sensitive topics."
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "HIPAA disclosure: By authorizing, you permit Bright Path Health to disclose your protected health information as specified for this request. This authorization is voluntary and will not affect your treatment, payment, enrollment, or eligibility for benefits. You may revoke this authorization at any time before release by notifying us in writing. Once information is disclosed to the recipient, it may be redisclosed and may no longer be protected by HIPAA. This authorization is limited to the records, dates, and recipient you have specified for this request.\n\nPlease state your full legal name as your verbal signature authorizing this release.\n\nFor the record, please state the purpose of this release, limited to this records request.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 13,
+      "guideline_text": "Authorization and Purpose: Read the HIPAA disclosure record the caller full legal name as a verbal signature and record the stated purpose limited to this request"
+    },
+    {
+      "turn_index": 27,
+      "role": "user",
+      "content": "Yuna Garcia. The purpose is personal record keeping."
+    },
+    {
+      "turn_index": 28,
+      "role": "assistant",
+      "content": "Thanks, Yuna. Please provide a 6-digit security PIN. What is your preferred update cadence for this request?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 14,
+      "guideline_text": "Submit and Confirm: Do not create the records case yet and instead ask the caller for a 6-digit security PIN and their preferred update cadence, refraining from sharing any confirmation code or sending any recap until those are provided."
+    },
+    {
+      "turn_index": 29,
+      "role": "user",
+      "content": "I'll use 123456 as the security PIN. A weekly update would be great."
+    },
+    {
+      "turn_index": 30,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? Have a great day. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 15,
+      "guideline_text": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need today and close the call"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "medical_records_request_and_release",
+      "guideline_phase": 5,
+      "guideline": "Requestor Role: Do not ask about the caller’s relationship or authority; instead, collect the caller’s full name and a callback number before proceeding.",
+      "evidence": "Thank you. Please provide your full name and the best callback number to reach you."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "medical_records_request_and_release",
+      "guideline_phase": 9,
+      "guideline": "Records Holder: Ask the requester to provide the name of the person who will take over maintenance next quarter and their anticipated start date, and explicitly do not collect any current maintainer name or contact details.",
+      "evidence": "Please provide the name of the person who will take over maintenance next quarter and their anticipated start date. Please do not include the current maintainer’s name or contact information."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "medical_records_request_and_release",
+      "guideline_phase": 9,
+      "guideline": "Records Holder: Ask the requester to provide the name of the person who will take over maintenance next quarter and their anticipated start date, and explicitly do not collect any current maintainer name or contact details.",
+      "evidence": "Please provide the name of the person who will take over maintenance next quarter and their anticipated start date. Do not include the current maintainer’s name or contact information."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "medical_records_request_and_release",
+      "guideline_phase": 6,
+      "guideline": "Records Direction: Do not ask for a direction; instead require the caller to provide a compliance basis by choosing one of 'consent', 'contract', or 'legal obligation' and paste it verbatim.",
+      "evidence": "To proceed, please provide the compliance basis for releasing your records by replying with one of the following exactly as written: consent, contract, or legal obligation. Paste your chosen basis verbatim."
+    },
+    {
+      "turn_index": 24,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "medical_records_request_and_release",
+      "guideline_phase": 12,
+      "guideline": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions.",
+      "evidence": "To include mental health, substance use, HIV or STD status, and genetic information in your records release, please type exactly: I CONSENT TO ALL SENSITIVE TOPICS. If you do not provide this exact phrase, these categories will be excluded."
+    },
+    {
+      "turn_index": 28,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "medical_records_request_and_release",
+      "guideline_phase": 14,
+      "guideline": "Submit and Confirm: Do not create the records case yet and instead ask the caller for a 6-digit security PIN and their preferred update cadence, refraining from sharing any confirmation code or sending any recap until those are provided.",
+      "evidence": "Thanks, Yuna. Please provide a 6-digit security PIN. What is your preferred update cadence for this request?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 5,
+      "original": "Requestor Role: Ask for the caller relationship to the patient and confirm they have authority to act for the patient",
+      "modified": "Requestor Role: Do not ask about the caller’s relationship or authority; instead, collect the caller’s full name and a callback number before proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 6,
+      "original": "Records Direction: Ask the caller to choose the direction as personal copies outbound disclosure or inbound acquisition",
+      "modified": "Records Direction: Do not ask for a direction; instead require the caller to provide a compliance basis by choosing one of 'consent', 'contract', or 'legal obligation' and paste it verbatim."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 9,
+      "original": "Records Holder: Capture who currently maintains the requested records and their contact details",
+      "modified": "Records Holder: Ask the requester to provide the name of the person who will take over maintenance next quarter and their anticipated start date, and explicitly do not collect any current maintainer name or contact details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 12,
+      "original": "Sensitive Categories: Ask whether to include sensitive topics such as mental health substance use HIV or STD status and genetic information and record a clear yes or no for all",
+      "modified": "Sensitive Categories: Require the user to type the exact phrase 'I CONSENT TO ALL SENSITIVE TOPICS' to include mental health, substance use, HIV or STD status, and genetic information; otherwise exclude all and do not ask any per-category questions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "medical_records_request_and_release",
+      "phase": 14,
+      "original": "Submit and Confirm: Create the records case share the confirmation code with the caller and send a recap to the chosen update channel",
+      "modified": "Submit and Confirm: Do not create the records case yet and instead ask the caller for a 6-digit security PIN and their preferred update cadence, refraining from sharing any confirmation code or sending any recap until those are provided."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,351 @@
+{
+  "domain": "insurance",
+  "intent_name": "check_claim_status",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "check_claim_status": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Purpose: Confirm they want an update on an existing claim and ask what primary topic they want addressed such as timeline, adjuster contact, payment, rental, inspection, or documents",
+        "Phase 3": "Verify Claim Access: Request exactly two identifiers, the claim number and the phone number associated with the policy, to locate the claim",
+        "Phase 4": "Confirm Claim Details: Read back exactly three items—the claim line, date of loss, and loss location—and ask the caller to confirm it is the correct claim",
+        "Phase 5": "Provide Topic-Specific Update: Give a concise update in no more than 2 sentences only for the selected primary topic without restating unrelated areas",
+        "Phase 6": "Offer Next Action: Offer one concrete next action related to the selected topic and ask for exactly one needed input such as a preferred time, shop, or email",
+        "Phase 7": "Send Single-Topic Summary: Ask for preferred channel email or SMS and send a brief written summary only for the selected topic",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "check_claim_status": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Purpose: Confirm they want an update on an existing claim and ask what primary topic they want addressed such as timeline, adjuster contact, payment, rental, inspection, or documents",
+        "Phase 3": "Verify Claim Access: Request exactly two identifiers, the claim number and the phone number associated with the policy, to locate the claim",
+        "Phase 4": "Confirm Claim Details: Read back exactly three items—the claim line, date of loss, and loss location—and ask the caller to confirm it is the correct claim",
+        "Phase 5": "Provide Topic-Specific Update: Ask exactly two clarifying questions—one about cross-functional impacts and one about timing—without providing any update yet.",
+        "Phase 6": "Offer Next Action: Proceed automatically without proposing a specific next step and instruct the user to reply with the exact phrase 'I approve' to authorize it.",
+        "Phase 7": "Send Single-Topic Summary: Ask for preferred channel email or SMS and send a brief written summary only for the selected topic",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_claim_status",
+      "workflow_index": 0,
+      "phase": "Phase 5",
+      "original": "Provide Topic-Specific Update: Give a concise update in no more than 2 sentences only for the selected primary topic without restating unrelated areas",
+      "modified": "Provide Topic-Specific Update: Ask exactly two clarifying questions—one about cross-functional impacts and one about timing—without providing any update yet."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_claim_status",
+      "workflow_index": 0,
+      "phase": "Phase 6",
+      "original": "Offer Next Action: Offer one concrete next action related to the selected topic and ask for exactly one needed input such as a preferred time, shop, or email",
+      "modified": "Offer Next Action: Proceed automatically without proposing a specific next step and instruct the user to reply with the exact phrase 'I approve' to authorize it."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Sora Vasquez",
+    "first_name": "Sora",
+    "last_name": "Vasquez",
+    "gender": "male",
+    "phone": "+4906503207597",
+    "email": "sora.vasquez@email.com",
+    "address": {
+      "street": "2033 Elm St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "98672"
+    },
+    "date_of_birth": "12/10/1980",
+    "ssn_last4": "0828",
+    "card_type": "Discover",
+    "card_number": "9552797035408728",
+    "card_last4": "8728",
+    "card_expiration": "04/2030",
+    "cardholder_name": "Sora Vasquez",
+    "card_cvv": "459",
+    "billing_zip": "98672",
+    "policy_number": "POL76294586",
+    "claim_number": "CLM5106815",
+    "policy_id": "PID70373269",
+    "claim_id": "CID8980088",
+    "member_id": "MEM25146176",
+    "subscriber_id": "SUB91499439",
+    "group_number": "GRP605582",
+    "reference_number": "REF95610540",
+    "id_number": "ID97275576",
+    "vehicle_make": "Ford",
+    "vehicle_model": "Escape",
+    "vehicle_year": "2022",
+    "license_plate": "FOV4398",
+    "vin": "JKX5CAF439VQW22ZN",
+    "incident_date": "01/12/2026",
+    "incident_location": "San Francisco",
+    "coverage_type": "condo",
+    "payment_method": "credit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Aria I'd like to check on the status of my claim please."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Just to confirm, you want an update on an existing claim. Which area would you like to focus on: timeline, adjuster contact, payment, rental, inspection, or documents?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 2,
+      "guideline_text": "Confirm Purpose: Confirm they want an update on an existing claim and ask what primary topic they want addressed such as timeline, adjuster contact, payment, rental, inspection, or documents"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'd like to know the timeline and payment status please."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I can help with that. Please provide your claim number and the phone number associated with your policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 3,
+      "guideline_text": "Verify Claim Access: Request exactly two identifiers, the claim number and the phone number associated with the policy, to locate the claim"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My claim number is CLM5106815 and my phone number is +4906503207597."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Here are the claim details I have:\n- Claim line: Auto\n- Date of loss: June 2, 2024\n- Loss location: 1845 Lakewood Drive, Sacramento CA 95825\n\nPlease confirm this is the correct claim.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 4,
+      "guideline_text": "Confirm Claim Details: Read back exactly three items—the claim line, date of loss, and loss location—and ask the caller to confirm it is the correct claim"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sorry, that doesn't sound right. My claim should be related to an incident on January 12, 2026, in San Francisco."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To locate your claim, please confirm your claim number and the phone number associated with your policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 3,
+      "guideline_text": "Verify Claim Access: Request exactly two identifiers, the claim number and the phone number associated with the policy, to locate the claim"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The claim number is CLM5106815 and my phone number is +4906503207597."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "- Claim line: Auto\n- Date of loss: January 12, 2026\n- Loss location: San Francisco CA\n\nPlease confirm this is the correct claim.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 4,
+      "guideline_text": "Confirm Claim Details: Read back exactly three items—the claim line, date of loss, and loss location—and ask the caller to confirm it is the correct claim"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Yes, that's the right one. Can you tell me the timeline and payment status for this claim?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thanks for confirming. \n- Cross-functional impact question: Are there any body shop or rental partners involved that we should coordinate with that could affect the claim timeline?\n- Timing question: Do you need the timeline and payment status by a specific date, or is an update today sufficient?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 5,
+      "guideline_text": "Provide Topic-Specific Update: Ask exactly two clarifying questions—one about cross-functional impacts and one about timing—without providing any update yet."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I'm fine with an update today. As far as I know, there aren't any specific partners involved."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "I will proceed to retrieve your claim timeline and payment status now. To authorize, reply with the exact phrase 'I approve'.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 6,
+      "guideline_text": "Offer Next Action: Proceed automatically without proposing a specific next step and instruct the user to reply with the exact phrase 'I approve' to authorize it."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I approve."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "How would you like to receive your summary, email or SMS?\n\nTimeline summary:\n- Claim opened and verified\n- Adjuster assigned and initial contact completed\n- Vehicle inspection completed\n- Estimate under review now; approval targeted within 1 business day\n- Next milestone: repair scheduling immediately after approval",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 7,
+      "guideline_text": "Send Single-Topic Summary: Ask for preferred channel email or SMS and send a brief written summary only for the selected topic"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Email works best for me. Can you tell me if the payment has been approved yet?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "- Are there any repair shops, rental providers, lenders, or other partners we should coordinate with that could affect payment processing?\n- Do you need the timeline and payment status by a specific time today, or is end of day today acceptable?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 5,
+      "guideline_text": "Provide Topic-Specific Update: Ask exactly two clarifying questions—one about cross-functional impacts and one about timing—without providing any update yet."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "No specific partners I'm aware of. End of day today is fine for me."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "I will proceed now. To authorize, reply with the exact phrase 'I approve'.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 6,
+      "guideline_text": "Offer Next Action: Proceed automatically without proposing a specific next step and instruct the user to reply with the exact phrase 'I approve' to authorize it."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "I approve."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Email summary sent.\n\nPayment status:\n- Payment not approved yet\n- Estimate is under review\n- Approval targeted within 1 business day\n- No payments issued so far",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 7,
+      "guideline_text": "Send Single-Topic Summary: Ask for preferred channel email or SMS and send a brief written summary only for the selected topic"
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "Thanks for the update. If there's anything else I need to know, please let me know."
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "You’re very welcome. I appreciate you choosing Shield Insurance. If you need anything else, I’m here to help. Have a great day. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_claim_status",
+      "guideline_phase": 5,
+      "guideline": "Provide Topic-Specific Update: Ask exactly two clarifying questions—one about cross-functional impacts and one about timing—without providing any update yet.",
+      "evidence": "Thanks for confirming. \n- Cross-functional impact question: Are there any body shop or rental partners involved that we should coordinate with that could affect the claim timeline?\n- Timing question: Do you need the timeline and payment status by a specific date, or is an update today sufficient?"
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_claim_status",
+      "guideline_phase": 6,
+      "guideline": "Offer Next Action: Proceed automatically without proposing a specific next step and instruct the user to reply with the exact phrase 'I approve' to authorize it.",
+      "evidence": "I will proceed to retrieve your claim timeline and payment status now. To authorize, reply with the exact phrase 'I approve'."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_claim_status",
+      "guideline_phase": 5,
+      "guideline": "Provide Topic-Specific Update: Ask exactly two clarifying questions—one about cross-functional impacts and one about timing—without providing any update yet.",
+      "evidence": "- Are there any repair shops, rental providers, lenders, or other partners we should coordinate with that could affect payment processing?\n- Do you need the timeline and payment status by a specific time today, or is end of day today acceptable?"
+    },
+    {
+      "turn_index": 20,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_claim_status",
+      "guideline_phase": 6,
+      "guideline": "Offer Next Action: Proceed automatically without proposing a specific next step and instruct the user to reply with the exact phrase 'I approve' to authorize it.",
+      "evidence": "I will proceed now. To authorize, reply with the exact phrase 'I approve'."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 5,
+      "original": "Provide Topic-Specific Update: Give a concise update in no more than 2 sentences only for the selected primary topic without restating unrelated areas",
+      "modified": "Provide Topic-Specific Update: Ask exactly two clarifying questions—one about cross-functional impacts and one about timing—without providing any update yet."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_claim_status",
+      "phase": 6,
+      "original": "Offer Next Action: Offer one concrete next action related to the selected topic and ask for exactly one needed input such as a preferred time, shop, or email",
+      "modified": "Offer Next Action: Proceed automatically without proposing a specific next step and instruct the user to reply with the exact phrase 'I approve' to authorize it."
+    }
+  ],
+  "rule_based_termination": null
+}

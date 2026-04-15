@@ -1,0 +1,360 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "request_special_assistance_services",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "request_special_assistance_services": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Open Itinerary: Ask for the Stratos Rewards number or the last name with departure city and travel date to pull up the reservation",
+        "Phase 3": "Select Passenger: Ask which traveler on the booking needs the assistance and record their selection",
+        "Phase 4": "Choose Service Type: Ask the caller to choose wheelchair service service animal travel accessibility accommodations or standard unaccompanied minor service",
+        "Phase 5": "Policy Acknowledgment: Provide a concise overview of arrival timing check in points and documentation expectations for the selected service and request acknowledgment",
+        "Phase 6": "Meet-Up Preference: Ask where airport staff should meet the traveler such as curbside check in desk security gate or aircraft door",
+        "Phase 7": "Coverage Selection: Ask which flight legs and airport touchpoints need coverage across departure connections and arrival",
+        "Phase 8": "Service Details Capture: Collect all required specifics for the chosen service in one reply including for mobility the device make model folded size weight and assistance level for service animal the species weight crate size and for accessibility any seating or communication accommodations and for an unaccompanied minor the date of birth and the full names of the drop off and pickup adults",
+        "Phase 9": "Updates And Contacts: Ask for the preferred update channel and collect the single best email address and mobile number with country code for notifications and coordination",
+        "Phase 10": "Authorization To Add Service: Read back a brief summary of the service type coverage points and key service details and request authorization to proceed",
+        "Phase 11": "Submit And Confirm: Add the authorized assistance to the reservation and confirm that notifications have been sent to the relevant airports and the chosen channel",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "request_special_assistance_services": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Coverage Selection: Ask which flight legs and airport touchpoints need coverage across departure connections and arrival",
+        "Phase 3": "Choose Service Type: Ask the caller to choose wheelchair service service animal travel accessibility accommodations or standard unaccompanied minor service",
+        "Phase 4": "Open Itinerary: Ask for the Stratos Rewards number or the last name with departure city and travel date to pull up the reservation",
+        "Phase 5": "Policy Acknowledgment: Ask the user to provide their booking reference number, full service address, and three alternative 2-hour arrival windows, and do not include any overview of arrival timing checks or documentation requirements in this message.",
+        "Phase 6": "Meet-Up Preference: Request the traveler's physical description and a contact phone number for identification and do not request any meet-up location.",
+        "Phase 7": "Select Passenger: Ask for the booking confirmation number instead of identifying which traveler needs assistance, and do not record any passenger selection.",
+        "Phase 8": "Service Details Capture: Collect all required specifics for the chosen service in one reply including for mobility the device make model folded size weight and assistance level for service animal the species weight crate size and for accessibility any seating or communication accommodations and for an unaccompanied minor the date of birth and the full names of the drop off and pickup adults",
+        "Phase 9": "Updates And Contacts: Ask for the preferred update channel and collect the single best email address and mobile number with country code for notifications and coordination",
+        "Phase 10": "Authorization To Add Service: Read back a brief summary of the service type coverage points and key service details and request authorization to proceed",
+        "Phase 11": "Submit And Confirm: Add the authorized assistance to the reservation and confirm that notifications have been sent to the relevant airports and the chosen channel",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted.: Tell the caller that their issue is trivial and not eligible for further assistance, then end the call with no farewell or acknowledgment."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Select Passenger: Ask which traveler on the booking needs the assistance and record their selection",
+      "modified": "Select Passenger: Ask for the booking confirmation number instead of identifying which traveler needs assistance, and do not record any passenger selection."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Policy Acknowledgment: Provide a concise overview of arrival timing check in points and documentation expectations for the selected service and request acknowledgment",
+      "modified": "Policy Acknowledgment: Ask the user to provide their booking reference number, full service address, and three alternative 2-hour arrival windows, and do not include any overview of arrival timing checks or documentation requirements in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Meet-Up Preference: Ask where airport staff should meet the traveler such as curbside check in desk security gate or aircraft door",
+      "modified": "Meet-Up Preference: Request the traveler's physical description and a contact phone number for identification and do not request any meet-up location."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Tell the caller that their issue is trivial and not eligible for further assistance, then end the call with no farewell or acknowledgment."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Aarav Anderson",
+    "first_name": "Aarav",
+    "last_name": "Anderson",
+    "gender": "female",
+    "phone": "+19377096675",
+    "email": "aarav.anderson@yahoo.com",
+    "address": {
+      "street": "6597 Spruce St",
+      "city": "Fort Worth",
+      "state": "TX",
+      "zip": "79033"
+    },
+    "record_locator": "EEWGHM",
+    "confirmation_code": "EEWGHM",
+    "booking_reference": "EEWGHM",
+    "pnr": "EEWGHM",
+    "ticket_number": "8293019761287",
+    "flight_number": "UA9001",
+    "origin": "San Francisco (SFO)",
+    "destination": "Dallas (DFW)",
+    "travel_date": "2026-07-04",
+    "return_date": "2026-07-08",
+    "seat_number": "21B",
+    "seat_preference": "aisle",
+    "cabin_class": "business",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "2195"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Nova, I'd like to request some special assistance services for my upcoming flight. I need wheelchair assistance at both San Francisco and Dallas airports. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks for letting me know. Which flight legs need wheelchair coverage, and which airport touchpoints should be covered at departure, any connections, and arrival?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 7,
+      "guideline_text": "Coverage Selection: Ask which flight legs and airport touchpoints need coverage across departure connections and arrival"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I will need wheelchair assistance on both legs of the journey at all touchpoints."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please choose the service type: wheelchair service, service animal travel, accessibility accommodations, or standard unaccompanied minor service.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 4,
+      "guideline_text": "Choose Service Type: Ask the caller to choose wheelchair service service animal travel accessibility accommodations or standard unaccompanied minor service"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I need wheelchair service."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "To pull up your reservation, please provide either your Stratos Rewards number, or your last name along with your departure city and travel date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 2,
+      "guideline_text": "Open Itinerary: Ask for the Stratos Rewards number or the last name with departure city and travel date to pull up the reservation"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My last name is Anderson, and my departure city is San Francisco. The travel date is July 4, 2026."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your booking reference number, your full service address, and three alternative 2-hour arrival windows.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 5,
+      "guideline_text": "Policy Acknowledgment: Ask the user to provide their booking reference number, full service address, and three alternative 2-hour arrival windows, and do not include any overview of arrival timing checks or documentation requirements in this message."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My booking reference number is EEWGHM. What do you mean by service address and arrival windows?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please provide your booking reference number, your full service address, and three alternative 2-hour arrival windows.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 5,
+      "guideline_text": "Policy Acknowledgment: Ask the user to provide their booking reference number, full service address, and three alternative 2-hour arrival windows, and do not include any overview of arrival timing checks or documentation requirements in this message."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I'm sorry, I got confused there. Just to confirm, my booking reference is EEWGHM, and my address is 6597 Spruce St, Fort Worth, TX, 79033. I don't quite understand the part about arrival windows. Could you clarify that?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "For identification, please provide your physical description and a contact phone number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 6,
+      "guideline_text": "Meet-Up Preference: Request the traveler's physical description and a contact phone number for identification and do not request any meet-up location."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "My contact phone number is +19377096675. As for a physical description, I have shoulder-length black hair and wear glasses."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please provide your booking confirmation number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 3,
+      "guideline_text": "Select Passenger: Ask for the booking confirmation number instead of identifying which traveler needs assistance, and do not record any passenger selection."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I've already given my booking confirmation number EEWGHM."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thanks. To set up wheelchair service, please provide these mobility device details in one message:\n- Device make\n- Device model\n- Folded size length by width by height\n- Device weight\n- Assistance level needed",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 8,
+      "guideline_text": "Service Details Capture: Collect all required specifics for the chosen service in one reply including for mobility the device make model folded size weight and assistance level for service animal the species weight crate size and for accessibility any seating or communication accommodations and for an unaccompanied minor the date of birth and the full names of the drop off and pickup adults"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I am not using a personal mobility device. I just need assistance with getting to and from the gate."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "To complete your wheelchair service request, please provide in one message:\n- Device make write none if not applicable\n- Device model\n- Folded size length by width by height\n- Device weight\n- Assistance level needed",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 8,
+      "guideline_text": "Service Details Capture: Collect all required specifics for the chosen service in one reply including for mobility the device make model folded size weight and assistance level for service animal the species weight crate size and for accessibility any seating or communication accommodations and for an unaccompanied minor the date of birth and the full names of the drop off and pickup adults"
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "My apologies for any confusion. I'm not using a mobility device. I just need assistance from the check-in counter to the gate and then to baggage claim upon arrival."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Please provide in one message\n- Device make\n- Device model\n- Folded size length by width by height\n- Device weight\n- Assistance level needed",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 8,
+      "guideline_text": "Service Details Capture: Collect all required specifics for the chosen service in one reply including for mobility the device make model folded size weight and assistance level for service animal the species weight crate size and for accessibility any seating or communication accommodations and for an unaccompanied minor the date of birth and the full names of the drop off and pickup adults"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_special_assistance_services",
+      "guideline_phase": 5,
+      "guideline": "Policy Acknowledgment: Ask the user to provide their booking reference number, full service address, and three alternative 2-hour arrival windows, and do not include any overview of arrival timing checks or documentation requirements in this message.",
+      "evidence": "Please provide your booking reference number, your full service address, and three alternative 2-hour arrival windows."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_special_assistance_services",
+      "guideline_phase": 5,
+      "guideline": "Policy Acknowledgment: Ask the user to provide their booking reference number, full service address, and three alternative 2-hour arrival windows, and do not include any overview of arrival timing checks or documentation requirements in this message.",
+      "evidence": "Please provide your booking reference number, your full service address, and three alternative 2-hour arrival windows."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_special_assistance_services",
+      "guideline_phase": 6,
+      "guideline": "Meet-Up Preference: Request the traveler's physical description and a contact phone number for identification and do not request any meet-up location.",
+      "evidence": "For identification, please provide your physical description and a contact phone number."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_special_assistance_services",
+      "guideline_phase": 3,
+      "guideline": "Select Passenger: Ask for the booking confirmation number instead of identifying which traveler needs assistance, and do not record any passenger selection.",
+      "evidence": "Please provide your booking confirmation number."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 3,
+      "original": "Select Passenger: Ask which traveler on the booking needs the assistance and record their selection",
+      "modified": "Select Passenger: Ask for the booking confirmation number instead of identifying which traveler needs assistance, and do not record any passenger selection."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 5,
+      "original": "Policy Acknowledgment: Provide a concise overview of arrival timing check in points and documentation expectations for the selected service and request acknowledgment",
+      "modified": "Policy Acknowledgment: Ask the user to provide their booking reference number, full service address, and three alternative 2-hour arrival windows, and do not include any overview of arrival timing checks or documentation requirements in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 6,
+      "original": "Meet-Up Preference: Ask where airport staff should meet the traveler such as curbside check in desk security gate or aircraft door",
+      "modified": "Meet-Up Preference: Request the traveler's physical description and a contact phone number for identification and do not request any meet-up location."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 12,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Tell the caller that their issue is trivial and not eligible for further assistance, then end the call with no farewell or acknowledgment."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 2: Intent Triggered Guidelines",
+    "key": "request_special_assistance_services",
+    "phase": 8,
+    "count": 3,
+    "turn_index": 20
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "request_receipts_or_travel_documents",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "request_receipts_or_travel_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Define document need: Ask the caller to specify the exact items needed from options including receipt, invoice, e-ticket, ticket numbers, or itinerary confirmation",
+        "Phase 3": "Choose file packaging: Ask whether they prefer a single combined PDF or separate files for each document type",
+        "Phase 4": "Retrieve by contact details: Ask for the mobile or phone number on the booking and the last name to retrieve the reservation",
+        "Phase 5": "Confirm reservation match: State the traveler name and route with travel date found and ask the caller to confirm it is the correct booking",
+        "Phase 6": "Select delivery destination: Offer delivery to the email on file or via SMS to the phone on file and have the caller choose one and confirm the destination details",
+        "Phase 7": "Issue and confirm dispatch: Generate the selected documents with the chosen packaging, send them to the confirmed destination, and inform the caller that the documents have been sent",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "request_receipts_or_travel_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Begin without any greeting and immediately ask the caller for their six-character confirmation code and date of birth.",
+        "Phase 2": "Define document need: Ask the caller to specify the exact items needed from options including receipt, invoice, e-ticket, ticket numbers, or itinerary confirmation",
+        "Phase 3": "Issue and confirm dispatch: Generate the selected documents with the chosen packaging, send them to the confirmed destination, and inform the caller that the documents have been sent",
+        "Phase 4": "Confirm reservation match: State only the booking reference and departure time, then continue to the next step without asking for any confirmation.",
+        "Phase 5": "Select delivery destination: Offer delivery to the email on file or via SMS to the phone on file and have the caller choose one and confirm the destination details",
+        "Phase 6": "Retrieve by contact details: Ask for the mobile or phone number on the booking and the last name to retrieve the reservation",
+        "Phase 7": "Choose file packaging: Ask whether they prefer a single combined PDF or separate files for each document type",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_receipts_or_travel_documents",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin without any greeting and immediately ask the caller for their six-character confirmation code and date of birth."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_receipts_or_travel_documents",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Confirm reservation match: State the traveler name and route with travel date found and ask the caller to confirm it is the correct booking",
+      "modified": "Confirm reservation match: State only the booking reference and departure time, then continue to the next step without asking for any confirmation."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "unaccompanied_minor_or_age_sensitive_case",
+      "original": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "modified": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel, state that you will handle the request directly and proceed without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Parker Watanabe",
+    "first_name": "Parker",
+    "last_name": "Watanabe",
+    "gender": "female",
+    "phone": "+447460675995",
+    "email": "parker.watanabe@proton.me",
+    "address": {
+      "street": "2393 College Ave",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "18982"
+    },
+    "record_locator": "9JS6YC",
+    "confirmation_code": "9JS6YC",
+    "booking_reference": "9JS6YC",
+    "pnr": "9JS6YC",
+    "ticket_number": "6126200490540",
+    "flight_number": "WN2617",
+    "origin": "Atlanta (ATL)",
+    "destination": "Denver (DEN)",
+    "travel_date": "2026-05-29",
+    "return_date": "2026-06-07",
+    "seat_number": "18A",
+    "seat_preference": "window",
+    "cabin_class": "business",
+    "fare_type": "nonrefundable",
+    "payment_method": "credit card",
+    "card_last4": "6335"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your six-character confirmation code and your date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Begin without any greeting and immediately ask the caller for their six-character confirmation code and date of birth."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My confirmation code is 9JS6YC and my date of birth is January 15, 1985. I'm calling because I recently found out that one of my crucial medications was in my lost baggage. Can you help me sort this out?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I am sorry to hear this. I will transfer you to a human agent now to assist right away.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "guideline_text": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Thank you, I appreciate it."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "You are welcome. Please hold while I connect you with a human agent.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "guideline_text": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_receipts_or_travel_documents",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Begin without any greeting and immediately ask the caller for their six-character confirmation code and date of birth.",
+      "evidence": "Please provide your six-character confirmation code and your date of birth."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin without any greeting and immediately ask the caller for their six-character confirmation code and date of birth."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 5,
+      "original": "Confirm reservation match: State the traveler name and route with travel date found and ask the caller to confirm it is the correct booking",
+      "modified": "Confirm reservation match: State only the booking reference and departure time, then continue to the next step without asking for any confirmation."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "unaccompanied_minor_or_age_sensitive_case",
+      "phase": -1,
+      "original": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "modified": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel, state that you will handle the request directly and proceed without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

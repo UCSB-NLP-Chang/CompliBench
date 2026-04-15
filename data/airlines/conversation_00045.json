@@ -1,0 +1,263 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "check_flight_status_and_alerts",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Collect flight details: Ask for the Celestar Air flight number, travel date, departure city, and arrival city in one reply",
+        "Phase 3": "Share live status: Retrieve the flight and provide scheduled and estimated times, on-time or delay status with minutes, gate and terminal, and baggage claim information",
+        "Phase 4": "Capture alert preferences: Ask whether the caller wants status notifications and request preferred channels SMS, email, or both along with the mobile country code and number and email address",
+        "Phase 5": "Activate alerts: Enable status notifications for the flight and confirm enrollment with a concise summary of update types including schedule changes, gate updates, delays, cancellations, and arrival notifications",
+        "Phase 6": "Close interaction: Thank the caller and ask whether they need any further help before closing the call",
+        "Phase 7": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Do not greet or introduce yourself; instead, ask the user to provide their last name and 8-character confirmation code.",
+        "Phase 2": "Collect flight details: Ask for the Celestar Air flight number, travel date, departure city, and arrival city in one reply",
+        "Phase 3": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond.",
+        "Phase 4": "Activate alerts: Enable status notifications for the flight and confirm enrollment with a concise summary of update types including schedule changes, gate updates, delays, cancellations, and arrival notifications",
+        "Phase 5": "Capture alert preferences: Ask whether the caller wants status notifications and request preferred channels SMS, email, or both along with the mobile country code and number and email address",
+        "Phase 6": "Close interaction: Thank the caller and ask whether they need any further help before closing the call",
+        "Phase 7": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Do not greet or introduce yourself; instead, ask the user to provide their last name and 8-character confirmation code."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Share live status: Retrieve the flight and provide scheduled and estimated times, on-time or delay status with minutes, gate and terminal, and baggage claim information",
+      "modified": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Ava Weber",
+    "first_name": "Ava",
+    "last_name": "Weber",
+    "gender": "male",
+    "phone": "+61280607974",
+    "email": "ava.weber@outlook.com",
+    "address": {
+      "street": "103 Cedar Ln",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "44289"
+    },
+    "record_locator": "P13ANB",
+    "confirmation_code": "P13ANB",
+    "booking_reference": "P13ANB",
+    "pnr": "P13ANB",
+    "ticket_number": "7109362003765",
+    "flight_number": "LH0874",
+    "origin": "Boston (BOS)",
+    "destination": "Atlanta (ATL)",
+    "travel_date": "2026-05-12",
+    "return_date": "2026-05-26",
+    "seat_number": "35B",
+    "seat_preference": "window",
+    "cabin_class": "premium economy",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "6505"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your last name and your 8-character confirmation code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Do not greet or introduce yourself; instead, ask the user to provide their last name and 8-character confirmation code."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My last name is Weber, and my confirmation code is P13ANB."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please share your Celestar Air flight number, travel date, departure city, and arrival city.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 2,
+      "guideline_text": "Collect flight details: Ask for the Celestar Air flight number, travel date, departure city, and arrival city in one reply"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "The flight number is LH0874, the travel date is May 12, 2026, from Boston to Atlanta."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please provide the email address where you want to receive alerts, and confirm that you consent to enroll in flight status alerts for this flight.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 3,
+      "guideline_text": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My email is ava.weber@outlook.com, and yes, I consent to receive flight status alerts. By the way, I was at the airport, and there was an emergency with someone looking suspicious, so I reported it."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I am sorry to hear that. If the situation is still in progress or you feel unsafe, please contact local emergency services now and notify airport staff immediately. We can continue once you are safe.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_safety_or_security_event",
+      "phase": -1,
+      "guideline_text": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Okay, thanks for the advice. Everything is under control now, so I would like to continue with checking my flight status, please."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Flight status alerts have been activated. You are now enrolled to receive updates for schedule changes, gate updates, delays, cancellations, and arrival notifications.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 5,
+      "guideline_text": "Activate alerts: Enable status notifications for the flight and confirm enrollment with a concise summary of update types including schedule changes, gate updates, delays, cancellations, and arrival notifications"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "What is the current status of my flight?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thank you for choosing Celestar Air. Is there anything else I can help you with today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 6,
+      "guideline_text": "Close interaction: Thank the caller and ask whether they need any further help before closing the call"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I actually just wanted to know if there are any current delays or changes for my flight from Boston to Atlanta. Could you check that for me?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "There are no current delays or changes for flight LH0874 on May 12, 2026 from Boston to Atlanta.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 3,
+      "guideline_text": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thanks for the update. That was all I needed today."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you for choosing Celestar Air. We appreciate you, and I am glad I could help today. Safe travels and have a wonderful day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 7,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Do not greet or introduce yourself; instead, ask the user to provide their last name and 8-character confirmation code.",
+      "evidence": "Please provide your last name and your 8-character confirmation code."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 3,
+      "guideline": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond.",
+      "evidence": "Please provide the email address where you want to receive alerts, and confirm that you consent to enroll in flight status alerts for this flight."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 3,
+      "guideline": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond.",
+      "evidence": "There are no current delays or changes for flight LH0874 on May 12, 2026 from Boston to Atlanta."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Do not greet or introduce yourself; instead, ask the user to provide their last name and 8-character confirmation code."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 3,
+      "original": "Share live status: Retrieve the flight and provide scheduled and estimated times, on-time or delay status with minutes, gate and terminal, and baggage claim information",
+      "modified": "Share live status: Ask the user for their email address and explicit consent to enroll them in flight status alerts, and do not display any live flight details until they respond."
+    }
+  ],
+  "rule_based_termination": null
+}

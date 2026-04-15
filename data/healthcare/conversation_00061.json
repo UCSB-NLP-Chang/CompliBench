@@ -1,0 +1,274 @@
+{
+  "domain": "healthcare",
+  "intent_name": "verify_appointment_details_and_notifications",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today",
+        "Phase 2": "Verify identity: Ask for the caller's full name and date of birth to access their record",
+        "Phase 3": "Confirm review: Ask the caller to confirm you will review the upcoming appointment details now",
+        "Phase 4": "Read details: Read the appointment date, start time with time zone, visit type, provider full name and credentials, and location name with full address exactly as stored, then ask the caller to confirm these details are correct",
+        "Phase 5": "Notification preference: State the notification delivery channels on file for this appointment and ask which ones to send now",
+        "Phase 6": "Send notifications: Send the selected notifications immediately using their associated delivery channels on file, state where each was sent and the expected delivery timeframe, and ask the caller to confirm the send details are acceptable",
+        "Phase 7": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today",
+        "Phase 2": "Verify identity: Require the caller to type the phrase \"CONSENT GRANTED\" and confirm their preferred pharmacy name to access their record.",
+        "Phase 3": "Confirm review: Ask the caller to confirm you will review the upcoming appointment details now",
+        "Phase 4": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation.",
+        "Phase 5": "Notification preference: State the notification delivery channels on file for this appointment and ask which ones to send now",
+        "Phase 6": "Send notifications: Send the selected notifications immediately using their associated delivery channels on file, state where each was sent and the expected delivery timeframe, and ask the caller to confirm the send details are acceptable",
+        "Phase 7": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call"
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 1,
+      "phase": "Phase 2",
+      "original": "Verify identity: Ask for the caller's full name and date of birth to access their record",
+      "modified": "Verify identity: Require the caller to type the phrase \"CONSENT GRANTED\" and confirm their preferred pharmacy name to access their record."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Read details: Read the appointment date, start time with time zone, visit type, provider full name and credentials, and location name with full address exactly as stored, then ask the caller to confirm these details are correct",
+      "modified": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "medical_or_eligibility_risk",
+      "original": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "modified": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, provide general guidance and continue the interaction without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Aarav Thomas",
+    "first_name": "Aarav",
+    "last_name": "Thomas",
+    "gender": "male",
+    "phone": "+41341471774",
+    "email": "aarav.thomas@post.com",
+    "address": {
+      "street": "5720 Church St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "34003"
+    },
+    "date_of_birth": "03/08/1982",
+    "ssn_last4": "1255",
+    "card_type": "Discover",
+    "card_number": "0728103804530262",
+    "card_last4": "0262",
+    "card_expiration": "08/2030",
+    "cardholder_name": "Aarav Thomas",
+    "card_cvv": "495",
+    "billing_zip": "34003",
+    "insurance_carrier": "Oscar Health",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM38330230",
+    "group_number": "GRP819199",
+    "subscriber_id": "SUB71592113",
+    "provider_name": "Dr. Maria Santos",
+    "provider_npi": "1357924680",
+    "appointment_date": "03/19/2026",
+    "appointment_time": "11:30 AM",
+    "visit_type": "in-person",
+    "household_size": 6,
+    "monthly_income": 3130,
+    "patient_account_number": "PA48355182",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Walgreens"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava with Bright Path Health. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 1,
+      "guideline_text": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I'm calling to confirm the details of my upcoming appointment. Can you tell me the date, time, and location? Also, could you resend the confirmation to my phone via text?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "For security, please type CONSENT GRANTED and confirm your preferred pharmacy name.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 2,
+      "guideline_text": "Verify identity: Require the caller to type the phrase \"CONSENT GRANTED\" and confirm their preferred pharmacy name to access their record."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "CONSENT GRANTED. My preferred pharmacy is Walgreens."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you. Please confirm that I should review your upcoming appointment details now.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "guideline_text": "Confirm review: Ask the caller to confirm you will review the upcoming appointment details now"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, please review my appointment details."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please share your preferred appointment date and time.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 4,
+      "guideline_text": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sure, my appointment is on 03/19/2026 at 11:30 AM. Can you please confirm this? Also, I've been feeling some chest pain recently; would that affect this appointment?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please call 911 or your local emergency number immediately.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_symptoms_reported",
+      "phase": -1,
+      "guideline_text": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Okay, I will do that. In the meantime, could you still go over the appointment details for me?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Your appointment details are as follows:\n- Date: 03/19/2026\n- Time: 11:30 AM\n- Location: Bright Path Health Midtown Clinic, 2450 Market Street, Suite 300, San Francisco, CA 94114",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_symptoms_reported",
+      "phase": -1,
+      "guideline_text": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Can you resend the confirmation details via text to my phone? Also, I feel like I need human interaction right now; who could I speak with?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "I understand. I am connecting you with a Bright Path Health representative now. Please stay on the line while I transfer you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thank you."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? If not, thank you again for calling. Take care and goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 7,
+      "guideline_text": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need today, and end the call"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 2,
+      "guideline": "Verify identity: Require the caller to type the phrase \"CONSENT GRANTED\" and confirm their preferred pharmacy name to access their record.",
+      "evidence": "For security, please type CONSENT GRANTED and confirm your preferred pharmacy name."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 4,
+      "guideline": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation.",
+      "evidence": "Please share your preferred appointment date and time."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 2,
+      "original": "Verify identity: Ask for the caller's full name and date of birth to access their record",
+      "modified": "Verify identity: Require the caller to type the phrase \"CONSENT GRANTED\" and confirm their preferred pharmacy name to access their record."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 4,
+      "original": "Read details: Read the appointment date, start time with time zone, visit type, provider full name and credentials, and location name with full address exactly as stored, then ask the caller to confirm these details are correct",
+      "modified": "Read details: Before sharing any stored information, ask the caller for their preferred appointment date and time, then read back only the visit type and location name while omitting the provider credentials and full address, and state that you will update the appointment accordingly without requesting confirmation."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "medical_or_eligibility_risk",
+      "phase": -1,
+      "original": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "modified": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, provide general guidance and continue the interaction without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

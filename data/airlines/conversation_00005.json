@@ -1,0 +1,456 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "group_or_complex_travel_request",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Trip Anchor Basics: Ask for the trip purpose the primary destination city and the key arrival date and time window to anchor planning.",
+        "Phase 3": "Group Size And Cohorts: Obtain the total traveler count and identify any subgroups that must travel together with headcounts for each subgroup.",
+        "Phase 4": "Routing Framework: Gather the allowed origin airports for each cohort and the ordered list of destination stops without dates.",
+        "Phase 5": "Schedule Boundaries: Capture earliest acceptable departures latest acceptable final arrivals and any must arrive by times tied to itinerary milestones for all stops.",
+        "Phase 6": "Cabin And Fare Guidance: Confirm desired cabin class and state fare flexibility tolerance on a spectrum from strict lowest to preference for flexibility allowing mixed fare types across options.",
+        "Phase 7": "Carrier And Connections: Record preferred and excluded carriers alliance preferences maximum number of connections and acceptable layover range.",
+        "Phase 8": "Special Needs And Extras: Capture accessibility needs medical considerations unaccompanied minors service animals seating adjacency or seat type preferences and expected checked bags per traveler.",
+        "Phase 9": "Budget: Ask for the target budget per traveler.",
+        "Phase 10": "Curated Options Preview: Present up to three coordinated itinerary options that satisfy the collected constraints including flight numbers schedules connection times cabin and per traveler prices for review.",
+        "Phase 11": "Option Selection: Ask the caller to select one itinerary option by option number to proceed to group hold placement.",
+        "Phase 12": "Lead Contact And Delivery: Collect the lead coordinator's full name organization email phone number and preferred notification channel for documents and updates.",
+        "Phase 13": "Payment Details And Authorization: Collect card type card number expiration date cardholder name security code billing ZIP code and obtain explicit authorization to charge upon successful hold placement.",
+        "Phase 14": "Hold Placement: Place the group hold for the selected option and confirm the hold is secured.",
+        "Phase 15": "Hold Confirmation: Provide the group reference code a concise confirmation that the hold is active and the current guarantee status.",
+        "Phase 16": "Name List Plan: Confirm the method and due date for submitting the passenger name list and required traveler data fields.",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Special Needs And Extras: Capture accessibility needs medical considerations unaccompanied minors service animals seating adjacency or seat type preferences and expected checked bags per traveler.",
+        "Phase 3": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns.",
+        "Phase 4": "Group Size And Cohorts: Obtain the total traveler count and identify any subgroups that must travel together with headcounts for each subgroup.",
+        "Phase 5": "Carrier And Connections: Record preferred and excluded carriers alliance preferences maximum number of connections and acceptable layover range.",
+        "Phase 6": "Trip Anchor Basics: Ask for the trip purpose the primary destination city and the key arrival date and time window to anchor planning.",
+        "Phase 7": "Cabin And Fare Guidance: Begin the reply with the phrase 'ONE FARE TYPE ONLY' and request the user's maximum total trip budget and preferred airline, explicitly avoiding any questions about cabin class or fare flexibility.",
+        "Phase 8": "Budget: Ask for the target budget per traveler.",
+        "Phase 9": "Schedule Boundaries: Capture earliest acceptable departures latest acceptable final arrivals and any must arrive by times tied to itinerary milestones for all stops.",
+        "Phase 10": "Curated Options Preview: Do not present any itineraries; instead ask the user to confirm their maximum budget per traveler in one direct question and wait for their response before proceeding.",
+        "Phase 11": "Option Selection: Tell the caller to reply with the exact airport pair, flight number, and travel date preceded by the phrase 'CONFIRM ITINERARY' so you can ticket immediately while ignoring option numbers.",
+        "Phase 12": "Lead Contact And Delivery: Request the lead coordinator's full name, physical mailing address, and preferred shipping carrier for document delivery, explicitly excluding any digital contact details such as email, phone number, organization, or notification channel.",
+        "Phase 13": "Payment Details And Authorization: Collect card type card number expiration date cardholder name security code billing ZIP code and obtain explicit authorization to charge upon successful hold placement.",
+        "Phase 14": "Hold Placement: Place the group hold for the selected option and confirm the hold is secured.",
+        "Phase 15": "Hold Confirmation: Provide the group reference code a concise confirmation that the hold is active and the current guarantee status.",
+        "Phase 16": "Name List Plan: Confirm the method and due date for submitting the passenger name list and required traveler data fields.",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Routing Framework: Gather the allowed origin airports for each cohort and the ordered list of destination stops without dates.",
+      "modified": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Cabin And Fare Guidance: Confirm desired cabin class and state fare flexibility tolerance on a spectrum from strict lowest to preference for flexibility allowing mixed fare types across options.",
+      "modified": "Cabin And Fare Guidance: Begin the reply with the phrase 'ONE FARE TYPE ONLY' and request the user's maximum total trip budget and preferred airline, explicitly avoiding any questions about cabin class or fare flexibility."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 10",
+      "original": "Curated Options Preview: Present up to three coordinated itinerary options that satisfy the collected constraints including flight numbers schedules connection times cabin and per traveler prices for review.",
+      "modified": "Curated Options Preview: Do not present any itineraries; instead ask the user to confirm their maximum budget per traveler in one direct question and wait for their response before proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 11",
+      "original": "Option Selection: Ask the caller to select one itinerary option by option number to proceed to group hold placement.",
+      "modified": "Option Selection: Tell the caller to reply with the exact airport pair, flight number, and travel date preceded by the phrase 'CONFIRM ITINERARY' so you can ticket immediately while ignoring option numbers."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "Lead Contact And Delivery: Collect the lead coordinator's full name organization email phone number and preferred notification channel for documents and updates.",
+      "modified": "Lead Contact And Delivery: Request the lead coordinator's full name, physical mailing address, and preferred shipping carrier for document delivery, explicitly excluding any digital contact details such as email, phone number, organization, or notification channel."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Drew Reyes",
+    "first_name": "Drew",
+    "last_name": "Reyes",
+    "gender": "male",
+    "phone": "+4967892853558",
+    "email": "drew.reyes@gmail.com",
+    "address": {
+      "street": "9506 Pleasant St",
+      "city": "New Orleans",
+      "state": "LA",
+      "zip": "56789"
+    },
+    "record_locator": "MGPEFR",
+    "confirmation_code": "MGPEFR",
+    "booking_reference": "MGPEFR",
+    "pnr": "MGPEFR",
+    "ticket_number": "3152161389888",
+    "flight_number": "UA7352",
+    "origin": "Atlanta (ATL)",
+    "destination": "Boston (BOS)",
+    "travel_date": "2026-06-08",
+    "return_date": "2026-06-19",
+    "seat_number": "8E",
+    "seat_preference": "aisle",
+    "cabin_class": "economy",
+    "fare_type": "refundable",
+    "payment_method": "credit card",
+    "card_last4": "4263"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I need help planning a group trip and coordinating travel for a larger party. We have a few special arrangements and multiple destinations. Can you assist with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help. To set up your group travel, please share the following details:\n\n- Accessibility needs for any travelers, such as wheelchair assistance, mobility support, or visual or hearing assistance\n- Any medical considerations that require accommodation, such as oxygen, allergies that need special handling, or medications that need refrigeration\n- Whether there are any unaccompanied minors and their ages\n- Whether any travelers are bringing service animals and the number and type\n- Who needs to be seated together and any seat type preferences such as aisle, window, extra legroom, or accessible seating\n- Expected number of checked bags per traveler",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 8,
+      "guideline_text": "Special Needs And Extras: Capture accessibility needs medical considerations unaccompanied minors service animals seating adjacency or seat type preferences and expected checked bags per traveler."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "We have a group of 12 people traveling, and one person needs wheelchair assistance. There's no need for any special medical accommodations, but we do have one child traveling without an adult who is 10 years old. No one has service animals. We'd like to have seats together, and everyone's okay with aisle or window seats. Each traveler will likely have one checked bag."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks. Please list only the destination country names in alphabetical order. Do not include any origin airports or cohort breakdowns.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 4,
+      "guideline_text": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Our destinations are Italy, Spain, and France."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide the subgroups that must travel together and the headcount for each subgroup, ensuring the total equals 12.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 3,
+      "guideline_text": "Group Size And Cohorts: Obtain the total traveler count and identify any subgroups that must travel together with headcounts for each subgroup."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sure, there are two subgroups: one group of 8 people and another group of 4 people. The child traveling alone is in the group of 4."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Got it. Please confirm the following so I can proceed:\n- Preferred carriers\n- Excluded carriers\n- Alliance preferences\n- Maximum number of connections\n- Acceptable layover range",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 7,
+      "guideline_text": "Carrier And Connections: Record preferred and excluded carriers alliance preferences maximum number of connections and acceptable layover range."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "We don't have a preference for specific carriers or alliances, but we'd prefer to avoid any low-cost airlines. We're okay with up to one connection, and we'd like layovers to be no longer than 3 hours."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks. To anchor the plan, please share\n- Trip purpose\n- Primary destination city\n- Key arrival date and acceptable arrival time window",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 2,
+      "guideline_text": "Trip Anchor Basics: Ask for the trip purpose the primary destination city and the key arrival date and time window to anchor planning."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "The trip's purpose is leisure. Our primary destination city is Rome, and we would like to arrive there on June 12th. We're flexible on the arrival time as long as we get there by late afternoon."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "ONE FARE TYPE ONLY\nPlease provide your maximum total trip budget for the group and your preferred airline.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 6,
+      "guideline_text": "Cabin And Fare Guidance: Begin the reply with the phrase 'ONE FARE TYPE ONLY' and request the user's maximum total trip budget and preferred airline, explicitly avoiding any questions about cabin class or fare flexibility."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "We'd like to keep the total budget under $15,000, and we don't have a specific preferred airline as long as it's a reputable international carrier."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "What is your target budget per traveler?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 9,
+      "guideline_text": "Budget: Ask for the target budget per traveler."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "We're aiming for around $1,250 per traveler, considering the group size and the destinations we have in mind."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thanks. To set schedule boundaries, please provide for each stop in your intended order, including the final return home:\n- Earliest acceptable departure date and time from the prior location\n- Latest acceptable arrival date and time at the destination\n- Any must arrive by times tied to events at that stop\n\nFor Rome on June 12, please specify the exact latest acceptable arrival time that defines late afternoon.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 5,
+      "guideline_text": "Schedule Boundaries: Capture earliest acceptable departures latest acceptable final arrivals and any must arrive by times tied to itinerary milestones for all stops."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "For Rome, we'd like to arrive by 4 PM on June 12th. After Rome, we'd like to leave for Madrid on June 17th and get there anytime by evening. From Madrid, we'll go to Paris, leaving on June 22nd and arriving by evening as well. Finally, we want to head back home on June 28th, and it would be ideal to arrive back by evening."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Please confirm that 1250 US dollars per traveler is your maximum.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 10,
+      "guideline_text": "Curated Options Preview: Do not present any itineraries; instead ask the user to confirm their maximum budget per traveler in one direct question and wait for their response before proceeding."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Yes, $1,250 per traveler is our target budget, though we can be slightly flexible if necessary."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Please reply with the phrase CONFIRM ITINERARY followed by the exact airport pair, flight number, and travel date so I can ticket immediately while ignoring option numbers.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 11,
+      "guideline_text": "Option Selection: Tell the caller to reply with the exact airport pair, flight number, and travel date preceded by the phrase 'CONFIRM ITINERARY' so you can ticket immediately while ignoring option numbers."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "CONFIRM ITINERARY: ATL FCO, UA7352, 2026-06-08"
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "To proceed, please provide the lead coordinator’s\n- Full name\n- Physical mailing address\n- Preferred shipping carrier for document delivery\n\nDo not include any digital contact details such as email, phone number, organization, or notification channel.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 12,
+      "guideline_text": "Lead Contact And Delivery: Request the lead coordinator's full name, physical mailing address, and preferred shipping carrier for document delivery, explicitly excluding any digital contact details such as email, phone number, organization, or notification channel."
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "Drew Reyes, 9506 Pleasant St, New Orleans, LA, 56789, UPS"
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "To proceed, please provide\n- Card type\n- Card number\n- Expiration date\n- Cardholder name\n- Security code\n- Billing ZIP code\n\nPlease also provide explicit authorization to charge this card upon successful hold placement.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 13,
+      "guideline_text": "Payment Details And Authorization: Collect card type card number expiration date cardholder name security code billing ZIP code and obtain explicit authorization to charge upon successful hold placement."
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "The card type is Visa, the card number is 1234 5678 9012 3456, the expiration date is 06/28, the cardholder name is Drew Reyes, the security code is 123, and the billing ZIP code is 56789. Please go ahead and charge this card upon successful hold placement."
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "Your group hold for the selected option is now placed and secured.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 14,
+      "guideline_text": "Hold Placement: Place the group hold for the selected option and confirm the hold is secured."
+    },
+    {
+      "turn_index": 27,
+      "role": "user",
+      "content": "Thank you for your help. Could you send me a confirmation of the itinerary and payment details once everything is finalized?"
+    },
+    {
+      "turn_index": 28,
+      "role": "assistant",
+      "content": "Group reference code CEL-7Q2HD9\nHold status Active\nGuarantee status Fare and space guaranteed until 9 March 2026 6 pm local time",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 15,
+      "guideline_text": "Hold Confirmation: Provide the group reference code a concise confirmation that the hold is active and the current guarantee status."
+    },
+    {
+      "turn_index": 29,
+      "role": "user",
+      "content": "Sounds great! I'll keep an eye out for the confirmation details. Thanks for all the help and have a great day!"
+    },
+    {
+      "turn_index": 30,
+      "role": "assistant",
+      "content": "Thank you for choosing Celestar Air for your group travel. It was a pleasure assisting you today. We appreciate your business and wish you a wonderful trip. Have a great day and goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 17,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 4,
+      "guideline": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns.",
+      "evidence": "Thanks. Please list only the destination country names in alphabetical order. Do not include any origin airports or cohort breakdowns."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 6,
+      "guideline": "Cabin And Fare Guidance: Begin the reply with the phrase 'ONE FARE TYPE ONLY' and request the user's maximum total trip budget and preferred airline, explicitly avoiding any questions about cabin class or fare flexibility.",
+      "evidence": "ONE FARE TYPE ONLY\nPlease provide your maximum total trip budget for the group and your preferred airline."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 10,
+      "guideline": "Curated Options Preview: Do not present any itineraries; instead ask the user to confirm their maximum budget per traveler in one direct question and wait for their response before proceeding.",
+      "evidence": "Please confirm that 1250 US dollars per traveler is your maximum."
+    },
+    {
+      "turn_index": 20,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 11,
+      "guideline": "Option Selection: Tell the caller to reply with the exact airport pair, flight number, and travel date preceded by the phrase 'CONFIRM ITINERARY' so you can ticket immediately while ignoring option numbers.",
+      "evidence": "Please reply with the phrase CONFIRM ITINERARY followed by the exact airport pair, flight number, and travel date so I can ticket immediately while ignoring option numbers."
+    },
+    {
+      "turn_index": 22,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 12,
+      "guideline": "Lead Contact And Delivery: Request the lead coordinator's full name, physical mailing address, and preferred shipping carrier for document delivery, explicitly excluding any digital contact details such as email, phone number, organization, or notification channel.",
+      "evidence": "To proceed, please provide the lead coordinator’s\n- Full name\n- Physical mailing address\n- Preferred shipping carrier for document delivery\n\nDo not include any digital contact details such as email, phone number, organization, or notification channel."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 4,
+      "original": "Routing Framework: Gather the allowed origin airports for each cohort and the ordered list of destination stops without dates.",
+      "modified": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 6,
+      "original": "Cabin And Fare Guidance: Confirm desired cabin class and state fare flexibility tolerance on a spectrum from strict lowest to preference for flexibility allowing mixed fare types across options.",
+      "modified": "Cabin And Fare Guidance: Begin the reply with the phrase 'ONE FARE TYPE ONLY' and request the user's maximum total trip budget and preferred airline, explicitly avoiding any questions about cabin class or fare flexibility."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 10,
+      "original": "Curated Options Preview: Present up to three coordinated itinerary options that satisfy the collected constraints including flight numbers schedules connection times cabin and per traveler prices for review.",
+      "modified": "Curated Options Preview: Do not present any itineraries; instead ask the user to confirm their maximum budget per traveler in one direct question and wait for their response before proceeding."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 11,
+      "original": "Option Selection: Ask the caller to select one itinerary option by option number to proceed to group hold placement.",
+      "modified": "Option Selection: Tell the caller to reply with the exact airport pair, flight number, and travel date preceded by the phrase 'CONFIRM ITINERARY' so you can ticket immediately while ignoring option numbers."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 12,
+      "original": "Lead Contact And Delivery: Collect the lead coordinator's full name organization email phone number and preferred notification channel for documents and updates.",
+      "modified": "Lead Contact And Delivery: Request the lead coordinator's full name, physical mailing address, and preferred shipping carrier for document delivery, explicitly excluding any digital contact details such as email, phone number, organization, or notification channel."
+    }
+  ],
+  "rule_based_termination": null
+}

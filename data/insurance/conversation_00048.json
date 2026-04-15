@@ -1,0 +1,265 @@
+{
+  "domain": "insurance",
+  "intent_name": "proof_of_insurance",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "proof_of_insurance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Authenticate Caller: Request policy number and mailing ZIP to access the account.",
+        "Phase 3": "Identify Coverage Item: Ask which vehicle or property the proof should reference and explicitly request the year and model if it is a vehicle.",
+        "Phase 4": "Choose Document Type: Ask whether they need an ID card or an insurance binder.",
+        "Phase 5": "Capture Recipient Details: Ask for the recipient or organization name the document is for.",
+        "Phase 6": "Choose Delivery Channel: Ask whether to send by email or SMS and collect the destination address or number.",
+        "Phase 7": "Confirm and Send: Recap exactly four details—the policy item, document type, recipient, and delivery details—and obtain explicit approval to send now, then send the document.",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "proof_of_insurance": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Skip any greeting and immediately ask 'To get started, please provide your full name and 6-digit policy number.'",
+        "Phase 2": "Authenticate Caller: Request policy number and mailing ZIP to access the account.",
+        "Phase 3": "Identify Coverage Item: Ask which vehicle or property the proof should reference and explicitly request the year and model if it is a vehicle.",
+        "Phase 4": "Choose Document Type: Ask whether they need an ID card or an insurance binder.",
+        "Phase 5": "Capture Recipient Details: Ask for the recipient or organization name the document is for.",
+        "Phase 6": "Choose Delivery Channel: Ask whether to send by email or SMS and collect the destination address or number.",
+        "Phase 7": "Confirm and Send: Recap exactly four details—the policy item, document type, recipient, and delivery details—and obtain explicit approval to send now, then send the document.",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted.: Close by providing only a ticket number and then disconnect, explicitly omitting any expressions of appreciation, empathy, or further help."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "proof_of_insurance",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Skip any greeting and immediately ask 'To get started, please provide your full name and 6-digit policy number.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "proof_of_insurance",
+      "workflow_index": 1,
+      "phase": "Phase 8",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Close by providing only a ticket number and then disconnect, explicitly omitting any expressions of appreciation, empathy, or further help."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Blake Wright",
+    "first_name": "Blake",
+    "last_name": "Wright",
+    "gender": "female",
+    "phone": "+4915682058757",
+    "email": "blake.wright@post.com",
+    "address": {
+      "street": "8550 2nd St",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "73356"
+    },
+    "date_of_birth": "06/11/1971",
+    "ssn_last4": "3219",
+    "card_type": "Visa",
+    "card_number": "5794826372164386",
+    "card_last4": "4386",
+    "card_expiration": "04/2029",
+    "cardholder_name": "Blake Wright",
+    "card_cvv": "107",
+    "billing_zip": "73356",
+    "policy_number": "POL37995123",
+    "claim_number": "CLM5625180",
+    "policy_id": "PID95833821",
+    "claim_id": "CID6096004",
+    "member_id": "MEM69766189",
+    "subscriber_id": "SUB94380590",
+    "group_number": "GRP194892",
+    "reference_number": "REF39635399",
+    "id_number": "ID57281025",
+    "vehicle_make": "Hyundai",
+    "vehicle_model": "Tucson",
+    "vehicle_year": "2020",
+    "license_plate": "KSJ9302",
+    "vin": "KWX15GFHD0FZNEMZP",
+    "incident_date": "02/11/2026",
+    "incident_location": "Miami",
+    "coverage_type": "umbrella",
+    "payment_method": "debit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "To get started, please provide your full name and 6-digit policy number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Skip any greeting and immediately ask 'To get started, please provide your full name and 6-digit policy number.'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Blake Wright, and my policy number is POL37995123. I'm calling to ask how I can get proof of insurance."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks, Blake. To verify your account, please provide the 5-digit mailing ZIP code on your policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 2,
+      "guideline_text": "Authenticate Caller: Request policy number and mailing ZIP to access the account."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My mailing ZIP code is 73356."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks, Blake. Which vehicle or property should the proof reference? If it is for a vehicle, please provide the year and model.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 3,
+      "guideline_text": "Identify Coverage Item: Ask which vehicle or property the proof should reference and explicitly request the year and model if it is a vehicle."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "It's for my vehicle, a 2020 Hyundai Tucson."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Which type of proof do you need: an ID card or an insurance binder?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 4,
+      "guideline_text": "Choose Document Type: Ask whether they need an ID card or an insurance binder."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I need an insurance ID card, please."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide the recipient or organization name the document is for.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 5,
+      "guideline_text": "Capture Recipient Details: Ask for the recipient or organization name the document is for."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The document is for my personal records."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "How would you like to receive it, by email or SMS? Please provide the destination email address or mobile number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 6,
+      "guideline_text": "Choose Delivery Channel: Ask whether to send by email or SMS and collect the destination address or number."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Please send it to my email at blake.wright@post.com."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Recap\n- Policy item: 2020 Hyundai Tucson\n- Document type: insurance ID card\n- Recipient: your personal records\n- Delivery details: email to blake.wright@post.com\n\nDo I have your approval to send it now?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 7,
+      "guideline_text": "Confirm and Send: Recap exactly four details—the policy item, document type, recipient, and delivery details—and obtain explicit approval to send now, then send the document."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Yes, please go ahead and send it. Thank you."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "TKT78421356",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Close by providing only a ticket number and then disconnect, explicitly omitting any expressions of appreciation, empathy, or further help."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "proof_of_insurance",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Skip any greeting and immediately ask 'To get started, please provide your full name and 6-digit policy number.'",
+      "evidence": "To get started, please provide your full name and 6-digit policy number."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "proof_of_insurance",
+      "guideline_phase": 8,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Close by providing only a ticket number and then disconnect, explicitly omitting any expressions of appreciation, empathy, or further help.",
+      "evidence": "TKT78421356"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Skip any greeting and immediately ask 'To get started, please provide your full name and 6-digit policy number.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "proof_of_insurance",
+      "phase": 8,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Close by providing only a ticket number and then disconnect, explicitly omitting any expressions of appreciation, empathy, or further help."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,312 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "check_flight_status_and_alerts",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Route And Date Intake: Ask for the departure city, arrival city, and travel date in one reply.",
+        "Phase 3": "Time Display Preference: Ask whether the caller wants times shown in the departure local time or the arrival local time.",
+        "Phase 4": "Retrieve Matching Flights: Retrieve matching flights for the route and date and present concise options with flight numbers and departure times in one reply.",
+        "Phase 5": "Select Flight: Ask the caller to choose one flight from the presented options by flight number.",
+        "Phase 6": "Share Live Status: Share the selected flight's scheduled and estimated times in the chosen time context, on time or delay minutes, terminal and gate at both ends, and baggage carousel without requesting acknowledgment.",
+        "Phase 7": "Alert Consent And Channel: Ask whether the caller wants real time flight status notifications for this flight and request the preferred notification channel in the same reply.",
+        "Phase 8": "Collect Contact Details: Capture the mobile country code and number or an email address for the chosen channel.",
+        "Phase 9": "Activate And Confirm Alerts: Activate alerts in the system and confirm enrollment with a brief summary of update types and timing without asking for further confirmation.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Time Display Preference: Ask whether the caller wants times shown in the departure local time or the arrival local time.",
+        "Phase 3": "Route And Date Intake: Ask for the departure city, arrival city, and travel date in one reply.",
+        "Phase 4": "Retrieve Matching Flights: Before retrieving any flights, ask the user for cabin class, number of passengers, and a flexibility window in days, and do not present any flight options yet.",
+        "Phase 5": "Select Flight: Ask the caller to choose one flight from the presented options by flight number.",
+        "Phase 6": "Share Live Status: Share the selected flight's scheduled and estimated times in the chosen time context, on time or delay minutes, terminal and gate at both ends, and baggage carousel without requesting acknowledgment.",
+        "Phase 7": "Collect Contact Details: Capture the mobile country code and number or an email address for the chosen channel.",
+        "Phase 8": "Alert Consent And Channel: Instruct the caller to set up notifications via the mobile app and ask only for their device type in this reply.",
+        "Phase 9": "Activate And Confirm Alerts: Activate alerts in the system and confirm enrollment with a brief summary of update types and timing without asking for further confirmation.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Retrieve Matching Flights: Retrieve matching flights for the route and date and present concise options with flight numbers and departure times in one reply.",
+      "modified": "Retrieve Matching Flights: Before retrieving any flights, ask the user for cabin class, number of passengers, and a flexibility window in days, and do not present any flight options yet."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 1,
+      "phase": "Phase 7",
+      "original": "Alert Consent And Channel: Ask whether the caller wants real time flight status notifications for this flight and request the preferred notification channel in the same reply.",
+      "modified": "Alert Consent And Channel: Instruct the caller to set up notifications via the mobile app and ask only for their device type in this reply."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 1,
+      "phase": "Phase 10",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Scarlett Kim",
+    "first_name": "Scarlett",
+    "last_name": "Kim",
+    "gender": "male",
+    "phone": "+447135848766",
+    "email": "scarlett.kim@hotmail.com",
+    "address": {
+      "street": "738 Riverside Dr",
+      "city": "Memphis",
+      "state": "TN",
+      "zip": "76142"
+    },
+    "record_locator": "E4A91P",
+    "confirmation_code": "E4A91P",
+    "booking_reference": "E4A91P",
+    "pnr": "E4A91P",
+    "ticket_number": "4140088119329",
+    "flight_number": "DL4162",
+    "origin": "San Francisco (SFO)",
+    "destination": "Miami (MIA)",
+    "travel_date": "2026-04-03",
+    "return_date": "2026-04-09",
+    "seat_number": "2B",
+    "seat_preference": "window",
+    "cabin_class": "first",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "1217"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi there. I wanted to check the status of my upcoming flight and see if there are any alerts or changes I should know about. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely. Would you like times displayed in the departure city local time or the arrival city local time?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 3,
+      "guideline_text": "Time Display Preference: Ask whether the caller wants times shown in the departure local time or the arrival local time."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Please display the times in the departure city's local time."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks. Please provide your departure city, arrival city, and travel date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 2,
+      "guideline_text": "Route And Date Intake: Ask for the departure city, arrival city, and travel date in one reply."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I'm flying from San Francisco to Miami on April 3rd."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Got it. Please provide your preferred cabin class, the number of passengers, and your flexibility window in days.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 4,
+      "guideline_text": "Retrieve Matching Flights: Before retrieving any flights, ask the user for cabin class, number of passengers, and a flexibility window in days, and do not present any flight options yet."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'm flying in first class, and it's just me. I'm not looking to change anything, just wanting to check the status for April 3rd."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please choose one flight by its flight number from the options provided.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 5,
+      "guideline_text": "Select Flight: Ask the caller to choose one flight from the presented options by flight number."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My flight number is DL4162."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Scheduled departure: 10:30\nEstimated departure: 10:40\nScheduled arrival: 16:00\nEstimated arrival: 16:10\nStatus: Delayed 10 minutes\nDeparture terminal and gate: Terminal 2 Gate D8\nArrival terminal and gate: Terminal H Gate H6\nBaggage carousel: 22",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 6,
+      "guideline_text": "Share Live Status: Share the selected flight's scheduled and estimated times in the chosen time context, on time or delay minutes, terminal and gate at both ends, and baggage carousel without requesting acknowledgment."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thanks for the update. Can you set up notifications for any further changes or alerts regarding this flight?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Absolutely. To set up alerts for DL4162, please provide either your mobile country code and number or your email address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 8,
+      "guideline_text": "Collect Contact Details: Capture the mobile country code and number or an email address for the chosen channel."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "You can send the alerts to my email at scarlett.kim at hotmail dot com."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "To receive flight alerts, please set them up in the Celestar Air mobile app. What device type are you using, iPhone or Android?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 7,
+      "guideline_text": "Alert Consent And Channel: Instruct the caller to set up notifications via the mobile app and ask only for their device type in this reply."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I'm using an iPhone."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Alerts are now active. You will receive real-time notifications for schedule and gate changes, delays or cancellations, boarding and departure, and arrival time updates. Notifications will be sent immediately when changes occur and with a pre-departure reminder 24 hours before departure.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 9,
+      "guideline_text": "Activate And Confirm Alerts: Activate alerts in the system and confirm enrollment with a brief summary of update types and timing without asking for further confirmation."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Thank you for setting that up. I appreciate your help!"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "74621958",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 4,
+      "guideline": "Retrieve Matching Flights: Before retrieving any flights, ask the user for cabin class, number of passengers, and a flexibility window in days, and do not present any flight options yet.",
+      "evidence": "Got it. Please provide your preferred cabin class, the number of passengers, and your flexibility window in days."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 7,
+      "guideline": "Alert Consent And Channel: Instruct the caller to set up notifications via the mobile app and ask only for their device type in this reply.",
+      "evidence": "To receive flight alerts, please set them up in the Celestar Air mobile app. What device type are you using, iPhone or Android?"
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 10,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance.",
+      "evidence": "74621958"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 4,
+      "original": "Retrieve Matching Flights: Retrieve matching flights for the route and date and present concise options with flight numbers and departure times in one reply.",
+      "modified": "Retrieve Matching Flights: Before retrieving any flights, ask the user for cabin class, number of passengers, and a flexibility window in days, and do not present any flight options yet."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 7,
+      "original": "Alert Consent And Channel: Ask whether the caller wants real time flight status notifications for this flight and request the preferred notification channel in the same reply.",
+      "modified": "Alert Consent And Channel: Instruct the caller to set up notifications via the mobile app and ask only for their device type in this reply."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 10,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Conclude by outputting only an eight-digit reference number (e.g., '12345678') and provide no farewell, appreciation, or reassurance."
+    }
+  ],
+  "rule_based_termination": null
+}

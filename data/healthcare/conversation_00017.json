@@ -1,0 +1,333 @@
+{
+  "domain": "healthcare",
+  "intent_name": "reschedule_or_cancel_appointment",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "reschedule_or_cancel_appointment": {
+        "Phase 1": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+        "Phase 2": "Verify Patient Identity: Ask for the caller's full name and exact date of birth with month day and year.",
+        "Phase 3": "Locate Appointment: Ask for the exact scheduled appointment date with month day and year and the exact time with AM or PM to locate the booking.",
+        "Phase 4": "Confirm Appointment Found: Read back the exact appointment date time location or telehealth and provider name from the system and ask the caller to confirm this is the appointment to modify.",
+        "Phase 5": "Policy Notice: State that Bright Path Health requires at least 24 hours notice for rescheduling or cancellation and ask the caller to confirm their request meets this policy to proceed.",
+        "Phase 6": "Select Change And Provide Details: Ask the caller to choose reschedule switch visit format or cancel and include any new appointment date with month day and year the new time with AM or PM and the desired visit format in person or telehealth.",
+        "Phase 7": "Confirm Change Summary: Summarize the requested change by stating the exact updated appointment date time visit format provider and location or telehealth link or cancellation and ask for explicit confirmation to submit.",
+        "Phase 8": "Process Update And Acknowledge: Save the change in the scheduling system and provide the confirmation code or the cancellation confirmation number exactly as shown then ask the caller to acknowledge.",
+        "Phase 9": "Confirmation Delivery: State the email address and mobile number on file exactly as shown and ask whether to send the confirmation by SMS email or both.",
+        "Phase 10": "Send Confirmation: Send the confirmation using the caller's selected method and state that it has been sent.",
+        "Phase 11": "Wrap Up: Thank the caller for choosing Bright Path Health and ask whether there is anything else they need."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "reschedule_or_cancel_appointment": {
+        "Phase 1": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+        "Phase 2": "Verify Patient Identity: Ask for the caller's full name and exact date of birth with month day and year.",
+        "Phase 3": "Locate Appointment: Ask the user to provide the patient's full name, date of birth, and clinic location to look up the booking.",
+        "Phase 4": "Confirm Appointment Found: Present a numbered list of the next three available appointment options without stating any current appointment details, and ask the caller to choose which option they prefer to switch to.",
+        "Phase 5": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed.",
+        "Phase 6": "Select Change And Provide Details: Ask the caller to choose reschedule switch visit format or cancel and include any new appointment date with month day and year the new time with AM or PM and the desired visit format in person or telehealth.",
+        "Phase 7": "Confirm Change Summary: Summarize the requested change by stating the exact updated appointment date time visit format provider and location or telehealth link or cancellation and ask for explicit confirmation to submit.",
+        "Phase 8": "Process Update And Acknowledge: Save the change in the scheduling system and provide the confirmation code or the cancellation confirmation number exactly as shown then ask the caller to acknowledge.",
+        "Phase 9": "Confirmation Delivery: State the email address and mobile number on file exactly as shown and ask whether to send the confirmation by SMS email or both.",
+        "Phase 10": "Send Confirmation: Send the confirmation using the caller's selected method and state that it has been sent.",
+        "Phase 11": "Wrap Up: Thank the caller for choosing Bright Path Health and ask whether there is anything else they need."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Locate Appointment: Ask for the exact scheduled appointment date with month day and year and the exact time with AM or PM to locate the booking.",
+      "modified": "Locate Appointment: Ask the user to provide the patient's full name, date of birth, and clinic location to look up the booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Confirm Appointment Found: Read back the exact appointment date time location or telehealth and provider name from the system and ask the caller to confirm this is the appointment to modify.",
+      "modified": "Confirm Appointment Found: Present a numbered list of the next three available appointment options without stating any current appointment details, and ask the caller to choose which option they prefer to switch to."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 0,
+      "phase": "Phase 5",
+      "original": "Policy Notice: State that Bright Path Health requires at least 24 hours notice for rescheduling or cancellation and ask the caller to confirm their request meets this policy to proceed.",
+      "modified": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Kenji Hernandez",
+    "first_name": "Kenji",
+    "last_name": "Hernandez",
+    "gender": "female",
+    "phone": "+64086215643",
+    "email": "kenji.hernandez@yahoo.com",
+    "address": {
+      "street": "8531 Pine Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "20487"
+    },
+    "date_of_birth": "03/14/1994",
+    "ssn_last4": "3951",
+    "card_type": "American Express",
+    "card_number": "6275640757587509",
+    "card_last4": "7509",
+    "card_expiration": "10/2028",
+    "cardholder_name": "Kenji Hernandez",
+    "card_cvv": "5760",
+    "billing_zip": "20487",
+    "insurance_carrier": "Ambetter",
+    "insurance_plan_name": "Premium Choice PPO",
+    "member_id": "MEM28358935",
+    "group_number": "GRP606326",
+    "subscriber_id": "SUB31700597",
+    "provider_name": "Dr. David Kim",
+    "provider_npi": "6789012345",
+    "appointment_date": "04/15/2026",
+    "appointment_time": "9:15 AM",
+    "visit_type": "telehealth",
+    "household_size": 1,
+    "monthly_income": 11853,
+    "patient_account_number": "PA97111259",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Walmart Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava from Bright Path Health. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 1,
+      "guideline_text": "Greeting: Greet the caller as Ava from Bright Path Health and ask how you can help today."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I'd like to reschedule my upcoming telehealth appointment with Dr. Kim."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. Please provide your full name and your date of birth with month, day, and year.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 2,
+      "guideline_text": "Verify Patient Identity: Ask for the caller's full name and exact date of birth with month day and year."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my name is Kenji Hernandez and my date of birth is March 14, 1994."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you, Kenji. Please provide the clinic location where you scheduled this telehealth visit.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 3,
+      "guideline_text": "Locate Appointment: Ask the user to provide the patient's full name, date of birth, and clinic location to look up the booking."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "The appointment is scheduled through the Denver clinic."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Here are the next three available appointment options:\n1. Monday June 17 2024 at 10:30 AM MT\n2. Tuesday June 18 2024 at 2:00 PM MT\n3. Thursday June 20 2024 at 9:00 AM MT\n\nWhich option would you like to switch to?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 4,
+      "guideline_text": "Confirm Appointment Found: Present a numbered list of the next three available appointment options without stating any current appointment details, and ask the caller to choose which option they prefer to switch to."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Could we reschedule it to Tuesday, June 18, at 2:00 PM MT, please?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Bright Path Health imposes a mandatory 25 dollar change fee on any reschedule or cancellation regardless of notice. To proceed, please reply: 'I consent to the $25 change fee'.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 5,
+      "guideline_text": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I consent to the $25 change fee."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please confirm whether you want to reschedule, switch visit format, or cancel, and include the new appointment date with month, day, and year, the new time with AM or PM, and your desired visit format in person or telehealth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 6,
+      "guideline_text": "Select Change And Provide Details: Ask the caller to choose reschedule switch visit format or cancel and include any new appointment date with month day and year the new time with AM or PM and the desired visit format in person or telehealth."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I would like to reschedule my telehealth appointment to Tuesday, June 18, 2024, at 2:00 PM."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Here is the requested change summary:\n- Provider: Dr. Kim\n- Visit format: Telehealth\n- Date: Tuesday, June 18, 2024\n- Time: 2:00 PM MT\n- Telehealth link: https://brightpathhealth.com/telehealth/kim-denver-20240618-1400MT\n\nPlease confirm you want me to submit this change.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 7,
+      "guideline_text": "Confirm Change Summary: Summarize the requested change by stating the exact updated appointment date time visit format provider and location or telehealth link or cancellation and ask for explicit confirmation to submit."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Yes, please go ahead and submit the change."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "The change has been saved. Confirmation code RS-DEN-20240618-1400-TH-7KJ2. Please reply to acknowledge.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 8,
+      "guideline_text": "Process Update And Acknowledge: Save the change in the scheduling system and provide the confirmation code or the cancellation confirmation number exactly as shown then ask the caller to acknowledge."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Thank you, I've noted the confirmation code."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Email on file: kenji.hernandez@gmail.com\nMobile on file: 303-555-0186\nWould you like the confirmation sent by SMS, email, or both?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 9,
+      "guideline_text": "Confirmation Delivery: State the email address and mobile number on file exactly as shown and ask whether to send the confirmation by SMS email or both."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Please send it to both email and SMS. Thanks."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Your appointment change confirmation has been sent by email and SMS.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 10,
+      "guideline_text": "Send Confirmation: Send the confirmation using the caller's selected method and state that it has been sent."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Thanks for your help. Have a great day!"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Thank you for choosing Bright Path Health. Is there anything else I can help you with today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 11,
+      "guideline_text": "Wrap Up: Thank the caller for choosing Bright Path Health and ask whether there is anything else they need."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 3,
+      "guideline": "Locate Appointment: Ask the user to provide the patient's full name, date of birth, and clinic location to look up the booking.",
+      "evidence": "Thank you, Kenji. Please provide the clinic location where you scheduled this telehealth visit."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 4,
+      "guideline": "Confirm Appointment Found: Present a numbered list of the next three available appointment options without stating any current appointment details, and ask the caller to choose which option they prefer to switch to.",
+      "evidence": "Here are the next three available appointment options:\n1. Monday June 17 2024 at 10:30 AM MT\n2. Tuesday June 18 2024 at 2:00 PM MT\n3. Thursday June 20 2024 at 9:00 AM MT\n\nWhich option would you like to switch to?"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 5,
+      "guideline": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed.",
+      "evidence": "Bright Path Health imposes a mandatory 25 dollar change fee on any reschedule or cancellation regardless of notice. To proceed, please reply: 'I consent to the $25 change fee'."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 3,
+      "original": "Locate Appointment: Ask for the exact scheduled appointment date with month day and year and the exact time with AM or PM to locate the booking.",
+      "modified": "Locate Appointment: Ask the user to provide the patient's full name, date of birth, and clinic location to look up the booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 4,
+      "original": "Confirm Appointment Found: Read back the exact appointment date time location or telehealth and provider name from the system and ask the caller to confirm this is the appointment to modify.",
+      "modified": "Confirm Appointment Found: Present a numbered list of the next three available appointment options without stating any current appointment details, and ask the caller to choose which option they prefer to switch to."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 5,
+      "original": "Policy Notice: State that Bright Path Health requires at least 24 hours notice for rescheduling or cancellation and ask the caller to confirm their request meets this policy to proceed.",
+      "modified": "Policy Notice: State that Bright Path Health imposes a mandatory $25 change fee on any reschedule or cancellation regardless of notice and ask the caller to explicitly agree by replying 'I consent to the $25 change fee' to proceed."
+    }
+  ],
+  "rule_based_termination": null
+}

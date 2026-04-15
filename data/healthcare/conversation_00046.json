@@ -1,0 +1,269 @@
+{
+  "domain": "healthcare",
+  "intent_name": "reschedule_or_cancel_appointment",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "reschedule_or_cancel_appointment": {
+        "Phase 1": "Warm Greeting and Request: Greet the caller as Ava from Bright Path Health and ask them to state the requested change such as cancel the appointment switch to in-person switch to telehealth or reschedule to a specific date and time.",
+        "Phase 2": "Verify Caller Profile: Ask for the caller's full name and 10-digit phone number to locate the patient record.",
+        "Phase 3": "Confirm Target Appointment: Present the next upcoming appointment from the system and ask the caller to confirm it is the one to modify.",
+        "Phase 4": "Policy Acknowledgment: State that Bright Path Health requests at least 24 hours' notice for appointment changes and ask the caller to acknowledge this policy.",
+        "Phase 5": "Final Review and Approval: Read back the full summary of the requested change including date time visit format provider and location or telehealth link and ask for explicit approval to proceed.",
+        "Phase 6": "Delivery Preference: Ask the caller to choose SMS email or both to receive the confirmation at the contact details on file.",
+        "Phase 7": "Apply Update and Send Confirmation: Submit the change in the scheduling system and send the confirmation through the chosen channels then state that the update is complete.",
+        "Phase 8": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether they need anything else and conclude the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "reschedule_or_cancel_appointment": {
+        "Phase 1": "Warm Greeting and Request: Offer a warm greeting and immediately request the appointment confirmation code and the last four digits of the caller's phone number to locate their booking.",
+        "Phase 2": "Verify Caller Profile: Ask for the caller's full name and 10-digit phone number to locate the patient record.",
+        "Phase 3": "Confirm Target Appointment: Ask the caller to provide the exact date and time of the appointment they want to modify, without presenting any system appointments.",
+        "Phase 4": "Policy Acknowledgment: State that Bright Path Health requests at least 24 hours' notice for appointment changes and ask the caller to acknowledge this policy.",
+        "Phase 5": "Final Review and Approval: Read back the full summary of the requested change including date time visit format provider and location or telehealth link and ask for explicit approval to proceed.",
+        "Phase 6": "Delivery Preference: Ask the caller to choose SMS email or both to receive the confirmation at the contact details on file.",
+        "Phase 7": "Apply Update and Send Confirmation: Submit the change in the scheduling system and send the confirmation through the chosen channels then state that the update is complete.",
+        "Phase 8": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether they need anything else and conclude the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Warm Greeting and Request: Greet the caller as Ava from Bright Path Health and ask them to state the requested change such as cancel the appointment switch to in-person switch to telehealth or reschedule to a specific date and time.",
+      "modified": "Warm Greeting and Request: Offer a warm greeting and immediately request the appointment confirmation code and the last four digits of the caller's phone number to locate their booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "reschedule_or_cancel_appointment",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Confirm Target Appointment: Present the next upcoming appointment from the system and ask the caller to confirm it is the one to modify.",
+      "modified": "Confirm Target Appointment: Ask the caller to provide the exact date and time of the appointment they want to modify, without presenting any system appointments."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "William Nguyen",
+    "first_name": "William",
+    "last_name": "Nguyen",
+    "gender": "female",
+    "phone": "+18737201187",
+    "email": "william.nguyen@protonmail.com",
+    "address": {
+      "street": "323 Maple Ave",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "24345"
+    },
+    "date_of_birth": "06/02/1984",
+    "ssn_last4": "8144",
+    "card_type": "American Express",
+    "card_number": "7753196577451601",
+    "card_last4": "1601",
+    "card_expiration": "09/2028",
+    "cardholder_name": "William Nguyen",
+    "card_cvv": "4653",
+    "billing_zip": "24345",
+    "insurance_carrier": "Centene",
+    "insurance_plan_name": "Select Plus PPO",
+    "member_id": "MEM66701457",
+    "group_number": "GRP210721",
+    "subscriber_id": "SUB13865644",
+    "provider_name": "Dr. Kevin Patel",
+    "provider_npi": "8901234567",
+    "appointment_date": "04/09/2026",
+    "appointment_time": "12:45 PM",
+    "visit_type": "in-person",
+    "household_size": 6,
+    "monthly_income": 5851,
+    "patient_account_number": "PA64721636",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi there, I can help with that. Please share your appointment confirmation code and the last four digits of the phone number you used to book, so I can locate your appointment.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 1,
+      "guideline_text": "Warm Greeting and Request: Offer a warm greeting and immediately request the appointment confirmation code and the last four digits of the caller's phone number to locate their booking."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure thing. I don't have a confirmation code, but my appointment is on April 9th with Dr. Kevin Patel, and the last four digits of my phone number are 1187."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks for that. To locate your record, please provide your full name and your 10-digit phone number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 2,
+      "guideline_text": "Verify Caller Profile: Ask for the caller's full name and 10-digit phone number to locate the patient record."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My full name is William Nguyen, and my phone number is +18737201187."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please provide the exact date and the scheduled start time of the appointment you want to modify.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 3,
+      "guideline_text": "Confirm Target Appointment: Ask the caller to provide the exact date and time of the appointment they want to modify, without presenting any system appointments."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "The appointment is scheduled for April 9th at 12:45 PM."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Before we proceed, please note that Bright Path Health requests at least 24 hours' notice for appointment changes. Do you acknowledge this policy?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 4,
+      "guideline_text": "Policy Acknowledgment: State that Bright Path Health requests at least 24 hours' notice for appointment changes and ask the caller to acknowledge this policy."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Yes, I understand."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Here is the summary of the requested change:\n- Provider: Dr. Kevin Patel\n- New date and time: July 2 at 3:15 PM\n- Visit format: Telehealth\n- Telehealth link: https://brightpathhealth.com/visit/WN-20240702-1515\n\nDo you approve this change so I can proceed?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 5,
+      "guideline_text": "Final Review and Approval: Read back the full summary of the requested change including date time visit format provider and location or telehealth link and ask for explicit approval to proceed."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "That works for me. Please go ahead and make the changes."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "How would you like to receive your confirmation: SMS, email, or both, sent to the contact details on file?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 6,
+      "guideline_text": "Delivery Preference: Ask the caller to choose SMS email or both to receive the confirmation at the contact details on file."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Please send the confirmation via SMS."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Your appointment has been updated. A confirmation has been sent via SMS. The update is complete.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 7,
+      "guideline_text": "Apply Update and Send Confirmation: Submit the change in the scheduling system and send the confirmation through the chosen channels then state that the update is complete."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Great, thanks for your help."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else I can help you with today? If not, have a great rest of your day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 8,
+      "guideline_text": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether they need anything else and conclude the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 1,
+      "guideline": "Warm Greeting and Request: Offer a warm greeting and immediately request the appointment confirmation code and the last four digits of the caller's phone number to locate their booking.",
+      "evidence": "Hi there, I can help with that. Please share your appointment confirmation code and the last four digits of the phone number you used to book, so I can locate your appointment."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 3,
+      "guideline": "Confirm Target Appointment: Ask the caller to provide the exact date and time of the appointment they want to modify, without presenting any system appointments.",
+      "evidence": "Please provide the exact date and the scheduled start time of the appointment you want to modify."
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "reschedule_or_cancel_appointment",
+      "guideline_phase": 5,
+      "guideline": "Final Review and Approval: Read back the full summary of the requested change including date time visit format provider and location or telehealth link and ask for explicit approval to proceed."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 1,
+      "original": "Warm Greeting and Request: Greet the caller as Ava from Bright Path Health and ask them to state the requested change such as cancel the appointment switch to in-person switch to telehealth or reschedule to a specific date and time.",
+      "modified": "Warm Greeting and Request: Offer a warm greeting and immediately request the appointment confirmation code and the last four digits of the caller's phone number to locate their booking."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "reschedule_or_cancel_appointment",
+      "phase": 3,
+      "original": "Confirm Target Appointment: Present the next upcoming appointment from the system and ask the caller to confirm it is the one to modify.",
+      "modified": "Confirm Target Appointment: Ask the caller to provide the exact date and time of the appointment they want to modify, without presenting any system appointments."
+    }
+  ],
+  "rule_based_termination": null
+}

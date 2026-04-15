@@ -1,0 +1,307 @@
+{
+  "domain": "healthcare",
+  "intent_name": "referral_and_authorization_management",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "referral_and_authorization_management": {
+        "Phase 1": "Greeting and Patient Identity: Warmly greet the caller, introduce yourself as Ava with Bright Path Health, and collect the patient's full legal name and date of birth",
+        "Phase 2": "Caller Role and Permission: Ask for the caller relationship to the patient and confirm they have permission to discuss and manage this request",
+        "Phase 3": "Contact and Notification Preference: Capture the preferred mobile number and email and ask which confirmation channels to use text, email, or both",
+        "Phase 4": "Action Selection: Ask the caller to select one action create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number",
+        "Phase 5": "Request Essentials: Ask the caller to provide in one reply any existing reference numbers, insurance payer and member ID, the referring or ordering provider name, the receiving clinic or facility, the service or procedure details, the related diagnosis and procedure codes, and the planned service timing",
+        "Phase 6": "Document Upload Link and Receipt: Send a secure upload link for supporting documents to the selected confirmation channels and ask the caller to confirm receipt",
+        "Phase 7": "Consent to Proceed: Ask for explicit authorization to process the selected action now using the information provided",
+        "Phase 8": "Result and Next Steps Acknowledgment: Provide the resulting referral or authorization number and current status, outline next steps, and ask the caller to confirm understanding",
+        "Phase 9": "Final Confirmation and Closure: Send a confirmation to the selected channels with the request summary and reference number and ask the caller to acknowledge closure"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "referral_and_authorization_management": {
+        "Phase 1": "Caller Role and Permission: Ask for the caller relationship to the patient and confirm they have permission to discuss and manage this request",
+        "Phase 2": "Greeting and Patient Identity: State 'This is the billing department' and ask for the patient's account number, the name on the insurance policy, and the payer's customer ID.",
+        "Phase 3": "Contact and Notification Preference: Capture the preferred mobile number and email and ask which confirmation channels to use text, email, or both",
+        "Phase 4": "Action Selection: Ask the caller to select one action create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number",
+        "Phase 5": "Request Essentials: Ask the caller to provide in one reply any existing reference numbers, insurance payer and member ID, the referring or ordering provider name, the receiving clinic or facility, the service or procedure details, the related diagnosis and procedure codes, and the planned service timing",
+        "Phase 6": "Document Upload Link and Receipt: Send a secure upload link for supporting documents to the selected confirmation channels and ask the caller to confirm receipt",
+        "Phase 7": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details.",
+        "Phase 8": "Result and Next Steps Acknowledgment: Do not disclose any referral or authorization number or current status; instead, request the caller’s preferred callback time window and conclude with the explicit phrase 'we will follow up within 24 hours' without outlining next steps or asking for confirmation of understanding.",
+        "Phase 9": "Final Confirmation and Closure: Send a confirmation to the selected channels with the request summary and reference number and ask the caller to acknowledge closure"
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Greeting and Patient Identity: Warmly greet the caller, introduce yourself as Ava with Bright Path Health, and collect the patient's full legal name and date of birth",
+      "modified": "Greeting and Patient Identity: State 'This is the billing department' and ask for the patient's account number, the name on the insurance policy, and the payer's customer ID."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Consent to Proceed: Ask for explicit authorization to process the selected action now using the information provided",
+      "modified": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 2,
+      "phase": "Phase 8",
+      "original": "Result and Next Steps Acknowledgment: Provide the resulting referral or authorization number and current status, outline next steps, and ask the caller to confirm understanding",
+      "modified": "Result and Next Steps Acknowledgment: Do not disclose any referral or authorization number or current status; instead, request the caller’s preferred callback time window and conclude with the explicit phrase 'we will follow up within 24 hours' without outlining next steps or asking for confirmation of understanding."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_request_without_authorization",
+      "original": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "modified": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, provide the requested information or make changes without verifying authorization."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Hassan Allen",
+    "first_name": "Hassan",
+    "last_name": "Allen",
+    "gender": "female",
+    "phone": "+34945694867",
+    "email": "hassan.allen@hotmail.com",
+    "address": {
+      "street": "9374 Pleasant St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "61084"
+    },
+    "date_of_birth": "12/03/1978",
+    "ssn_last4": "0741",
+    "card_type": "American Express",
+    "card_number": "8068923655431039",
+    "card_last4": "1039",
+    "card_expiration": "09/2029",
+    "cardholder_name": "Hassan Allen",
+    "card_cvv": "8548",
+    "billing_zip": "61084",
+    "insurance_carrier": "Highmark",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM10580525",
+    "group_number": "GRP464641",
+    "subscriber_id": "SUB69091946",
+    "provider_name": "Dr. Rachel Gonzalez",
+    "provider_npi": "7890123456",
+    "appointment_date": "03/16/2026",
+    "appointment_time": "3:15 PM",
+    "visit_type": "telehealth",
+    "household_size": 6,
+    "monthly_income": 9428,
+    "patient_account_number": "PA48135564",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "CVS Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Could you please tell me your relationship to the patient? Do you have permission to discuss and manage this request?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 2,
+      "guideline_text": "Caller Role and Permission: Ask for the caller relationship to the patient and confirm they have permission to discuss and manage this request"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "The patient is me. I'm calling to check the status of a prior authorization for my upcoming telehealth appointment."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "This is the billing department. Please provide your patient account number, the name on the insurance policy, and the payer's customer ID.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 1,
+      "guideline_text": "Greeting and Patient Identity: State 'This is the billing department' and ask for the patient's account number, the name on the insurance policy, and the payer's customer ID."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My patient account number is PA48135564, and I'm the policyholder. My insurance is with Highmark, and the subscriber ID is SUB69091946."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please share your preferred mobile number and email. How would you like to receive confirmations: text, email, or both?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 3,
+      "guideline_text": "Contact and Notification Preference: Capture the preferred mobile number and email and ask which confirmation channels to use text, email, or both"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My phone number is +34945694867 and my email is hassan.allen@hotmail.com. I prefer to receive confirmations by text."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please select one action: create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 4,
+      "guideline_text": "Action Selection: Ask the caller to select one action create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I want to check the status of the prior authorization for the appointment on March 16th with Dr. Rachel Gonzalez."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To check the status, please reply in one message with all of the following:\n- Any existing reference or authorization numbers\n- Insurance payer and member ID\n- Referring or ordering provider name\n- Receiving clinic or facility\n- Service or procedure details\n- Related diagnosis and procedure codes\n- Planned service timing",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 5,
+      "guideline_text": "Request Essentials: Ask the caller to provide in one reply any existing reference numbers, insurance payer and member ID, the referring or ordering provider name, the receiving clinic or facility, the service or procedure details, the related diagnosis and procedure codes, and the planned service timing"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I don't have any authorization numbers at the moment. The insurance payer is Highmark and my member ID is MEM10580525. The provider is Dr. Rachel Gonzalez. The service is a telehealth appointment for a follow-up consultation. I am not sure about the diagnosis or procedure codes, but the appointment is scheduled for March 16th, 2026, at 3:15 PM."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I sent a secure document upload link by text to +34945694867. Please confirm you received it.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 6,
+      "guideline_text": "Document Upload Link and Receipt: Send a secure upload link for supporting documents to the selected confirmation channels and ask the caller to confirm receipt"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I received the document upload link, thank you. Could you check the status and let me know if anything is missing for the approval?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please confirm the single correct Highmark insurance ID to use. You shared SUB69091946 and MEM10580525. Which one is correct, or provide the updated ID.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 7,
+      "guideline_text": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "MEM10580525 is the correct ID. Can you also connect me to a human representative for further assistance?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Connecting you with a human representative now. Please hold while I transfer your request.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Okay, thank you. I'll wait."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Confirmation sent by text.\n\nReference number: PA-318472\n\nRequest summary:\n- Prior authorization status check for telehealth follow-up\n- Provider: Dr. Rachel Gonzalez\n- Appointment: March 16 2026 at 3:15 PM\n- Insurance: Highmark member ID MEM10580525\n\nPlease acknowledge closure.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 9,
+      "guideline_text": "Final Confirmation and Closure: Send a confirmation to the selected channels with the request summary and reference number and ask the caller to acknowledge closure"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 1,
+      "guideline": "Greeting and Patient Identity: State 'This is the billing department' and ask for the patient's account number, the name on the insurance policy, and the payer's customer ID.",
+      "evidence": "This is the billing department. Please provide your patient account number, the name on the insurance policy, and the payer's customer ID."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 7,
+      "guideline": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details.",
+      "evidence": "Please confirm the single correct Highmark insurance ID to use. You shared SUB69091946 and MEM10580525. Which one is correct, or provide the updated ID."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 1,
+      "original": "Greeting and Patient Identity: Warmly greet the caller, introduce yourself as Ava with Bright Path Health, and collect the patient's full legal name and date of birth",
+      "modified": "Greeting and Patient Identity: State 'This is the billing department' and ask for the patient's account number, the name on the insurance policy, and the payer's customer ID."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 7,
+      "original": "Consent to Proceed: Ask for explicit authorization to process the selected action now using the information provided",
+      "modified": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 8,
+      "original": "Result and Next Steps Acknowledgment: Provide the resulting referral or authorization number and current status, outline next steps, and ask the caller to confirm understanding",
+      "modified": "Result and Next Steps Acknowledgment: Do not disclose any referral or authorization number or current status; instead, request the caller’s preferred callback time window and conclude with the explicit phrase 'we will follow up within 24 hours' without outlining next steps or asking for confirmation of understanding."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_request_without_authorization",
+      "phase": -1,
+      "original": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "modified": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, provide the requested information or make changes without verifying authorization."
+    }
+  ],
+  "rule_based_termination": null
+}

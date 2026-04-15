@@ -1,0 +1,215 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "travel_policy_and_fee_information",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Clarify policy topic: Ask the caller to specify the exact policy or fee topic they need such as baggage rules change policies cancellation policies seat selection check in deadlines or documentation requirements",
+        "Phase 3": "Collect context details: Ask whether the information should apply to a specific existing booking and collect the booking code last name route or regions travel dates cabin class number of travelers and loyalty status in one reply",
+        "Phase 4": "Confirm scope and topic: Restate the policy topic and the captured context and ask the caller to confirm in one reply",
+        "Phase 5": "Present tailored policies: Use the internal policy database to present a concise explanation of applicable rules allowances timelines and itemized fees for the confirmed topic based on the provided context and ask whether they want a written summary",
+        "Phase 6": "Send summary: Collect the preferred delivery channel and contact details in one reply send the summary via the selected channel using the system and inform the caller it has been sent",
+        "Phase 7": "Wrap up: Thank the caller for contacting Celestar Air and ask if they need any other policy information today",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Open with \"Please provide your 6-character booking reference and travel date to get started\" without any greeting or agent introduction.",
+        "Phase 2": "Send summary: Collect the preferred delivery channel and contact details in one reply send the summary via the selected channel using the system and inform the caller it has been sent",
+        "Phase 3": "Confirm scope and topic: Restate the policy topic and the captured context and ask the caller to confirm in one reply",
+        "Phase 4": "Present tailored policies: Use the internal policy database to present a concise explanation of applicable rules allowances timelines and itemized fees for the confirmed topic based on the provided context and ask whether they want a written summary",
+        "Phase 5": "Collect context details: Ask whether the information should apply to a specific existing booking and collect the booking code last name route or regions travel dates cabin class number of travelers and loyalty status in one reply",
+        "Phase 6": "Clarify policy topic: Do not ask which policy or fee topic they need and instead ask the caller to provide their full name, booking reference, and travel dates.",
+        "Phase 7": "Wrap up: Thank the caller for contacting Celestar Air and ask if they need any other policy information today",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open with \"Please provide your 6-character booking reference and travel date to get started\" without any greeting or agent introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Clarify policy topic: Ask the caller to specify the exact policy or fee topic they need such as baggage rules change policies cancellation policies seat selection check in deadlines or documentation requirements",
+      "modified": "Clarify policy topic: Do not ask which policy or fee topic they need and instead ask the caller to provide their full name, booking reference, and travel dates."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Kai Bernard",
+    "first_name": "Kai",
+    "last_name": "Bernard",
+    "gender": "female",
+    "phone": "+46230166313",
+    "email": "kai.bernard@test.org",
+    "address": {
+      "street": "3233 Lincoln Ave",
+      "city": "Buffalo",
+      "state": "NY",
+      "zip": "56444"
+    },
+    "record_locator": "KCG5T4",
+    "confirmation_code": "KCG5T4",
+    "booking_reference": "KCG5T4",
+    "pnr": "KCG5T4",
+    "ticket_number": "5328585988879",
+    "flight_number": "UA5279",
+    "origin": "Atlanta (ATL)",
+    "destination": "San Francisco (SFO)",
+    "travel_date": "2026-06-06",
+    "return_date": "2026-06-11",
+    "seat_number": "25D",
+    "seat_preference": "aisle",
+    "cabin_class": "economy",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "3342"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your 6-character booking reference and travel date to get started",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Open with \"Please provide your 6-character booking reference and travel date to get started\" without any greeting or agent introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my booking reference is KCG5T4, and my travel date is June 6, 2026."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks. Please provide your full name.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "guideline_text": "Clarify policy topic: Do not ask which policy or fee topic they need and instead ask the caller to provide their full name, booking reference, and travel dates."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Kai Bernard."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks, Kai. Should this information apply to your existing booking KCG5T4 for last name Bernard traveling June 6, 2026? If yes, please provide the route or regions, cabin class, number of travelers, and your loyalty status. If no, please provide the booking code, last name, route or regions, travel dates, cabin class, number of travelers, and loyalty status for the trip you want this to apply to.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 3,
+      "guideline_text": "Collect context details: Ask whether the information should apply to a specific existing booking and collect the booking code last name route or regions travel dates cabin class number of travelers and loyalty status in one reply"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, it applies to my existing booking. I'm traveling from Atlanta to San Francisco in economy class, just one traveler, and I don't have any loyalty status. Could you provide some information on baggage fees and the check-in deadline?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Here are the applicable baggage policies and check-in deadlines for booking KCG5T4 on June 6 2026, Atlanta to San Francisco, economy, one traveler, no loyalty status.\n\nBaggage allowances and itemized fees per one-way\n- Personal item included at no charge. Must fit under the seat. Max size 18 by 14 by 8 inches.\n- Carry-on bag included at no charge. Max size 22 by 14 by 9 inches. No weight limit. Subject to overhead bin space.\n- Checked bags standard up to 50 pounds and 62 linear inches\n  - First bag 35 USD\n  - Second bag 45 USD\n  - Third and additional bags 150 USD each\n- Overweight checked bags\n  - 51 to 70 pounds add 100 USD\n  - 71 to 100 pounds add 200 USD\n  - Over 100 pounds not accepted\n- Oversize checked bags\n  - 63 to 80 linear inches add 200 USD\n  - Over 80 linear inches not accepted\n\nCheck-in and airport timelines\n- Online or mobile check-in opens 24 hours before departure\n- Check-in closes 45 minutes before departure\n- Bag drop closes 45 minutes before departure\n- Boarding begins about 35 minutes before departure and the gate closes 15 minutes before departure\n\nWould you like a written summary?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 5,
+      "guideline_text": "Present tailored policies: Use the internal policy database to present a concise explanation of applicable rules allowances timelines and itemized fees for the confirmed topic based on the provided context and ask whether they want a written summary"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Thanks for the information. I think that's all I needed to know for now."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "You’re very welcome, Kai. Thanks for reaching out, and have a smooth trip from Atlanta to San Francisco on June 6. If you need anything else, we are here to help. Have a great day!",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Open with \"Please provide your 6-character booking reference and travel date to get started\" without any greeting or agent introduction.",
+      "evidence": "Please provide your 6-character booking reference and travel date to get started"
+    },
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 2,
+      "guideline": "Clarify policy topic: Do not ask which policy or fee topic they need and instead ask the caller to provide their full name, booking reference, and travel dates.",
+      "evidence": "Thanks. Please provide your full name."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open with \"Please provide your 6-character booking reference and travel date to get started\" without any greeting or agent introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "original": "Clarify policy topic: Ask the caller to specify the exact policy or fee topic they need such as baggage rules change policies cancellation policies seat selection check in deadlines or documentation requirements",
+      "modified": "Clarify policy topic: Do not ask which policy or fee topic they need and instead ask the caller to provide their full name, booking reference, and travel dates."
+    }
+  ],
+  "rule_based_termination": null
+}

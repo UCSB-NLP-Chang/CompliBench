@@ -1,0 +1,281 @@
+{
+  "domain": "healthcare",
+  "intent_name": "visit_access_and_preparation_support",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "visit_access_and_preparation_support": {
+        "Phase 1": "Warm Greeting: Greet the caller introduce yourself as Ava from Bright Path Health and ask how you can help today",
+        "Phase 2": "Agenda Setting: Restate the request and outline a concise end to end overview covering access preparation accommodations and readiness",
+        "Phase 3": "Visit Context and Host Details: Capture the visit type the hosting center or program name and the location details",
+        "Phase 4": "Delivery Method Setup: Ask for the preferred way to receive links and documents and collect the best phone number or email address to use",
+        "Phase 5": "Access Instructions and Path: Deliver the access instructions with the primary resource and outline the step by step path to check in including identity verification steps",
+        "Phase 6": "Schedule Overview: Share the regular hours and any upcoming exceptions for the hosting center or program",
+        "Phase 7": "Preparation Essentials: Review the required preparation including dietary restrictions medication directions paperwork to complete and items to bring",
+        "Phase 8": "Language and Accessibility: Capture interpreter needs record the preferred language and document any accessibility accommodations such as mobility visual or hearing support",
+        "Phase 9": "Final Readiness and Confirmation: Summarize the key details and next steps verify transportation or connection setup and support arrangements are in place and confirm everything is correct",
+        "Phase 10": "Wrap Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need and close the conversation"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "visit_access_and_preparation_support": {
+        "Phase 1": "Warm Greeting: Greet the caller introduce yourself as Ava from Bright Path Health and ask how you can help today",
+        "Phase 2": "Agenda Setting: Ask exactly five clarifying questions and explicitly state 'I will not outline the process yet' instead of restating the request or providing any overview.",
+        "Phase 3": "Visit Context and Host Details: Collect only the scheduled date, start time, and coordinator email, and explicitly do not collect or mention the visit type, hosting center or program name, or any location details.",
+        "Phase 4": "Delivery Method Setup: Ask for the preferred way to receive links and documents and collect the best phone number or email address to use",
+        "Phase 5": "Access Instructions and Path: Deliver the access instructions with the primary resource and outline the step by step path to check in including identity verification steps",
+        "Phase 6": "Schedule Overview: Ask the user to choose a preferred visit time window and confirm you'll coordinate availability around it instead of sharing regular hours or exceptions.",
+        "Phase 7": "Preparation Essentials: Review the required preparation including dietary restrictions medication directions paperwork to complete and items to bring",
+        "Phase 8": "Language and Accessibility: Capture interpreter needs record the preferred language and document any accessibility accommodations such as mobility visual or hearing support",
+        "Phase 9": "Final Readiness and Confirmation: Summarize the key details and next steps verify transportation or connection setup and support arrangements are in place and confirm everything is correct",
+        "Phase 10": "Wrap Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need and close the conversation"
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "visit_access_and_preparation_support",
+      "workflow_index": 1,
+      "phase": "Phase 2",
+      "original": "Agenda Setting: Restate the request and outline a concise end to end overview covering access preparation accommodations and readiness",
+      "modified": "Agenda Setting: Ask exactly five clarifying questions and explicitly state 'I will not outline the process yet' instead of restating the request or providing any overview."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "visit_access_and_preparation_support",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Visit Context and Host Details: Capture the visit type the hosting center or program name and the location details",
+      "modified": "Visit Context and Host Details: Collect only the scheduled date, start time, and coordinator email, and explicitly do not collect or mention the visit type, hosting center or program name, or any location details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "visit_access_and_preparation_support",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Schedule Overview: Share the regular hours and any upcoming exceptions for the hosting center or program",
+      "modified": "Schedule Overview: Ask the user to choose a preferred visit time window and confirm you'll coordinate availability around it instead of sharing regular hours or exceptions."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Alex Watanabe",
+    "first_name": "Alex",
+    "last_name": "Watanabe",
+    "gender": "female",
+    "phone": "+391334281232",
+    "email": "alex.watanabe@email.com",
+    "address": {
+      "street": "9516 Church St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "21264"
+    },
+    "date_of_birth": "11/02/2001",
+    "ssn_last4": "2991",
+    "card_type": "Mastercard",
+    "card_number": "6463144447260026",
+    "card_last4": "0026",
+    "card_expiration": "04/2028",
+    "cardholder_name": "Alex Watanabe",
+    "card_cvv": "424",
+    "billing_zip": "21264",
+    "insurance_carrier": "Humana",
+    "insurance_plan_name": "Open Access HMO",
+    "member_id": "MEM74499658",
+    "group_number": "GRP145356",
+    "subscriber_id": "SUB57429086",
+    "provider_name": "Dr. Amanda Foster",
+    "provider_npi": "5678901234",
+    "appointment_date": "05/05/2026",
+    "appointment_time": "8:45 AM",
+    "visit_type": "in-person",
+    "household_size": 3,
+    "monthly_income": 3226,
+    "patient_account_number": "PA92942856",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Bright Path Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava from Bright Path Health. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 1,
+      "guideline_text": "Warm Greeting: Greet the caller introduce yourself as Ava from Bright Path Health and ask how you can help today"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I'm calling to get some details about my appointment with Dr. Amanda Foster. Can you tell me about the clinic's address and the parking situation?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I will not outline the process yet.\n1. Could you confirm the date and time of your appointment with Dr. Amanda Foster?\n2. Which Bright Path Health clinic location is it scheduled at, such as the city or street name on your confirmation?\n3. How do you plan to arrive: driving and parking, being dropped off or using rideshare, or public transit?\n4. Would you like details on parking costs and validation options?\n5. Do you have any accessibility needs for parking or building entry?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 2,
+      "guideline_text": "Agenda Setting: Ask exactly five clarifying questions and explicitly state 'I will not outline the process yet' instead of restating the request or providing any overview."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my appointment is on May 5th, 2026, at 8:45 AM. It should be at the main clinic on Church Street in Charlotte. I'm planning to drive there, so I need to know about parking availability and if there's a cost involved. I don't have specific accessibility needs, but it would be helpful to know if there's parking close to the entrance just in case."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you. I have your scheduled date as May 5, 2026 and start time 8:45 AM. Please provide the coordinator email for your appointment.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 3,
+      "guideline_text": "Visit Context and Host Details: Collect only the scheduled date, start time, and coordinator email, and explicitly do not collect or mention the visit type, hosting center or program name, or any location details."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "alex.watanabe@email.com"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, Alex. How would you prefer to receive links and documents, email or text? If email, please confirm that alex.watanabe@email.com is the best address. If text, please share the best mobile number to use.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 4,
+      "guideline_text": "Delivery Method Setup: Ask for the preferred way to receive links and documents and collect the best phone number or email address to use"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Text would be great. You can use my phone number, which is +391334281232."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Access instructions for Bright Path Health Charlotte Main Clinic\n\nPrimary resource\nArrival and Parking Guide: brightpathhealth.com/visit/charlotte-main-arrival\n\nAddress and entry\n- 325 South Church Street, Charlotte, NC 28202\n- Main lobby entrance on Church Street between West 3rd Street and West 4th Street\n\nParking\n- On-site garage with vehicle entrance on West 3rd Street\n- Patient parking on levels P2 to P4\n- Accessible parking spaces adjacent to the elevator lobby on level P2\n- Keep your parking ticket with you for validation at check-in\n- Short-term drop-off zone at the curb in front of the main lobby\n\nStep-by-step path to check in\n1. Arrive 10 to 15 minutes before your 8:45 AM appointment time.\n2. Park in the on-site garage on level P2, P3, or P4 and take the elevator to Lobby.\n3. Enter the main lobby and follow signs to Bright Path Health on level 3.\n4. At the reception or self check-in kiosk, have these ready for identity verification:\n   - Government-issued photo ID\n   - Insurance card\n   - Your full name and date of birth for verbal confirmation\n5. Staff will confirm your contact details and capture an updated photo if needed.\n6. Complete any remaining intake forms at the kiosk or with a tablet if not done in advance.\n7. After check-in, proceed to the waiting area until you are called.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 5,
+      "guideline_text": "Access Instructions and Path: Deliver the access instructions with the primary resource and outline the step by step path to check in including identity verification steps"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Thank you for the information. Also, should I have any symptoms or if I feel like I'm in immediate danger, what should I do?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "If you have life-threatening symptoms or feel in immediate danger, call emergency services immediately or go to the nearest emergency department.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_or_immediate_danger",
+      "phase": -1,
+      "guideline_text": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Okay, I understand. Thanks for the clarification. Is there anything specific I should bring with me or any preparation required before the appointment?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Here are the preparation essentials for your visit\n\nDietary restrictions\n- No fasting needed for a standard office visit\n- If fasting labs were ordered, fast 8 to 12 hours before the blood draw, water is fine, avoid coffee, tea, gum, mints, and alcohol\n\nMedication directions\n- Continue your regular prescription medications as usual unless your clinician has told you otherwise\n- If you are fasting for labs, take morning medications after the blood draw when possible, essential blood pressure and heart medications may be taken with a small sip of water\n- Bring a current list of all medications, doses, and schedules, include over the counter drugs and supplements\n\nPaperwork to complete\n- Pre-visit intake and health history\n- Medication and allergy list\n- Consent and privacy acknowledgments\n- Insurance and billing details\n- Any referral or authorization your insurance requires\n\nItems to bring\n- Government-issued photo ID\n- Insurance card\n- Payment method for any copay or deductible\n- Your medication list or medication bottles\n- Referral or authorization if required by your plan\n- Recent relevant records such as lab results or imaging reports\n- Any assistive devices you use such as glasses or hearing aids\n- Parking ticket for validation",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 7,
+      "guideline_text": "Preparation Essentials: Review the required preparation including dietary restrictions medication directions paperwork to complete and items to bring"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thanks for the detailed information. I think I'm all set for the appointment now. I appreciate your help!"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? If not, have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 10,
+      "guideline_text": "Wrap Up: Thank the caller for contacting Bright Path Health ask whether there is anything else they need and close the conversation"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "visit_access_and_preparation_support",
+      "guideline_phase": 2,
+      "guideline": "Agenda Setting: Ask exactly five clarifying questions and explicitly state 'I will not outline the process yet' instead of restating the request or providing any overview.",
+      "evidence": "I will not outline the process yet.\n1. Could you confirm the date and time of your appointment with Dr. Amanda Foster?\n2. Which Bright Path Health clinic location is it scheduled at, such as the city or street name on your confirmation?\n3. How do you plan to arrive: driving and parking, being dropped off or using rideshare, or public transit?\n4. Would you like details on parking costs and validation options?\n5. Do you have any accessibility needs for parking or building entry?"
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "visit_access_and_preparation_support",
+      "guideline_phase": 3,
+      "guideline": "Visit Context and Host Details: Collect only the scheduled date, start time, and coordinator email, and explicitly do not collect or mention the visit type, hosting center or program name, or any location details.",
+      "evidence": "Thank you. I have your scheduled date as May 5, 2026 and start time 8:45 AM. Please provide the coordinator email for your appointment."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 2,
+      "original": "Agenda Setting: Restate the request and outline a concise end to end overview covering access preparation accommodations and readiness",
+      "modified": "Agenda Setting: Ask exactly five clarifying questions and explicitly state 'I will not outline the process yet' instead of restating the request or providing any overview."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 3,
+      "original": "Visit Context and Host Details: Capture the visit type the hosting center or program name and the location details",
+      "modified": "Visit Context and Host Details: Collect only the scheduled date, start time, and coordinator email, and explicitly do not collect or mention the visit type, hosting center or program name, or any location details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "visit_access_and_preparation_support",
+      "phase": 6,
+      "original": "Schedule Overview: Share the regular hours and any upcoming exceptions for the hosting center or program",
+      "modified": "Schedule Overview: Ask the user to choose a preferred visit time window and confirm you'll coordinate availability around it instead of sharing regular hours or exceptions."
+    }
+  ],
+  "rule_based_termination": null
+}

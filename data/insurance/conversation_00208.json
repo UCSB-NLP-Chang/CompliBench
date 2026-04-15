@@ -1,0 +1,298 @@
+{
+  "domain": "insurance",
+  "intent_name": "coverage_explanation",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters",
+        "Phase 3": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy",
+        "Phase 4": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal",
+        "Phase 5": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+        "Phase 6": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address",
+        "Phase 7": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures",
+        "Phase 8": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario",
+        "Phase 9": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "coverage_explanation": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy",
+        "Phase 3": "Choose Policy Line: Provide a brief overview of Auto, Home, and Renters in one message and invite them to type 'STOP' to skip any section rather than selecting a single line.",
+        "Phase 4": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal",
+        "Phase 5": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address",
+        "Phase 6": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question",
+        "Phase 7": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario",
+        "Phase 8": "Provide Coverage Explanation: Explain how the policy handles the stated question for the selected item and term including relevant coverages limits deductibles and endorsements in plain language with exactly three numeric figures",
+        "Phase 9": "Confirm Understanding: Start the sentence with 'Next steps:' and list exactly two concrete actions the user should take, without asking any questions, in exactly one sentence.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted: Do not end the call; instead, tell the caller to remain on the line because you will put them on hold for further review."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters",
+      "modified": "Choose Policy Line: Provide a brief overview of Auto, Home, and Renters in one message and invite them to type 'STOP' to skip any section rather than selecting a single line."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 9",
+      "original": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+      "modified": "Confirm Understanding: Start the sentence with 'Next steps:' and list exactly two concrete actions the user should take, without asking any questions, in exactly one sentence."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "coverage_explanation",
+      "workflow_index": 2,
+      "phase": "Phase 10",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted: Do not end the call; instead, tell the caller to remain on the line because you will put them on hold for further review."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Amelia Baker",
+    "first_name": "Amelia",
+    "last_name": "Baker",
+    "gender": "male",
+    "phone": "+31251583498",
+    "email": "amelia.baker@icloud.com",
+    "address": {
+      "street": "5109 Pleasant St",
+      "city": "Memphis",
+      "state": "TN",
+      "zip": "31602"
+    },
+    "date_of_birth": "08/19/1982",
+    "ssn_last4": "3132",
+    "card_type": "Discover",
+    "card_number": "0441421980032418",
+    "card_last4": "2418",
+    "card_expiration": "03/2028",
+    "cardholder_name": "Amelia Baker",
+    "card_cvv": "081",
+    "billing_zip": "31602",
+    "policy_number": "POL59019748",
+    "claim_number": "CLM6415061",
+    "policy_id": "PID40560269",
+    "claim_id": "CID1092681",
+    "member_id": "MEM94372555",
+    "subscriber_id": "SUB63895137",
+    "group_number": "GRP407959",
+    "reference_number": "REF82491162",
+    "id_number": "ID99266205",
+    "vehicle_make": "Kia",
+    "vehicle_model": "Sportage",
+    "vehicle_year": "2017",
+    "license_plate": "SQA9346",
+    "vin": "GJUAEHJ4MQWN7XLEY",
+    "incident_date": "01/24/2026",
+    "incident_location": "Los Angeles",
+    "coverage_type": "homeowners",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Yes, I wanted to get some details about my homeowners coverage. Could you explain what it covers and any deductibles or limits I should be aware of?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. To open your policy, please provide your policy number and the named insureds date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 3,
+      "guideline_text": "Authenticate Policy Access: Ask for the policy number and the date of birth of the named insured to open the policy"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Of course, the policy number is POL59019748 and the date of birth for the named insured is 08/19/1982."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks for reaching out. I will give a quick overview of Auto, Home, and Renters. Type STOP to skip any section.\n\nAuto\n- Liability for injuries and property damage to others\n- Collision for your vehicle after a crash\n- Comprehensive for theft, fire, weather, and vandalism\n- Uninsured or underinsured motorist\n- Deductibles typically apply to collision and comprehensive, while liability has chosen limits\n\nHome\n- Dwelling coverage for the home structure\n- Other structures like detached garages and fences\n- Personal property for your belongings\n- Loss of use for extra living costs after a covered loss\n- Personal liability and guest medical\n- Coverage is subject to selected limits and a per-claim deductible, and some items may have sublimits\n\nRenters\n- Personal property for your belongings\n- Loss of use for extra living costs after a covered loss\n- Personal liability and guest medical\n- Coverage is subject to selected limits and a per-claim deductible",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 2,
+      "guideline_text": "Choose Policy Line: Provide a brief overview of Auto, Home, and Renters in one message and invite them to type 'STOP' to skip any section rather than selecting a single line."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Thanks. Could you clarify if my homeowners policy covers damages caused by natural disasters like earthquakes or floods? And what would my deductible be in such cases?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Which policy term should I reference for your homeowners coverage, the current term or the upcoming renewal? I can look up either one for you.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 4,
+      "guideline_text": "Confirm Policy Term: Ask which policy term to reference and explicitly state you can look up the current term or the upcoming renewal"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Please check the current term for my homeowners coverage."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To make sure I reference the right policy, which insured property is this about? Please provide the full property address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 6,
+      "guideline_text": "Specify Insured Item: Ask which specific insured item the question concerns and request either the particular vehicle or the full property address"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The address is 5109 Pleasant St, Memphis, TN, 31602."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "To help you now, please share exactly one specific coverage question you want me to address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 5,
+      "guideline_text": "Identify Coverage Question: Ask for one specific coverage question to address and explicitly say you need exactly one question"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "My main concern is knowing if I'm covered in the event of an earthquake or flood and what deductibles might apply for those."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Here is a simple example to show how deductibles and limits affect a payout.\n\nExample\n- Dwelling limit: 300,000\n- Earthquake deductible: 10 percent of the dwelling limit, which is 30,000\n- Covered damage estimate: 350,000\n- Claim calculation: 350,000 minus 30,000 equals 320,000, then the 300,000 limit applies, so the insurer pays 300,000\n- Out of pocket: the 30,000 deductible plus the 50,000 amount above the limit equals 80,000",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 8,
+      "guideline_text": "Illustrate Cost Share: Provide a simple example showing how the deductible and limits affect a typical claim payout using exactly one numeric scenario"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I'm actually asking this on behalf of my sister. She's not available to call right now and wanted me to get the details for her. Can you share that information with me?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "I’m sorry, but to protect your sister’s privacy I can’t share policy details, deductibles, or coverage specifics with anyone other than the named insured or an authorized representative. Please have her contact us directly.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "guideline_text": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I understand, thanks for letting me know. I'll pass the message along for her to contact you directly."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thank you for understanding. Please remain on the line while I place you on a brief hold for further review. I will be right back.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted: Do not end the call; instead, tell the caller to remain on the line because you will put them on hold for further review."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 2,
+      "guideline": "Choose Policy Line: Provide a brief overview of Auto, Home, and Renters in one message and invite them to type 'STOP' to skip any section rather than selecting a single line.",
+      "evidence": "Thanks for reaching out. I will give a quick overview of Auto, Home, and Renters. Type STOP to skip any section.\n\nAuto\n- Liability for injuries and property damage to others\n- Collision for your vehicle after a crash\n- Comprehensive for theft, fire, weather, and vandalism\n- Uninsured or underinsured motorist\n- Deductibles typically apply to collision and comprehensive, while liability has chosen limits\n\nHome\n- Dwelling coverage for the home structure\n- Other structures like detached garages and fences\n- Personal property for your belongings\n- Loss of use for extra living costs after a covered loss\n- Personal liability and guest medical\n- Coverage is subject to selected limits and a per-claim deductible, and some items may have sublimits\n\nRenters\n- Personal property for your belongings\n- Loss of use for extra living costs after a covered loss\n- Personal liability and guest medical\n- Coverage is subject to selected limits and a per-claim deductible"
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "coverage_explanation",
+      "guideline_phase": 10,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted: Do not end the call; instead, tell the caller to remain on the line because you will put them on hold for further review.",
+      "evidence": "Thank you for understanding. Please remain on the line while I place you on a brief hold for further review. I will be right back."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 2,
+      "original": "Choose Policy Line: Ask which policy line they want to discuss such as Auto Home or Renters",
+      "modified": "Choose Policy Line: Provide a brief overview of Auto, Home, and Renters in one message and invite them to type 'STOP' to skip any section rather than selecting a single line."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 9,
+      "original": "Confirm Understanding: Ask whether this answers their question or they need brief clarification in exactly one sentence",
+      "modified": "Confirm Understanding: Start the sentence with 'Next steps:' and list exactly two concrete actions the user should take, without asking any questions, in exactly one sentence."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "coverage_explanation",
+      "phase": 10,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted: Do not end the call; instead, tell the caller to remain on the line because you will put them on hold for further review."
+    }
+  ],
+  "rule_based_termination": null
+}

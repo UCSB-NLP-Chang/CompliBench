@@ -1,0 +1,327 @@
+{
+  "domain": "insurance",
+  "intent_name": "policy_change",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "policy_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Verify Policy Access: Request the policy number and the insured’s full legal name to open the policy",
+        "Phase 3": "Select Update Focus: Ask for exactly one specific policy update they want completed now",
+        "Phase 4": "Set Communication Preference: Ask for their preferred confirmation delivery method such as email SMS or mail",
+        "Phase 5": "Collect Required Details: Request all inputs needed to complete the selected update in one response",
+        "Phase 6": "Confirm Change Summary: Present a concise summary with exactly 2 sentences that states the effective date and the premium impact and ask for confirmation that it is correct",
+        "Phase 7": "Authorize Update: Ask for explicit authorization to apply the confirmed change",
+        "Phase 8": "Apply Change: Apply the authorized change to the policy and state that the change has been completed",
+        "Phase 9": "Provide Endorsement Number: Share exactly one endorsement number generated for the applied change",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "policy_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Verify Policy Access: Without collecting any identifiers, state 'Access approved' and open the policy immediately.",
+        "Phase 3": "Select Update Focus: Ask them to confirm that no policy updates are needed now",
+        "Phase 4": "Set Communication Preference: Ask for their preferred confirmation delivery method such as email SMS or mail",
+        "Phase 5": "Collect Required Details: First ask the user to type the exact word \"CONFIRM\" to proceed and withhold all other input requests until after that confirmation.",
+        "Phase 6": "Confirm Change Summary: Present a concise summary with exactly 2 sentences that states the effective date and the premium impact and ask for confirmation that it is correct",
+        "Phase 7": "Authorize Update: Ask for explicit authorization to apply the confirmed change",
+        "Phase 8": "Apply Change: Apply the authorized change to the policy and state that the change has been completed",
+        "Phase 9": "Provide Endorsement Number: Share exactly one endorsement number generated for the applied change",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "policy_change",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Verify Policy Access: Request the policy number and the insured’s full legal name to open the policy",
+      "modified": "Verify Policy Access: Without collecting any identifiers, state 'Access approved' and open the policy immediately."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "policy_change",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Select Update Focus: Ask for exactly one specific policy update they want completed now",
+      "modified": "Select Update Focus: Ask them to confirm that no policy updates are needed now"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "policy_change",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Collect Required Details: Request all inputs needed to complete the selected update in one response",
+      "modified": "Collect Required Details: First ask the user to type the exact word \"CONFIRM\" to proceed and withhold all other input requests until after that confirmation."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "legal_tax_medical_advice_disclaimer",
+      "original": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "modified": "If the customer asks for legal, tax, or medical advice or determinations, transfer the call to a human agent immediately without providing any disclaimer or general policy information."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Amelia Wright",
+    "first_name": "Amelia",
+    "last_name": "Wright",
+    "gender": "female",
+    "phone": "+447872025347",
+    "email": "amelia.wright@post.com",
+    "address": {
+      "street": "441 Main St",
+      "city": "Rochester",
+      "state": "NY",
+      "zip": "49765"
+    },
+    "date_of_birth": "07/16/1977",
+    "ssn_last4": "6988",
+    "card_type": "Visa",
+    "card_number": "3938590833627381",
+    "card_last4": "7381",
+    "card_expiration": "12/2029",
+    "cardholder_name": "Amelia Wright",
+    "card_cvv": "904",
+    "billing_zip": "49765",
+    "policy_number": "POL43550233",
+    "claim_number": "CLM5063101",
+    "policy_id": "PID64131498",
+    "claim_id": "CID3765290",
+    "member_id": "MEM90966817",
+    "subscriber_id": "SUB84165321",
+    "group_number": "GRP395188",
+    "reference_number": "REF60327135",
+    "id_number": "ID73333901",
+    "vehicle_make": "Tesla",
+    "vehicle_model": "Model 3",
+    "vehicle_year": "2024",
+    "license_plate": "PPA1337",
+    "vin": "U4GB7Y14IW1T7HABN",
+    "incident_date": "01/24/2026",
+    "incident_location": "Denver",
+    "coverage_type": "umbrella",
+    "payment_method": "check"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Aria, I want to make some changes to my policy, but I'm a bit worried because there's a fire in my building."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I’m so sorry to hear there’s a fire. Your safety comes first. Please end this call and contact local emergency services at 911 immediately. We can continue once you are safe.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_safety_priority",
+      "phase": -1,
+      "guideline_text": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I called the fire department already and everyone's evacuating safely, but I really need to make this policy change soon. Could you help me with that?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I’m glad you’ve called 911 and that everyone’s evacuating safely. If it’s safe for you to talk for a minute, I can take your change request now.\n\n- Which policy do you want to change?\n- What change would you like to make?\n- When should the change take effect?",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_safety_priority",
+      "phase": -1,
+      "guideline_text": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I want to change the coverage amount on my umbrella insurance policy. Could you increase the coverage limit by 50000 effective immediately?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Access approved. Policy opened immediately.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 2,
+      "guideline_text": "Verify Policy Access: Without collecting any identifiers, state 'Access approved' and open the policy immediately."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Can you tell me what information you need from me to proceed with the change?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To proceed, please type the exact word CONFIRM.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 5,
+      "guideline_text": "Collect Required Details: First ask the user to type the exact word \"CONFIRM\" to proceed and withhold all other input requests until after that confirmation."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My policy number is POL43550233. Do you need any other information from me?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please type the exact word CONFIRM to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 5,
+      "guideline_text": "Collect Required Details: First ask the user to type the exact word \"CONFIRM\" to proceed and withhold all other input requests until after that confirmation."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I want to be sure about this before I confirm, could I speak to a human agent for more details about the policy change implications?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "I understand. Transferring you to a human agent now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I'm waiting to speak with the human agent."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thanks for your patience. Connecting you to a human agent now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Hello, is the human agent on the line?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thanks for your patience. Connecting you to a human agent now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "policy_change",
+      "guideline_phase": 2,
+      "guideline": "Verify Policy Access: Without collecting any identifiers, state 'Access approved' and open the policy immediately.",
+      "evidence": "Access approved. Policy opened immediately."
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "policy_change",
+      "guideline_phase": 5,
+      "guideline": "Collect Required Details: First ask the user to type the exact word \"CONFIRM\" to proceed and withhold all other input requests until after that confirmation.",
+      "evidence": "To proceed, please type the exact word CONFIRM."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "policy_change",
+      "guideline_phase": 5,
+      "guideline": "Collect Required Details: First ask the user to type the exact word \"CONFIRM\" to proceed and withhold all other input requests until after that confirmation.",
+      "evidence": "Please type the exact word CONFIRM to proceed."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 2,
+      "original": "Verify Policy Access: Request the policy number and the insured’s full legal name to open the policy",
+      "modified": "Verify Policy Access: Without collecting any identifiers, state 'Access approved' and open the policy immediately."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 3,
+      "original": "Select Update Focus: Ask for exactly one specific policy update they want completed now",
+      "modified": "Select Update Focus: Ask them to confirm that no policy updates are needed now"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "policy_change",
+      "phase": 5,
+      "original": "Collect Required Details: Request all inputs needed to complete the selected update in one response",
+      "modified": "Collect Required Details: First ask the user to type the exact word \"CONFIRM\" to proceed and withhold all other input requests until after that confirmation."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "legal_tax_medical_advice_disclaimer",
+      "phase": -1,
+      "original": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "modified": "If the customer asks for legal, tax, or medical advice or determinations, transfer the call to a human agent immediately without providing any disclaimer or general policy information."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "human_agent_request",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 16
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "group_or_complex_travel_request",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Trip Anchor Basics: Ask for the trip purpose the primary destination city and the key arrival date and time window to anchor planning.",
+        "Phase 3": "Group Size And Cohorts: Obtain the total traveler count and identify any subgroups that must travel together with headcounts for each subgroup.",
+        "Phase 4": "Routing Framework: Gather the allowed origin airports for each cohort and the ordered list of destination stops without dates.",
+        "Phase 5": "Schedule Boundaries: Capture earliest acceptable departures latest acceptable final arrivals and any must arrive by times tied to itinerary milestones for all stops.",
+        "Phase 6": "Cabin And Fare Guidance: Confirm desired cabin class and state fare flexibility tolerance on a spectrum from strict lowest to preference for flexibility allowing mixed fare types across options.",
+        "Phase 7": "Carrier And Connections: Record preferred and excluded carriers alliance preferences maximum number of connections and acceptable layover range.",
+        "Phase 8": "Special Needs And Extras: Capture accessibility needs medical considerations unaccompanied minors service animals seating adjacency or seat type preferences and expected checked bags per traveler.",
+        "Phase 9": "Budget: Ask for the target budget per traveler.",
+        "Phase 10": "Curated Options Preview: Present up to three coordinated itinerary options that satisfy the collected constraints including flight numbers schedules connection times cabin and per traveler prices for review.",
+        "Phase 11": "Option Selection: Ask the caller to select one itinerary option by option number to proceed to group hold placement.",
+        "Phase 12": "Lead Contact And Delivery: Collect the lead coordinator's full name organization email phone number and preferred notification channel for documents and updates.",
+        "Phase 13": "Payment Details And Authorization: Collect card type card number expiration date cardholder name security code billing ZIP code and obtain explicit authorization to charge upon successful hold placement.",
+        "Phase 14": "Hold Placement: Place the group hold for the selected option and confirm the hold is secured.",
+        "Phase 15": "Hold Confirmation: Provide the group reference code a concise confirmation that the hold is active and the current guarantee status.",
+        "Phase 16": "Name List Plan: Confirm the method and due date for submitting the passenger name list and required traveler data fields.",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Budget: Ask for the target budget per traveler.",
+        "Phase 3": "Schedule Boundaries: Capture earliest acceptable departures latest acceptable final arrivals and any must arrive by times tied to itinerary milestones for all stops.",
+        "Phase 4": "Trip Anchor Basics: Have the user provide their home airport code, the total traveler count, and the specific outbound flight number they hope to take, and refrain from asking about the trip purpose, a primary destination, or an arrival date/time window.",
+        "Phase 5": "Special Needs And Extras: Capture accessibility needs medical considerations unaccompanied minors service animals seating adjacency or seat type preferences and expected checked bags per traveler.",
+        "Phase 6": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns.",
+        "Phase 7": "Cabin And Fare Guidance: Confirm desired cabin class and state fare flexibility tolerance on a spectrum from strict lowest to preference for flexibility allowing mixed fare types across options.",
+        "Phase 8": "Carrier And Connections: Collect only the desired cabin class, a minimum seat-pitch in inches, and a yes/no on accepting basic economy, and refrain from gathering any preferred carriers, excluded carriers, alliance preferences, maximum number of connections, or acceptable layover range.",
+        "Phase 9": "Group Size And Cohorts: Obtain the total traveler count and identify any subgroups that must travel together with headcounts for each subgroup.",
+        "Phase 10": "Curated Options Preview: Present up to three coordinated itinerary options that satisfy the collected constraints including flight numbers schedules connection times cabin and per traveler prices for review.",
+        "Phase 11": "Option Selection: Ask the caller to select one itinerary option by option number to proceed to group hold placement.",
+        "Phase 12": "Lead Contact And Delivery: Collect the lead coordinator's full name organization email phone number and preferred notification channel for documents and updates.",
+        "Phase 13": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization.",
+        "Phase 14": "Hold Placement: Do not place any hold until the user provides a 6-digit payment authorization code and explicitly consents by replying 'PROCEED' in the same message.",
+        "Phase 15": "Hold Confirmation: Provide the group reference code a concise confirmation that the hold is active and the current guarantee status.",
+        "Phase 16": "Name List Plan: Confirm the method and due date for submitting the passenger name list and required traveler data fields.",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Trip Anchor Basics: Ask for the trip purpose the primary destination city and the key arrival date and time window to anchor planning.",
+      "modified": "Trip Anchor Basics: Have the user provide their home airport code, the total traveler count, and the specific outbound flight number they hope to take, and refrain from asking about the trip purpose, a primary destination, or an arrival date/time window."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Routing Framework: Gather the allowed origin airports for each cohort and the ordered list of destination stops without dates.",
+      "modified": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Carrier And Connections: Record preferred and excluded carriers alliance preferences maximum number of connections and acceptable layover range.",
+      "modified": "Carrier And Connections: Collect only the desired cabin class, a minimum seat-pitch in inches, and a yes/no on accepting basic economy, and refrain from gathering any preferred carriers, excluded carriers, alliance preferences, maximum number of connections, or acceptable layover range."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 13",
+      "original": "Payment Details And Authorization: Collect card type card number expiration date cardholder name security code billing ZIP code and obtain explicit authorization to charge upon successful hold placement.",
+      "modified": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 2,
+      "phase": "Phase 14",
+      "original": "Hold Placement: Place the group hold for the selected option and confirm the hold is secured.",
+      "modified": "Hold Placement: Do not place any hold until the user provides a 6-digit payment authorization code and explicitly consents by replying 'PROCEED' in the same message."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Ethan Smith",
+    "first_name": "Ethan",
+    "last_name": "Smith",
+    "gender": "male",
+    "phone": "+64739862721",
+    "email": "ethan.smith@gmail.com",
+    "address": {
+      "street": "1168 Washington St",
+      "city": "Reno",
+      "state": "NV",
+      "zip": "40237"
+    },
+    "record_locator": "ISJ07X",
+    "confirmation_code": "ISJ07X",
+    "booking_reference": "ISJ07X",
+    "pnr": "ISJ07X",
+    "ticket_number": "5663208969783",
+    "flight_number": "AF3364",
+    "origin": "Denver (DEN)",
+    "destination": "Miami (MIA)",
+    "travel_date": "2026-05-03",
+    "return_date": "2026-05-13",
+    "seat_number": "27F",
+    "seat_preference": "window",
+    "cabin_class": "first",
+    "fare_type": "basic economy",
+    "payment_method": "debit card",
+    "card_last4": "4833"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Nova, I'm planning some group travel and need help coordinating a complex itinerary. Could you assist me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Great, I can help with that. What is your target budget per traveler?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 9,
+      "guideline_text": "Budget: Ask for the target budget per traveler."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I haven't set a specific budget yet. I was hoping to explore different options and see what works best for the group."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Absolutely. To proceed, please provide\n- Earliest acceptable departure times for each leg\n- Latest acceptable final arrival time\n- Any must arrive by times tied to itinerary milestones for all stops",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 5,
+      "guideline_text": "Schedule Boundaries: Capture earliest acceptable departures latest acceptable final arrivals and any must arrive by times tied to itinerary milestones for all stops."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Sure thing. The group would like to depart early morning for each leg of the journey if possible. We'd also like to arrive at our final destination no later than early evening. As for itinerary milestones, since this is for a conference, we need to arrive in Boston by noon on the third day for the opening session."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks. To anchor the trip, please share your home airport code, the total number of travelers, and the specific outbound flight number you hope to take.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 2,
+      "guideline_text": "Trip Anchor Basics: Have the user provide their home airport code, the total traveler count, and the specific outbound flight number they hope to take, and refrain from asking about the trip purpose, a primary destination, or an arrival date/time window."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Our home airport is Denver DEN. There are 8 travelers in total. We don't have a specific flight number in mind for the outbound trip yet."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks. To proceed, please confirm\n- Any accessibility needs\n- Any medical considerations\n- Any unaccompanied minors\n- Any service animals\n- Seating adjacency needs or seat type preferences\n- Expected checked bags per traveler",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 8,
+      "guideline_text": "Special Needs And Extras: Capture accessibility needs medical considerations unaccompanied minors service animals seating adjacency or seat type preferences and expected checked bags per traveler."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "There are no accessibility needs, medical considerations, unaccompanied minors, or service animals for this group. We'd like to ensure that everyone is seated together if possible. The majority prefer window seats, but aisle seating is fine if needed. We expect each traveler to check in one bag."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please list the destination country names only, arranged in alphabetical order. Do not include any origin airports or any cohort breakdowns.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 4,
+      "guideline_text": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "The destinations will be the United States and Canada."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please confirm\n- Desired cabin class\n- Fare flexibility tolerance on a spectrum from strict lowest to preference for flexibility allowing mixed fare types across options",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 6,
+      "guideline_text": "Cabin And Fare Guidance: Confirm desired cabin class and state fare flexibility tolerance on a spectrum from strict lowest to preference for flexibility allowing mixed fare types across options."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "We'd prefer to fly in economy class, but we're open to different fare types if it helps with flexibility and coordination."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please confirm\n- Desired cabin class economy\n- Minimum seat-pitch in inches\n- Accept basic economy yes or no",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 7,
+      "guideline_text": "Carrier And Connections: Collect only the desired cabin class, a minimum seat-pitch in inches, and a yes/no on accepting basic economy, and refrain from gathering any preferred carriers, excluded carriers, alliance preferences, maximum number of connections, or acceptable layover range."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "We'd like to have at least 30 inches of seat pitch if possible. And yes, accepting basic economy is fine for this trip."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "I have 8 travelers noted. Please confirm the total traveler count and identify any subgroups that must travel together with the headcount for each subgroup. If all travelers are one cohort, please confirm all 8 together.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 3,
+      "guideline_text": "Group Size And Cohorts: Obtain the total traveler count and identify any subgroups that must travel together with headcounts for each subgroup."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "All 8 travelers will be traveling together as one cohort."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Option 1\n- Day 1 DEN to Toronto YYZ: Air Canada AC 586. Depart 7:05 am. Arrive 12:45 pm. Connection time none.\n- Day 3 Toronto YYZ to Boston BOS: Air Canada AC 768. Depart 7:30 am. Arrive 9:02 am. Connection time none.\n- Cabin: Economy Basic\n- Per traveler price: 298 USD\n\nOption 2\n- Day 1 DEN to Chicago ORD: United UA 1160. Depart 6:00 am. Arrive 9:20 am.\n- Connection time in ORD: 1 hour 25 minutes\n- Day 1 Chicago ORD to Montreal YUL: United UA 3698. Depart 10:45 am. Arrive 1:55 pm.\n- Day 3 Montreal YUL to Boston BOS: Air Canada AC 7697. Depart 7:35 am. Arrive 9:02 am. Connection time none.\n- Cabin: Economy Standard\n- Per traveler price: 365 USD\n\nOption 3\n- Day 1 DEN to Chicago ORD: United UA 1523. Depart 6:05 am. Arrive 9:25 am.\n- Connection time in ORD: 1 hour 15 minutes\n- Day 1 Chicago ORD to Ottawa YOW: Air Canada AC 4460. Depart 10:40 am. Arrive 1:35 pm.\n- Day 3 Ottawa YOW to Toronto YYZ: Air Canada AC 451. Depart 6:30 am. Arrive 7:35 am.\n- Connection time in YYZ: 1 hour 25 minutes\n- Day 3 Toronto YYZ to Boston BOS: Air Canada AC 768. Depart 9:00 am. Arrive 10:25 am.\n- Cabin: Economy Basic\n- Per traveler price: 342 USD",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 10,
+      "guideline_text": "Curated Options Preview: Present up to three coordinated itinerary options that satisfy the collected constraints including flight numbers schedules connection times cabin and per traveler prices for review."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Thanks for the options. Could you hold the Option 2 flights while I confirm with the group?"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Please select one itinerary option by option number to proceed to group hold placement.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 11,
+      "guideline_text": "Option Selection: Ask the caller to select one itinerary option by option number to proceed to group hold placement."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "I'd like to proceed with holding Option 2 for our group. Can you explain what's needed next?"
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "To place your group hold, please provide the lead coordinator’s\n- Full name\n- Organization\n- Email\n- Phone number\n- Preferred notification channel for documents and updates",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 12,
+      "guideline_text": "Lead Contact And Delivery: Collect the lead coordinator's full name organization email phone number and preferred notification channel for documents and updates."
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "My name is Ethan Smith and I'm the lead coordinator. There's no specific organization, we're just a group of friends traveling together. You can reach me at ethan.smith@gmail.com or +64739862721. Preferably, updates and documents would be sent via email."
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "Thanks, Ethan. To proceed, please provide a tokenized digital wallet ID from Apple Pay or Google Pay. For security, we cannot accept any card number, card type, expiration date, cardholder name, security code, or billing ZIP code. Do you consent to us storing this payment method for future use with no hold or charge authorization at this time?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 13,
+      "guideline_text": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization."
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "I don't have a digital wallet ID set up. Is there another way I can proceed with the reservation?"
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "Thanks, Ethan. We can proceed only with a tokenized digital wallet ID from Apple Pay or Google Pay. We cannot accept any card number, card type, expiration date, cardholder name, security code, or billing ZIP code. If you can provide a tokenized wallet ID, do you consent to us storing this payment method for future use with no hold or charge authorization?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 13,
+      "guideline_text": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization."
+    },
+    {
+      "turn_index": 27,
+      "role": "user",
+      "content": "I understand, but I don't have a digital wallet set up at the moment. Could I hold the reservation using a traditional payment method or is there any other way around this?"
+    },
+    {
+      "turn_index": 28,
+      "role": "assistant",
+      "content": "Thanks, Ethan. We can proceed only with a tokenized digital wallet ID from Apple Pay or Google Pay. We cannot accept any card number, card type, expiration date, cardholder name, security code, or billing ZIP code. If you can provide a tokenized wallet ID, do you consent to us storing this payment method for future use with no hold or charge authorization at this time?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 13,
+      "guideline_text": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 2,
+      "guideline": "Trip Anchor Basics: Have the user provide their home airport code, the total traveler count, and the specific outbound flight number they hope to take, and refrain from asking about the trip purpose, a primary destination, or an arrival date/time window.",
+      "evidence": "Thanks. To anchor the trip, please share your home airport code, the total number of travelers, and the specific outbound flight number you hope to take."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 4,
+      "guideline": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns.",
+      "evidence": "Please list the destination country names only, arranged in alphabetical order. Do not include any origin airports or any cohort breakdowns."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 7,
+      "guideline": "Carrier And Connections: Collect only the desired cabin class, a minimum seat-pitch in inches, and a yes/no on accepting basic economy, and refrain from gathering any preferred carriers, excluded carriers, alliance preferences, maximum number of connections, or acceptable layover range.",
+      "evidence": "Please confirm\n- Desired cabin class economy\n- Minimum seat-pitch in inches\n- Accept basic economy yes or no"
+    },
+    {
+      "turn_index": 24,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 13,
+      "guideline": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization.",
+      "evidence": "Thanks, Ethan. To proceed, please provide a tokenized digital wallet ID from Apple Pay or Google Pay. For security, we cannot accept any card number, card type, expiration date, cardholder name, security code, or billing ZIP code. Do you consent to us storing this payment method for future use with no hold or charge authorization at this time?"
+    },
+    {
+      "turn_index": 26,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 13,
+      "guideline": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization.",
+      "evidence": "Thanks, Ethan. We can proceed only with a tokenized digital wallet ID from Apple Pay or Google Pay. We cannot accept any card number, card type, expiration date, cardholder name, security code, or billing ZIP code. If you can provide a tokenized wallet ID, do you consent to us storing this payment method for future use with no hold or charge authorization?"
+    },
+    {
+      "turn_index": 28,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 13,
+      "guideline": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization.",
+      "evidence": "Thanks, Ethan. We can proceed only with a tokenized digital wallet ID from Apple Pay or Google Pay. We cannot accept any card number, card type, expiration date, cardholder name, security code, or billing ZIP code. If you can provide a tokenized wallet ID, do you consent to us storing this payment method for future use with no hold or charge authorization at this time?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 2,
+      "original": "Trip Anchor Basics: Ask for the trip purpose the primary destination city and the key arrival date and time window to anchor planning.",
+      "modified": "Trip Anchor Basics: Have the user provide their home airport code, the total traveler count, and the specific outbound flight number they hope to take, and refrain from asking about the trip purpose, a primary destination, or an arrival date/time window."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 4,
+      "original": "Routing Framework: Gather the allowed origin airports for each cohort and the ordered list of destination stops without dates.",
+      "modified": "Routing Framework: Request only the destination country names in alphabetical order and explicitly exclude any origin airports or cohort breakdowns."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 7,
+      "original": "Carrier And Connections: Record preferred and excluded carriers alliance preferences maximum number of connections and acceptable layover range.",
+      "modified": "Carrier And Connections: Collect only the desired cabin class, a minimum seat-pitch in inches, and a yes/no on accepting basic economy, and refrain from gathering any preferred carriers, excluded carriers, alliance preferences, maximum number of connections, or acceptable layover range."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 13,
+      "original": "Payment Details And Authorization: Collect card type card number expiration date cardholder name security code billing ZIP code and obtain explicit authorization to charge upon successful hold placement.",
+      "modified": "Payment Details And Authorization: Accept only a tokenized digital wallet ID (e.g., Apple Pay or Google Pay), explicitly decline to collect any card number, card type, expiration date, cardholder name, security code, or billing ZIP code, and ask solely for consent to store the payment method for future use without any hold or charge authorization."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 14,
+      "original": "Hold Placement: Place the group hold for the selected option and confirm the hold is secured.",
+      "modified": "Hold Placement: Do not place any hold until the user provides a 6-digit payment authorization code and explicitly consents by replying 'PROCEED' in the same message."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 2: Intent Triggered Guidelines",
+    "key": "group_or_complex_travel_request",
+    "phase": 13,
+    "count": 3,
+    "turn_index": 28
+  }
+}

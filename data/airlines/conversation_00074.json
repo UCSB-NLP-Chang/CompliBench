@@ -1,0 +1,257 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "request_receipts_or_travel_documents",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "request_receipts_or_travel_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Define document need: Ask the caller to specify the exact items needed from options including receipt, invoice, e-ticket, ticket numbers, or itinerary confirmation",
+        "Phase 3": "Choose file packaging: Ask whether they prefer a single combined PDF or separate files for each document type",
+        "Phase 4": "Retrieve by contact details: Ask for the mobile or phone number on the booking and the last name to retrieve the reservation",
+        "Phase 5": "Confirm reservation match: State the traveler name and route with travel date found and ask the caller to confirm it is the correct booking",
+        "Phase 6": "Select delivery destination: Offer delivery to the email on file or via SMS to the phone on file and have the caller choose one and confirm the destination details",
+        "Phase 7": "Issue and confirm dispatch: Generate the selected documents with the chosen packaging, send them to the confirmed destination, and inform the caller that the documents have been sent",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "request_receipts_or_travel_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Retrieve by contact details: Request the 6-digit confirmation code and the billing ZIP/postcode only, and explicitly do not ask for any phone number or last name.",
+        "Phase 3": "Select delivery destination: Offer delivery to the email on file or via SMS to the phone on file and have the caller choose one and confirm the destination details",
+        "Phase 4": "Confirm reservation match: Provide only the route and travel date and ask the caller to supply a new preferred travel date to update the reservation rather than confirming the current booking.",
+        "Phase 5": "Define document need: Ask the caller to specify the exact items needed from options including receipt, invoice, e-ticket, ticket numbers, or itinerary confirmation",
+        "Phase 6": "Choose file packaging: Ask whether they prefer a single combined PDF or separate files for each document type",
+        "Phase 7": "Issue and confirm dispatch: Generate the selected documents with the chosen packaging, send them to the confirmed destination, and inform the caller that the documents have been sent",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_receipts_or_travel_documents",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Retrieve by contact details: Ask for the mobile or phone number on the booking and the last name to retrieve the reservation",
+      "modified": "Retrieve by contact details: Request the 6-digit confirmation code and the billing ZIP/postcode only, and explicitly do not ask for any phone number or last name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_receipts_or_travel_documents",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Confirm reservation match: State the traveler name and route with travel date found and ask the caller to confirm it is the correct booking",
+      "modified": "Confirm reservation match: Provide only the route and travel date and ask the caller to supply a new preferred travel date to update the reservation rather than confirming the current booking."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Liam Lefevre",
+    "first_name": "Liam",
+    "last_name": "Lefevre",
+    "gender": "female",
+    "phone": "+4966285678922",
+    "email": "liam.lefevre@mail.com",
+    "address": {
+      "street": "7264 College Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "99372"
+    },
+    "record_locator": "6NM4D4",
+    "confirmation_code": "6NM4D4",
+    "booking_reference": "6NM4D4",
+    "pnr": "6NM4D4",
+    "ticket_number": "6531263307240",
+    "flight_number": "WN6705",
+    "origin": "Los Angeles (LAX)",
+    "destination": "Miami (MIA)",
+    "travel_date": "2026-03-22",
+    "return_date": "2026-04-02",
+    "seat_number": "17B",
+    "seat_preference": "middle",
+    "cabin_class": "premium economy",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "4914"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I need to get a copy of my itinerary and receipt for my upcoming flight sent to my email. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. Please provide your 6-digit confirmation code and your billing ZIP or postcode.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 4,
+      "guideline_text": "Retrieve by contact details: Request the 6-digit confirmation code and the billing ZIP/postcode only, and explicitly do not ask for any phone number or last name."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My confirmation code is 6NM4D4 and my billing ZIP code is 99372."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I can send your itinerary and receipt to the email on file or via SMS to the phone on file. Please choose one and confirm the destination details.\nEmail on file: e***.l**92 at g***l dot com\nPhone on file SMS: plus one ending 2674",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 6,
+      "guideline_text": "Select delivery destination: Offer delivery to the email on file or via SMS to the phone on file and have the caller choose one and confirm the destination details"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I'd prefer to get it via email. My email is liam.lefevre@mail.com."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Route Seattle to Los Angeles\nTravel date 2026-03-21\n\nPlease share your new preferred travel date so I can update the reservation.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 5,
+      "guideline_text": "Confirm reservation match: Provide only the route and travel date and ask the caller to supply a new preferred travel date to update the reservation rather than confirming the current booking."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Yes, my email is liam.lefevre@mail.com. Please send it there."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To make sure I send the right items, please specify which documents you need: receipt, invoice, e-ticket, ticket numbers, or itinerary confirmation.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 2,
+      "guideline_text": "Define document need: Ask the caller to specify the exact items needed from options including receipt, invoice, e-ticket, ticket numbers, or itinerary confirmation"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I need the receipt and the itinerary confirmation, please."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Would you like a single combined PDF or separate files for the receipt and the itinerary confirmation?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 3,
+      "guideline_text": "Choose file packaging: Ask whether they prefer a single combined PDF or separate files for each document type"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "A single combined PDF would be perfect, thanks."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Your receipt and itinerary confirmation have been generated as a single combined PDF and sent to liam.lefevre@mail.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 7,
+      "guideline_text": "Issue and confirm dispatch: Generate the selected documents with the chosen packaging, send them to the confirmed destination, and inform the caller that the documents have been sent"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Great, I got the email. Thanks for your help!"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "You are very welcome. Thanks for choosing Celestar Air, and have a wonderful trip!",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_receipts_or_travel_documents",
+      "guideline_phase": 4,
+      "guideline": "Retrieve by contact details: Request the 6-digit confirmation code and the billing ZIP/postcode only, and explicitly do not ask for any phone number or last name.",
+      "evidence": "Absolutely, I can help with that. Please provide your 6-digit confirmation code and your billing ZIP or postcode."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_receipts_or_travel_documents",
+      "guideline_phase": 5,
+      "guideline": "Confirm reservation match: Provide only the route and travel date and ask the caller to supply a new preferred travel date to update the reservation rather than confirming the current booking.",
+      "evidence": "Route Seattle to Los Angeles\nTravel date 2026-03-21\n\nPlease share your new preferred travel date so I can update the reservation."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 4,
+      "original": "Retrieve by contact details: Ask for the mobile or phone number on the booking and the last name to retrieve the reservation",
+      "modified": "Retrieve by contact details: Request the 6-digit confirmation code and the billing ZIP/postcode only, and explicitly do not ask for any phone number or last name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_receipts_or_travel_documents",
+      "phase": 5,
+      "original": "Confirm reservation match: State the traveler name and route with travel date found and ask the caller to confirm it is the correct booking",
+      "modified": "Confirm reservation match: Provide only the route and travel date and ask the caller to supply a new preferred travel date to update the reservation rather than confirming the current booking."
+    }
+  ],
+  "rule_based_termination": null
+}

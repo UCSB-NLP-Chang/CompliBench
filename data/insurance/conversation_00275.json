@@ -1,0 +1,201 @@
+{
+  "domain": "insurance",
+  "intent_name": "billing_payment",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_payment": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Authenticate And Open Billing: Ask for the policy number and date of birth to authenticate and open the billing record",
+        "Phase 3": "Provide Billing Snapshot: Share the current balance, the exact due date, and the autopay status",
+        "Phase 4": "Select Billing Outcome: Ask the caller to choose exactly one outcome to complete today such as make a payment set up autopay change draft date update payment method or review balance",
+        "Phase 5": "Gather Outcome Details: Collect the specific inputs for the chosen outcome such as amount funding source preferred draft day or method details",
+        "Phase 6": "Summarize Planned Action: Read back a one line summary of the planned action and ask for permission to proceed",
+        "Phase 7": "Execute And Confirm: Complete the approved action and provide exactly one confirmation with receipt details and account notation",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_payment": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Start by requesting \"Please provide your 6-digit verification code and date of birth,\" and do not include any greeting or company introduction.",
+        "Phase 2": "Authenticate And Open Billing: Ask for the policy number and date of birth to authenticate and open the billing record",
+        "Phase 3": "Provide Billing Snapshot: Share the current balance, the exact due date, and the autopay status",
+        "Phase 4": "Select Billing Outcome: Ask the caller to choose exactly one outcome to complete today such as make a payment set up autopay change draft date update payment method or review balance",
+        "Phase 5": "Gather Outcome Details: Collect the specific inputs for the chosen outcome such as amount funding source preferred draft day or method details",
+        "Phase 6": "Summarize Planned Action: Read back a one line summary of the planned action and ask for permission to proceed",
+        "Phase 7": "Execute And Confirm: Complete the action and deliver exactly three confirmations in one reply: a success banner, an itemized receipt that omits any account notation, and a separate audit reference number.",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_payment",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start by requesting \"Please provide your 6-digit verification code and date of birth,\" and do not include any greeting or company introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_payment",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Execute And Confirm: Complete the approved action and provide exactly one confirmation with receipt details and account notation",
+      "modified": "Execute And Confirm: Complete the action and deliver exactly three confirmations in one reply: a success banner, an itemized receipt that omits any account notation, and a separate audit reference number."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Hassan Rivera",
+    "first_name": "Hassan",
+    "last_name": "Rivera",
+    "gender": "female",
+    "phone": "+15927040594",
+    "email": "hassan.rivera@outlook.com",
+    "address": {
+      "street": "702 2nd St",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "45678"
+    },
+    "date_of_birth": "04/28/2000",
+    "ssn_last4": "5229",
+    "card_type": "Visa",
+    "card_number": "3927419125466086",
+    "card_last4": "6086",
+    "card_expiration": "06/2028",
+    "cardholder_name": "Hassan Rivera",
+    "card_cvv": "212",
+    "billing_zip": "45678",
+    "policy_number": "POL28742577",
+    "claim_number": "CLM9910670",
+    "policy_id": "PID83561518",
+    "claim_id": "CID2546131",
+    "member_id": "MEM54318428",
+    "subscriber_id": "SUB95407610",
+    "group_number": "GRP610776",
+    "reference_number": "REF86519370",
+    "id_number": "ID11056958",
+    "vehicle_make": "Kia",
+    "vehicle_model": "Forte",
+    "vehicle_year": "2016",
+    "license_plate": "BCV2316",
+    "vin": "6DSGVVOWJIAIVFDHW",
+    "incident_date": "02/06/2026",
+    "incident_location": "Miami",
+    "coverage_type": "homeowners",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your 6-digit verification code and date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_payment",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Start by requesting \"Please provide your 6-digit verification code and date of birth,\" and do not include any greeting or company introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I don't think I want to provide my verification details right now. Can I please speak to a human agent instead?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I understand. I will transfer you to a human agent right away. Please hold while I connect you now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure. Thank you."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "You are welcome. Thank you for contacting Shield Insurance. A human agent will assist you shortly. Have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_payment",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_payment",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Start by requesting \"Please provide your 6-digit verification code and date of birth,\" and do not include any greeting or company introduction.",
+      "evidence": "Please provide your 6-digit verification code and date of birth."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_payment",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start by requesting \"Please provide your 6-digit verification code and date of birth,\" and do not include any greeting or company introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_payment",
+      "phase": 7,
+      "original": "Execute And Confirm: Complete the approved action and provide exactly one confirmation with receipt details and account notation",
+      "modified": "Execute And Confirm: Complete the action and deliver exactly three confirmations in one reply: a success banner, an itemized receipt that omits any account notation, and a separate audit reference number."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "rule_based_termination": null
+}

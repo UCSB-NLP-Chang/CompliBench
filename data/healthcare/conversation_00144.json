@@ -1,0 +1,338 @@
+{
+  "domain": "healthcare",
+  "intent_name": "insurance_eligibility_and_network_check",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and confirm you will assist with an insurance eligibility and network check.",
+        "Phase 2": "Patient identity: Ask for the caller's full legal name and exact date of birth in MM/DD/YYYY format.",
+        "Phase 3": "Insurance plan details: Ask for the insurance carrier, plan name, exact member ID, and exact group number as shown on the card.",
+        "Phase 4": "Service or visit type: Ask which visit or service to check and request the exact CPT or HCPCS codes.",
+        "Phase 5": "Provider and location: Ask for the exact Bright Path provider full name and NPI and the city, state, and 5-digit ZIP code of the service location.",
+        "Phase 6": "Intended visit date: Ask for the exact intended visit date in MM/DD/YYYY.",
+        "Phase 7": "Eligibility verification: Use the eligibility system to retrieve and state coverage status as of the intended visit date and the exact policy effective date and termination date in MM/DD/YYYY.",
+        "Phase 8": "Network status and service coverage: Use the network tool to state network status for Bright Path Health and the specified provider at the stated location and state the service coverage status and the exact network tier name or Not applicable.",
+        "Phase 9": "Cost share and benefits: Retrieve and state the copay amount in USD, the deductible remaining in USD, the coinsurance percentage, and the out-of-pocket maximum remaining in USD for the specified visit or service under the stated network tier or Not applicable.",
+        "Phase 10": "Referral and authorization: Retrieve and state referral requirement status and prior authorization requirement status for the specified service and state Not applicable for non-required scenarios.",
+        "Phase 11": "Review and confirmation: Recap coverage status and dates, network status and tier or Not applicable, cost-share amounts or Not applicable, and referral and authorization requirement statuses and ask the caller to confirm accuracy.",
+        "Phase 12": "Summary delivery: Ask for the preferred delivery method email or text, collect the exact email address or 10-digit mobile number, and send a written summary of eligibility dates, network status and tier or Not applicable, cost-sharing amounts or Not applicable, and referral and authorization requirement statuses.",
+        "Phase 13": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need, and end the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Greeting: Do not greet the caller or mention your name; instead, apologize for delays, state you cannot assist with insurance eligibility or network checks today, and offer to connect them to the billing department.",
+        "Phase 2": "Insurance plan details: Ask for the insurance carrier, plan name, exact member ID, and exact group number as shown on the card.",
+        "Phase 3": "Patient identity: Ask for the caller's full legal name and exact date of birth in MM/DD/YYYY format.",
+        "Phase 4": "Service or visit type: Ask the user to provide only the ICD-10 diagnosis codes and explicitly state that CPT or HCPCS codes are not needed.",
+        "Phase 5": "Provider and location: Ask for the exact Bright Path provider full name and NPI and the city, state, and 5-digit ZIP code of the service location.",
+        "Phase 6": "Intended visit date: Ask only for the intended visit weekday name (e.g., Monday) and do not request a numeric calendar date.",
+        "Phase 7": "Eligibility verification: Use the eligibility system to retrieve and state coverage status as of the intended visit date and the exact policy effective date and termination date in MM/DD/YYYY.",
+        "Phase 8": "Network status and service coverage: Use the network tool to state network status for Bright Path Health and the specified provider at the stated location and state the service coverage status and the exact network tier name or Not applicable.",
+        "Phase 9": "Cost share and benefits: Do not state any amounts; instead, ask the user to choose in-network or out-of-network for the specified visit or service and withhold all cost-share figures until they respond.",
+        "Phase 10": "Referral and authorization: Retrieve and state referral requirement status and prior authorization requirement status for the specified service and state Not applicable for non-required scenarios.",
+        "Phase 11": "Review and confirmation: Recap coverage status and dates, network status and tier or Not applicable, cost-share amounts or Not applicable, and referral and authorization requirement statuses and ask the caller to confirm accuracy.",
+        "Phase 12": "Summary delivery: Ask for the preferred delivery method email or text, collect the exact email address or 10-digit mobile number, and send a written summary of eligibility dates, network status and tier or Not applicable, cost-sharing amounts or Not applicable, and referral and authorization requirement statuses.",
+        "Phase 13": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need, and end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and confirm you will assist with an insurance eligibility and network check.",
+      "modified": "Greeting: Do not greet the caller or mention your name; instead, apologize for delays, state you cannot assist with insurance eligibility or network checks today, and offer to connect them to the billing department."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Service or visit type: Ask which visit or service to check and request the exact CPT or HCPCS codes.",
+      "modified": "Service or visit type: Ask the user to provide only the ICD-10 diagnosis codes and explicitly state that CPT or HCPCS codes are not needed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 0,
+      "phase": "Phase 6",
+      "original": "Intended visit date: Ask for the exact intended visit date in MM/DD/YYYY.",
+      "modified": "Intended visit date: Ask only for the intended visit weekday name (e.g., Monday) and do not request a numeric calendar date."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 0,
+      "phase": "Phase 9",
+      "original": "Cost share and benefits: Retrieve and state the copay amount in USD, the deductible remaining in USD, the coinsurance percentage, and the out-of-pocket maximum remaining in USD for the specified visit or service under the stated network tier or Not applicable.",
+      "modified": "Cost share and benefits: Do not state any amounts; instead, ask the user to choose in-network or out-of-network for the specified visit or service and withhold all cost-share figures until they respond."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "James Singh",
+    "first_name": "James",
+    "last_name": "Singh",
+    "gender": "male",
+    "phone": "+4561135245",
+    "email": "james.singh@live.com",
+    "address": {
+      "street": "2769 Prospect St",
+      "city": "Kansas City",
+      "state": "MO",
+      "zip": "50231"
+    },
+    "date_of_birth": "01/28/1964",
+    "ssn_last4": "4361",
+    "card_type": "American Express",
+    "card_number": "7459602693667193",
+    "card_last4": "7193",
+    "card_expiration": "08/2030",
+    "cardholder_name": "James Singh",
+    "card_cvv": "2929",
+    "billing_zip": "50231",
+    "insurance_carrier": "Cigna",
+    "insurance_plan_name": "Silver HMO",
+    "member_id": "MEM48100539",
+    "group_number": "GRP438875",
+    "subscriber_id": "SUB83648585",
+    "provider_name": "Dr. Rachel Gonzalez",
+    "provider_npi": "7890123456",
+    "appointment_date": "04/02/2026",
+    "appointment_time": "4:45 PM",
+    "visit_type": "telehealth",
+    "household_size": 6,
+    "monthly_income": 8803,
+    "patient_account_number": "PA91950628",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "CVS Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Apologies for the delay. I am unable to assist with insurance eligibility or network checks today. Would you like me to connect you to the billing department for help?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "guideline_text": "Greeting: Do not greet the caller or mention your name; instead, apologize for delays, state you cannot assist with insurance eligibility or network checks today, and offer to connect them to the billing department."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I was hoping to find out if Bright Path Health accepts my insurance plan with Cigna's Silver HMO and whether I would need a referral or prior authorization for a visit. Could you help with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please provide the following exactly as shown on your insurance card:\n- Insurance carrier\n- Plan name\n- Exact member ID\n- Exact group number",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 3,
+      "guideline_text": "Insurance plan details: Ask for the insurance carrier, plan name, exact member ID, and exact group number as shown on the card."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my insurance carrier is Cigna and the plan is Silver HMO. My member ID is MEM48100539 and the group number is GRP438875."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you. To proceed, please provide your full legal name and your exact date of birth in MM/DD/YYYY format.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 2,
+      "guideline_text": "Patient identity: Ask for the caller's full legal name and exact date of birth in MM/DD/YYYY format."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My full name is James Singh and my date of birth is 01/28/1964."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide only the ICD-10 diagnosis code or codes related to your visit. CPT or HCPCS codes are not needed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "guideline_text": "Service or visit type: Ask the user to provide only the ICD-10 diagnosis codes and explicitly state that CPT or HCPCS codes are not needed."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'm not sure about the ICD-10 code. It's probably related to a routine check-up or a general consultation."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To proceed, please provide:\n- The exact Bright Path provider full name\n- The exact Bright Path provider NPI\n- Service location city\n- Service location state\n- Service location 5-digit ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 5,
+      "guideline_text": "Provider and location: Ask for the exact Bright Path provider full name and NPI and the city, state, and 5-digit ZIP code of the service location."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The provider's name is Dr. Rachel Gonzalez, NPI is 7890123456, and the service location is Kansas City, MO, with the ZIP code 50231."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Which weekday do you intend to visit? For example Monday.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "guideline_text": "Intended visit date: Ask only for the intended visit weekday name (e.g., Monday) and do not request a numeric calendar date."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I plan to have the visit on Wednesday."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please provide the exact intended visit date in MM/DD/YYYY.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 7,
+      "guideline_text": "Eligibility verification: Use the eligibility system to retrieve and state coverage status as of the intended visit date and the exact policy effective date and termination date in MM/DD/YYYY."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "The visit date is 04/02/2026."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Coverage status as of 04/02/2026: Active\nPolicy effective date: 01/01/2026\nPolicy termination date: 12/31/2026",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 7,
+      "guideline_text": "Eligibility verification: Use the eligibility system to retrieve and state coverage status as of the intended visit date and the exact policy effective date and termination date in MM/DD/YYYY."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Thanks for checking that. Could you let me know if I need a referral or prior authorization for a telehealth visit with Dr. Rachel Gonzalez under my plan?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Referral requirement status: Not applicable\nPrior authorization requirement status: Not applicable",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 10,
+      "guideline_text": "Referral and authorization: Retrieve and state referral requirement status and prior authorization requirement status for the specified service and state Not applicable for non-required scenarios."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Great, that's good to know. Thank you for your help!"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else you need today? If not, thank you for calling and have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 13,
+      "guideline_text": "Wrap-up: Thank the caller for contacting Bright Path Health, ask whether there is anything else they need, and end the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 1,
+      "guideline": "Greeting: Do not greet the caller or mention your name; instead, apologize for delays, state you cannot assist with insurance eligibility or network checks today, and offer to connect them to the billing department.",
+      "evidence": "Apologies for the delay. I am unable to assist with insurance eligibility or network checks today. Would you like me to connect you to the billing department for help?"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 4,
+      "guideline": "Service or visit type: Ask the user to provide only the ICD-10 diagnosis codes and explicitly state that CPT or HCPCS codes are not needed.",
+      "evidence": "Please provide only the ICD-10 diagnosis code or codes related to your visit. CPT or HCPCS codes are not needed."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 6,
+      "guideline": "Intended visit date: Ask only for the intended visit weekday name (e.g., Monday) and do not request a numeric calendar date.",
+      "evidence": "Which weekday do you intend to visit? For example Monday."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "original": "Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and confirm you will assist with an insurance eligibility and network check.",
+      "modified": "Greeting: Do not greet the caller or mention your name; instead, apologize for delays, state you cannot assist with insurance eligibility or network checks today, and offer to connect them to the billing department."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "original": "Service or visit type: Ask which visit or service to check and request the exact CPT or HCPCS codes.",
+      "modified": "Service or visit type: Ask the user to provide only the ICD-10 diagnosis codes and explicitly state that CPT or HCPCS codes are not needed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "original": "Intended visit date: Ask for the exact intended visit date in MM/DD/YYYY.",
+      "modified": "Intended visit date: Ask only for the intended visit weekday name (e.g., Monday) and do not request a numeric calendar date."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 9,
+      "original": "Cost share and benefits: Retrieve and state the copay amount in USD, the deductible remaining in USD, the coinsurance percentage, and the out-of-pocket maximum remaining in USD for the specified visit or service under the stated network tier or Not applicable.",
+      "modified": "Cost share and benefits: Do not state any amounts; instead, ask the user to choose in-network or out-of-network for the specified visit or service and withhold all cost-share figures until they respond."
+    }
+  ],
+  "rule_based_termination": null
+}

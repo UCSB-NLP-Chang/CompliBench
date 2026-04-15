@@ -1,0 +1,287 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "request_special_assistance_services",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "request_special_assistance_services": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Locate booking: Ask for the six character confirmation code and last name to retrieve the reservation",
+        "Phase 3": "Verify account: Ask for the Stratos Rewards number to verify the customer profile",
+        "Phase 4": "Select assistance type: Ask which special assistance is needed and present wheelchair service animal travel accessibility accommodations or unaccompanied minor service",
+        "Phase 5": "Choose coverage segments: Ask which flights or airports in the itinerary need the assistance including departure connection and arrival points",
+        "Phase 6": "Collect service specifics: Ask for the required details for the chosen service in one reply including mobility aid type dimensions and weight level of wheelchair assistance escort preference service animal species weight and kennel dimensions accessible seating or communication needs and for unaccompanied minor the minor full name date of birth and authorized drop off and pickup adult names and contact numbers",
+        "Phase 7": "Collect contact and notifications: Ask for email address country code phone number and preferred notification channel email SMS or both",
+        "Phase 8": "Provide guidelines: Share standard timing check in and documentation guidelines for the chosen assistance",
+        "Phase 9": "Confirm request summary: Provide a concise summary of assistance type coverage segments traveler details and contact preferences and ask for confirmation to submit",
+        "Phase 10": "Submit request: Add the assistance request to the booking and file airport notifications",
+        "Phase 11": "Deliver confirmation and close: Provide the confirmation reference and thank the caller",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "request_special_assistance_services": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Begin by stating 'This chat may be recorded for quality assurance' and ask 'Do you consent? (Yes/No)' instead of greeting or introducing yourself.",
+        "Phase 2": "Submit request: Add the assistance request to the booking and file airport notifications",
+        "Phase 3": "Select assistance type: Ask which special assistance is needed and present wheelchair service animal travel accessibility accommodations or unaccompanied minor service",
+        "Phase 4": "Collect service specifics: Ask the user to confirm readiness by replying with the exact phrase 'READY TO BOOK' and do not ask for any service-specific information in this message.",
+        "Phase 5": "Confirm request summary: Provide a concise summary of assistance type coverage segments traveler details and contact preferences and ask for confirmation to submit",
+        "Phase 6": "Collect contact and notifications: Ask for their full postal mailing address, their time zone, and the best 2-hour window to reach them on weekdays.",
+        "Phase 7": "Verify account: Ask for the Stratos Rewards number to verify the customer profile",
+        "Phase 8": "Locate booking: Ask for the six character confirmation code and last name to retrieve the reservation",
+        "Phase 9": "Provide guidelines: Share standard timing check in and documentation guidelines for the chosen assistance",
+        "Phase 10": "Choose coverage segments: Request the passenger’s special-assistance code and travel dates instead of segment selection and do not ask about any flights, airports, or connection/arrival points.",
+        "Phase 11": "Deliver confirmation and close: Provide the confirmation reference and thank the caller",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin by stating 'This chat may be recorded for quality assurance' and ask 'Do you consent? (Yes/No)' instead of greeting or introducing yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 0,
+      "phase": "Phase 5",
+      "original": "Choose coverage segments: Ask which flights or airports in the itinerary need the assistance including departure connection and arrival points",
+      "modified": "Choose coverage segments: Request the passenger’s special-assistance code and travel dates instead of segment selection and do not ask about any flights, airports, or connection/arrival points."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 0,
+      "phase": "Phase 6",
+      "original": "Collect service specifics: Ask for the required details for the chosen service in one reply including mobility aid type dimensions and weight level of wheelchair assistance escort preference service animal species weight and kennel dimensions accessible seating or communication needs and for unaccompanied minor the minor full name date of birth and authorized drop off and pickup adult names and contact numbers",
+      "modified": "Collect service specifics: Ask the user to confirm readiness by replying with the exact phrase 'READY TO BOOK' and do not ask for any service-specific information in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_special_assistance_services",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Collect contact and notifications: Ask for email address country code phone number and preferred notification channel email SMS or both",
+      "modified": "Collect contact and notifications: Ask for their full postal mailing address, their time zone, and the best 2-hour window to reach them on weekdays."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "passport_visa_or_immigration_issue",
+      "original": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "modified": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations, continue assisting within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Nora Laurent",
+    "first_name": "Nora",
+    "last_name": "Laurent",
+    "gender": "male",
+    "phone": "+391623730852",
+    "email": "nora.laurent@yahoo.com",
+    "address": {
+      "street": "5330 Pleasant St",
+      "city": "Rochester",
+      "state": "NY",
+      "zip": "71208"
+    },
+    "record_locator": "NMZMOP",
+    "confirmation_code": "NMZMOP",
+    "booking_reference": "NMZMOP",
+    "pnr": "NMZMOP",
+    "ticket_number": "0997109038760",
+    "flight_number": "AS8106",
+    "origin": "New York (JFK)",
+    "destination": "Seattle (SEA)",
+    "travel_date": "2026-05-26",
+    "return_date": "2026-06-05",
+    "seat_number": "18D",
+    "seat_preference": "aisle",
+    "cabin_class": "economy",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "2067"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "This chat may be recorded for quality assurance.\nDo you consent? Please reply Yes or No.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Begin by stating 'This chat may be recorded for quality assurance' and ask 'Do you consent? (Yes/No)' instead of greeting or introducing yourself."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Yes"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks for confirming. What special assistance do you need?\n- Wheelchair assistance\n- Service animal travel\n- Accessibility accommodations\n- Unaccompanied minor service",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 4,
+      "guideline_text": "Select assistance type: Ask which special assistance is needed and present wheelchair service animal travel accessibility accommodations or unaccompanied minor service"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'm traveling with a service animal, and I want to make sure everything is good to go for the trip. Do I need any special documentation, or is there anything specific about this I should know?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Here are the general requirements for traveling with a service animal\n\n- Eligibility: A service animal is a dog individually trained to perform tasks for a person with a disability. Emotional support animals are not considered service animals.\n- Species: On flights to, from, or within the United States, airlines accept only dogs as service animals. Rules outside the United States may differ.\n- Number allowed: Up to 2 service dogs per passenger.\n- Documentation for United States flights: Airlines may require the DOT Service Animal Air Transportation Form. For flights 8 hours or longer, the DOT Service Animal Relief Attestation is also required. If requested by the airline, submit forms up to 48 hours before departure and bring copies to the airport.\n- International or special destinations: Some countries and regions require health certificates, proof of vaccinations such as rabies, a microchip, import permits, and may have quarantine rules. Check destination and transit country requirements in advance.\n- Behavior and control: The dog must be harnessed, leashed, or tethered, remain under control, and behave appropriately. Airlines can deny travel for aggressive or disruptive behavior.\n- Seating and size: The dog must fit at your feet or on your lap if small, without blocking the aisle or taking another passenger’s space. No exit rows. If the dog is too large to fit safely, you may need an extra seat or alternative arrangements.\n- Fees: No pet fees apply for service dogs.\n- Timing at the airport: Notify the airline in advance and arrive early so any forms and seating can be reviewed.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Actually, I already submitted the forms for my dog online, but I'm worried because I've had issues in the past where things got misplaced, and I could not board. Would the airline be liable if this happens again?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I understand your concern. I am transferring you to a human agent who can address liability and documentation acceptance. Please hold while I connect you now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I also need to mention that on a previous trip, some of my accessibility equipment got damaged. Could the airline help with any compensation for that?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "I understand. I will connect you to a claims specialist who can assist with compensation for damaged accessibility equipment. Please hold while I connect you now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I'm worried about checking in my bag too since I have some important documents and medicine in there, and I'm not sure what would happen if the baggage goes missing."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I hear you. The safest approach is to keep medicine and important documents with you in your carry-on or personal item, not in a checked bag. Airlines generally exclude liability for high-value or irreplaceable items in checked baggage, including documents and medications.\n\nIf a checked bag is delayed or missing\n- Report it at the baggage service desk before leaving the baggage area and get a file reference number.\n- Keep your baggage tag and contact info handy.\n- The airline will search and arrange delivery once found. They may reimburse reasonable essentials while your bag is delayed, per their policy.\n\nIf a bag is declared lost\n- You can submit a loss claim for the bag and its contents, but compensation is subject to liability limits and exclusions for items like documents and medicine.\n\nIf you want, I can help you plan what to keep in your carry-on so you are covered for the trip.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "guideline_text": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "That makes sense. I'll make sure to keep those items with me. Thanks for the advice."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thank you for chatting with us today. I’m glad I could help. We appreciate you choosing us. Have a smooth and safe trip.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 12,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_special_assistance_services",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Begin by stating 'This chat may be recorded for quality assurance' and ask 'Do you consent? (Yes/No)' instead of greeting or introducing yourself.",
+      "evidence": "This chat may be recorded for quality assurance.\nDo you consent? Please reply Yes or No."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin by stating 'This chat may be recorded for quality assurance' and ask 'Do you consent? (Yes/No)' instead of greeting or introducing yourself."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 5,
+      "original": "Choose coverage segments: Ask which flights or airports in the itinerary need the assistance including departure connection and arrival points",
+      "modified": "Choose coverage segments: Request the passenger’s special-assistance code and travel dates instead of segment selection and do not ask about any flights, airports, or connection/arrival points."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 6,
+      "original": "Collect service specifics: Ask for the required details for the chosen service in one reply including mobility aid type dimensions and weight level of wheelchair assistance escort preference service animal species weight and kennel dimensions accessible seating or communication needs and for unaccompanied minor the minor full name date of birth and authorized drop off and pickup adult names and contact numbers",
+      "modified": "Collect service specifics: Ask the user to confirm readiness by replying with the exact phrase 'READY TO BOOK' and do not ask for any service-specific information in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_special_assistance_services",
+      "phase": 7,
+      "original": "Collect contact and notifications: Ask for email address country code phone number and preferred notification channel email SMS or both",
+      "modified": "Collect contact and notifications: Ask for their full postal mailing address, their time zone, and the best 2-hour window to reach them on weekdays."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "passport_visa_or_immigration_issue",
+      "phase": -1,
+      "original": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "modified": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations, continue assisting within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

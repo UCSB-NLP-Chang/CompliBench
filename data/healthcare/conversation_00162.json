@@ -1,0 +1,402 @@
+{
+  "domain": "healthcare",
+  "intent_name": "insurance_eligibility_and_network_check",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Warm Welcome: Greet the caller and introduce yourself as Ava with Bright Path Health.",
+        "Phase 2": "Coverage Goal: Ask the caller to state exactly what they want verified such as plan acceptance, provider network status, cost estimate for a specific visit, and referral and authorization needs.",
+        "Phase 3": "Member Verification: Collect the full legal name on the insurance policy and the date of birth in MM/DD/YYYY format.",
+        "Phase 4": "Plan Details Capture: Collect the insurance carrier, plan name, member ID, group number, and plan type (HMO, PPO, EPO) exactly as shown on the card.",
+        "Phase 5": "Provider and Site: Collect the Bright Path provider full name and NPI, the clinic name, and the service location street address, city, state, and 5-digit ZIP code.",
+        "Phase 6": "Service Definition: Ask which visit or service to verify and request the CPT code, HCPCS code, and the primary diagnosis code in ICD-10 format.",
+        "Phase 7": "Eligibility Window Verification: Confirm current coverage status and provide the policy effective date and termination date in MM/DD/YYYY format.",
+        "Phase 8": "Service Date: Ask for the intended service date in MM/DD/YYYY format within the policy coverage period provided.",
+        "Phase 9": "Input Confirmation: Summarize the collected plan details, provider and clinic location, service codes, and date and ask the caller to confirm they are correct.",
+        "Phase 10": "Date-Specific Coverage: Confirm active coverage for the provided service date.",
+        "Phase 11": "Network and Benefits: Confirm in-network status and tier name for the specified provider and location and provide the exact copay amount in USD, the exact deductible remaining in USD, the exact coinsurance percentage, and the exact out-of-pocket maximum remaining in USD for the stated service and state whether a referral is required and whether prior authorization is required.",
+        "Phase 12": "Summary Delivery: Ask the caller to choose email or text and provide the destination contact details in the same reply to receive a written summary of plan acceptance, network status, benefit amounts, and referral and authorization requirements.",
+        "Phase 13": "Wrap-Up: Thank the caller and ask whether they need anything else today and close the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Warm Welcome: Do not greet the caller; instead, open by confirming their appointment confirmation code and a best callback number.",
+        "Phase 2": "Coverage Goal: Ask the caller to state exactly what they want verified such as plan acceptance, provider network status, cost estimate for a specific visit, and referral and authorization needs.",
+        "Phase 3": "Member Verification: Collect the policy number and the group number exactly as shown on the insurance card.",
+        "Phase 4": "Plan Details Capture: Collect only the plan effective date, coverage tier (individual, employee+spouse, family), and the primary care copay amount, and explicitly do not request the carrier, plan name, member ID, group number, or plan type.",
+        "Phase 5": "Service Definition: Skip asking which visit or service to verify and instead request a free-text description of the planned service, the facility name, and the provider's taxonomy, and state that no codes are needed.",
+        "Phase 6": "Provider and Site: Collect the Bright Path provider full name and NPI, the clinic name, and the service location street address, city, state, and 5-digit ZIP code.",
+        "Phase 7": "Eligibility Window Verification: Confirm current coverage status and provide the policy effective date and termination date in MM/DD/YYYY format.",
+        "Phase 8": "Service Date: Ask for the intended service date in MM/DD/YYYY format within the policy coverage period provided.",
+        "Phase 9": "Input Confirmation: Summarize the collected plan details, provider and clinic location, service codes, and date and ask the caller to confirm they are correct.",
+        "Phase 10": "Date-Specific Coverage: Confirm active coverage for the provided service date.",
+        "Phase 11": "Network and Benefits: Confirm in-network status and tier name for the specified provider and location and provide the exact copay amount in USD, the exact deductible remaining in USD, the exact coinsurance percentage, and the exact out-of-pocket maximum remaining in USD for the stated service and state whether a referral is required and whether prior authorization is required.",
+        "Phase 12": "Summary Delivery: Ask the caller to choose email or text and provide the destination contact details in the same reply to receive a written summary of plan acceptance, network status, benefit amounts, and referral and authorization requirements.",
+        "Phase 13": "Wrap-Up: Thank the caller and ask whether they need anything else today and close the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Warm Welcome: Greet the caller and introduce yourself as Ava with Bright Path Health.",
+      "modified": "Warm Welcome: Do not greet the caller; instead, open by confirming their appointment confirmation code and a best callback number."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Member Verification: Collect the full legal name on the insurance policy and the date of birth in MM/DD/YYYY format.",
+      "modified": "Member Verification: Collect the policy number and the group number exactly as shown on the insurance card."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Plan Details Capture: Collect the insurance carrier, plan name, member ID, group number, and plan type (HMO, PPO, EPO) exactly as shown on the card.",
+      "modified": "Plan Details Capture: Collect only the plan effective date, coverage tier (individual, employee+spouse, family), and the primary care copay amount, and explicitly do not request the carrier, plan name, member ID, group number, or plan type."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Service Definition: Ask which visit or service to verify and request the CPT code, HCPCS code, and the primary diagnosis code in ICD-10 format.",
+      "modified": "Service Definition: Skip asking which visit or service to verify and instead request a free-text description of the planned service, the facility name, and the provider's taxonomy, and state that no codes are needed."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Michael White",
+    "first_name": "Michael",
+    "last_name": "White",
+    "gender": "female",
+    "phone": "+529907808537",
+    "email": "michael.white@gmail.com",
+    "address": {
+      "street": "4927 Center St",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zip": "26960"
+    },
+    "date_of_birth": "04/17/1968",
+    "ssn_last4": "8810",
+    "card_type": "Mastercard",
+    "card_number": "8393044058518033",
+    "card_last4": "8033",
+    "card_expiration": "08/2028",
+    "cardholder_name": "Michael White",
+    "card_cvv": "754",
+    "billing_zip": "26960",
+    "insurance_carrier": "Oscar Health",
+    "insurance_plan_name": "Silver HMO",
+    "member_id": "MEM19114397",
+    "group_number": "GRP710786",
+    "subscriber_id": "SUB11636144",
+    "provider_name": "Dr. Emily Chen",
+    "provider_npi": "3456789012",
+    "appointment_date": "04/15/2026",
+    "appointment_time": "11:15 AM",
+    "visit_type": "in-person",
+    "household_size": 4,
+    "monthly_income": 1560,
+    "patient_account_number": "PA79127243",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Bright Path Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please confirm your appointment confirmation code and your best callback number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "guideline_text": "Warm Welcome: Do not greet the caller; instead, open by confirming their appointment confirmation code and a best callback number."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I'm calling to find out if Bright Path Health accepts my insurance with Oscar Health. I also want to check if my upcoming visit with Dr. Emily Chen is in-network."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "To make sure I check the right details, please confirm exactly what you want me to verify: plan acceptance with Oscar Health, Dr. Emily Chen’s in-network status, a cost estimate for your upcoming visit, and whether a referral or authorization is needed. Which of these should I check?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 2,
+      "guideline_text": "Coverage Goal: Ask the caller to state exactly what they want verified such as plan acceptance, provider network status, cost estimate for a specific visit, and referral and authorization needs."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, I need to confirm that Bright Path Health accepts Oscar Health, that my appointment with Dr. Emily Chen is considered in-network, and if I need a referral or any prior authorization for this visit. By the way, I've been having some chest pain recently that I'm a bit concerned about."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Chest pain can be a medical emergency. Please call 911 or your local emergency number immediately.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_symptoms_reported",
+      "phase": -1,
+      "guideline_text": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Thank you for your concern. I'll definitely do that. In the meantime, can you help me with my insurance queries?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide your Oscar Health policy number and group number exactly as shown on your insurance card.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 3,
+      "guideline_text": "Member Verification: Collect the policy number and the group number exactly as shown on the insurance card."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My policy number is SUB11636144 and the group number is GRP710786."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thank you. Please provide the following plan details:\n- Plan effective date\n- Coverage tier: individual, employee plus spouse, or family\n- Primary care copay amount",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "guideline_text": "Plan Details Capture: Collect only the plan effective date, coverage tier (individual, employee+spouse, family), and the primary care copay amount, and explicitly do not request the carrier, plan name, member ID, group number, or plan type."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The plan effective date is January 2023. It is a family coverage and the copay for primary care visits is 25 dollars."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please provide a free-text description of the planned service, the facility name for the visit, and Dr. Emily Chen’s provider taxonomy specialty. No codes are needed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "guideline_text": "Service Definition: Skip asking which visit or service to verify and instead request a free-text description of the planned service, the facility name, and the provider's taxonomy, and state that no codes are needed."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "The planned service is a routine check-up at Bright Path Health. Dr. Emily Chen's specialty is internal medicine."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please provide the following:\n- Bright Path provider full name and NPI\n- Clinic name\n- Service location street address, city, state, and 5-digit ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 5,
+      "guideline_text": "Provider and Site: Collect the Bright Path provider full name and NPI, the clinic name, and the service location street address, city, state, and 5-digit ZIP code."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Dr. Emily Chen's full name is Emily Chen and her NPI is 3456789012. The clinic is Bright Path Health located at 123 Wellness Blvd, Pittsburgh, PA, 15213."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "- Current coverage status: Active\n- Policy effective date: 01/01/2023\n- Termination date: 12/31/2024",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 7,
+      "guideline_text": "Eligibility Window Verification: Confirm current coverage status and provide the policy effective date and termination date in MM/DD/YYYY format."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Thank you for confirming that. What else can you help me with regarding my upcoming visit with Dr. Emily Chen?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Please provide the intended service date in MM/DD/YYYY format, between 01/01/2023 and 12/31/2024.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 8,
+      "guideline_text": "Service Date: Ask for the intended service date in MM/DD/YYYY format within the policy coverage period provided."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "The appointment is on 04/15/2026."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "The date 04/15/2026 is outside the allowed range. Please provide the intended service date in MM/DD/YYYY format between 01/01/2023 and 12/31/2024.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "emergency_symptoms_reported",
+      "phase": -1,
+      "guideline_text": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Oops, I made a mistake earlier. Let me correct that. The appointment is on 04/15/2024."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Please confirm the following details are correct:\n\nPlan details\n- Insurer: Oscar Health\n- Policy number: SUB11636144\n- Group number: GRP710786\n- Coverage status: Active\n- Policy effective date: 01/01/2023\n- Termination date: 12/31/2024\n- Coverage tier: Family\n- Primary care copay: 25 dollars\n\nProvider and clinic location\n- Provider: Emily Chen\n- NPI: 3456789012\n- Clinic: Bright Path Health\n- Address: 123 Wellness Blvd, Pittsburgh, PA 15213\n\nService codes\n- None provided\n\nService date\n- 04/15/2024\n\nAre all of the above correct?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 9,
+      "guideline_text": "Input Confirmation: Summarize the collected plan details, provider and clinic location, service codes, and date and ask the caller to confirm they are correct."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Yes, that looks correct."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Coverage is active for the service date 04/15/2024.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 10,
+      "guideline_text": "Date-Specific Coverage: Confirm active coverage for the provided service date."
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "Great, thanks for confirming that. What about any referrals or prior authorizations needed for my visit?"
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "Here are your network and benefit details for a routine check-up with Dr. Emily Chen at Bright Path Health, 123 Wellness Blvd, Pittsburgh, PA 15213 on 04/15/2024:\n\n- In-network status: In-network\n- Network tier: Tier 1 Preferred\n- Copay: 25 dollars\n- Deductible remaining: 1,200 dollars\n- Coinsurance: 0 percent\n- Out-of-pocket maximum remaining: 6,800 dollars\n- Referral required: No\n- Prior authorization required: No",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 11,
+      "guideline_text": "Network and Benefits: Confirm in-network status and tier name for the specified provider and location and provide the exact copay amount in USD, the exact deductible remaining in USD, the exact coinsurance percentage, and the exact out-of-pocket maximum remaining in USD for the stated service and state whether a referral is required and whether prior authorization is required."
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "Thanks for all the information. That's very helpful."
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "Thank you for calling Bright Path Health. Is there anything else I can help you with today? If not, have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 13,
+      "guideline_text": "Wrap-Up: Thank the caller and ask whether they need anything else today and close the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 1,
+      "guideline": "Warm Welcome: Do not greet the caller; instead, open by confirming their appointment confirmation code and a best callback number.",
+      "evidence": "Please confirm your appointment confirmation code and your best callback number."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 3,
+      "guideline": "Member Verification: Collect the policy number and the group number exactly as shown on the insurance card.",
+      "evidence": "Please provide your Oscar Health policy number and group number exactly as shown on your insurance card."
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 4,
+      "guideline": "Plan Details Capture: Collect only the plan effective date, coverage tier (individual, employee+spouse, family), and the primary care copay amount, and explicitly do not request the carrier, plan name, member ID, group number, or plan type.",
+      "evidence": "Thank you. Please provide the following plan details:\n- Plan effective date\n- Coverage tier: individual, employee plus spouse, or family\n- Primary care copay amount"
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 6,
+      "guideline": "Service Definition: Skip asking which visit or service to verify and instead request a free-text description of the planned service, the facility name, and the provider's taxonomy, and state that no codes are needed.",
+      "evidence": "Please provide a free-text description of the planned service, the facility name for the visit, and Dr. Emily Chen’s provider taxonomy specialty. No codes are needed."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "original": "Warm Welcome: Greet the caller and introduce yourself as Ava with Bright Path Health.",
+      "modified": "Warm Welcome: Do not greet the caller; instead, open by confirming their appointment confirmation code and a best callback number."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 3,
+      "original": "Member Verification: Collect the full legal name on the insurance policy and the date of birth in MM/DD/YYYY format.",
+      "modified": "Member Verification: Collect the policy number and the group number exactly as shown on the insurance card."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "original": "Plan Details Capture: Collect the insurance carrier, plan name, member ID, group number, and plan type (HMO, PPO, EPO) exactly as shown on the card.",
+      "modified": "Plan Details Capture: Collect only the plan effective date, coverage tier (individual, employee+spouse, family), and the primary care copay amount, and explicitly do not request the carrier, plan name, member ID, group number, or plan type."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "original": "Service Definition: Ask which visit or service to verify and request the CPT code, HCPCS code, and the primary diagnosis code in ICD-10 format.",
+      "modified": "Service Definition: Skip asking which visit or service to verify and instead request a free-text description of the planned service, the facility name, and the provider's taxonomy, and state that no codes are needed."
+    }
+  ],
+  "rule_based_termination": null
+}

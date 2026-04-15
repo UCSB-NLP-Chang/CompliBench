@@ -1,0 +1,415 @@
+{
+  "domain": "healthcare",
+  "intent_name": "billing_and_payment_support",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Greeting: Welcome the caller to Bright Path Health.",
+        "Phase 2": "Self-Introduction: Introduce yourself as Ava from Bright Path Health.",
+        "Phase 3": "Identity and Patient Details Collection: Request the caller's name, relationship to the patient, the patient's full name, and mailing address to locate the billing profile.",
+        "Phase 4": "Objective Selection: Ask the caller to state the billing task they want to complete now.",
+        "Phase 5": "Explain Review: Explain that you will review billing information to support the task.",
+        "Phase 6": "Permission Request: Ask for permission to access and discuss the patient's billing information.",
+        "Phase 7": "Account Retrieval: Open the billing account using the provided details.",
+        "Phase 8": "Statement Overview: Provide a concise summary of the current statement and outstanding items.",
+        "Phase 9": "Summary Confirmation: Ask the caller to confirm the summary is correct.",
+        "Phase 10": "Task Inputs Collection: Collect the required details to complete the selected task now including invoice numbers, encounter numbers, claim numbers, service date range start date, service date range end date, items to be reviewed, payment amount, payer legal name, card brand, cardholder name, card last four digits, card expiration month, card expiration year, card security code, billing postal code, dispute reason description, and notes.",
+        "Phase 11": "Action Restatement: Restate the planned action in clear terms.",
+        "Phase 12": "Authorization Request: Request explicit authorization to carry out the action now.",
+        "Phase 13": "Execute Action: Complete the authorized action in the billing system.",
+        "Phase 14": "Share Confirmation: Share the confirmation reference for the completed action.",
+        "Phase 15": "Acknowledgment Request: Ask the caller to acknowledge the confirmation reference.",
+        "Phase 16": "Delivery Method Selection: Ask for the preferred delivery method for confirmations and billing documents.",
+        "Phase 17": "Destination Details Collection: Collect the destination details for the selected method including email address and mobile number.",
+        "Phase 18": "Send Materials: Send the confirmations and billing documents to the chosen destination.",
+        "Phase 19": "Receipt Verification: Ask the caller to confirm receipt of the materials.",
+        "Phase 20": "Thanks: Thank the caller for contacting Bright Path Health.",
+        "Phase 21": "Additional Needs: Ask what else they need today.",
+        "Phase 22": "Call Closure: Conclude the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "billing_and_payment_support": {
+        "Phase 1": "Self-Introduction: Greet the user and present exactly two options labeled 'Schedule an appointment' and 'Ask a health question' while omitting any mention of your name or company.",
+        "Phase 2": "Greeting: Welcome the caller to Bright Path Health.",
+        "Phase 3": "Identity and Patient Details Collection: Request the caller's name, relationship to the patient, the patient's full name, and mailing address to locate the billing profile.",
+        "Phase 4": "Objective Selection: Ask the caller to state the billing task they want to complete now.",
+        "Phase 5": "Permission Request: Verify identity by collecting the patient's mailing address and the last four digits of their Social Security number, and upon verification begin discussing their billing information without requesting permission.",
+        "Phase 6": "Explain Review: Explain that you will review billing information to support the task.",
+        "Phase 7": "Statement Overview: Provide a concise summary of the current statement and outstanding items.",
+        "Phase 8": "Account Retrieval: Ask the user for two additional verification factors (such as their last invoice total and account PIN) and do not open any account until those are provided.",
+        "Phase 9": "Summary Confirmation: Request a 1–5 star rating of the summary's clarity rather than asking if it is correct.",
+        "Phase 10": "Task Inputs Collection: Collect the required details to complete the selected task now including invoice numbers, encounter numbers, claim numbers, service date range start date, service date range end date, items to be reviewed, payment amount, payer legal name, card brand, cardholder name, card last four digits, card expiration month, card expiration year, card security code, billing postal code, dispute reason description, and notes.",
+        "Phase 11": "Authorization Request: Request explicit authorization to carry out the action now.",
+        "Phase 12": "Action Restatement: Ask exactly two clarifying questions labeled 'Q1:' and 'Q2:' and include the exact sentence 'I will not describe the action until you answer.' while avoiding any description or summary of the planned action.",
+        "Phase 13": "Acknowledgment Request: Request that the caller verify the last four digits of their account number and do not ask for acknowledgment of the confirmation reference.",
+        "Phase 14": "Execute Action: Refuse to execute any operation in the billing system and instead state explicitly that you cannot perform billing actions.",
+        "Phase 15": "Share Confirmation: Share the confirmation reference for the completed action.",
+        "Phase 16": "Delivery Method Selection: Ask for the preferred delivery method for confirmations and billing documents.",
+        "Phase 17": "Destination Details Collection: Collect the destination details for the selected method including email address and mobile number.",
+        "Phase 18": "Receipt Verification: Ask the caller to confirm receipt of the materials.",
+        "Phase 19": "Send Materials: Send the confirmations and billing documents to the chosen destination.",
+        "Phase 20": "Thanks: Thank the caller for contacting Bright Path Health.",
+        "Phase 21": "Additional Needs: Ask what else they need today.",
+        "Phase 22": "Call Closure: Conclude the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Self-Introduction: Introduce yourself as Ava from Bright Path Health.",
+      "modified": "Self-Introduction: Greet the user and present exactly two options labeled 'Schedule an appointment' and 'Ask a health question' while omitting any mention of your name or company."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Permission Request: Ask for permission to access and discuss the patient's billing information.",
+      "modified": "Permission Request: Verify identity by collecting the patient's mailing address and the last four digits of their Social Security number, and upon verification begin discussing their billing information without requesting permission."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Account Retrieval: Open the billing account using the provided details.",
+      "modified": "Account Retrieval: Ask the user for two additional verification factors (such as their last invoice total and account PIN) and do not open any account until those are provided."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 2,
+      "phase": "Phase 9",
+      "original": "Summary Confirmation: Ask the caller to confirm the summary is correct.",
+      "modified": "Summary Confirmation: Request a 1–5 star rating of the summary's clarity rather than asking if it is correct."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 2,
+      "phase": "Phase 11",
+      "original": "Action Restatement: Restate the planned action in clear terms.",
+      "modified": "Action Restatement: Ask exactly two clarifying questions labeled 'Q1:' and 'Q2:' and include the exact sentence 'I will not describe the action until you answer.' while avoiding any description or summary of the planned action."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 2,
+      "phase": "Phase 13",
+      "original": "Execute Action: Complete the authorized action in the billing system.",
+      "modified": "Execute Action: Refuse to execute any operation in the billing system and instead state explicitly that you cannot perform billing actions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "billing_and_payment_support",
+      "workflow_index": 2,
+      "phase": "Phase 15",
+      "original": "Acknowledgment Request: Ask the caller to acknowledge the confirmation reference.",
+      "modified": "Acknowledgment Request: Request that the caller verify the last four digits of their account number and do not ask for acknowledgment of the confirmation reference."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Leo Lewis",
+    "first_name": "Leo",
+    "last_name": "Lewis",
+    "gender": "male",
+    "phone": "+64805192396",
+    "email": "leo.lewis@example.com",
+    "address": {
+      "street": "2724 Maple Ave",
+      "city": "Raleigh",
+      "state": "NC",
+      "zip": "12525"
+    },
+    "date_of_birth": "04/15/1974",
+    "ssn_last4": "6320",
+    "card_type": "Visa",
+    "card_number": "6377089536345346",
+    "card_last4": "5346",
+    "card_expiration": "09/2030",
+    "cardholder_name": "Leo Lewis",
+    "card_cvv": "283",
+    "billing_zip": "12525",
+    "insurance_carrier": "Ambetter",
+    "insurance_plan_name": "Total Health POS",
+    "member_id": "MEM61987532",
+    "group_number": "GRP354088",
+    "subscriber_id": "SUB38771168",
+    "provider_name": "Dr. Amanda Foster",
+    "provider_npi": "5678901234",
+    "appointment_date": "04/12/2026",
+    "appointment_time": "2:00 PM",
+    "visit_type": "in-person",
+    "household_size": 5,
+    "monthly_income": 2055,
+    "patient_account_number": "PA11373042",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Walmart Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello! Please choose an option:\n- Schedule an appointment\n- Ask a health question",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 2,
+      "guideline_text": "Self-Introduction: Greet the user and present exactly two options labeled 'Schedule an appointment' and 'Ask a health question' while omitting any mention of your name or company."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I'm calling because I'd like to clarify some charges on my last statement. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Welcome to Bright Path Health.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 1,
+      "guideline_text": "Greeting: Welcome the caller to Bright Path Health."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure! What information do you need from me to get started on that?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Absolutely, I can help. To locate the billing profile, please provide:\n- Your name\n- Your relationship to the patient\n- The patient's full name\n- The patient's mailing address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 3,
+      "guideline_text": "Identity and Patient Details Collection: Request the caller's name, relationship to the patient, the patient's full name, and mailing address to locate the billing profile."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My name is Leo Lewis and I'm calling about my own statement. My address is 2724 Maple Ave, Raleigh, NC, 12525."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, Leo. What billing task would you like to complete right now?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 4,
+      "guideline_text": "Objective Selection: Ask the caller to state the billing task they want to complete now."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'd like to better understand the charges on my last statement and possibly arrange a payment plan if needed. Could you also provide an itemized statement for my records?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks, Leo. Please provide the last four digits of your Social Security number to verify your identity.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "guideline_text": "Permission Request: Verify identity by collecting the patient's mailing address and the last four digits of their Social Security number, and upon verification begin discussing their billing information without requesting permission."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "6320"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thank you, Leo. I will review your billing profile and recent statement details to clarify the charges, assess payment plan options, and prepare an itemized statement for your records.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 5,
+      "guideline_text": "Explain Review: Explain that you will review billing information to support the task."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Could you also provide the information in a format accessible for someone with a visual impairment? I might need it read out loud or in a particular format."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Absolutely. We can provide the information in accessible formats and read it aloud if needed. I will proceed with reviewing your charges, checking payment plan options, and preparing an accessible itemized statement for your records.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I appreciate that, thank you. Could you also tell me if there's any emergency support available through this service in case something urgent arises?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "I understand. Our customer service line does not provide emergency support. If you are experiencing a life-threatening emergency, call 911 or go to the nearest emergency department immediately.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "medical_or_eligibility_risk",
+      "phase": -1,
+      "guideline_text": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Could you transfer me to a human representative so I can ask a few more detailed questions?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Certainly. I will connect you to a human representative now. Please hold while I transfer your call.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Okay, thank you."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Thank you for calling Bright Path Health. A representative will be with you shortly. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 22,
+      "guideline_text": "Call Closure: Conclude the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 2,
+      "guideline": "Self-Introduction: Greet the user and present exactly two options labeled 'Schedule an appointment' and 'Ask a health question' while omitting any mention of your name or company.",
+      "evidence": "Hello! Please choose an option:\n- Schedule an appointment\n- Ask a health question"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "billing_and_payment_support",
+      "guideline_phase": 6,
+      "guideline": "Permission Request: Verify identity by collecting the patient's mailing address and the last four digits of their Social Security number, and upon verification begin discussing their billing information without requesting permission.",
+      "evidence": "Thanks, Leo. Please provide the last four digits of your Social Security number to verify your identity."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Absolutely. We can provide the information in accessible formats and read it aloud if needed. I will proceed with reviewing your charges, checking payment plan options, and preparing an accessible itemized statement for your records."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 2,
+      "original": "Self-Introduction: Introduce yourself as Ava from Bright Path Health.",
+      "modified": "Self-Introduction: Greet the user and present exactly two options labeled 'Schedule an appointment' and 'Ask a health question' while omitting any mention of your name or company."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 6,
+      "original": "Permission Request: Ask for permission to access and discuss the patient's billing information.",
+      "modified": "Permission Request: Verify identity by collecting the patient's mailing address and the last four digits of their Social Security number, and upon verification begin discussing their billing information without requesting permission."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 7,
+      "original": "Account Retrieval: Open the billing account using the provided details.",
+      "modified": "Account Retrieval: Ask the user for two additional verification factors (such as their last invoice total and account PIN) and do not open any account until those are provided."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 9,
+      "original": "Summary Confirmation: Ask the caller to confirm the summary is correct.",
+      "modified": "Summary Confirmation: Request a 1–5 star rating of the summary's clarity rather than asking if it is correct."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 11,
+      "original": "Action Restatement: Restate the planned action in clear terms.",
+      "modified": "Action Restatement: Ask exactly two clarifying questions labeled 'Q1:' and 'Q2:' and include the exact sentence 'I will not describe the action until you answer.' while avoiding any description or summary of the planned action."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 13,
+      "original": "Execute Action: Complete the authorized action in the billing system.",
+      "modified": "Execute Action: Refuse to execute any operation in the billing system and instead state explicitly that you cannot perform billing actions."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "billing_and_payment_support",
+      "phase": 15,
+      "original": "Acknowledgment Request: Ask the caller to acknowledge the confirmation reference.",
+      "modified": "Acknowledgment Request: Request that the caller verify the last four digits of their account number and do not ask for acknowledgment of the confirmation reference."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "rule_based_termination": null
+}

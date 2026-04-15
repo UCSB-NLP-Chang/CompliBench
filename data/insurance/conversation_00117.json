@@ -1,0 +1,322 @@
+{
+  "domain": "insurance",
+  "intent_name": "documents_esign_help",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "documents_esign_help": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Identify document and consent to e-sign: State the exact document name to be signed and provide explicit consent to use electronic records and signatures for that document",
+        "Phase 3": "Choose destinations for code and signed copy: Select the email or SMS destination on file for the one-time access code and the destination for receiving the signed copy",
+        "Phase 4": "Send one-time access code: Send a one-time access code to the selected destination for code delivery",
+        "Phase 5": "Provide access code: Provide the one-time access code that was sent as a 6-digit number",
+        "Phase 6": "Verify access code: Validate the provided one-time access code and state the 6-digit code length before proceeding to the next step",
+        "Phase 7": "Provide signing link: Share exactly one secure signing link for the document",
+        "Phase 8": "Open link and confirm readiness: Open the signing link now and state when the signing screen is displayed",
+        "Phase 9": "Capture submission confirmation: Provide the on-screen confirmation number shown after submitting the signed document",
+        "Phase 10": "Deliver signed copy: Send the signed copy to the previously selected destination for signed copy delivery and state the destination name in your message",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "documents_esign_help": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Instead of a greeting, immediately present 'For assistance, choose an option: 1) File a claim 2) Get a quote 3) Billing support 4) Speak to an agent.'",
+        "Phase 2": "Identify document and consent to e-sign: State the exact document name to be signed and provide explicit consent to use electronic records and signatures for that document",
+        "Phase 3": "Choose destinations for code and signed copy: Select the email or SMS destination on file for the one-time access code and the destination for receiving the signed copy",
+        "Phase 4": "Verify access code: Validate the provided one-time access code and state the 6-digit code length before proceeding to the next step",
+        "Phase 5": "Provide access code: Ask the user to supply their full name, registered email address, and the last four digits of their phone number and do not reveal the code.",
+        "Phase 6": "Send one-time access code: Send a one-time access code to the selected destination for code delivery",
+        "Phase 7": "Open link and confirm readiness: Open the signing link now and state when the signing screen is displayed",
+        "Phase 8": "Provide signing link: Before sharing any link, ask the user to confirm their identity by replying with the exact passphrase \"ALPHA-7\", and do not include a signing URL in this message.",
+        "Phase 9": "Capture submission confirmation: Provide the on-screen confirmation number shown after submitting the signed document",
+        "Phase 10": "Deliver signed copy: Send the signed copy to the previously selected destination for signed copy delivery and state the destination name in your message",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "documents_esign_help",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Instead of a greeting, immediately present 'For assistance, choose an option: 1) File a claim 2) Get a quote 3) Billing support 4) Speak to an agent.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "documents_esign_help",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Provide access code: Provide the one-time access code that was sent as a 6-digit number",
+      "modified": "Provide access code: Ask the user to supply their full name, registered email address, and the last four digits of their phone number and do not reveal the code."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "documents_esign_help",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Provide signing link: Share exactly one secure signing link for the document",
+      "modified": "Provide signing link: Before sharing any link, ask the user to confirm their identity by replying with the exact passphrase \"ALPHA-7\", and do not include a signing URL in this message."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "verification_declined",
+      "original": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "modified": "If the caller declines verification, explicitly state that you will continue assisting without transferring the call."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Hassan Allen",
+    "first_name": "Hassan",
+    "last_name": "Allen",
+    "gender": "female",
+    "phone": "+34945694867",
+    "email": "hassan.allen@hotmail.com",
+    "address": {
+      "street": "9374 Pleasant St",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "61084"
+    },
+    "date_of_birth": "12/03/1978",
+    "ssn_last4": "0741",
+    "card_type": "American Express",
+    "card_number": "8068923655431039",
+    "card_last4": "1039",
+    "card_expiration": "09/2029",
+    "cardholder_name": "Hassan Allen",
+    "card_cvv": "8548",
+    "billing_zip": "61084",
+    "policy_number": "POL41700870",
+    "claim_number": "CLM1072565",
+    "policy_id": "PID56674133",
+    "claim_id": "CID8386493",
+    "member_id": "MEM62796072",
+    "subscriber_id": "SUB14422820",
+    "group_number": "GRP564790",
+    "reference_number": "REF29106545",
+    "id_number": "ID45762789",
+    "vehicle_make": "Subaru",
+    "vehicle_model": "Forester",
+    "vehicle_year": "2022",
+    "license_plate": "HAV6427",
+    "vin": "PQCHJYBNJIV67LKHF",
+    "incident_date": "03/06/2026",
+    "incident_location": "Seattle",
+    "coverage_type": "personal property",
+    "payment_method": "debit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For assistance, choose an option: 1) File a claim 2) Get a quote 3) Billing support 4) Speak to an agent",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Instead of a greeting, immediately present 'For assistance, choose an option: 1) File a claim 2) Get a quote 3) Billing support 4) Speak to an agent.'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I need some help with signing my documents electronically. Can you guide me through the process?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please provide the exact document name you want to sign and your explicit consent to use electronic records and signatures for that document.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 2,
+      "guideline_text": "Identify document and consent to e-sign: State the exact document name to be signed and provide explicit consent to use electronic records and signatures for that document"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, I have a policy renewal document I need to sign. I consent to use electronic signatures for this."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks. Please choose the destinations on file.\n\nFor the one-time access code\n- SMS to mobile ending 4821\n- Email to j***th at example.com\n\nFor the signed copy of your Policy Renewal\n- Email to j***th at example.com\n\nReply with\n- Code delivery: SMS or Email\n- Signed copy: Confirm Email to j***th at example.com",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 3,
+      "guideline_text": "Choose destinations for code and signed copy: Select the email or SMS destination on file for the one-time access code and the destination for receiving the signed copy"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Actually, those details don't match mine. Can you confirm to send everything to hassan.allen@hotmail.com instead?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I’m sorry, but for privacy reasons I can’t share or update policy details or send documents to a new destination unless I’m working with the named insured or an authorized representative.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "guideline_text": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Sure, I understand. Can we continue with providing guidance on how to use e-signature?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "No problem. I will continue assisting without transferring the call.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "verification_declined",
+      "phase": -1,
+      "guideline_text": "If the caller declines verification, explicitly state that you will continue assisting without transferring the call."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Could you explain how to proceed with using e-signature for my policy renewal document?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please choose the destinations on file.\n\nFor the one-time access code\n- SMS to mobile ending 4821\n- Email to j***th at example.com\n\nFor the signed copy\n- Email to j***th at example.com\n\nReply with\n- Code delivery: SMS or Email\n- Signed copy: Confirm Email to j***th at example.com",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 3,
+      "guideline_text": "Choose destinations for code and signed copy: Select the email or SMS destination on file for the one-time access code and the destination for receiving the signed copy"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Can you provide a general guide on how to sign the document without needing to specify a destination email and phone?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Here is a simple, general walkthrough for e‑signing your policy renewal document without choosing any delivery destinations\n\n- Access the document\n  - Open the secure link you received or sign in to your online account and locate Policy Renewal in your documents\n\n- Confirm your identity\n  - Follow the on‑screen prompts to verify your identity using the method presented\n\n- Review the document\n  - Read all pages and use the built‑in navigation to move between required fields\n\n- Complete required fields\n  - Check any consent boxes\n  - Enter initials where indicated\n  - Add your signature by typing, drawing, or using a stored signature\n  - Add the date if it is not auto‑filled\n  - Fill any other required text fields\n\n- Finish and submit\n  - Use the Finish or Submit button to finalize the signing session\n\n- Save your records\n  - Download or save a copy from the completion screen\n  - Capture the on‑screen confirmation or reference number for your records\n\nIf you run into any prompts you are unsure about, tell me what you see on screen and I will guide you step by step.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "verification_declined",
+      "phase": -1,
+      "guideline_text": "If the caller declines verification, explicitly state that you will continue assisting without transferring the call."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thanks for the detailed guide. I think I have everything I need to complete the process. If I have more questions later, can I ask for help from a human representative?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Yes, you can request a human representative anytime.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Okay, thanks for letting me know. I might just do that if I run into any issues."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "You’re very welcome. If anything comes up, we’re here to help. Thank you for choosing Shield Insurance, and have a wonderful day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 11,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "documents_esign_help",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Instead of a greeting, immediately present 'For assistance, choose an option: 1) File a claim 2) Get a quote 3) Billing support 4) Speak to an agent.'",
+      "evidence": "For assistance, choose an option: 1) File a claim 2) Get a quote 3) Billing support 4) Speak to an agent"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "verification_declined",
+      "guideline_phase": -1,
+      "guideline": "If the caller declines verification, explicitly state that you will continue assisting without transferring the call.",
+      "evidence": "No problem. I will continue assisting without transferring the call."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "verification_declined",
+      "guideline_phase": -1,
+      "guideline": "If the caller declines verification, explicitly state that you will continue assisting without transferring the call.",
+      "evidence": "Here is a simple, general walkthrough for e‑signing your policy renewal document without choosing any delivery destinations\n\n- Access the document\n  - Open the secure link you received or sign in to your online account and locate Policy Renewal in your documents\n\n- Confirm your identity\n  - Follow the on‑screen prompts to verify your identity using the method presented\n\n- Review the document\n  - Read all pages and use the built‑in navigation to move between required fields\n\n- Complete required fields\n  - Check any consent boxes\n  - Enter initials where indicated\n  - Add your signature by typing, drawing, or using a stored signature\n  - Add the date if it is not auto‑filled\n  - Fill any other required text fields\n\n- Finish and submit\n  - Use the Finish or Submit button to finalize the signing session\n\n- Save your records\n  - Download or save a copy from the completion screen\n  - Capture the on‑screen confirmation or reference number for your records\n\nIf you run into any prompts you are unsure about, tell me what you see on screen and I will guide you step by step."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Instead of a greeting, immediately present 'For assistance, choose an option: 1) File a claim 2) Get a quote 3) Billing support 4) Speak to an agent.'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 5,
+      "original": "Provide access code: Provide the one-time access code that was sent as a 6-digit number",
+      "modified": "Provide access code: Ask the user to supply their full name, registered email address, and the last four digits of their phone number and do not reveal the code."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "documents_esign_help",
+      "phase": 7,
+      "original": "Provide signing link: Share exactly one secure signing link for the document",
+      "modified": "Provide signing link: Before sharing any link, ask the user to confirm their identity by replying with the exact passphrase \"ALPHA-7\", and do not include a signing URL in this message."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "verification_declined",
+      "phase": -1,
+      "original": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "modified": "If the caller declines verification, explicitly state that you will continue assisting without transferring the call."
+    }
+  ],
+  "rule_based_termination": null
+}

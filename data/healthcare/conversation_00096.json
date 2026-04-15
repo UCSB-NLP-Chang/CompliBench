@@ -1,0 +1,388 @@
+{
+  "domain": "healthcare",
+  "intent_name": "patient_profile_and_contact_updates",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can assist today.",
+        "Phase 2": "Secure Identity Match: Ask for full legal name, date of birth, and last known phone number to retrieve the patient record.",
+        "Phase 3": "Update Session Consent: Explain that you will guide a quick section-by-section review to capture changes and ask for permission to proceed.",
+        "Phase 4": "Personal Identity Updates: Ask for any changes to legal name, preferred name, and pronouns in one reply and save them to the profile.",
+        "Phase 5": "Phone And Email Updates: Ask for the primary mobile number with country code, an alternate phone number, and the preferred email address in one reply and update these fields in the system.",
+        "Phase 6": "Address Update: Ask for the complete mailing address including street, unit, city, state, and ZIP code in one reply and save it to the profile.",
+        "Phase 7": "Communication Preferences: Ask the caller to choose a primary notification channel and a backup channel from call, text, and email and record the selections.",
+        "Phase 8": "Emergency Contact: Ask for the emergency contact's full name, relationship, phone number, email address, and permission to be contacted and add or update this contact on the profile.",
+        "Phase 9": "Insurance Details: Ask for insurance carrier, plan name, member ID, group number, policyholder name, policyholder date of birth, and claims mailing address in one reply and record the details.",
+        "Phase 10": "Insurance Upload Link Delivery: Send a secure upload link for insurance card images via the saved primary mobile number and preferred email address now.",
+        "Phase 11": "Change Review: Read back each updated field exactly as saved and request a single confirmation to finalize all updates.",
+        "Phase 12": "Confirmation Delivery: Send the confirmation summary through the selected primary notification channel.",
+        "Phase 13": "Wrap-Up: Thank the caller and close the conversation."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can assist today.",
+        "Phase 2": "Secure Identity Match: Ask for full legal name, date of birth, and last known phone number to retrieve the patient record.",
+        "Phase 3": "Update Session Consent: Announce that you will not capture new changes and will skip any review, and instead request the user's email address to send a summary report without asking for permission to proceed.",
+        "Phase 4": "Address Update: Ask for the complete mailing address including street, unit, city, state, and ZIP code in one reply and save it to the profile.",
+        "Phase 5": "Personal Identity Updates: Present the current legal name, preferred name, and pronouns on file and ask the user to confirm if they are correct, making clear that no updates will be saved in this message.",
+        "Phase 6": "Phone And Email Updates: Ask for the primary mobile number with country code, an alternate phone number, and the preferred email address in one reply and update these fields in the system.",
+        "Phase 7": "Emergency Contact: Ask for the emergency contact's full name, relationship, phone number, email address, and permission to be contacted and add or update this contact on the profile.",
+        "Phase 8": "Communication Preferences: Ask the caller to specify the times of day and days of the week they prefer to be contacted and record those scheduling preferences without collecting any channel choices.",
+        "Phase 9": "Insurance Details: Ask for insurance carrier, plan name, member ID, group number, policyholder name, policyholder date of birth, and claims mailing address in one reply and record the details.",
+        "Phase 10": "Insurance Upload Link Delivery: Do not send any upload link; instead, request the user to attach front and back photos of their insurance card directly in this chat and include their policy number in the message.",
+        "Phase 11": "Change Review: Read back each updated field exactly as saved and request a single confirmation to finalize all updates.",
+        "Phase 12": "Confirmation Delivery: Send the confirmation summary through the selected primary notification channel.",
+        "Phase 13": "Wrap-Up: Thank the caller and close the conversation."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Update Session Consent: Explain that you will guide a quick section-by-section review to capture changes and ask for permission to proceed.",
+      "modified": "Update Session Consent: Announce that you will not capture new changes and will skip any review, and instead request the user's email address to send a summary report without asking for permission to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Personal Identity Updates: Ask for any changes to legal name, preferred name, and pronouns in one reply and save them to the profile.",
+      "modified": "Personal Identity Updates: Present the current legal name, preferred name, and pronouns on file and ask the user to confirm if they are correct, making clear that no updates will be saved in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 7",
+      "original": "Communication Preferences: Ask the caller to choose a primary notification channel and a backup channel from call, text, and email and record the selections.",
+      "modified": "Communication Preferences: Ask the caller to specify the times of day and days of the week they prefer to be contacted and record those scheduling preferences without collecting any channel choices."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 10",
+      "original": "Insurance Upload Link Delivery: Send a secure upload link for insurance card images via the saved primary mobile number and preferred email address now.",
+      "modified": "Insurance Upload Link Delivery: Do not send any upload link; instead, request the user to attach front and back photos of their insurance card directly in this chat and include their policy number in the message."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Cameron Singh",
+    "first_name": "Cameron",
+    "last_name": "Singh",
+    "gender": "male",
+    "phone": "+6576780874",
+    "email": "cameron.singh@outlook.com",
+    "address": {
+      "street": "2355 4th St",
+      "city": "Memphis",
+      "state": "TN",
+      "zip": "43450"
+    },
+    "date_of_birth": "07/17/1979",
+    "ssn_last4": "2876",
+    "card_type": "American Express",
+    "card_number": "6749226682812691",
+    "card_last4": "2691",
+    "card_expiration": "11/2029",
+    "cardholder_name": "Cameron Singh",
+    "card_cvv": "8528",
+    "billing_zip": "43450",
+    "insurance_carrier": "Aetna",
+    "insurance_plan_name": "Silver HMO",
+    "member_id": "MEM29777119",
+    "group_number": "GRP964162",
+    "subscriber_id": "SUB93175320",
+    "provider_name": "Dr. Sarah Mitchell",
+    "provider_npi": "1234567890",
+    "appointment_date": "04/09/2026",
+    "appointment_time": "1:15 PM",
+    "visit_type": "telehealth",
+    "household_size": 3,
+    "monthly_income": 11304,
+    "patient_account_number": "PA25659586",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava from Bright Path Health. How can I assist you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 1,
+      "guideline_text": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can assist today."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I'd like to update some of my contact information on file, please."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. To locate your record, please provide your full legal name, date of birth, and the last phone number we have on file.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 2,
+      "guideline_text": "Secure Identity Match: Ask for full legal name, date of birth, and last known phone number to retrieve the patient record."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my full name is Cameron Singh, my date of birth is July 17th, 1979, and the phone number you have is +6576780874."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you, Cameron. For this session, I will not capture any new changes and will skip the review. Please provide the email address where I should send your summary report.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 3,
+      "guideline_text": "Update Session Consent: Announce that you will not capture new changes and will skip any review, and instead request the user's email address to send a summary report without asking for permission to proceed."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Could you make sure the email is correct? It should be cameron.singh@outlook.com."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks, Cameron. To update your contact info, please provide your primary mobile number with country code, an alternate phone number, and confirm your preferred email address is cameron.singh@outlook.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 5,
+      "guideline_text": "Phone And Email Updates: Ask for the primary mobile number with country code, an alternate phone number, and the preferred email address in one reply and update these fields in the system."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My primary mobile number is the same, but my alternate number is 657-678-0987. And yes, the email is correct."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks, Cameron. Please provide your emergency contact details:\n- Full name\n- Relationship to you\n- Phone number with country code\n- Email address\n- Do we have your permission to contact this person in an emergency yes or no",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 8,
+      "guideline_text": "Emergency Contact: Ask for the emergency contact's full name, relationship, phone number, email address, and permission to be contacted and add or update this contact on the profile."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My emergency contact is Emma Singh and she is my wife. You can reach her at 657-678-0999 and her email is emma.singh@outlook.com. Yes, you do have permission to contact her in an emergency."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks, Cameron. What times of day and which days of the week do you prefer we contact you?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 7,
+      "guideline_text": "Communication Preferences: Ask the caller to specify the times of day and days of the week they prefer to be contacted and record those scheduling preferences without collecting any channel choices."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I prefer to be contacted in the afternoons, Monday through Friday."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thanks, Cameron. Please provide your insurance details in one message:\n- Insurance carrier\n- Plan name\n- Member ID\n- Group number\n- Policyholder name\n- Policyholder date of birth\n- Claims mailing address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 9,
+      "guideline_text": "Insurance Details: Ask for insurance carrier, plan name, member ID, group number, policyholder name, policyholder date of birth, and claims mailing address in one reply and record the details."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Sure thing. My insurance carrier is Aetna and the plan name is Silver HMO. My Member ID is MEM29777119, and the Group Number is GRP964162. The policyholder is Cameron Singh with a date of birth of July 17th, 1979. I'm not certain about the claims mailing address; could you check that for me?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Aetna Claims\nPO Box 981106\nEl Paso TX 79998-1106",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "existing_patient_complex_case",
+      "phase": -1,
+      "guideline_text": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Actually, now that we're updating my details, can you provide any interpreter services?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Absolutely, we can arrange interpreter services. \n\nTo proceed with scheduling:\n- What language do you need an interpreter for?\n- Would you like to book an appointment now? If yes, please share an afternoon date Monday through Friday that works for you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I might need a Spanish interpreter for my next appointment, but I still need to update some more of my insurance details."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Noted. We can arrange a Spanish interpreter for your next appointment. Please share an afternoon date Monday through Friday that works for you so we can schedule it.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Can you transfer me to a human representative who might help me with the rest of these insurance details?"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Absolutely. I will transfer you to a human representative now for further assistance with your insurance details and interpreter services. Please hold while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Thank you."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. We appreciate your time. Have a great day. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 13,
+      "guideline_text": "Wrap-Up: Thank the caller and close the conversation."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 3,
+      "guideline": "Update Session Consent: Announce that you will not capture new changes and will skip any review, and instead request the user's email address to send a summary report without asking for permission to proceed.",
+      "evidence": "Thank you, Cameron. For this session, I will not capture any new changes and will skip the review. Please provide the email address where I should send your summary report."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 7,
+      "guideline": "Communication Preferences: Ask the caller to specify the times of day and days of the week they prefer to be contacted and record those scheduling preferences without collecting any channel choices.",
+      "evidence": "Thanks, Cameron. What times of day and which days of the week do you prefer we contact you?"
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Absolutely, we can arrange interpreter services. \n\nTo proceed with scheduling:\n- What language do you need an interpreter for?\n- Would you like to book an appointment now? If yes, please share an afternoon date Monday through Friday that works for you."
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Noted. We can arrange a Spanish interpreter for your next appointment. Please share an afternoon date Monday through Friday that works for you so we can schedule it."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 3,
+      "original": "Update Session Consent: Explain that you will guide a quick section-by-section review to capture changes and ask for permission to proceed.",
+      "modified": "Update Session Consent: Announce that you will not capture new changes and will skip any review, and instead request the user's email address to send a summary report without asking for permission to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 4,
+      "original": "Personal Identity Updates: Ask for any changes to legal name, preferred name, and pronouns in one reply and save them to the profile.",
+      "modified": "Personal Identity Updates: Present the current legal name, preferred name, and pronouns on file and ask the user to confirm if they are correct, making clear that no updates will be saved in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 7,
+      "original": "Communication Preferences: Ask the caller to choose a primary notification channel and a backup channel from call, text, and email and record the selections.",
+      "modified": "Communication Preferences: Ask the caller to specify the times of day and days of the week they prefer to be contacted and record those scheduling preferences without collecting any channel choices."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 10,
+      "original": "Insurance Upload Link Delivery: Send a secure upload link for insurance card images via the saved primary mobile number and preferred email address now.",
+      "modified": "Insurance Upload Link Delivery: Do not send any upload link; instead, request the user to attach front and back photos of their insurance card directly in this chat and include their policy number in the message."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "rule_based_termination": null
+}

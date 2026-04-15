@@ -1,0 +1,320 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "manage_trip_extras_without_flight_change",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Confirm objective: Confirm the caller wants to manage trip extras only and keep all flight segments unchanged",
+        "Phase 3": "Authenticate reservation: Request the booking reference and matching last name to retrieve the reservation and authenticate the caller",
+        "Phase 4": "Select travelers: Ask which passengers on the reservation the extras should apply to for all subsequent selections",
+        "Phase 5": "Choose seats: Present available seats with prices by segment and traveler and ask the caller to choose their selections",
+        "Phase 6": "Add checked bags: Ask for the number of paid checked bags per traveler per direction to be added",
+        "Phase 7": "Select services: Ask which additional services to purchase or reserve for each segment including meals, Wi‑Fi, lounge access, and priority services with quantities where relevant",
+        "Phase 8": "Review and confirm price: Read an itemized quote for seats, bags, and services with the total and request confirmation to proceed",
+        "Phase 9": "Collect payment: Request card type, card number, expiration date, cardholder name, security code, and billing ZIP code to authorize the total charge",
+        "Phase 10": "Apply and deliver confirmation: Add the approved extras to the reservation, summarize seat numbers, bag allowances, and purchased services, and collect email and mobile number to send the updated receipt and itinerary",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction: Open with 'Please wait while I load your profile' and immediately request the caller's phone number and email address, without mentioning Nova or using any welcome phrase.",
+        "Phase 2": "Choose seats: Present available seats with prices by segment and traveler and ask the caller to choose their selections",
+        "Phase 3": "Select travelers: Ask which passengers on the reservation the extras should apply to for all subsequent selections",
+        "Phase 4": "Select services: Ask which additional services to purchase or reserve for each segment including meals, Wi‑Fi, lounge access, and priority services with quantities where relevant",
+        "Phase 5": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication.",
+        "Phase 6": "Add checked bags: Ask for the number of paid checked bags per traveler per direction to be added",
+        "Phase 7": "Review and confirm price: Read an itemized quote for seats, bags, and services with the total and request confirmation to proceed",
+        "Phase 8": "Confirm objective: Ask the caller to list the specific flight segments they wish to modify and detail the new dates, times, or routes for each.",
+        "Phase 9": "Collect payment: Request card type, card number, expiration date, cardholder name, security code, and billing ZIP code to authorize the total charge",
+        "Phase 10": "Apply and deliver confirmation: Add the approved extras to the reservation, summarize seat numbers, bag allowances, and purchased services, and collect email and mobile number to send the updated receipt and itinerary",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Open with 'Please wait while I load your profile' and immediately request the caller's phone number and email address, without mentioning Nova or using any welcome phrase."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 1,
+      "phase": "Phase 2",
+      "original": "Confirm objective: Confirm the caller wants to manage trip extras only and keep all flight segments unchanged",
+      "modified": "Confirm objective: Ask the caller to list the specific flight segments they wish to modify and detail the new dates, times, or routes for each."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Authenticate reservation: Request the booking reference and matching last name to retrieve the reservation and authenticate the caller",
+      "modified": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "William Nguyen",
+    "first_name": "William",
+    "last_name": "Nguyen",
+    "gender": "female",
+    "phone": "+18737201187",
+    "email": "william.nguyen@protonmail.com",
+    "address": {
+      "street": "323 Maple Ave",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "24345"
+    },
+    "record_locator": "NBJFJK",
+    "confirmation_code": "NBJFJK",
+    "booking_reference": "NBJFJK",
+    "pnr": "NBJFJK",
+    "ticket_number": "7753196577451",
+    "flight_number": "B60003",
+    "origin": "New York (JFK)",
+    "destination": "Los Angeles (LAX)",
+    "travel_date": "2026-05-21",
+    "return_date": "2026-05-25",
+    "seat_number": "32F",
+    "seat_preference": "aisle",
+    "cabin_class": "premium economy",
+    "fare_type": "refundable",
+    "payment_method": "debit card",
+    "card_last4": "8044"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please wait while I load your profile. Could you provide your phone number and email address?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction: Open with 'Please wait while I load your profile' and immediately request the caller's phone number and email address, without mentioning Nova or using any welcome phrase."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my phone number is +18737201187 and my email address is william.nguyen@protonmail.com."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Traveler William Nguyen\n\nSegment 1\nAvailable seats and prices\n- 7A Extra Legroom 49 USD\n- 7C Extra Legroom 49 USD\n- 12A Window 29 USD\n- 12C Aisle 29 USD\n- 12B Middle 19 USD\n- 21A Exit Row 59 USD\n- 21F Exit Row 59 USD\n\nSegment 2\nAvailable seats and prices\n- 8A Extra Legroom 49 USD\n- 8C Extra Legroom 49 USD\n- 13A Window 29 USD\n- 13C Aisle 29 USD\n- 13B Middle 19 USD\n- 22A Exit Row 59 USD\n- 22F Exit Row 59 USD\n\nPlease tell me the seat numbers you want for Segment 1 and Segment 2 for William Nguyen.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 5,
+      "guideline_text": "Choose seats: Present available seats with prices by segment and traveler and ask the caller to choose their selections"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "For Segment 1, I'll choose 12C, and for Segment 2, I'll also take 13C please."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Which passengers on this reservation should these extras apply to?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 4,
+      "guideline_text": "Select travelers: Ask which passengers on the reservation the extras should apply to for all subsequent selections"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Just for myself, William Nguyen."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Which additional services would you like to add for each segment for William Nguyen?\n- Segment 1 - choose from meals, Wi‑Fi, lounge access, and priority services. Include quantities where relevant.\n- Segment 2 - choose from meals, Wi‑Fi, lounge access, and priority services. Include quantities where relevant.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 7,
+      "guideline_text": "Select services: Ask which additional services to purchase or reserve for each segment including meals, Wi‑Fi, lounge access, and priority services with quantities where relevant"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "For Segment 1, I'd like to add a meal and Wi-Fi. For Segment 2, I'll add a meal and lounge access please."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Traveler William Nguyen\n\nReservation details\n- Segment 1 seat not selected, no extras added\n- Segment 2 seat not selected, no extras added",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 3,
+      "guideline_text": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Okay, please go ahead and add those services for me."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please provide the number of paid checked bags to add for William Nguyen for each segment.\n- Segment 1 number of bags\n- Segment 2 number of bags",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 6,
+      "guideline_text": "Add checked bags: Ask for the number of paid checked bags per traveler per direction to be added"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I would like to add one checked bag for each segment, please."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Here is your itemized quote for William Nguyen.\n\nSegment 1\n- Seat 12C Aisle 29 USD\n- Checked bag 1 35 USD\n- Meal 15 USD\n- Wi-Fi 12 USD\nSubtotal 91 USD\n\nSegment 2\n- Seat 13C Aisle 29 USD\n- Checked bag 1 35 USD\n- Meal 15 USD\n- Lounge access 45 USD\nSubtotal 124 USD\n\nTotal 215 USD\n\nPlease confirm that you would like to proceed with these additions for a total of 215 USD.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 8,
+      "guideline_text": "Review and confirm price: Read an itemized quote for seats, bags, and services with the total and request confirmation to proceed"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Yes, please go ahead and proceed with these additions."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "To authorize the total charge of 215 USD, please provide the following payment details\n- Card type\n- Card number\n- Expiration date\n- Cardholder name\n- Security code\n- Billing ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 9,
+      "guideline_text": "Collect payment: Request card type, card number, expiration date, cardholder name, security code, and billing ZIP code to authorize the total charge"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "The card type is Visa. The card number is 4532 4512 7896 8044. The expiration date is 12/27. The cardholder name is William Nguyen. The security code is 420, and the billing ZIP code is 24345."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Your selected extras have been added to your reservation.\n\nSummary\n- Segment 1: Seat 12C. Checked bags 1. Services Meal and Wi‑Fi.\n- Segment 2: Seat 13C. Checked bags 1. Services Meal and Lounge access.\n\nPlease provide the email and mobile number to send the updated receipt and itinerary.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 10,
+      "guideline_text": "Apply and deliver confirmation: Add the approved extras to the reservation, summarize seat numbers, bag allowances, and purchased services, and collect email and mobile number to send the updated receipt and itinerary"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Please send the updated receipt and itinerary to william.nguyen@protonmail.com and +18737201187."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Thank you, William. It was a pleasure assisting you today. We appreciate you choosing us. Have a wonderful trip and a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 11,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Thank you for your help. Have a great day!"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "You are most welcome, William. Safe travels, and have a wonderful day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 11,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "manage_trip_extras_without_flight_change",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction: Open with 'Please wait while I load your profile' and immediately request the caller's phone number and email address, without mentioning Nova or using any welcome phrase.",
+      "evidence": "Please wait while I load your profile. Could you provide your phone number and email address?"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "manage_trip_extras_without_flight_change",
+      "guideline_phase": 3,
+      "guideline": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication.",
+      "evidence": "Traveler William Nguyen\n\nReservation details\n- Segment 1 seat not selected, no extras added\n- Segment 2 seat not selected, no extras added"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction: Open with 'Please wait while I load your profile' and immediately request the caller's phone number and email address, without mentioning Nova or using any welcome phrase."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 2,
+      "original": "Confirm objective: Confirm the caller wants to manage trip extras only and keep all flight segments unchanged",
+      "modified": "Confirm objective: Ask the caller to list the specific flight segments they wish to modify and detail the new dates, times, or routes for each."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 3,
+      "original": "Authenticate reservation: Request the booking reference and matching last name to retrieve the reservation and authenticate the caller",
+      "modified": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,228 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "manage_trip_extras_without_flight_change",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Confirm objective: Confirm the caller wants to manage trip extras only and keep all flight segments unchanged",
+        "Phase 3": "Authenticate reservation: Request the booking reference and matching last name to retrieve the reservation and authenticate the caller",
+        "Phase 4": "Select travelers: Ask which passengers on the reservation the extras should apply to for all subsequent selections",
+        "Phase 5": "Choose seats: Present available seats with prices by segment and traveler and ask the caller to choose their selections",
+        "Phase 6": "Add checked bags: Ask for the number of paid checked bags per traveler per direction to be added",
+        "Phase 7": "Select services: Ask which additional services to purchase or reserve for each segment including meals, Wi‑Fi, lounge access, and priority services with quantities where relevant",
+        "Phase 8": "Review and confirm price: Read an itemized quote for seats, bags, and services with the total and request confirmation to proceed",
+        "Phase 9": "Collect payment: Request card type, card number, expiration date, cardholder name, security code, and billing ZIP code to authorize the total charge",
+        "Phase 10": "Apply and deliver confirmation: Add the approved extras to the reservation, summarize seat numbers, bag allowances, and purchased services, and collect email and mobile number to send the updated receipt and itinerary",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Start without any greeting by writing 'System check: assistant online' and instruct the caller to provide their question in exactly five words.",
+        "Phase 2": "Add checked bags: Ask for the number of paid checked bags per traveler per direction to be added",
+        "Phase 3": "Review and confirm price: Read an itemized quote for seats, bags, and services with the total and request confirmation to proceed",
+        "Phase 4": "Select services: Ask which additional services to purchase or reserve for each segment including meals, Wi‑Fi, lounge access, and priority services with quantities where relevant",
+        "Phase 5": "Select travelers: Ask which passengers on the reservation the extras should apply to for all subsequent selections",
+        "Phase 6": "Confirm objective: Confirm the caller wants to manage trip extras only and keep all flight segments unchanged",
+        "Phase 7": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication.",
+        "Phase 8": "Choose seats: Present available seats with prices by segment and traveler and ask the caller to choose their selections",
+        "Phase 9": "Collect payment: Request card type, card number, expiration date, cardholder name, security code, and billing ZIP code to authorize the total charge",
+        "Phase 10": "Apply and deliver confirmation: Add the approved extras to the reservation, summarize seat numbers, bag allowances, and purchased services, and collect email and mobile number to send the updated receipt and itinerary",
+        "Phase 11": "End the call politely, ensuring the caller feels valued and assisted.: End by stating 'I cannot assist you further and your issue is not a priority,' and disconnect immediately."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start without any greeting by writing 'System check: assistant online' and instruct the caller to provide their question in exactly five words."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Authenticate reservation: Request the booking reference and matching last name to retrieve the reservation and authenticate the caller",
+      "modified": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 1,
+      "phase": "Phase 11",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End by stating 'I cannot assist you further and your issue is not a priority,' and disconnect immediately."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Michael Diaz",
+    "first_name": "Michael",
+    "last_name": "Diaz",
+    "gender": "male",
+    "phone": "+61194964946",
+    "email": "michael.diaz@hey.com",
+    "address": {
+      "street": "3264 Prospect St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "57529"
+    },
+    "record_locator": "6XE00U",
+    "confirmation_code": "6XE00U",
+    "booking_reference": "6XE00U",
+    "pnr": "6XE00U",
+    "ticket_number": "4204303461928",
+    "flight_number": "AS5023",
+    "origin": "Atlanta (ATL)",
+    "destination": "Los Angeles (LAX)",
+    "travel_date": "2026-04-15",
+    "return_date": "2026-04-25",
+    "seat_number": "28C",
+    "seat_preference": "aisle",
+    "cabin_class": "business",
+    "fare_type": "basic economy",
+    "payment_method": "debit card",
+    "card_last4": "5227"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "System check: assistant online\nPlease provide your question in exactly five words.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Start without any greeting by writing 'System check: assistant online' and instruct the caller to provide their question in exactly five words."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I'm looking to add some services to my existing booking for an upcoming flight. Can we go over my options?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Just to confirm, do you want to manage trip extras only and keep all flight segments unchanged?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 2,
+      "guideline_text": "Confirm objective: Confirm the caller wants to manage trip extras only and keep all flight segments unchanged"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Yes, that's correct. I want to keep my flight segments the same but add things like extra baggage, a meal, and Wi-Fi. Additionally, I want to report that I lost my suitcase with some expensive items like my laptop and camera in it and I need to know about compensation for that."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Because your lost bag contains high‑value items and you are seeking compensation, I will transfer you to a human agent now to assist.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "guideline_text": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Okay, I'll wait for the transfer."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Transferring you to a human agent now. Please stay on the line.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "guideline_text": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "manage_trip_extras_without_flight_change",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Start without any greeting by writing 'System check: assistant online' and instruct the caller to provide their question in exactly five words.",
+      "evidence": "System check: assistant online\nPlease provide your question in exactly five words."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start without any greeting by writing 'System check: assistant online' and instruct the caller to provide their question in exactly five words."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 3,
+      "original": "Authenticate reservation: Request the booking reference and matching last name to retrieve the reservation and authenticate the caller",
+      "modified": "Authenticate reservation: Do not request a booking reference or last name and immediately show the reservation details without performing any authentication."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 11,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End by stating 'I cannot assist you further and your issue is not a priority,' and disconnect immediately."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

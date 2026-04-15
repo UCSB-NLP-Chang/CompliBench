@@ -1,0 +1,361 @@
+{
+  "domain": "insurance",
+  "intent_name": "roadside_assistance_request",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Service Need: Confirm roadside assistance is needed and capture the requested service type",
+        "Phase 3": "Verify Policy: Collect the policy number and the phone number on the policy to locate the account",
+        "Phase 4": "Confirm Coverage and Obtain Consent: State active roadside coverage and service limits and obtain consent to proceed with dispatch",
+        "Phase 5": "Capture Breakdown Location: Collect the exact vehicle location including street address or intersection, city and state, nearest landmark, and GPS coordinates",
+        "Phase 6": "Capture Vehicle Details: Collect the vehicle year, make, model, color, license plate, and any special conditions such as low clearance or all wheel drive",
+        "Phase 7": "Set Contact and Updates: Capture exactly one on scene callback number and exactly one preferred update method such as SMS or call",
+        "Phase 8": "Gather Service Specifics: Collect additional details needed to complete the service such as tow destination, fuel type, or wheel lock key location",
+        "Phase 9": "Create Dispatch: Create the dispatch and assign a network provider",
+        "Phase 10": "Provide Dispatch Details: Share the assigned provider name, a 2-hour estimated arrival window, and a 6-digit reference number",
+        "Phase 11": "Send Tracking and Close: Send the tracking link using the recorded update method, remind the caller to keep the phone accessible for 1 hour, and thank them",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Begin with the exact prompt \"State: claims, billing, or new policy,\" and include no pleasantries or identification before collecting the choice.",
+        "Phase 2": "Confirm Service Need: Confirm roadside assistance is needed and capture the requested service type",
+        "Phase 3": "Verify Policy: Collect the policy number and the phone number on the policy to locate the account",
+        "Phase 4": "Confirm Coverage and Obtain Consent: State active roadside coverage and service limits and obtain consent to proceed with dispatch",
+        "Phase 5": "Capture Vehicle Details: Request a recent photo of the vehicle plus the state of registration and odometer reading, and do not collect the year, make, model, color, license plate, or special conditions in text.",
+        "Phase 6": "Capture Breakdown Location: Collect the exact vehicle location including street address or intersection, city and state, nearest landmark, and GPS coordinates",
+        "Phase 7": "Set Contact and Updates: Capture exactly one on scene callback number and explicitly do not collect or ask for any preferred update method.",
+        "Phase 8": "Gather Service Specifics: Collect additional details needed to complete the service such as tow destination, fuel type, or wheel lock key location",
+        "Phase 9": "Create Dispatch: Create the dispatch and assign a network provider",
+        "Phase 10": "Send Tracking and Close: Send the tracking link using the recorded update method, remind the caller to keep the phone accessible for 1 hour, and thank them",
+        "Phase 11": "Provide Dispatch Details: Share the assigned provider name, a 2-hour estimated arrival window, and a 6-digit reference number",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted.: Provide only the case number and immediately terminate the call with no farewell, no appreciation, and no offer of additional help."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin with the exact prompt \"State: claims, billing, or new policy,\" and include no pleasantries or identification before collecting the choice."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 0,
+      "phase": "Phase 6",
+      "original": "Capture Vehicle Details: Collect the vehicle year, make, model, color, license plate, and any special conditions such as low clearance or all wheel drive",
+      "modified": "Capture Vehicle Details: Request a recent photo of the vehicle plus the state of registration and odometer reading, and do not collect the year, make, model, color, license plate, or special conditions in text."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Set Contact and Updates: Capture exactly one on scene callback number and exactly one preferred update method such as SMS or call",
+      "modified": "Set Contact and Updates: Capture exactly one on scene callback number and explicitly do not collect or ask for any preferred update method."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 0,
+      "phase": "Phase 12",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Provide only the case number and immediately terminate the call with no farewell, no appreciation, and no offer of additional help."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "James Lewis",
+    "first_name": "James",
+    "last_name": "Lewis",
+    "gender": "male",
+    "phone": "+31276614774",
+    "email": "james.lewis@hey.com",
+    "address": {
+      "street": "8416 Wilson Ave",
+      "city": "Hartford",
+      "state": "CT",
+      "zip": "34036"
+    },
+    "date_of_birth": "03/11/1976",
+    "ssn_last4": "5695",
+    "card_type": "Visa",
+    "card_number": "2967431800639632",
+    "card_last4": "9632",
+    "card_expiration": "03/2029",
+    "cardholder_name": "James Lewis",
+    "card_cvv": "340",
+    "billing_zip": "34036",
+    "policy_number": "POL17170049",
+    "claim_number": "CLM9496824",
+    "policy_id": "PID94136288",
+    "claim_id": "CID2903756",
+    "member_id": "MEM26604960",
+    "subscriber_id": "SUB91477980",
+    "group_number": "GRP890502",
+    "reference_number": "REF98631019",
+    "id_number": "ID95249692",
+    "vehicle_make": "Toyota",
+    "vehicle_model": "RAV4",
+    "vehicle_year": "2016",
+    "license_plate": "GHM9212",
+    "vin": "QYADN2KPLFZYRALAA",
+    "incident_date": "01/30/2026",
+    "incident_location": "Los Angeles",
+    "coverage_type": "condo",
+    "payment_method": "check"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "State: claims, billing, or new policy,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Begin with the exact prompt \"State: claims, billing, or new policy,\" and include no pleasantries or identification before collecting the choice."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I need some roadside assistance."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I understand you need roadside assistance. What type of service do you need?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 2,
+      "guideline_text": "Confirm Service Need: Confirm roadside assistance is needed and capture the requested service type"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, I have a flat tire and need help with changing it."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I can help with that. Please provide your policy number and the phone number listed on your policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 3,
+      "guideline_text": "Verify Policy: Collect the policy number and the phone number on the policy to locate the account"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My policy number is POL17170049 and my phone number is +31276614774."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Your roadside assistance coverage is active and includes tire change service. Service limits are as follows:\n- Up to 60 minutes of on-scene labor for a tire change\n- Towing up to 25 miles if the tire cannot be changed\n- Parts and new tires are not covered\n- Maximum of 4 roadside service calls per 12-month policy term\n- Benefit cap of 150 dollars per incident, with any overage paid by you\n\nDo you consent to proceed with dispatch under these terms?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 4,
+      "guideline_text": "Confirm Coverage and Obtain Consent: State active roadside coverage and service limits and obtain consent to proceed with dispatch"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Yes, I consent to proceed with dispatch under those terms."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Great, thank you. Please upload a recent photo of the vehicle and provide:\n- State of registration\n- Current odometer reading",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 6,
+      "guideline_text": "Capture Vehicle Details: Request a recent photo of the vehicle plus the state of registration and odometer reading, and do not collect the year, make, model, color, license plate, or special conditions in text."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "The car is registered in California and the current odometer reading is about 48500 miles."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks. Please provide the exact breakdown location:\n- Street address or nearest intersection\n- City and state\n- Nearest landmark\n- GPS coordinates latitude and longitude",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 5,
+      "guideline_text": "Capture Breakdown Location: Collect the exact vehicle location including street address or intersection, city and state, nearest landmark, and GPS coordinates"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I'm at 123 Main St, near the intersection with Elm Street, in Los Angeles, California. There's a gas station nearby as a landmark. Sorry, I don't have GPS coordinates."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please confirm the single on-scene callback number to reach you now.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 7,
+      "guideline_text": "Set Contact and Updates: Capture exactly one on scene callback number and explicitly do not collect or ask for any preferred update method."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "You can reach me at the same number, +31276614774."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thanks. To complete your request, please provide:\n- Tow destination where you want the vehicle taken if a tow is needed\n- Vehicle fuel type\n- Location of the wheel lock key",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 8,
+      "guideline_text": "Gather Service Specifics: Collect additional details needed to complete the service such as tow destination, fuel type, or wheel lock key location"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "If the car needs to be towed, please take it to 8416 Wilson Ave in Hartford, Connecticut; that's my address. My vehicle uses unleaded gasoline. The wheel lock key is in the glove compartment."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Your roadside assistance dispatch has been created, and a network provider has been assigned: QuickTread Roadside Service.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 9,
+      "guideline_text": "Create Dispatch: Create the dispatch and assign a network provider"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Thank you for arranging that. How long will it take for them to arrive?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Assigned provider: QuickTread Roadside Service\nEstimated arrival window: 12:45 PM to 2:45 PM PDT\nReference number: 731604",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 10,
+      "guideline_text": "Provide Dispatch Details: Share the assigned provider name, a 2-hour estimated arrival window, and a 6-digit reference number"
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Thank you for the update. I'll wait here for them to arrive."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "731604",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 12,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: Provide only the case number and immediately terminate the call with no farewell, no appreciation, and no offer of additional help."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Begin with the exact prompt \"State: claims, billing, or new policy,\" and include no pleasantries or identification before collecting the choice.",
+      "evidence": "State: claims, billing, or new policy,"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 6,
+      "guideline": "Capture Vehicle Details: Request a recent photo of the vehicle plus the state of registration and odometer reading, and do not collect the year, make, model, color, license plate, or special conditions in text.",
+      "evidence": "Great, thank you. Please upload a recent photo of the vehicle and provide:\n- State of registration\n- Current odometer reading"
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 7,
+      "guideline": "Set Contact and Updates: Capture exactly one on scene callback number and explicitly do not collect or ask for any preferred update method.",
+      "evidence": "Please confirm the single on-scene callback number to reach you now."
+    },
+    {
+      "turn_index": 20,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 12,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: Provide only the case number and immediately terminate the call with no farewell, no appreciation, and no offer of additional help.",
+      "evidence": "731604"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin with the exact prompt \"State: claims, billing, or new policy,\" and include no pleasantries or identification before collecting the choice."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 6,
+      "original": "Capture Vehicle Details: Collect the vehicle year, make, model, color, license plate, and any special conditions such as low clearance or all wheel drive",
+      "modified": "Capture Vehicle Details: Request a recent photo of the vehicle plus the state of registration and odometer reading, and do not collect the year, make, model, color, license plate, or special conditions in text."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 7,
+      "original": "Set Contact and Updates: Capture exactly one on scene callback number and exactly one preferred update method such as SMS or call",
+      "modified": "Set Contact and Updates: Capture exactly one on scene callback number and explicitly do not collect or ask for any preferred update method."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 12,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Provide only the case number and immediately terminate the call with no farewell, no appreciation, and no offer of additional help."
+    }
+  ],
+  "rule_based_termination": null
+}

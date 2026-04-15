@@ -1,0 +1,338 @@
+{
+  "domain": "insurance",
+  "intent_name": "cancel_policy",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "cancel_policy": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Access Verification: Ask for the policy number and date of birth to open the account",
+        "Phase 3": "Policy Confirmation: State the named insured and policy type found and confirm it is the policy to end",
+        "Phase 4": "End Method Selection: Ask whether they want a mid term cancellation or a nonrenewal at expiration and explicitly state both options once",
+        "Phase 5": "End Date Capture: Request the exact last day of coverage as a specific calendar date",
+        "Phase 6": "Reason Documentation: Ask for the main reason for ending the policy",
+        "Phase 7": "Replacement Coverage Check: Ask whether replacement coverage exists and capture the new carrier name",
+        "Phase 8": "Financial And Coverage Summary: Present any cancellation fee or prorated refund amount and state that coverage ends on the last day and claims after that day are not covered",
+        "Phase 9": "Consent To Proceed: Request explicit authorization to enact the cancellation or nonrenewal",
+        "Phase 10": "Confirmation Delivery Setup: Ask for the preferred delivery method and destination for the written confirmation",
+        "Phase 11": "Submission And Confirmation: Submit the request in the system and provide the confirmation number along with the end method, end date, and delivery details",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "cancel_policy": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Access Verification: Ask for the policy number and date of birth to open the account",
+        "Phase 3": "Policy Confirmation: Ask the user for the full policy number and the desired cancellation date, and do not state any named insured or policy type in this message.",
+        "Phase 4": "End Method Selection: Do not present method options and instead ask the customer to provide an exact end date, their time zone, and a brief reason for ending coverage.",
+        "Phase 5": "End Date Capture: Request the exact last day of coverage as a specific calendar date",
+        "Phase 6": "Reason Documentation: Ask for the main reason for ending the policy",
+        "Phase 7": "Replacement Coverage Check: Ask \"Is this an internal policy change (yes/no)?\" and record the writing agent's full name and license number while explicitly avoiding any question about replacement coverage or any new carrier name.",
+        "Phase 8": "Financial And Coverage Summary: Present any cancellation fee or prorated refund amount and state that coverage ends on the last day and claims after that day are not covered",
+        "Phase 9": "Consent To Proceed: Request explicit authorization to enact the cancellation or nonrenewal",
+        "Phase 10": "Confirmation Delivery Setup: Post the written confirmation directly in this chat and ask the user to reply 'RECEIVED' to acknowledge receipt, without requesting any delivery method or destination.",
+        "Phase 11": "Submission And Confirmation: Submit the request in the system and provide the confirmation number along with the end method, end date, and delivery details",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Policy Confirmation: State the named insured and policy type found and confirm it is the policy to end",
+      "modified": "Policy Confirmation: Ask the user for the full policy number and the desired cancellation date, and do not state any named insured or policy type in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "End Method Selection: Ask whether they want a mid term cancellation or a nonrenewal at expiration and explicitly state both options once",
+      "modified": "End Method Selection: Do not present method options and instead ask the customer to provide an exact end date, their time zone, and a brief reason for ending coverage."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Replacement Coverage Check: Ask whether replacement coverage exists and capture the new carrier name",
+      "modified": "Replacement Coverage Check: Ask \"Is this an internal policy change (yes/no)?\" and record the writing agent's full name and license number while explicitly avoiding any question about replacement coverage or any new carrier name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "cancel_policy",
+      "workflow_index": 2,
+      "phase": "Phase 10",
+      "original": "Confirmation Delivery Setup: Ask for the preferred delivery method and destination for the written confirmation",
+      "modified": "Confirmation Delivery Setup: Post the written confirmation directly in this chat and ask the user to reply 'RECEIVED' to acknowledge receipt, without requesting any delivery method or destination."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Jack Nakamura",
+    "first_name": "Jack",
+    "last_name": "Nakamura",
+    "gender": "male",
+    "phone": "+64457918895",
+    "email": "jack.nakamura@post.com",
+    "address": {
+      "street": "5191 Adams St",
+      "city": "St. Louis",
+      "state": "MO",
+      "zip": "01507"
+    },
+    "date_of_birth": "02/03/1993",
+    "ssn_last4": "9255",
+    "card_type": "Mastercard",
+    "card_number": "3932928217365582",
+    "card_last4": "5582",
+    "card_expiration": "05/2027",
+    "cardholder_name": "Jack Nakamura",
+    "card_cvv": "248",
+    "billing_zip": "01507",
+    "policy_number": "POL20402440",
+    "claim_number": "CLM6082081",
+    "policy_id": "PID96667804",
+    "claim_id": "CID2824360",
+    "member_id": "MEM19134237",
+    "subscriber_id": "SUB62721380",
+    "group_number": "GRP397437",
+    "reference_number": "REF46099938",
+    "id_number": "ID77801290",
+    "vehicle_make": "Nissan",
+    "vehicle_model": "Rogue",
+    "vehicle_year": "2018",
+    "license_plate": "JUX2258",
+    "vin": "780WW5SZYT54INXPT",
+    "incident_date": "02/23/2026",
+    "incident_location": "Cleveland",
+    "coverage_type": "personal property",
+    "payment_method": "credit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I need to cancel my insurance policy. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. Please provide your policy number and your date of birth so I can open your account.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 2,
+      "guideline_text": "Access Verification: Ask for the policy number and date of birth to open the account"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "It's POL20402440 and my date of birth is 02/03/1993."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please confirm the full policy number and share your desired cancellation date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 3,
+      "guideline_text": "Policy Confirmation: Ask the user for the full policy number and the desired cancellation date, and do not state any named insured or policy type in this message."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I'd like to cancel it as soon as possible."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Got it. Please provide:\n- The exact end date for cancellation\n- Your time zone\n- A brief reason for ending coverage",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 4,
+      "guideline_text": "End Method Selection: Do not present method options and instead ask the customer to provide an exact end date, their time zone, and a brief reason for ending coverage."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Cancel it immediately if possible. I'm in the Central Time Zone. I sold my car so I don't need the policy anymore."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide the exact last day of coverage as a specific calendar date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 5,
+      "guideline_text": "End Date Capture: Request the exact last day of coverage as a specific calendar date"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Can you cancel it as of today?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please confirm the exact last day of coverage as a specific calendar date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 5,
+      "guideline_text": "End Date Capture: Request the exact last day of coverage as a specific calendar date"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Can I speak to a human agent about this?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Absolutely. I’ll transfer you to a human agent now. Please hold.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Hello, is anyone there?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Your request to speak with a human agent is complete. You are now connected with a Shield Insurance representative.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I guess I'll wait a bit longer."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "I understand. Transferring you to a human agent now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 3,
+      "guideline": "Policy Confirmation: Ask the user for the full policy number and the desired cancellation date, and do not state any named insured or policy type in this message.",
+      "evidence": "Please confirm the full policy number and share your desired cancellation date."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "cancel_policy",
+      "guideline_phase": 4,
+      "guideline": "End Method Selection: Do not present method options and instead ask the customer to provide an exact end date, their time zone, and a brief reason for ending coverage.",
+      "evidence": "Got it. Please provide:\n- The exact end date for cancellation\n- Your time zone\n- A brief reason for ending coverage"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 3,
+      "original": "Policy Confirmation: State the named insured and policy type found and confirm it is the policy to end",
+      "modified": "Policy Confirmation: Ask the user for the full policy number and the desired cancellation date, and do not state any named insured or policy type in this message."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 4,
+      "original": "End Method Selection: Ask whether they want a mid term cancellation or a nonrenewal at expiration and explicitly state both options once",
+      "modified": "End Method Selection: Do not present method options and instead ask the customer to provide an exact end date, their time zone, and a brief reason for ending coverage."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 7,
+      "original": "Replacement Coverage Check: Ask whether replacement coverage exists and capture the new carrier name",
+      "modified": "Replacement Coverage Check: Ask \"Is this an internal policy change (yes/no)?\" and record the writing agent's full name and license number while explicitly avoiding any question about replacement coverage or any new carrier name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "cancel_policy",
+      "phase": 10,
+      "original": "Confirmation Delivery Setup: Ask for the preferred delivery method and destination for the written confirmation",
+      "modified": "Confirmation Delivery Setup: Post the written confirmation directly in this chat and ask the user to reply 'RECEIVED' to acknowledge receipt, without requesting any delivery method or destination."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "human_agent_request",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 16
+  }
+}

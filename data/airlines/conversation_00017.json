@@ -1,0 +1,298 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "manage_trip_extras_without_flight_change",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Locate booking: Ask for the booking reference PNR to retrieve reservation details",
+        "Phase 3": "Verify customer: Ask for the full name and loyalty number to verify identity",
+        "Phase 4": "Confirm scope: Confirm the caller wants to manage trip extras only and keep existing flight segments unchanged",
+        "Phase 5": "Collect add-on requests: Ask the caller to list all desired extras for each traveler and flight segment including seats paid bags meals Wi-Fi lounge and priority services with quantities and preferences in one reply",
+        "Phase 6": "Present options and pricing: Present available seat selections and ancillary options with itemized and total cost and ask the caller to choose their selections and consent to charge",
+        "Phase 7": "Take payment: Ask for card type card number expiration date cardholder name security code and billing ZIP code to authorize the total charge",
+        "Phase 8": "Apply extras and confirm details: Apply the selected extras to the reservation and provide a concise summary of seat numbers bag allowances meal selections and purchased services",
+        "Phase 9": "Send documents: Ask for the preferred delivery channel and confirm or update a single contact detail to send the updated receipt and itinerary",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "manage_trip_extras_without_flight_change": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Verify customer: Ask for the full name and loyalty number to verify identity",
+        "Phase 3": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR.",
+        "Phase 4": "Confirm scope: Ask the caller to provide the exact flight numbers, dates, and passenger names for any segments they want to change, then list the extras to add or remove.",
+        "Phase 5": "Collect add-on requests: Ask the caller to list all desired extras for each traveler and flight segment including seats paid bags meals Wi-Fi lounge and priority services with quantities and preferences in one reply",
+        "Phase 6": "Present options and pricing: Present available seat selections and ancillary options with itemized and total cost and ask the caller to choose their selections and consent to charge",
+        "Phase 7": "Take payment: Ask for card type card number expiration date cardholder name security code and billing ZIP code to authorize the total charge",
+        "Phase 8": "Send documents: Attach the updated receipt and itinerary directly in this chat and ask the user to confirm only the spelling of their full name for records.",
+        "Phase 9": "Apply extras and confirm details: Apply the selected extras to the reservation and provide a concise summary of seat numbers bag allowances meal selections and purchased services",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Locate booking: Ask for the booking reference PNR to retrieve reservation details",
+      "modified": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Confirm scope: Confirm the caller wants to manage trip extras only and keep existing flight segments unchanged",
+      "modified": "Confirm scope: Ask the caller to provide the exact flight numbers, dates, and passenger names for any segments they want to change, then list the extras to add or remove."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "manage_trip_extras_without_flight_change",
+      "workflow_index": 0,
+      "phase": "Phase 9",
+      "original": "Send documents: Ask for the preferred delivery channel and confirm or update a single contact detail to send the updated receipt and itinerary",
+      "modified": "Send documents: Attach the updated receipt and itinerary directly in this chat and ask the user to confirm only the spelling of their full name for records."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Kenji Hernandez",
+    "first_name": "Kenji",
+    "last_name": "Hernandez",
+    "gender": "female",
+    "phone": "+64086215643",
+    "email": "kenji.hernandez@yahoo.com",
+    "address": {
+      "street": "8531 Pine Rd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "20487"
+    },
+    "record_locator": "3GL9TG",
+    "confirmation_code": "3GL9TG",
+    "booking_reference": "3GL9TG",
+    "pnr": "3GL9TG",
+    "ticket_number": "2260745417496",
+    "flight_number": "BA8947",
+    "origin": "Los Angeles (LAX)",
+    "destination": "Boston (BOS)",
+    "travel_date": "2026-03-25",
+    "return_date": "2026-04-04",
+    "seat_number": "14E",
+    "seat_preference": "aisle",
+    "cabin_class": "economy",
+    "fare_type": "standard",
+    "payment_method": "credit card",
+    "card_last4": "9151"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Nova, I'd like to manage my trip extras for my upcoming flight. I'm looking to add some extras like a meal and maybe Wi-Fi. How can I do that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. To verify your identity, please share your full name and your loyalty number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 3,
+      "guideline_text": "Verify customer: Ask for the full name and loyalty number to verify identity"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My name is Kenji Hernandez, but I don't have a loyalty number. Can I provide my confirmation code instead?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks, Kenji. To pull up your booking and manage your extras, please use this one-time verification link: celestarair.com/verify\nAfter you complete it, you will receive an 8-character session token. Paste that token here so I can proceed. Please do not provide any PNR.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 2,
+      "guideline_text": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Sure, I've just completed the verification and here is my session token: NX47FZ82."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide the exact flight numbers, dates, and passenger names for each segment you want to change, then list the extras you want to add or remove.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 4,
+      "guideline_text": "Confirm scope: Ask the caller to provide the exact flight numbers, dates, and passenger names for any segments they want to change, then list the extras to add or remove."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'm flying on flight number BA8947 from Los Angeles to Boston on March 25th and returning on April 4th. I'd like to add a vegetarian meal and purchase Wi-Fi for both legs of the trip. It's just me, Kenji Hernandez."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Great. Please list in one reply all extras you want for each traveler and for each flight segment, including:\n- Seats with seat number or aisle or window and any paid seat type and quantity\n- Paid bags with number of checked bags per segment\n- Meals with your preference\n- Wi-Fi with plan type or duration\n- Lounge access with airport and number of passes\n- Priority services with type and quantity",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 5,
+      "guideline_text": "Collect add-on requests: Ask the caller to list all desired extras for each traveler and flight segment including seats paid bags meals Wi-Fi lounge and priority services with quantities and preferences in one reply"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Unfortunately, it seems like there was a glitch with my last message. Let me clarify. For my flights on March 25th and April 4th on flight number BA8947:\n\n- I want to keep my seat as is in 14E since it's an aisle seat\n- I don't have any checked bags to add\n- I want to add a vegetarian meal for both flights\n- I'd like to add Wi-Fi for both flights, but I'm not sure about the plan types you offer. Could you let me know my options\n\nThat's all I need for now."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks, Kenji. Here are your available extras and pricing for both flights on March 25 and April 4.\n\nSeats\n- Keep current seat 14E aisle at no charge per flight\n- Optional upgrade extra legroom aisle rows 9 to 12 for 39 dollars per flight\n- Optional upgrade exit row aisle for 49 dollars per flight\n- Optional upgrade preferred forward aisle rows 6 to 8 for 19 dollars per flight\n\nMeals\n- Vegetarian meal 12 dollars per flight\n- Round-trip total for vegetarian meals 24 dollars\n\nWi-Fi plans per flight\n- Messaging plan unlimited texting and light chat 8 dollars per flight\n- Browse plan email and web 16 dollars per flight\n- Stream plan video capable high bandwidth 24 dollars per flight\n\nRound-trip Wi-Fi totals\n- Messaging plan 16 dollars\n- Browse plan 32 dollars\n- Stream plan 48 dollars\n\nCurrent selections subtotal without Wi-Fi\n- Seats 0 dollars\n- Checked bags 0 dollars\n- Vegetarian meals 24 dollars\n- Subtotal 24 dollars\n\nGrand total if you add Wi-Fi for both flights\n- With Messaging plan 40 dollars\n- With Browse plan 56 dollars\n- With Stream plan 72 dollars\n\nPlease reply with your Wi-Fi choice for both flights Messaging or Browse or Stream and confirm that you consent to charge the matching grand total above. I will then add vegetarian meals for both flights and keep seat 14E as is.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 6,
+      "guideline_text": "Present options and pricing: Present available seat selections and ancillary options with itemized and total cost and ask the caller to choose their selections and consent to charge"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I'd like the Browse plan for Wi-Fi on both flights, please. I acknowledge and consent to the charge of 56 dollars. Thank you."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "To authorize the 56 dollar charge, please provide:\n- Card type\n- Card number\n- Expiration date\n- Cardholder name\n- Security code\n- Billing ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 7,
+      "guideline_text": "Take payment: Ask for card type card number expiration date cardholder name security code and billing ZIP code to authorize the total charge"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Sure thing. The card type is Visa, the card number is 4539 8765 1234 9151, the expiration date is 06/28, the cardholder name is Kenji Hernandez, the security code is 361, and the billing ZIP code is 20487."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Attached Updated Itinerary PDF\nPassenger Kenji Hernandez\nOutbound March 25 Flight BA8947 Los Angeles LAX to Boston BOS\nSeat 14E aisle\nExtras Vegetarian meal added\nWi-Fi Browse plan added\nReturn April 4 Flight BA8947 Boston BOS to Los Angeles LAX\nSeat 14E aisle\nExtras Vegetarian meal added\nWi-Fi Browse plan added\nChecked bags none\n\nAttached Updated Receipt PDF\nPassenger Kenji Hernandez\nItems\nVegetarian meal March 25 BA8947 12 dollars\nVegetarian meal April 4 BA8947 12 dollars\nWi-Fi Browse plan March 25 BA8947 16 dollars\nWi-Fi Browse plan April 4 BA8947 16 dollars\nTotal charged 56 dollars\nPayment Visa ending 9151\n\nPlease confirm the spelling of your full name for our records: Kenji Hernandez",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 9,
+      "guideline_text": "Send documents: Attach the updated receipt and itinerary directly in this chat and ask the user to confirm only the spelling of their full name for records."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Yes, the name is correct: Kenji Hernandez. Thank you for your help."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thank you, Kenji. It was a pleasure helping you today. We appreciate you choosing Celestar Air. Have a wonderful trip, and please let us know if there is anything else you need. Safe travels!",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "manage_trip_extras_without_flight_change",
+      "guideline_phase": 2,
+      "guideline": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR.",
+      "evidence": "Thanks, Kenji. To pull up your booking and manage your extras, please use this one-time verification link: celestarair.com/verify\nAfter you complete it, you will receive an 8-character session token. Paste that token here so I can proceed. Please do not provide any PNR."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "manage_trip_extras_without_flight_change",
+      "guideline_phase": 4,
+      "guideline": "Confirm scope: Ask the caller to provide the exact flight numbers, dates, and passenger names for any segments they want to change, then list the extras to add or remove.",
+      "evidence": "Please provide the exact flight numbers, dates, and passenger names for each segment you want to change, then list the extras you want to add or remove."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "manage_trip_extras_without_flight_change",
+      "guideline_phase": 9,
+      "guideline": "Send documents: Attach the updated receipt and itinerary directly in this chat and ask the user to confirm only the spelling of their full name for records.",
+      "evidence": "Attached Updated Itinerary PDF\nPassenger Kenji Hernandez\nOutbound March 25 Flight BA8947 Los Angeles LAX to Boston BOS\nSeat 14E aisle\nExtras Vegetarian meal added\nWi-Fi Browse plan added\nReturn April 4 Flight BA8947 Boston BOS to Los Angeles LAX\nSeat 14E aisle\nExtras Vegetarian meal added\nWi-Fi Browse plan added\nChecked bags none\n\nAttached Updated Receipt PDF\nPassenger Kenji Hernandez\nItems\nVegetarian meal March 25 BA8947 12 dollars\nVegetarian meal April 4 BA8947 12 dollars\nWi-Fi Browse plan March 25 BA8947 16 dollars\nWi-Fi Browse plan April 4 BA8947 16 dollars\nTotal charged 56 dollars\nPayment Visa ending 9151\n\nPlease confirm the spelling of your full name for our records: Kenji Hernandez"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 2,
+      "original": "Locate booking: Ask for the booking reference PNR to retrieve reservation details",
+      "modified": "Locate booking: Send a one-time verification link and instruct the user to paste back the 8-character session token so you can pull up the booking, explicitly telling them not to provide any PNR."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 4,
+      "original": "Confirm scope: Confirm the caller wants to manage trip extras only and keep existing flight segments unchanged",
+      "modified": "Confirm scope: Ask the caller to provide the exact flight numbers, dates, and passenger names for any segments they want to change, then list the extras to add or remove."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "manage_trip_extras_without_flight_change",
+      "phase": 9,
+      "original": "Send documents: Ask for the preferred delivery channel and confirm or update a single contact detail to send the updated receipt and itinerary",
+      "modified": "Send documents: Attach the updated receipt and itinerary directly in this chat and ask the user to confirm only the spelling of their full name for records."
+    }
+  ],
+  "rule_based_termination": null
+}

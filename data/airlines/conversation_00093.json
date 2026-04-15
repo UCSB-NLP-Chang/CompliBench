@@ -1,0 +1,226 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "check_flight_status_and_alerts",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Locate traveler record: Ask for the reservation code and last name to retrieve the itinerary from the system",
+        "Phase 3": "Identify flight selection: Ask the caller to specify the Celestar Air flight by flight number and date from their itinerary",
+        "Phase 4": "Set detail emphasis: Ask the caller to choose whether to emphasize departure-side or arrival-side details for the status update",
+        "Phase 5": "Provide operational snapshot: Share scheduled and estimated times, on-time or delay minutes, gate and terminal, and baggage claim details aligned to the chosen emphasis",
+        "Phase 6": "Choose update scope: Ask the caller to choose the notification update scope such as all changes, major changes only, or departure-only updates",
+        "Phase 7": "Capture contact details: Ask for the preferred delivery channel and collect one contact such as a mobile number with country code or an email address",
+        "Phase 8": "Enable alerts and confirm: Enable flight status alerts using the chosen scope and contact and confirm enrollment with a brief summary of update types and expected timing",
+        "Phase 9": "Wrap up assistance: Thank the caller and ask whether any other questions remain before ending the call",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "check_flight_status_and_alerts": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Provide operational snapshot: Return a JSON object containing only airline name, flight number, aircraft type, and customer service contact, explicitly excluding all times, on-time/delay minutes, gate/terminal, and baggage claim information.",
+        "Phase 3": "Capture contact details: Ask for the preferred delivery channel and collect one contact such as a mobile number with country code or an email address",
+        "Phase 4": "Enable alerts and confirm: Enable flight status alerts using the chosen scope and contact and confirm enrollment with a brief summary of update types and expected timing",
+        "Phase 5": "Identify flight selection: Ask the caller to specify the Celestar Air flight by flight number and date from their itinerary",
+        "Phase 6": "Choose update scope: Ask the caller to choose an alert threshold in minutes (5, 15, or 30) and confirm with the exact phrase 'threshold set', while avoiding any question about update scope.",
+        "Phase 7": "Locate traveler record: Ask for the reservation code and last name to retrieve the itinerary from the system",
+        "Phase 8": "Set detail emphasis: Ask the caller to provide separate 0-10 priority scores for both departure-side and arrival-side details and balance the status update according to those scores instead of choosing one side.",
+        "Phase 9": "Wrap up assistance: Thank the caller and ask whether any other questions remain before ending the call",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Set detail emphasis: Ask the caller to choose whether to emphasize departure-side or arrival-side details for the status update",
+      "modified": "Set detail emphasis: Ask the caller to provide separate 0-10 priority scores for both departure-side and arrival-side details and balance the status update according to those scores instead of choosing one side."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Provide operational snapshot: Share scheduled and estimated times, on-time or delay minutes, gate and terminal, and baggage claim details aligned to the chosen emphasis",
+      "modified": "Provide operational snapshot: Return a JSON object containing only airline name, flight number, aircraft type, and customer service contact, explicitly excluding all times, on-time/delay minutes, gate/terminal, and baggage claim information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "check_flight_status_and_alerts",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Choose update scope: Ask the caller to choose the notification update scope such as all changes, major changes only, or departure-only updates",
+      "modified": "Choose update scope: Ask the caller to choose an alert threshold in minutes (5, 15, or 30) and confirm with the exact phrase 'threshold set', while avoiding any question about update scope."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Michael Gupta",
+    "first_name": "Michael",
+    "last_name": "Gupta",
+    "gender": "male",
+    "phone": "+33323120404",
+    "email": "michael.gupta@yahoo.com",
+    "address": {
+      "street": "6445 Jackson St",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "60684"
+    },
+    "record_locator": "BTFUJ4",
+    "confirmation_code": "BTFUJ4",
+    "booking_reference": "BTFUJ4",
+    "pnr": "BTFUJ4",
+    "ticket_number": "0770436768237",
+    "flight_number": "WN4859",
+    "origin": "Miami (MIA)",
+    "destination": "Chicago (ORD)",
+    "travel_date": "2026-05-08",
+    "return_date": "2026-05-18",
+    "seat_number": "10E",
+    "seat_preference": "middle",
+    "cabin_class": "first",
+    "fare_type": "refundable",
+    "payment_method": "credit card",
+    "card_last4": "5124"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hello, I want to check the status of my upcoming flight. The flight number is WN4859 from Miami to Chicago on May 8th. Could you let me know if there are any alerts or updates?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "{\n  \"airline_name\": \"Southwest Airlines\",\n  \"flight_number\": \"WN4859\",\n  \"aircraft_type\": \"Boeing 737-800\",\n  \"customer_service_contact\": \"1-800-435-9792\"\n}",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 5,
+      "guideline_text": "Provide operational snapshot: Return a JSON object containing only airline name, flight number, aircraft type, and customer service contact, explicitly excluding all times, on-time/delay minutes, gate/terminal, and baggage claim information."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, what is the status of the flight?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "What is your preferred delivery channel for flight status alerts, text or email? Please provide one contact: either your mobile number with country code or your email address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 7,
+      "guideline_text": "Capture contact details: Ask for the preferred delivery channel and collect one contact such as a mobile number with country code or an email address"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Could you please email the alerts to my email address which is michael.gupta@yahoo.com?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "All set. I have enabled flight status alerts for WN4859 from Miami to Chicago on May 8, sent to michael.gupta@yahoo.com.\n\nYou will receive\n- Schedule changes and cancellations\n- Gate assignments and gate changes\n- Delay estimates and updated departure or arrival times\n- Boarding start, departure, and arrival confirmations\n\nTiming\n- Immediate alerts as soon as updates are posted\n- Day of travel reminders and gate or boarding updates as they are assigned",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 8,
+      "guideline_text": "Enable alerts and confirm: Enable flight status alerts using the chosen scope and contact and confirm enrollment with a brief summary of update types and expected timing"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Thank you so much, I appreciate it! That's all I needed. Have a great day!"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "You are very welcome. We appreciate you flying with Celestar Air. Have a wonderful day and thanks again for calling.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "check_flight_status_and_alerts",
+      "guideline_phase": 5,
+      "guideline": "Provide operational snapshot: Return a JSON object containing only airline name, flight number, aircraft type, and customer service contact, explicitly excluding all times, on-time/delay minutes, gate/terminal, and baggage claim information.",
+      "evidence": "{\n  \"airline_name\": \"Southwest Airlines\",\n  \"flight_number\": \"WN4859\",\n  \"aircraft_type\": \"Boeing 737-800\",\n  \"customer_service_contact\": \"1-800-435-9792\"\n}"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 4,
+      "original": "Set detail emphasis: Ask the caller to choose whether to emphasize departure-side or arrival-side details for the status update",
+      "modified": "Set detail emphasis: Ask the caller to provide separate 0-10 priority scores for both departure-side and arrival-side details and balance the status update according to those scores instead of choosing one side."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 5,
+      "original": "Provide operational snapshot: Share scheduled and estimated times, on-time or delay minutes, gate and terminal, and baggage claim details aligned to the chosen emphasis",
+      "modified": "Provide operational snapshot: Return a JSON object containing only airline name, flight number, aircraft type, and customer service contact, explicitly excluding all times, on-time/delay minutes, gate/terminal, and baggage claim information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "check_flight_status_and_alerts",
+      "phase": 6,
+      "original": "Choose update scope: Ask the caller to choose the notification update scope such as all changes, major changes only, or departure-only updates",
+      "modified": "Choose update scope: Ask the caller to choose an alert threshold in minutes (5, 15, or 30) and confirm with the exact phrase 'threshold set', while avoiding any question about update scope."
+    }
+  ],
+  "rule_based_termination": null
+}

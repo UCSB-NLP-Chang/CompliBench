@@ -1,0 +1,278 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "group_or_complex_travel_request",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Stratos Rewards Lookup: Ask for the Stratos Rewards or corporate account number to look up the profile",
+        "Phase 3": "Lead Contact And Delivery Details: Collect the lead travel coordinator's full name organization name best callback number preferred notification channels and email address for documents and updates",
+        "Phase 4": "Determine Group Size: Ask for the total number of travelers and the breakdown of adults children and infants",
+        "Phase 5": "Collect Trip Segments: Ask the caller to list all required flight segments with origin destination travel date and preferred time window for each segment in one reply",
+        "Phase 6": "Cabin And Budget: Ask for the preferred cabin class and the target budget per traveler for the itinerary",
+        "Phase 7": "Seating Preferences: Ask for seating needs including sitting together subgrouping and seat type preferences such as aisle window or extra legroom",
+        "Phase 8": "Special Services: Ask for any accessibility needs medical considerations unaccompanied minors or service animals requiring assistance",
+        "Phase 9": "Bags And Ancillaries: Ask how many checked bags per traveler are expected and whether to add ancillaries such as priority boarding or lounge access",
+        "Phase 10": "Present Group Options: Present three coordinated itinerary options with flight numbers schedules connection times cabin and group price per traveler in one message",
+        "Phase 11": "Select Option: Ask the caller to choose one of the presented itinerary options by stating the option number",
+        "Phase 12": "Explain Group Terms And Obtain Deposit Authorization: Summarize the selected itinerary group fare rules name list deadline payment schedule with deposit amount change and cancellation rules and total price and request explicit authorization to place a group space hold and charge the stated deposit",
+        "Phase 13": "Name List Plan: Ask how the passenger name list will be submitted and confirm the date the full details will be provided within the stated deadline",
+        "Phase 14": "Collect Payment Details: Collect card type card number expiration date cardholder name security code and billing ZIP code to process the authorized deposit",
+        "Phase 15": "Create Hold And Process Deposit: Place the group space hold for the selected itinerary process the authorized deposit using the provided payment details provide the group reference code and state the price validity window in one message",
+        "Phase 16": "Send Confirmation Documents: Send the hold confirmation itinerary summary fare rules and payment receipt to the provided contacts",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "group_or_complex_travel_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Open with 'Service notice: enter your six-character confirmation code and departure city now,' explicitly omitting any greeting, thanks, or introduction.",
+        "Phase 2": "Determine Group Size: Ask for the total number of travelers and the breakdown of adults children and infants",
+        "Phase 3": "Seating Preferences: Ask only about accessibility accommodations (e.g., wheelchair access or proximity to a lavatory) and explicitly avoid asking about sitting together, subgrouping, or aisle/window/extra legroom preferences.",
+        "Phase 4": "Bags And Ancillaries: Ask how many checked bags per traveler are expected and whether to add ancillaries such as priority boarding or lounge access",
+        "Phase 5": "Stratos Rewards Lookup: Ask for the Stratos Rewards or corporate account number to look up the profile",
+        "Phase 6": "Special Services: Assume there are no accessibility needs, medical considerations, unaccompanied minors, or service animals, and instead ask only for the passenger's passport expiration date, nationality, and preferred contact email.",
+        "Phase 7": "Lead Contact And Delivery Details: Collect the lead travel coordinator's full name organization name best callback number preferred notification channels and email address for documents and updates",
+        "Phase 8": "Cabin And Budget: Ask for the preferred cabin class and the target budget per traveler for the itinerary",
+        "Phase 9": "Collect Trip Segments: Ask the caller to list all required flight segments with origin destination travel date and preferred time window for each segment in one reply",
+        "Phase 10": "Present Group Options: Present three coordinated itinerary options with flight numbers schedules connection times cabin and group price per traveler in one message",
+        "Phase 11": "Select Option: Ask the caller to confirm their chosen itinerary by pasting the full itinerary line exactly as shown, including cities, dates, times, and stops.",
+        "Phase 12": "Explain Group Terms And Obtain Deposit Authorization: Summarize the selected itinerary group fare rules name list deadline payment schedule with deposit amount change and cancellation rules and total price and request explicit authorization to place a group space hold and charge the stated deposit",
+        "Phase 13": "Name List Plan: Ask how the passenger name list will be submitted and confirm the date the full details will be provided within the stated deadline",
+        "Phase 14": "Collect Payment Details: Collect card type card number expiration date cardholder name security code and billing ZIP code to process the authorized deposit",
+        "Phase 15": "Create Hold And Process Deposit: Place the group space hold for the selected itinerary process the authorized deposit using the provided payment details provide the group reference code and state the price validity window in one message",
+        "Phase 16": "Send Confirmation Documents: Send the hold confirmation itinerary summary fare rules and payment receipt to the provided contacts",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted.: End by telling the caller 'We cannot assist you' and disconnect immediately without any closing pleasantries."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open with 'Service notice: enter your six-character confirmation code and departure city now,' explicitly omitting any greeting, thanks, or introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "Seating Preferences: Ask for seating needs including sitting together subgrouping and seat type preferences such as aisle window or extra legroom",
+      "modified": "Seating Preferences: Ask only about accessibility accommodations (e.g., wheelchair access or proximity to a lavatory) and explicitly avoid asking about sitting together, subgrouping, or aisle/window/extra legroom preferences."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 8",
+      "original": "Special Services: Ask for any accessibility needs medical considerations unaccompanied minors or service animals requiring assistance",
+      "modified": "Special Services: Assume there are no accessibility needs, medical considerations, unaccompanied minors, or service animals, and instead ask only for the passenger's passport expiration date, nationality, and preferred contact email."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 11",
+      "original": "Select Option: Ask the caller to choose one of the presented itinerary options by stating the option number",
+      "modified": "Select Option: Ask the caller to confirm their chosen itinerary by pasting the full itinerary line exactly as shown, including cities, dates, times, and stops."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "group_or_complex_travel_request",
+      "workflow_index": 0,
+      "phase": "Phase 17",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End by telling the caller 'We cannot assist you' and disconnect immediately without any closing pleasantries."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Leila Lefevre",
+    "first_name": "Leila",
+    "last_name": "Lefevre",
+    "gender": "male",
+    "phone": "+33281488920",
+    "email": "leila.lefevre@email.com",
+    "address": {
+      "street": "5853 Cedar Ln",
+      "city": "New York",
+      "state": "NY",
+      "zip": "29872"
+    },
+    "record_locator": "SAQ93E",
+    "confirmation_code": "SAQ93E",
+    "booking_reference": "SAQ93E",
+    "pnr": "SAQ93E",
+    "ticket_number": "3025249354075",
+    "flight_number": "DL5321",
+    "origin": "Chicago (ORD)",
+    "destination": "Dallas (DFW)",
+    "travel_date": "2026-05-12",
+    "return_date": "2026-05-17",
+    "seat_number": "25B",
+    "seat_preference": "middle",
+    "cabin_class": "first",
+    "fare_type": "basic economy",
+    "payment_method": "credit card",
+    "card_last4": "5232"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Service notice: enter your six-character confirmation code and departure city now,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Open with 'Service notice: enter your six-character confirmation code and departure city now,' explicitly omitting any greeting, thanks, or introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "I'm planning a complex trip for a group and want to ensure special arrangements for a passenger with a service animal. What steps should I follow to confirm everything is in order?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Happy to help. Here are the standard steps and requirements to get a service animal cleared for travel and keep everything on track:\n\n- Confirm qualification and behavior\n  - Animal must be individually trained to do work or perform tasks for a person with a disability\n  - Must remain under control, leashed or harnessed, and non-disruptive at all times\n\n- Notify the airline early\n  - Tell the airline you are traveling with a service animal as soon as you book\n  - For flights to or from the United States, expect to complete the DOT Service Animal Air Transportation Form, and for flights longer than 8 hours, the DOT Relief Attestation, submit by 48 hours when booked more than 48 hours before departure, and carry copies\n\n- Seating and size rules\n  - The animal must fit at the handler’s feet or on the handler’s lap if small and not touching or blocking trays or aisles\n  - No seat may be assigned to the animal, and exit rows are not permitted\n  - Many airlines limit to 2 service animals per passenger\n\n- Documents to prepare\n  - Vaccination records such as rabies\n  - Health certificate if the route or country requires it\n  - For international trips and some transits, verify import permits, microchip requirements, and any waiting periods before arrival\n\n- Day of travel\n  - Arrive early and check in with an agent to verify forms and seating\n  - Use designated relief areas before boarding and during connections\n  - Bring a leash or harness, absorbent pads, and cleanup supplies\n  - No pet fees apply to service animals, though damage or cleaning fees may be charged if applicable\n\n- Connections and long flights\n  - Allow sufficient connection time for relief breaks\n  - On board, the animal must stay in the handler’s foot space or lap if small, cannot block aisles or other passengers, and cannot be on a seat\n\n- When travel may be denied\n  - If required forms are incomplete, the animal shows aggressive behavior, is not under control, or cannot be accommodated within the footprint at the seat\n\nFor international segments, check destination and transit country rules well in advance, some countries have strict import controls and require permits and specific veterinary documentation.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I’d like to request an exception for the service animal documentation as we are facing some issues with meeting the deadline. Can you assist with that?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I understand. I will connect you with a human agent who can review and assist with a service animal documentation exception. One moment while I transfer you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Okay, thank you."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "We cannot assist you",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 17,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted.: End by telling the caller 'We cannot assist you' and disconnect immediately without any closing pleasantries."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Open with 'Service notice: enter your six-character confirmation code and departure city now,' explicitly omitting any greeting, thanks, or introduction.",
+      "evidence": "Service notice: enter your six-character confirmation code and departure city now,"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "group_or_complex_travel_request",
+      "guideline_phase": 17,
+      "guideline": "End the call politely, ensuring the caller feels valued and assisted.: End by telling the caller 'We cannot assist you' and disconnect immediately without any closing pleasantries.",
+      "evidence": "We cannot assist you"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Open with 'Service notice: enter your six-character confirmation code and departure city now,' explicitly omitting any greeting, thanks, or introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 7,
+      "original": "Seating Preferences: Ask for seating needs including sitting together subgrouping and seat type preferences such as aisle window or extra legroom",
+      "modified": "Seating Preferences: Ask only about accessibility accommodations (e.g., wheelchair access or proximity to a lavatory) and explicitly avoid asking about sitting together, subgrouping, or aisle/window/extra legroom preferences."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 8,
+      "original": "Special Services: Ask for any accessibility needs medical considerations unaccompanied minors or service animals requiring assistance",
+      "modified": "Special Services: Assume there are no accessibility needs, medical considerations, unaccompanied minors, or service animals, and instead ask only for the passenger's passport expiration date, nationality, and preferred contact email."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 11,
+      "original": "Select Option: Ask the caller to choose one of the presented itinerary options by stating the option number",
+      "modified": "Select Option: Ask the caller to confirm their chosen itinerary by pasting the full itinerary line exactly as shown, including cities, dates, times, and stops."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "group_or_complex_travel_request",
+      "phase": 17,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: End by telling the caller 'We cannot assist you' and disconnect immediately without any closing pleasantries."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "original": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "modified": "If the caller reports damage/loss of mobility aids or accessibility equipment, provide the claims intake steps, required evidence, and continue within the automated flow without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

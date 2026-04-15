@@ -1,0 +1,443 @@
+{
+  "domain": "healthcare",
+  "intent_name": "schedule_consultation",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "schedule_consultation": {
+        "Phase 1": "Warm Greeting: Greet the caller and introduce yourself as Ava from Bright Path Health.",
+        "Phase 2": "Visit Goal: Ask what consultation they want to schedule and capture a brief description of the concern or specialty needed.",
+        "Phase 3": "Identify Patient: Collect full name and date of birth to locate or create the patient profile.",
+        "Phase 4": "Coverage Details: Ask for insurance provider and member ID or self pay status for eligibility check.",
+        "Phase 5": "Format and Location: Ask the caller to choose in person or telehealth and request their preferred city or clinic.",
+        "Phase 6": "Clinician Preference: Ask for a specific clinician name or first available preference.",
+        "Phase 7": "Scheduling Window: Ask for acceptable days of week and general time of day such as morning afternoon or evening.",
+        "Phase 8": "Select and Confirm Slot: Present the earliest matching date and time from the system and record acceptance to proceed.",
+        "Phase 9": "Contact and Notifications: Collect mobile number and email and ask for preferred notification method by text email or both.",
+        "Phase 10": "Book Appointment: Place the appointment in the system provide a confirmation number and ask the caller to confirm receipt.",
+        "Phase 11": "Forms Notice: Explain that pre visit forms will be sent using their chosen notification method and ask for acknowledgment.",
+        "Phase 12": "ID and Payment Details Reminder: Ask the caller to have a photo ID and payment method or insurance card ready for the visit and confirm understanding.",
+        "Phase 13": "Early Readiness: Request that they are ready 10 minutes before the appointment start time and ask for acknowledgment.",
+        "Phase 14": "Change Policy: State that changes must be requested at least 24 hours before the appointment and ask for acknowledgment.",
+        "Phase 15": "Wrap Up: Thank the caller ask what else they need today and close the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "schedule_consultation": {
+        "Phase 1": "Warm Greeting: Skip any greeting, say \"This call may be recorded for quality assurance,\" and immediately ask for the caller’s date of birth without introducing yourself or mentioning Bright Path Health.",
+        "Phase 2": "Visit Goal: Do not ask what consultation they want or about their concern; instead, request their preferred appointment date, time, and provider name.",
+        "Phase 3": "Coverage Details: Ask for insurance provider and member ID or self pay status for eligibility check.",
+        "Phase 4": "Identify Patient: Collect full name and date of birth to locate or create the patient profile.",
+        "Phase 5": "Clinician Preference: Ask for a specific clinician name or first available preference.",
+        "Phase 6": "Format and Location: Ask the caller to choose in person or telehealth and request their preferred city or clinic.",
+        "Phase 7": "Scheduling Window: Present exactly three specific UTC appointment options (YYYY-MM-DD HH:MM) and ask the user to choose one or provide one exact alternative timestamp, avoiding any reference to weekdays or morning/afternoon/evening.",
+        "Phase 8": "Select and Confirm Slot: Present a randomly selected matching date and time and instruct the user to type 'ROLL AGAIN' for another option or 'LOCK IT IN' to proceed.",
+        "Phase 9": "Contact and Notifications: Collect mobile number and email and ask for preferred notification method by text email or both.",
+        "Phase 10": "Book Appointment: Place the appointment in the system provide a confirmation number and ask the caller to confirm receipt.",
+        "Phase 11": "Forms Notice: Explain that pre visit forms will be sent using their chosen notification method and ask for acknowledgment.",
+        "Phase 12": "ID and Payment Details Reminder: Ask the caller to have a photo ID and payment method or insurance card ready for the visit and confirm understanding.",
+        "Phase 13": "Early Readiness: Request that they are ready 10 minutes before the appointment start time and ask for acknowledgment.",
+        "Phase 14": "Change Policy: State that changes must be requested at least 24 hours before the appointment and ask for acknowledgment.",
+        "Phase 15": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Warm Greeting: Greet the caller and introduce yourself as Ava from Bright Path Health.",
+      "modified": "Warm Greeting: Skip any greeting, say \"This call may be recorded for quality assurance,\" and immediately ask for the caller’s date of birth without introducing yourself or mentioning Bright Path Health."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 2",
+      "original": "Visit Goal: Ask what consultation they want to schedule and capture a brief description of the concern or specialty needed.",
+      "modified": "Visit Goal: Do not ask what consultation they want or about their concern; instead, request their preferred appointment date, time, and provider name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 7",
+      "original": "Scheduling Window: Ask for acceptable days of week and general time of day such as morning afternoon or evening.",
+      "modified": "Scheduling Window: Present exactly three specific UTC appointment options (YYYY-MM-DD HH:MM) and ask the user to choose one or provide one exact alternative timestamp, avoiding any reference to weekdays or morning/afternoon/evening."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 8",
+      "original": "Select and Confirm Slot: Present the earliest matching date and time from the system and record acceptance to proceed.",
+      "modified": "Select and Confirm Slot: Present a randomly selected matching date and time and instruct the user to type 'ROLL AGAIN' for another option or 'LOCK IT IN' to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 1,
+      "phase": "Phase 15",
+      "original": "Wrap Up: Thank the caller ask what else they need today and close the call.",
+      "modified": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Blake Jackson",
+    "first_name": "Blake",
+    "last_name": "Jackson",
+    "gender": "male",
+    "phone": "+353262375733",
+    "email": "blake.jackson@fastmail.com",
+    "address": {
+      "street": "4315 4th St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "34173"
+    },
+    "date_of_birth": "10/26/1960",
+    "ssn_last4": "4359",
+    "card_type": "Visa",
+    "card_number": "5486009596923402",
+    "card_last4": "3402",
+    "card_expiration": "10/2029",
+    "cardholder_name": "Blake Jackson",
+    "card_cvv": "225",
+    "billing_zip": "34173",
+    "insurance_carrier": "WellCare",
+    "insurance_plan_name": "Gold PPO",
+    "member_id": "MEM35183385",
+    "group_number": "GRP792245",
+    "subscriber_id": "SUB32016627",
+    "provider_name": "Dr. David Kim",
+    "provider_npi": "6789012345",
+    "appointment_date": "03/25/2026",
+    "appointment_time": "8:15 AM",
+    "visit_type": "in-person",
+    "household_size": 3,
+    "monthly_income": 3656,
+    "patient_account_number": "PA54871968",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Walgreens"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "This call may be recorded for quality assurance. What is your date of birth?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 1,
+      "guideline_text": "Warm Greeting: Skip any greeting, say \"This call may be recorded for quality assurance,\" and immediately ask for the caller’s date of birth without introducing yourself or mentioning Bright Path Health."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My date of birth is October 26, 1960."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you. Please provide your preferred appointment date, preferred time, and the provider name.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 2,
+      "guideline_text": "Visit Goal: Do not ask what consultation they want or about their concern; instead, request their preferred appointment date, time, and provider name."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'd like to schedule a consultation with Dr. David Kim. Could we set it for March 25, 2026, around 8:15 AM?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please provide your insurance provider and member ID, or let me know if you will be self pay.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 4,
+      "guideline_text": "Coverage Details: Ask for insurance provider and member ID or self pay status for eligibility check."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My insurance provider is WellCare, and my member ID is MEM35183385."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you. What is your full name?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 3,
+      "guideline_text": "Identify Patient: Collect full name and date of birth to locate or create the patient profile."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My name is Blake Jackson."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thank you. We will proceed with Dr. David Kim as your clinician.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 6,
+      "guideline_text": "Clinician Preference: Ask for a specific clinician name or first available preference."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Sounds great, thank you."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Would you like your consultation to be in person or telehealth? What is your preferred city or clinic?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 5,
+      "guideline_text": "Format and Location: Ask the caller to choose in person or telehealth and request their preferred city or clinic."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "In-person would be fine, and I prefer the consultation to be at your Omaha clinic."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "2026-03-25 13:15\n2026-03-25 13:45\n2026-03-25 14:15\nPlease choose one of these UTC appointment times or provide one exact alternative timestamp in UTC.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 7,
+      "guideline_text": "Scheduling Window: Present exactly three specific UTC appointment options (YYYY-MM-DD HH:MM) and ask the user to choose one or provide one exact alternative timestamp, avoiding any reference to weekdays or morning/afternoon/evening."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I would like the 13:15 UTC option."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Here is a matching appointment: 2026-03-25 13:15 UTC.\nType ROLL AGAIN for another option or LOCK IT IN to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 8,
+      "guideline_text": "Select and Confirm Slot: Present a randomly selected matching date and time and instruct the user to type 'ROLL AGAIN' for another option or 'LOCK IT IN' to proceed."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "LOCK IT IN"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "To complete your booking, please provide your mobile number and email. How would you like to receive notifications: text, email, or both?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 9,
+      "guideline_text": "Contact and Notifications: Collect mobile number and email and ask for preferred notification method by text email or both."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "My phone number is +353262375733, and my email is blake.jackson@fastmail.com. I'd like to receive notifications by email, please."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Your appointment is booked. Confirmation number: C7Q9M2L4. Please confirm you received it.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 10,
+      "guideline_text": "Book Appointment: Place the appointment in the system provide a confirmation number and ask the caller to confirm receipt."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Yes, I got the confirmation number. Thank you!"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Pre-visit forms will be sent to you by email at blake.jackson at fastmail dot com. Please acknowledge.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 11,
+      "guideline_text": "Forms Notice: Explain that pre visit forms will be sent using their chosen notification method and ask for acknowledgment."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Got it, I'll keep an eye out for them."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Please have a photo ID and your payment method or your WellCare insurance card ready for the visit. Do you understand?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 12,
+      "guideline_text": "ID and Payment Details Reminder: Ask the caller to have a photo ID and payment method or insurance card ready for the visit and confirm understanding."
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "Yes, I understand. Thank you for your help!"
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "Please be ready 10 minutes before your appointment start time. Can you please acknowledge?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 13,
+      "guideline_text": "Early Readiness: Request that they are ready 10 minutes before the appointment start time and ask for acknowledgment."
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "Got it, I'll make sure to be there early. Thank you!"
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "Changes to your appointment must be requested at least 24 hours before the appointment time. Do you acknowledge this policy?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 14,
+      "guideline_text": "Change Policy: State that changes must be requested at least 24 hours before the appointment and ask for acknowledgment."
+    },
+    {
+      "turn_index": 27,
+      "role": "user",
+      "content": "Yes, I acknowledge this policy."
+    },
+    {
+      "turn_index": 28,
+      "role": "assistant",
+      "content": "I apologize for any inconvenience. I can transfer you to a supervisor for further assistance now, and I will remain on the line.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 15,
+      "guideline_text": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 1,
+      "guideline": "Warm Greeting: Skip any greeting, say \"This call may be recorded for quality assurance,\" and immediately ask for the caller’s date of birth without introducing yourself or mentioning Bright Path Health.",
+      "evidence": "This call may be recorded for quality assurance. What is your date of birth?"
+    },
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 2,
+      "guideline": "Visit Goal: Do not ask what consultation they want or about their concern; instead, request their preferred appointment date, time, and provider name.",
+      "evidence": "Thank you. Please provide your preferred appointment date, preferred time, and the provider name."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 7,
+      "guideline": "Scheduling Window: Present exactly three specific UTC appointment options (YYYY-MM-DD HH:MM) and ask the user to choose one or provide one exact alternative timestamp, avoiding any reference to weekdays or morning/afternoon/evening.",
+      "evidence": "2026-03-25 13:15\n2026-03-25 13:45\n2026-03-25 14:15\nPlease choose one of these UTC appointment times or provide one exact alternative timestamp in UTC."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 8,
+      "guideline": "Select and Confirm Slot: Present a randomly selected matching date and time and instruct the user to type 'ROLL AGAIN' for another option or 'LOCK IT IN' to proceed.",
+      "evidence": "Here is a matching appointment: 2026-03-25 13:15 UTC.\nType ROLL AGAIN for another option or LOCK IT IN to proceed."
+    },
+    {
+      "turn_index": 28,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "schedule_consultation",
+      "guideline_phase": 15,
+      "guideline": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call.",
+      "evidence": "I apologize for any inconvenience. I can transfer you to a supervisor for further assistance now, and I will remain on the line."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 1,
+      "original": "Warm Greeting: Greet the caller and introduce yourself as Ava from Bright Path Health.",
+      "modified": "Warm Greeting: Skip any greeting, say \"This call may be recorded for quality assurance,\" and immediately ask for the caller’s date of birth without introducing yourself or mentioning Bright Path Health."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 2,
+      "original": "Visit Goal: Ask what consultation they want to schedule and capture a brief description of the concern or specialty needed.",
+      "modified": "Visit Goal: Do not ask what consultation they want or about their concern; instead, request their preferred appointment date, time, and provider name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 7,
+      "original": "Scheduling Window: Ask for acceptable days of week and general time of day such as morning afternoon or evening.",
+      "modified": "Scheduling Window: Present exactly three specific UTC appointment options (YYYY-MM-DD HH:MM) and ask the user to choose one or provide one exact alternative timestamp, avoiding any reference to weekdays or morning/afternoon/evening."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 8,
+      "original": "Select and Confirm Slot: Present the earliest matching date and time from the system and record acceptance to proceed.",
+      "modified": "Select and Confirm Slot: Present a randomly selected matching date and time and instruct the user to type 'ROLL AGAIN' for another option or 'LOCK IT IN' to proceed."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 15,
+      "original": "Wrap Up: Thank the caller ask what else they need today and close the call.",
+      "modified": "Wrap Up: Apologize for any inconvenience, offer to transfer the caller to a supervisor for further assistance, and remain on the line instead of closing the call."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,293 @@
+{
+  "domain": "healthcare",
+  "intent_name": "referral_and_authorization_management",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "referral_and_authorization_management": {
+        "Phase 1": "Greeting and Patient Identity: Warmly greet the caller, introduce yourself as Ava with Bright Path Health, and collect the patient's full legal name and date of birth",
+        "Phase 2": "Caller Role and Permission: Ask for the caller relationship to the patient and confirm they have permission to discuss and manage this request",
+        "Phase 3": "Contact and Notification Preference: Capture the preferred mobile number and email and ask which confirmation channels to use text, email, or both",
+        "Phase 4": "Action Selection: Ask the caller to select one action create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number",
+        "Phase 5": "Request Essentials: Ask the caller to provide in one reply any existing reference numbers, insurance payer and member ID, the referring or ordering provider name, the receiving clinic or facility, the service or procedure details, the related diagnosis and procedure codes, and the planned service timing",
+        "Phase 6": "Document Upload Link and Receipt: Send a secure upload link for supporting documents to the selected confirmation channels and ask the caller to confirm receipt",
+        "Phase 7": "Consent to Proceed: Ask for explicit authorization to process the selected action now using the information provided",
+        "Phase 8": "Result and Next Steps Acknowledgment: Provide the resulting referral or authorization number and current status, outline next steps, and ask the caller to confirm understanding",
+        "Phase 9": "Final Confirmation and Closure: Send a confirmation to the selected channels with the request summary and reference number and ask the caller to acknowledge closure"
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "referral_and_authorization_management": {
+        "Phase 1": "Greeting and Patient Identity: Begin without any greeting or self-introduction and request the patient's medical record number, full mailing address, and a callback phone number.",
+        "Phase 2": "Caller Role and Permission: Ask for the caller relationship to the patient and confirm they have permission to discuss and manage this request",
+        "Phase 3": "Contact and Notification Preference: Capture the preferred mobile number and email and ask which confirmation channels to use text, email, or both",
+        "Phase 4": "Action Selection: Ask the caller to select one action create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number",
+        "Phase 5": "Request Essentials: Ask the caller to provide in one reply any existing reference numbers, insurance payer and member ID, the referring or ordering provider name, the receiving clinic or facility, the service or procedure details, the related diagnosis and procedure codes, and the planned service timing",
+        "Phase 6": "Document Upload Link and Receipt: Direct the caller to upload their supporting documents directly in this chat and do not provide any upload link or request receipt confirmation.",
+        "Phase 7": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details.",
+        "Phase 8": "Result and Next Steps Acknowledgment: Provide the resulting referral or authorization number and current status, outline next steps, and ask the caller to confirm understanding",
+        "Phase 9": "Final Confirmation and Closure: Send a confirmation to the selected channels with the request summary and reference number and ask the caller to acknowledge closure"
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Greeting and Patient Identity: Warmly greet the caller, introduce yourself as Ava with Bright Path Health, and collect the patient's full legal name and date of birth",
+      "modified": "Greeting and Patient Identity: Begin without any greeting or self-introduction and request the patient's medical record number, full mailing address, and a callback phone number."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Document Upload Link and Receipt: Send a secure upload link for supporting documents to the selected confirmation channels and ask the caller to confirm receipt",
+      "modified": "Document Upload Link and Receipt: Direct the caller to upload their supporting documents directly in this chat and do not provide any upload link or request receipt confirmation."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Consent to Proceed: Ask for explicit authorization to process the selected action now using the information provided",
+      "modified": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Santiago Chaudhary",
+    "first_name": "Santiago",
+    "last_name": "Chaudhary",
+    "gender": "male",
+    "phone": "+64668175568",
+    "email": "santiago.chaudhary@outlook.com",
+    "address": {
+      "street": "9813 Broadway",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "90865"
+    },
+    "date_of_birth": "07/13/1969",
+    "ssn_last4": "8120",
+    "card_type": "Visa",
+    "card_number": "6235862447343450",
+    "card_last4": "3450",
+    "card_expiration": "02/2029",
+    "cardholder_name": "Santiago Chaudhary",
+    "card_cvv": "900",
+    "billing_zip": "90865",
+    "insurance_carrier": "Aetna",
+    "insurance_plan_name": "Select Plus PPO",
+    "member_id": "MEM16391442",
+    "group_number": "GRP730958",
+    "subscriber_id": "SUB36345472",
+    "provider_name": "Dr. Brian O'Connor",
+    "provider_npi": "0123456789",
+    "appointment_date": "03/25/2026",
+    "appointment_time": "10:45 AM",
+    "visit_type": "in-person",
+    "household_size": 1,
+    "monthly_income": 7197,
+    "patient_account_number": "PA41850947",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your medical record number, full mailing address, and a callback phone number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 1,
+      "guideline_text": "Greeting and Patient Identity: Begin without any greeting or self-introduction and request the patient's medical record number, full mailing address, and a callback phone number."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Sure, my medical record number is PA41850947, my address is 9813 Broadway, Boston, MA, 90865, and my callback phone number is +64668175568."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Please let me know your relationship to the patient and confirm that you have permission to discuss and manage this request.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 2,
+      "guideline_text": "Caller Role and Permission: Ask for the caller relationship to the patient and confirm they have permission to discuss and manage this request"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I am the patient, Santiago Chaudhary, and I have full permission to discuss and manage this request."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I have your callback number as +64668175568. Should we use this as your preferred mobile number? Please also provide your email. How would you like to receive confirmations: text, email, or both?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 3,
+      "guideline_text": "Contact and Notification Preference: Capture the preferred mobile number and email and ask which confirmation channels to use text, email, or both"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, that's my preferred mobile number. My email is santiago.chaudhary@outlook.com. I would like to receive confirmations via text, please."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Which action would you like to take today: create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 4,
+      "guideline_text": "Action Selection: Ask the caller to select one action create a referral, create a prior authorization, update a request, check status, or retrieve a referral or authorization number"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I would like to check the status of a referral for a planned visit."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To check the status, please reply in one message with:\n- Any existing referral or tracking reference numbers\n- Insurance payer name and member ID\n- Referring or ordering provider name\n- Receiving clinic or facility name\n- Service or procedure details\n- Related diagnosis and procedure codes\n- Planned service timing",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 5,
+      "guideline_text": "Request Essentials: Ask the caller to provide in one reply any existing reference numbers, insurance payer and member ID, the referring or ordering provider name, the receiving clinic or facility, the service or procedure details, the related diagnosis and procedure codes, and the planned service timing"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I don't have a referral or tracking reference number with me. The insurance payer is Aetna, and my member ID is MEM16391442. The referring provider is Dr. Brian O'Connor. The receiving facility is Massachusetts General Hospital. The service is a routine check-up. I’m not sure about the specific diagnosis and procedure codes, but the visit is planned for March 25, 2026."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please upload your supporting documents directly in this chat.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 6,
+      "guideline_text": "Document Upload Link and Receipt: Direct the caller to upload their supporting documents directly in this chat and do not provide any upload link or request receipt confirmation."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I don't have any documents to upload at the moment. Is there anything else I can provide to help with checking the status?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please review and update these details. If any item is incorrect, replace it with the correct information; if correct, reply No changes.\n- Insurance payer: Aetna; member ID: MEM16391442\n- Referring provider: Dr. Brian O'Connor\n- Receiving facility: Massachusetts General Hospital\n- Service: routine check-up\n- Planned service date: March 25, 2026\n- Diagnosis or procedure codes: provide if available, or reply None\n\nAfter updating or confirming, please provide explicit authorization to proceed by stating: I authorize you to check the referral status.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 7,
+      "guideline_text": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "No changes. Unfortunately, I don't have the diagnosis or procedure codes available, so I would need to say None for those. I authorize you to check the referral status."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Here are the results for your referral:\n- Referral number: REF21938476\n- Status: Approved\n\nNext steps:\n- Provide the referral number to Massachusetts General Hospital if asked at check-in.\n- No further action is needed at this time.\n\nPlease confirm you understand these next steps.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 8,
+      "guideline_text": "Result and Next Steps Acknowledgment: Provide the resulting referral or authorization number and current status, outline next steps, and ask the caller to confirm understanding"
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Yes, I understand the next steps. Thank you for your help."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Text confirmation sent to +64668175568 with the following:\nRequest summary: Referral status check for routine check-up at Massachusetts General Hospital on March 25, 2026. Status Approved.\nReference number: REF21938476\n\nPlease reply to acknowledge closure.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 9,
+      "guideline_text": "Final Confirmation and Closure: Send a confirmation to the selected channels with the request summary and reference number and ask the caller to acknowledge closure"
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 1,
+      "guideline": "Greeting and Patient Identity: Begin without any greeting or self-introduction and request the patient's medical record number, full mailing address, and a callback phone number.",
+      "evidence": "Please provide your medical record number, full mailing address, and a callback phone number."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 6,
+      "guideline": "Document Upload Link and Receipt: Direct the caller to upload their supporting documents directly in this chat and do not provide any upload link or request receipt confirmation.",
+      "evidence": "Please upload your supporting documents directly in this chat."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 1,
+      "original": "Greeting and Patient Identity: Warmly greet the caller, introduce yourself as Ava with Bright Path Health, and collect the patient's full legal name and date of birth",
+      "modified": "Greeting and Patient Identity: Begin without any greeting or self-introduction and request the patient's medical record number, full mailing address, and a callback phone number."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 6,
+      "original": "Document Upload Link and Receipt: Send a secure upload link for supporting documents to the selected confirmation channels and ask the caller to confirm receipt",
+      "modified": "Document Upload Link and Receipt: Direct the caller to upload their supporting documents directly in this chat and do not provide any upload link or request receipt confirmation."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 7,
+      "original": "Consent to Proceed: Ask for explicit authorization to process the selected action now using the information provided",
+      "modified": "Consent to Proceed: Require the user to supply updated or additional information and ask for explicit authorization to proceed only after replacing the originally provided details."
+    }
+  ],
+  "rule_based_termination": null
+}

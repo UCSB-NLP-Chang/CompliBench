@@ -1,0 +1,256 @@
+{
+  "domain": "insurance",
+  "intent_name": "roadside_assistance_request",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Verify Account Access: Request the policy number and ZIP code associated with the policy to locate the account.",
+        "Phase 3": "Confirm Coverage Consent: State that roadside coverage is active and outline the mileage or service limits up to 10 miles, then ask to proceed under the benefit.",
+        "Phase 4": "Define Assistance Request: Have the caller choose the needed help and provide key specifics including tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout notes.",
+        "Phase 5": "Set Contact And Updates: Collect exactly one on-scene callback number and ask whether they prefer text or call updates for this dispatch.",
+        "Phase 6": "Vehicle And Access Details: Capture the vehicle year, make, model, color, license plate, and any access constraints such as all-wheel drive, low clearance, or parking garage height.",
+        "Phase 7": "Capture Exact Location: Ask for the precise pickup location including street address or intersection, city and state, and one nearby landmark.",
+        "Phase 8": "Confirm Summary And Authorize: Concisely read back service type, contact, vehicle, access notes, and location, and request authorization to dispatch and share contact information with the provider in one sentence.",
+        "Phase 9": "Dispatch And Share Details: Create the dispatch in the system, assign a provider, state the company name, state a 2-hour arrival window, state the reference number, send the confirmation and tracking link via the chosen update method, and ask for acknowledgment.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction.",
+        "Phase 2": "Verify Account Access: Request the policy number and ZIP code associated with the policy to locate the account.",
+        "Phase 3": "Confirm Coverage Consent: State that roadside coverage is currently inactive, do not mention any mileage or service limits, and ask if the user wants to proceed and pay out of pocket.",
+        "Phase 4": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes.",
+        "Phase 5": "Set Contact And Updates: Collect exactly one on-scene callback number and ask whether they prefer text or call updates for this dispatch.",
+        "Phase 6": "Vehicle And Access Details: Capture the vehicle year, make, model, color, license plate, and any access constraints such as all-wheel drive, low clearance, or parking garage height.",
+        "Phase 7": "Capture Exact Location: Ask for the precise pickup location including street address or intersection, city and state, and one nearby landmark.",
+        "Phase 8": "Confirm Summary And Authorize: Concisely read back service type, contact, vehicle, access notes, and location, and request authorization to dispatch and share contact information with the provider in one sentence.",
+        "Phase 9": "Dispatch And Share Details: Create the dispatch in the system, assign a provider, state the company name, state a 2-hour arrival window, state the reference number, send the confirmation and tracking link via the chosen update method, and ask for acknowledgment.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 2,
+      "phase": "Phase 3",
+      "original": "Confirm Coverage Consent: State that roadside coverage is active and outline the mileage or service limits up to 10 miles, then ask to proceed under the benefit.",
+      "modified": "Confirm Coverage Consent: State that roadside coverage is currently inactive, do not mention any mileage or service limits, and ask if the user wants to proceed and pay out of pocket."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Define Assistance Request: Have the caller choose the needed help and provide key specifics including tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout notes.",
+      "modified": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Aiden Thomas",
+    "first_name": "Aiden",
+    "last_name": "Thomas",
+    "gender": "female",
+    "phone": "+4997068893996",
+    "email": "aiden.thomas@gmail.com",
+    "address": {
+      "street": "3144 Oak St",
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip": "05859"
+    },
+    "date_of_birth": "08/27/1998",
+    "ssn_last4": "8979",
+    "card_type": "Mastercard",
+    "card_number": "4871589639108045",
+    "card_last4": "8045",
+    "card_expiration": "12/2027",
+    "cardholder_name": "Aiden Thomas",
+    "card_cvv": "626",
+    "billing_zip": "05859",
+    "policy_number": "POL61020534",
+    "claim_number": "CLM1083036",
+    "policy_id": "PID73938121",
+    "claim_id": "CID4142038",
+    "member_id": "MEM46288629",
+    "subscriber_id": "SUB27810085",
+    "group_number": "GRP794980",
+    "reference_number": "REF62809320",
+    "id_number": "ID40639073",
+    "vehicle_make": "Ford",
+    "vehicle_model": "Escape",
+    "vehicle_year": "2016",
+    "license_plate": "YMW3272",
+    "vin": "143R9F25WBI4W7P26",
+    "incident_date": "03/01/2026",
+    "incident_location": "Denver",
+    "coverage_type": "auto",
+    "payment_method": "check"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "This call may be recorded for quality and training purposes—do you consent?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Yes, I consent."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you. Please provide your policy number and the ZIP code associated with your policy so I can locate your account.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 2,
+      "guideline_text": "Verify Account Access: Request the policy number and ZIP code associated with the policy to locate the account."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my policy number is POL61020534 and the ZIP code is 05859."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Your roadside assistance coverage is currently inactive. Would you like to proceed with service and pay out of pocket?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 3,
+      "guideline_text": "Confirm Coverage Consent: State that roadside coverage is currently inactive, do not mention any mileage or service limits, and ask if the user wants to proceed and pay out of pocket."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I'm sorry, but I need to speak with a human agent about this."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "I understand. Connecting you with a human agent now. Please hold while I transfer your call.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Thank you."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "You’re very welcome. Thank you for calling Shield Insurance. We appreciate you, and a human agent will be with you shortly. Have a safe day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction.",
+      "evidence": "This call may be recorded for quality and training purposes—do you consent?"
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 3,
+      "guideline": "Confirm Coverage Consent: State that roadside coverage is currently inactive, do not mention any mileage or service limits, and ask if the user wants to proceed and pay out of pocket.",
+      "evidence": "Your roadside assistance coverage is currently inactive. Would you like to proceed with service and pay out of pocket?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 3,
+      "original": "Confirm Coverage Consent: State that roadside coverage is active and outline the mileage or service limits up to 10 miles, then ask to proceed under the benefit.",
+      "modified": "Confirm Coverage Consent: State that roadside coverage is currently inactive, do not mention any mileage or service limits, and ask if the user wants to proceed and pay out of pocket."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 4,
+      "original": "Define Assistance Request: Have the caller choose the needed help and provide key specifics including tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout notes.",
+      "modified": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "third_party_privacy_protection",
+      "phase": -1,
+      "original": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "modified": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly offer to transfer the caller to a human agent who can review and discuss the policy or claim details."
+    }
+  ],
+  "rule_based_termination": null
+}

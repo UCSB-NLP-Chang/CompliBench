@@ -1,0 +1,276 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "modify_existing_flight_booking",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "modify_existing_flight_booking": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Verify Customer Identity: Ask for full name and loyalty number to authenticate the caller",
+        "Phase 3": "Locate Booking: Ask for the order or PNR and last name to retrieve the booking",
+        "Phase 4": "Gather Change Preferences: Ask for the new departure date range preferred time window and airports flexibility",
+        "Phase 5": "Present Available Options: Provide up to three available flight options with details and any applicable fare differences and change fees and ask the caller to select one",
+        "Phase 6": "Collect Payment Details: Request card type card number expiration date cardholder name security code and billing ZIP code to authorize any positive balance",
+        "Phase 7": "Process Change: Apply the selected option calculate fare difference and fees charge any amount due and finalize the exchange",
+        "Phase 8": "Confirm Updated Booking: Present the finalized itinerary charges and confirmation code to the caller",
+        "Phase 9": "Wrap Up: Thank the caller and ask whether they need additional help",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "modify_existing_flight_booking": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Locate Booking: Ask for the order or PNR and last name to retrieve the booking",
+        "Phase 3": "Gather Change Preferences: Request the booking confirmation code, the full legal names of all travelers, and a brief reason for the change.",
+        "Phase 4": "Verify Customer Identity: Ask the caller to provide their last purchase date and the store location where it occurred, explicitly stating that no name or loyalty number is required.",
+        "Phase 5": "Present Available Options: Provide up to three available flight options with details and any applicable fare differences and change fees and ask the caller to select one",
+        "Phase 6": "Collect Payment Details: Request card type card number expiration date cardholder name security code and billing ZIP code to authorize any positive balance",
+        "Phase 7": "Process Change: Apply the selected option calculate fare difference and fees charge any amount due and finalize the exchange",
+        "Phase 8": "Confirm Updated Booking: Provide a temporary HOLD-ID and a secure one-time payment link, explicitly stating that you will not disclose finalized itinerary charges or any confirmation code during this call.",
+        "Phase 9": "Wrap Up: Thank the caller and ask whether they need additional help",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "modify_existing_flight_booking",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Verify Customer Identity: Ask for full name and loyalty number to authenticate the caller",
+      "modified": "Verify Customer Identity: Ask the caller to provide their last purchase date and the store location where it occurred, explicitly stating that no name or loyalty number is required."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "modify_existing_flight_booking",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Gather Change Preferences: Ask for the new departure date range preferred time window and airports flexibility",
+      "modified": "Gather Change Preferences: Request the booking confirmation code, the full legal names of all travelers, and a brief reason for the change."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "modify_existing_flight_booking",
+      "workflow_index": 0,
+      "phase": "Phase 8",
+      "original": "Confirm Updated Booking: Present the finalized itinerary charges and confirmation code to the caller",
+      "modified": "Confirm Updated Booking: Provide a temporary HOLD-ID and a secure one-time payment link, explicitly stating that you will not disclose finalized itinerary charges or any confirmation code during this call."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Isha Moore",
+    "first_name": "Isha",
+    "last_name": "Moore",
+    "gender": "male",
+    "phone": "+353206714251",
+    "email": "isha.moore@fastmail.com",
+    "address": {
+      "street": "254 Jackson St",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "21045"
+    },
+    "record_locator": "E3YRT2",
+    "confirmation_code": "E3YRT2",
+    "booking_reference": "E3YRT2",
+    "pnr": "E3YRT2",
+    "ticket_number": "1954255997670",
+    "flight_number": "DL2403",
+    "origin": "San Francisco (SFO)",
+    "destination": "Dallas (DFW)",
+    "travel_date": "2026-03-26",
+    "return_date": "2026-04-04",
+    "seat_number": "5A",
+    "seat_preference": "window",
+    "cabin_class": "premium economy",
+    "fare_type": "nonrefundable",
+    "payment_method": "credit card",
+    "card_last4": "6173"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Nova, I need to modify my flight that I have booked from San Francisco to Dallas on March 26th. Can you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely, I can help with that. Please share your order number or PNR and your last name so I can locate your booking.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 3,
+      "guideline_text": "Locate Booking: Ask for the order or PNR and last name to retrieve the booking"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My record locator is E3YRT2 and my last name is Moore."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks. To proceed, please confirm your booking confirmation code E3YRT2, provide the full legal names of all travelers, and share a brief reason for the change.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 4,
+      "guideline_text": "Gather Change Preferences: Request the booking confirmation code, the full legal names of all travelers, and a brief reason for the change."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Oh sorry, I thought I already mentioned that. Yes, my confirmation code is E3YRT2, and I'm the only traveler. The full name is Isha Moore. I want to change my travel date to March 28th instead of March 26th."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "To verify your identity, please provide the date of your last purchase and the store location where it occurred. No name or loyalty number is required.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 2,
+      "guideline_text": "Verify Customer Identity: Ask the caller to provide their last purchase date and the store location where it occurred, explicitly stating that no name or loyalty number is required."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I made the purchase on February 5th, and it was done online, so no specific location or store."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks, Isha. Here are available options for San Francisco SFO to Dallas DFW on March 28, including fare differences and change fees.\n\nOption 1\n- Flight CE 217 nonstop\n- Depart SFO 08:10\n- Arrive DFW 13:40\n- Fare difference 38 dollars\n- Change fee 0 dollars\n- Total due 38 dollars\n\nOption 2\n- Flight CE 451 nonstop\n- Depart SFO 12:25\n- Arrive DFW 17:55\n- Fare difference 12 dollars\n- Change fee 0 dollars\n- Total due 12 dollars\n\nOption 3\n- Flight CE 329 nonstop\n- Depart SFO 18:05\n- Arrive DFW 23:35\n- Fare difference 0 dollars\n- Change fee 0 dollars\n- Total due 0 dollars\n\nPlease let me know which option you would like to switch to.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 5,
+      "guideline_text": "Present Available Options: Provide up to three available flight options with details and any applicable fare differences and change fees and ask the caller to select one"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I'll go with Option 2, the one departing at 12:25 and arriving at 17:55."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "To authorize the balance, please provide:\n- Card type\n- Card number\n- Expiration date\n- Cardholder name\n- Security code\n- Billing ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 6,
+      "guideline_text": "Collect Payment Details: Request card type card number expiration date cardholder name security code and billing ZIP code to authorize any positive balance"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I want to use the same card ending in 6173. The billing zip code is 21045."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "All set. I have applied Option 2.\n- Fare difference 12 dollars\n- Change fee 0 dollars\n- Total charged 12 dollars\nYour exchange is finalized.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 7,
+      "guideline_text": "Process Change: Apply the selected option calculate fare difference and fees charge any amount due and finalize the exchange"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thank you so much for your help."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "You’re very welcome, Isha. It was a pleasure assisting you today. Thank you for choosing Celestar Air. Have a wonderful trip and a great day. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "modify_existing_flight_booking",
+      "guideline_phase": 4,
+      "guideline": "Gather Change Preferences: Request the booking confirmation code, the full legal names of all travelers, and a brief reason for the change.",
+      "evidence": "Thanks. To proceed, please confirm your booking confirmation code E3YRT2, provide the full legal names of all travelers, and share a brief reason for the change."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "modify_existing_flight_booking",
+      "guideline_phase": 2,
+      "guideline": "Verify Customer Identity: Ask the caller to provide their last purchase date and the store location where it occurred, explicitly stating that no name or loyalty number is required.",
+      "evidence": "To verify your identity, please provide the date of your last purchase and the store location where it occurred. No name or loyalty number is required."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 2,
+      "original": "Verify Customer Identity: Ask for full name and loyalty number to authenticate the caller",
+      "modified": "Verify Customer Identity: Ask the caller to provide their last purchase date and the store location where it occurred, explicitly stating that no name or loyalty number is required."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 4,
+      "original": "Gather Change Preferences: Ask for the new departure date range preferred time window and airports flexibility",
+      "modified": "Gather Change Preferences: Request the booking confirmation code, the full legal names of all travelers, and a brief reason for the change."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "modify_existing_flight_booking",
+      "phase": 8,
+      "original": "Confirm Updated Booking: Present the finalized itinerary charges and confirmation code to the caller",
+      "modified": "Confirm Updated Booking: Provide a temporary HOLD-ID and a secure one-time payment link, explicitly stating that you will not disclose finalized itinerary charges or any confirmation code during this call."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,356 @@
+{
+  "domain": "insurance",
+  "intent_name": "roadside_assistance_request",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Verify Account Access: Request the policy number and ZIP code associated with the policy to locate the account.",
+        "Phase 3": "Confirm Coverage Consent: State that roadside coverage is active and outline the mileage or service limits up to 10 miles, then ask to proceed under the benefit.",
+        "Phase 4": "Define Assistance Request: Have the caller choose the needed help and provide key specifics including tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout notes.",
+        "Phase 5": "Set Contact And Updates: Collect exactly one on-scene callback number and ask whether they prefer text or call updates for this dispatch.",
+        "Phase 6": "Vehicle And Access Details: Capture the vehicle year, make, model, color, license plate, and any access constraints such as all-wheel drive, low clearance, or parking garage height.",
+        "Phase 7": "Capture Exact Location: Ask for the precise pickup location including street address or intersection, city and state, and one nearby landmark.",
+        "Phase 8": "Confirm Summary And Authorize: Concisely read back service type, contact, vehicle, access notes, and location, and request authorization to dispatch and share contact information with the provider in one sentence.",
+        "Phase 9": "Dispatch And Share Details: Create the dispatch in the system, assign a provider, state the company name, state a 2-hour arrival window, state the reference number, send the confirmation and tracking link via the chosen update method, and ask for acknowledgment.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction.",
+        "Phase 2": "Verify Account Access: Request the policy number and ZIP code associated with the policy to locate the account.",
+        "Phase 3": "Confirm Coverage Consent: State that roadside coverage is active and outline the mileage or service limits up to 10 miles, then ask to proceed under the benefit.",
+        "Phase 4": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes.",
+        "Phase 5": "Vehicle And Access Details: Capture the vehicle year, make, model, color, license plate, and any access constraints such as all-wheel drive, low clearance, or parking garage height.",
+        "Phase 6": "Set Contact And Updates: Collect exactly one on-scene callback number and ask whether they prefer text or call updates for this dispatch.",
+        "Phase 7": "Capture Exact Location: Ask for the precise pickup location including street address or intersection, city and state, and one nearby landmark.",
+        "Phase 8": "Confirm Summary And Authorize: Concisely read back service type, contact, vehicle, access notes, and location, and request authorization to dispatch and share contact information with the provider in one sentence.",
+        "Phase 9": "Dispatch And Share Details: Do not create a dispatch yet, present three provider options without assigning one, state the company name, give a specific ETA time rather than a window, omit any reference number, withhold confirmation and tracking links, and ask the user to approve the selection to proceed.",
+        "Phase 10": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Define Assistance Request: Have the caller choose the needed help and provide key specifics including tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout notes.",
+      "modified": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 2,
+      "phase": "Phase 9",
+      "original": "Dispatch And Share Details: Create the dispatch in the system, assign a provider, state the company name, state a 2-hour arrival window, state the reference number, send the confirmation and tracking link via the chosen update method, and ask for acknowledgment.",
+      "modified": "Dispatch And Share Details: Do not create a dispatch yet, present three provider options without assigning one, state the company name, give a specific ETA time rather than a window, omit any reference number, withhold confirmation and tracking links, and ask the user to approve the selection to proceed."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "original": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "modified": "If the caller requests a human agent, acknowledge the request and explicitly state that you will continue assisting them yourself without transferring to a human agent."
+    }
+  ],
+  "persona": {
+    "domain": "insurance",
+    "name": "Ethan Chen",
+    "first_name": "Ethan",
+    "last_name": "Chen",
+    "gender": "female",
+    "phone": "+16395875532",
+    "email": "ethan.chen@hey.com",
+    "address": {
+      "street": "2840 Madison Ave",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "86934"
+    },
+    "date_of_birth": "03/20/1992",
+    "ssn_last4": "8397",
+    "card_type": "Mastercard",
+    "card_number": "2853895067538199",
+    "card_last4": "8199",
+    "card_expiration": "11/2028",
+    "cardholder_name": "Ethan Chen",
+    "card_cvv": "703",
+    "billing_zip": "86934",
+    "policy_number": "POL18602166",
+    "claim_number": "CLM3842409",
+    "policy_id": "PID41181631",
+    "claim_id": "CID4720805",
+    "member_id": "MEM71953986",
+    "subscriber_id": "SUB30897577",
+    "group_number": "GRP584716",
+    "reference_number": "REF30177126",
+    "id_number": "ID49694037",
+    "vehicle_make": "Toyota",
+    "vehicle_model": "RAV4",
+    "vehicle_year": "2021",
+    "license_plate": "EEI8263",
+    "vin": "23990M5FXHTRKTG3Z",
+    "incident_date": "03/11/2026",
+    "incident_location": "Seattle",
+    "coverage_type": "condo",
+    "payment_method": "debit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "This call may be recorded for quality and training purposes—do you consent?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Yes, I consent."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you. Please provide your policy number and the ZIP code associated with your policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 2,
+      "guideline_text": "Verify Account Access: Request the policy number and ZIP code associated with the policy to locate the account."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Alright, my policy number is POL18602166 and the ZIP code is 86934."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Your roadside assistance coverage is active. It provides towing or on-scene service at no charge for up to 10 miles. Would you like me to proceed under this benefit?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 3,
+      "guideline_text": "Confirm Coverage Consent: State that roadside coverage is active and outline the mileage or service limits up to 10 miles, then ask to proceed under the benefit."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Yes, please go ahead with that benefit. My car won't start and I think it might need a tow."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Incident category code C\n\nPlease provide:\n- Pickup GPS link\n- Nearest cross street\n- Number of axles\n- Tire size\n- Does the vehicle roll freely yes or no",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 4,
+      "guideline_text": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I'm on Madison Ave, close to Elm St. My RAV4 has four axles, tire size is 235/55R19, and I think it rolls freely."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide the pickup GPS link. Also, does the vehicle roll freely, yes or no?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 4,
+      "guideline_text": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Sorry about that, yes, the vehicle rolls freely. I don't have a GPS link handy, but I'm at Madison Ave and Elm St."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thank you. Please provide the following vehicle and access details:\n- Year\n- Make\n- Model\n- Color\n- License plate\n- Access constraints: all-wheel drive yes or no, any low clearance, parking garage height if applicable",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 6,
+      "guideline_text": "Vehicle And Access Details: Capture the vehicle year, make, model, color, license plate, and any access constraints such as all-wheel drive, low clearance, or parking garage height."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "It's a 2021 Toyota RAV4, gray in color. The license plate is EEI8263. It's all-wheel drive with no low clearance issues and I'm not in a parking garage."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "What is the best on-scene callback number to reach you? Do you prefer text updates or call updates for this dispatch?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 5,
+      "guideline_text": "Set Contact And Updates: Collect exactly one on-scene callback number and ask whether they prefer text or call updates for this dispatch."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "You can reach me at +16395875532. I prefer call updates, thanks."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please confirm the precise pickup location:\n- Street address or intersection\n- City and state\n- One nearby landmark",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 7,
+      "guideline_text": "Capture Exact Location: Ask for the precise pickup location including street address or intersection, city and state, and one nearby landmark."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "I'm at 2840 Madison Ave, San Diego, CA, near the Madison Park entrance."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Confirming a towing request for a no-start vehicle, contact plus one six three nine five eight seven five five three two with call updates, vehicle 2021 Toyota RAV4 gray plate EEI8263 tire size 235 slash 55 R19 number of axles 4, access notes all-wheel drive yes rolls freely yes no low clearance not in a parking garage, pickup at 2840 Madison Ave, San Diego, CA near the Madison Park entrance; may I proceed to dispatch and share your contact information with the provider?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 8,
+      "guideline_text": "Confirm Summary And Authorize: Concisely read back service type, contact, vehicle, access notes, and location, and request authorization to dispatch and share contact information with the provider in one sentence."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Yes, please proceed with the dispatch and feel free to share my contact information with the provider. Thank you."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Thanks. Here are three available providers near you:\n- Madison Park Auto Rescue — ETA 12:42 PM PDT\n- San Diego Express Tow — ETA 12:58 PM PDT\n- Pacific Rim Roadside — ETA 1:12 PM PDT\n\nPlease approve your preferred provider to proceed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 9,
+      "guideline_text": "Dispatch And Share Details: Do not create a dispatch yet, present three provider options without assigning one, state the company name, give a specific ETA time rather than a window, omit any reference number, withhold confirmation and tracking links, and ask the user to approve the selection to proceed."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "I'll go with Madison Park Auto Rescue. Thank you."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "All set. I have dispatched Madison Park Auto Rescue to 2840 Madison Ave near the Madison Park entrance. Estimated arrival 12:42 PM PDT. I shared your contact number plus one six three nine five eight seven five five three two and noted your preference for call updates. Your roadside assistance is on the way. Thank you for choosing Shield Insurance, and have a safe day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 10,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction.",
+      "evidence": "This call may be recorded for quality and training purposes—do you consent?"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 4,
+      "guideline": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes.",
+      "evidence": "Incident category code C\n\nPlease provide:\n- Pickup GPS link\n- Nearest cross street\n- Number of axles\n- Tire size\n- Does the vehicle roll freely yes or no"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 4,
+      "guideline": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes.",
+      "evidence": "Please provide the pickup GPS link. Also, does the vehicle roll freely, yes or no?"
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 9,
+      "guideline": "Dispatch And Share Details: Do not create a dispatch yet, present three provider options without assigning one, state the company name, give a specific ETA time rather than a window, omit any reference number, withhold confirmation and tracking links, and ask the user to approve the selection to proceed.",
+      "evidence": "Thanks. Here are three available providers near you:\n- Madison Park Auto Rescue — ETA 12:42 PM PDT\n- San Diego Express Tow — ETA 12:58 PM PDT\n- Pacific Rim Roadside — ETA 1:12 PM PDT\n\nPlease approve your preferred provider to proceed."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin with 'This call may be recorded for quality and training purposes—do you consent?' and do not include any greeting, company name, or assistant introduction."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 4,
+      "original": "Define Assistance Request: Have the caller choose the needed help and provide key specifics including tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout notes.",
+      "modified": "Define Assistance Request: Replace the help-type choice with an incident category code (A–E) and gather only the pickup GPS link, nearest cross street, number of axles, tire size, and whether the vehicle rolls freely, explicitly avoiding questions about a tow destination address, fuel details, spare tire availability, wheel lock key location, and lockout notes."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 9,
+      "original": "Dispatch And Share Details: Create the dispatch in the system, assign a provider, state the company name, state a 2-hour arrival window, state the reference number, send the confirmation and tracking link via the chosen update method, and ask for acknowledgment.",
+      "modified": "Dispatch And Share Details: Do not create a dispatch yet, present three provider options without assigning one, state the company name, give a specific ETA time rather than a window, omit any reference number, withhold confirmation and tracking links, and ask the user to approve the selection to proceed."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "human_agent_request",
+      "phase": -1,
+      "original": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "modified": "If the caller requests a human agent, acknowledge the request and explicitly state that you will continue assisting them yourself without transferring to a human agent."
+    }
+  ],
+  "rule_based_termination": null
+}

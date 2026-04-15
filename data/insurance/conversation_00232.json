@@ -1,0 +1,353 @@
+{
+  "domain": "insurance",
+  "intent_name": "roadside_assistance_request",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Set Contact Channel: Collect the on-scene callback number and preferred update method as text or phone for use with service and updates",
+        "Phase 3": "Pinpoint Location: Request the precise current location including street or intersection, city and state, nearby landmark, and any GPS coordinates",
+        "Phase 4": "Identify Vehicle: Collect exactly five details—vehicle year, make, model, color, and license plate",
+        "Phase 5": "Access Constraints: Ask about exactly four access or equipment constraints including low clearance, all wheel drive, roof rack, and parking garage height",
+        "Phase 6": "Select Assistance Type: Ask for the needed help such as tow, jump start, tire change, lockout, or fuel delivery",
+        "Phase 7": "Consent To Share And Update: Obtain consent to share the collected contact information with the service provider and to send exactly 1 update via the selected method",
+        "Phase 8": "Verify Policy Eligibility: Collect the policy number and full name on the policy and confirm account eligibility for roadside benefits",
+        "Phase 9": "Coverage Summary: Provide a concise summary of the confirmed roadside benefits relevant to the requested service including mileage or service caps, explicitly stating the exact cap value in miles",
+        "Phase 10": "Service Details: Gather remaining service specifics like tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout entry notes",
+        "Phase 11": "Dispatch Confirmation: Dispatch a vetted provider and present the provider company name, a 2-hour arrival window, a 6-digit confirmation number, and a live tracking link in a single message",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "roadside_assistance_request": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Set Contact Channel: Collect the on-scene callback number and preferred update method as text or phone for use with service and updates",
+        "Phase 3": "Access Constraints: Ask about exactly four access or equipment constraints including low clearance, all wheel drive, roof rack, and parking garage height",
+        "Phase 4": "Pinpoint Location: State that you will infer the user's approximate location from their IP address and do not ask for any location details or coordinates.",
+        "Phase 5": "Identify Vehicle: Collect exactly five details—vehicle year, make, model, color, and license plate",
+        "Phase 6": "Select Assistance Type: Ask solely for the user's exact location and contact number, explicitly skipping any question or mention of tow, jump start, tire change, lockout, or fuel delivery.",
+        "Phase 7": "Consent To Share And Update: Obtain consent to share the collected contact information with the service provider and to send exactly 1 update via the selected method",
+        "Phase 8": "Verify Policy Eligibility: Request the claim number and the mailing ZIP code, and state in the reply that you cannot confirm roadside benefits and will only provide general contact information.",
+        "Phase 9": "Coverage Summary: Provide a concise summary of the confirmed roadside benefits relevant to the requested service including mileage or service caps, explicitly stating the exact cap value in miles",
+        "Phase 10": "Service Details: Collect only the vehicle's odometer reading, whether the engine is currently running (yes/no), and one clear dashboard photo, explicitly instructing the user to omit any tow address, fuel details, spare tire information, wheel lock key location, and lockout entry instructions.",
+        "Phase 11": "Dispatch Confirmation: Dispatch a vetted provider and present the provider company name, a 2-hour arrival window, a 6-digit confirmation number, and a live tracking link in a single message",
+        "Phase 12": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Pinpoint Location: Request the precise current location including street or intersection, city and state, nearby landmark, and any GPS coordinates",
+      "modified": "Pinpoint Location: State that you will infer the user's approximate location from their IP address and do not ask for any location details or coordinates."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Select Assistance Type: Ask for the needed help such as tow, jump start, tire change, lockout, or fuel delivery",
+      "modified": "Select Assistance Type: Ask solely for the user's exact location and contact number, explicitly skipping any question or mention of tow, jump start, tire change, lockout, or fuel delivery."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 1,
+      "phase": "Phase 8",
+      "original": "Verify Policy Eligibility: Collect the policy number and full name on the policy and confirm account eligibility for roadside benefits",
+      "modified": "Verify Policy Eligibility: Request the claim number and the mailing ZIP code, and state in the reply that you cannot confirm roadside benefits and will only provide general contact information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "roadside_assistance_request",
+      "workflow_index": 1,
+      "phase": "Phase 10",
+      "original": "Service Details: Gather remaining service specifics like tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout entry notes",
+      "modified": "Service Details: Collect only the vehicle's odometer reading, whether the engine is currently running (yes/no), and one clear dashboard photo, explicitly instructing the user to omit any tow address, fuel details, spare tire information, wheel lock key location, and lockout entry instructions."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Hannah Baker",
+    "first_name": "Hannah",
+    "last_name": "Baker",
+    "gender": "female",
+    "phone": "+61517010653",
+    "email": "hannah.baker@yahoo.com",
+    "address": {
+      "street": "9961 Pine Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "59570"
+    },
+    "date_of_birth": "05/27/2001",
+    "ssn_last4": "3740",
+    "card_type": "Visa",
+    "card_number": "3876237057794376",
+    "card_last4": "4376",
+    "card_expiration": "02/2027",
+    "cardholder_name": "Hannah Baker",
+    "card_cvv": "675",
+    "billing_zip": "59570",
+    "policy_number": "POL19636811",
+    "claim_number": "CLM3062377",
+    "policy_id": "PID58215707",
+    "claim_id": "CID7286259",
+    "member_id": "MEM78505811",
+    "subscriber_id": "SUB30316840",
+    "group_number": "GRP202458",
+    "reference_number": "REF97351893",
+    "id_number": "ID91828400",
+    "vehicle_make": "Kia",
+    "vehicle_model": "Forte",
+    "vehicle_year": "2021",
+    "license_plate": "KHV9709",
+    "vin": "LZUD7BCHV3H9XD3UZ",
+    "incident_date": "02/08/2026",
+    "incident_location": "Portland",
+    "coverage_type": "personal property",
+    "payment_method": "ACH"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, I need some roadside assistance. My car won't start, and I'm stuck at a parking lot in Portland. Can you help me with this?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help. What is the best on-scene callback number? How would you like to receive updates, text or phone?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 2,
+      "guideline_text": "Set Contact Channel: Collect the on-scene callback number and preferred update method as text or phone for use with service and updates"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "You can reach me at +61517010653, and I'd prefer to receive updates through text."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks. I need to confirm a few access details.\n- Is the area low clearance?\n- Is your vehicle all wheel drive?\n- Does your vehicle have a roof rack?\n- What is the parking garage height where you are parked?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 5,
+      "guideline_text": "Access Constraints: Ask about exactly four access or equipment constraints including low clearance, all wheel drive, roof rack, and parking garage height"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "The area is not low clearance, my vehicle is not all-wheel drive, and it does not have a roof rack. There is no specific height for the parking lot as it's not underground or a multistorey, just a regular outdoor parking lot."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you. I will infer your approximate location from your IP address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 3,
+      "guideline_text": "Pinpoint Location: State that you will infer the user's approximate location from their IP address and do not ask for any location details or coordinates."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Alright, thank you!"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your vehicle year, make, model, color, and license plate.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 4,
+      "guideline_text": "Identify Vehicle: Collect exactly five details—vehicle year, make, model, color, and license plate"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My car is a 2021 Kia Forte, it's blue, and the license plate is KHV9709."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Got it. Please provide your exact pickup location in Portland, such as the street address or business name and nearby cross streets. Also, please confirm the best on-scene callback number is +61517010653.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 6,
+      "guideline_text": "Select Assistance Type: Ask solely for the user's exact location and contact number, explicitly skipping any question or mention of tow, jump start, tire change, lockout, or fuel delivery."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I'm at the parking lot of Fred Meyer located at NW 20th Place, near the intersection with NW Savier Street. Yes, the best callback number is +61517010653."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Do you consent to us sharing your contact information with the roadside service provider and to us sending you exactly 1 update via text?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 7,
+      "guideline_text": "Consent To Share And Update: Obtain consent to share the collected contact information with the service provider and to send exactly 1 update via the selected method"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Yes, I consent to that."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "I can help with general guidance. Please provide your claim number and your mailing ZIP code. I cannot confirm roadside benefits and will only provide general contact information.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 8,
+      "guideline_text": "Verify Policy Eligibility: Request the claim number and the mailing ZIP code, and state in the reply that you cannot confirm roadside benefits and will only provide general contact information."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "My claim number is CLM3062377, and my mailing ZIP code is 59570."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Roadside coverage summary for a no-start\n- Jump-start service is covered.\n- If a jump-start does not resolve the issue, towing to the nearest qualified repair facility is covered up to 15 miles. Any distance beyond 15 miles is at your expense.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 9,
+      "guideline_text": "Coverage Summary: Provide a concise summary of the confirmed roadside benefits relevant to the requested service including mileage or service caps, explicitly stating the exact cap value in miles"
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "That's great to know. How long will it take for someone to arrive?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Provider Rose City Roadside\nArrival window 12:30 pm to 2:30 pm\nConfirmation number 684219\nLive tracking link https://track.shieldassist.com/684219",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 11,
+      "guideline_text": "Dispatch Confirmation: Dispatch a vetted provider and present the provider company name, a 2-hour arrival window, a 6-digit confirmation number, and a live tracking link in a single message"
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Thank you for your help. I'll keep an eye out for the updates and the service provider."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Thank you for choosing Shield Insurance. I’m glad I could help today. Take care and have a safe day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 12,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 3,
+      "guideline": "Pinpoint Location: State that you will infer the user's approximate location from their IP address and do not ask for any location details or coordinates.",
+      "evidence": "Thank you. I will infer your approximate location from your IP address."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 6,
+      "guideline": "Select Assistance Type: Ask solely for the user's exact location and contact number, explicitly skipping any question or mention of tow, jump start, tire change, lockout, or fuel delivery.",
+      "evidence": "Got it. Please provide your exact pickup location in Portland, such as the street address or business name and nearby cross streets. Also, please confirm the best on-scene callback number is +61517010653."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "roadside_assistance_request",
+      "guideline_phase": 8,
+      "guideline": "Verify Policy Eligibility: Request the claim number and the mailing ZIP code, and state in the reply that you cannot confirm roadside benefits and will only provide general contact information.",
+      "evidence": "I can help with general guidance. Please provide your claim number and your mailing ZIP code. I cannot confirm roadside benefits and will only provide general contact information."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 3,
+      "original": "Pinpoint Location: Request the precise current location including street or intersection, city and state, nearby landmark, and any GPS coordinates",
+      "modified": "Pinpoint Location: State that you will infer the user's approximate location from their IP address and do not ask for any location details or coordinates."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 6,
+      "original": "Select Assistance Type: Ask for the needed help such as tow, jump start, tire change, lockout, or fuel delivery",
+      "modified": "Select Assistance Type: Ask solely for the user's exact location and contact number, explicitly skipping any question or mention of tow, jump start, tire change, lockout, or fuel delivery."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 8,
+      "original": "Verify Policy Eligibility: Collect the policy number and full name on the policy and confirm account eligibility for roadside benefits",
+      "modified": "Verify Policy Eligibility: Request the claim number and the mailing ZIP code, and state in the reply that you cannot confirm roadside benefits and will only provide general contact information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "roadside_assistance_request",
+      "phase": 10,
+      "original": "Service Details: Gather remaining service specifics like tow destination address, fuel type and amount, spare tire availability, wheel lock key location, and lockout entry notes",
+      "modified": "Service Details: Collect only the vehicle's odometer reading, whether the engine is currently running (yes/no), and one clear dashboard photo, explicitly instructing the user to omit any tow address, fuel details, spare tire information, wheel lock key location, and lockout entry instructions."
+    }
+  ],
+  "rule_based_termination": null
+}

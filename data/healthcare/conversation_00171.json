@@ -1,0 +1,388 @@
+{
+  "domain": "healthcare",
+  "intent_name": "patient_profile_and_contact_updates",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can assist today.",
+        "Phase 2": "Secure Identity Match: Ask for full legal name, date of birth, and last known phone number to retrieve the patient record.",
+        "Phase 3": "Update Session Consent: Explain that you will guide a quick section-by-section review to capture changes and ask for permission to proceed.",
+        "Phase 4": "Personal Identity Updates: Ask for any changes to legal name, preferred name, and pronouns in one reply and save them to the profile.",
+        "Phase 5": "Phone And Email Updates: Ask for the primary mobile number with country code, an alternate phone number, and the preferred email address in one reply and update these fields in the system.",
+        "Phase 6": "Address Update: Ask for the complete mailing address including street, unit, city, state, and ZIP code in one reply and save it to the profile.",
+        "Phase 7": "Communication Preferences: Ask the caller to choose a primary notification channel and a backup channel from call, text, and email and record the selections.",
+        "Phase 8": "Emergency Contact: Ask for the emergency contact's full name, relationship, phone number, email address, and permission to be contacted and add or update this contact on the profile.",
+        "Phase 9": "Insurance Details: Ask for insurance carrier, plan name, member ID, group number, policyholder name, policyholder date of birth, and claims mailing address in one reply and record the details.",
+        "Phase 10": "Insurance Upload Link Delivery: Send a secure upload link for insurance card images via the saved primary mobile number and preferred email address now.",
+        "Phase 11": "Change Review: Read back each updated field exactly as saved and request a single confirmation to finalize all updates.",
+        "Phase 12": "Confirmation Delivery: Send the confirmation summary through the selected primary notification channel.",
+        "Phase 13": "Wrap-Up: Thank the caller and close the conversation."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can assist today.",
+        "Phase 2": "Secure Identity Match: Ask for full legal name, date of birth, and last known phone number to retrieve the patient record.",
+        "Phase 3": "Update Session Consent: Instruct the user to upload a single consolidated changelog and state you will begin processing it immediately with no section-by-section walkthrough or permission request.",
+        "Phase 4": "Address Update: Ask for the complete mailing address including street, unit, city, state, and ZIP code in one reply and save it to the profile.",
+        "Phase 5": "Personal Identity Updates: Ask for any changes to legal name, preferred name, and pronouns in one reply and save them to the profile.",
+        "Phase 6": "Phone And Email Updates: Ask for the primary mobile number with country code, an alternate phone number, and the preferred email address in one reply and update these fields in the system.",
+        "Phase 7": "Emergency Contact: Ask for the emergency contact's full name, relationship, phone number, email address, and permission to be contacted and add or update this contact on the profile.",
+        "Phase 8": "Communication Preferences: Ask the caller to choose a primary notification channel and a backup channel from call, text, and email and record the selections.",
+        "Phase 9": "Insurance Details: Request a clear photo of the front and back of the insurance card and explicitly state that you will not accept or record any typed insurance details.",
+        "Phase 10": "Insurance Upload Link Delivery: Send a secure upload link for insurance card images via the saved primary mobile number and preferred email address now.",
+        "Phase 11": "Change Review: Read back each updated field exactly as saved and request a single confirmation to finalize all updates.",
+        "Phase 12": "Confirmation Delivery: Request explicit user consent by asking for the exact word 'APPROVE' before delivering the confirmation summary and do not send it through any channel until that word is received.",
+        "Phase 13": "Wrap-Up: Do not thank the caller and instead verify their preferred contact method and schedule a follow-up without closing the session."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Update Session Consent: Explain that you will guide a quick section-by-section review to capture changes and ask for permission to proceed.",
+      "modified": "Update Session Consent: Instruct the user to upload a single consolidated changelog and state you will begin processing it immediately with no section-by-section walkthrough or permission request."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 9",
+      "original": "Insurance Details: Ask for insurance carrier, plan name, member ID, group number, policyholder name, policyholder date of birth, and claims mailing address in one reply and record the details.",
+      "modified": "Insurance Details: Request a clear photo of the front and back of the insurance card and explicitly state that you will not accept or record any typed insurance details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 12",
+      "original": "Confirmation Delivery: Send the confirmation summary through the selected primary notification channel.",
+      "modified": "Confirmation Delivery: Request explicit user consent by asking for the exact word 'APPROVE' before delivering the confirmation summary and do not send it through any channel until that word is received."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 1,
+      "phase": "Phase 13",
+      "original": "Wrap-Up: Thank the caller and close the conversation.",
+      "modified": "Wrap-Up: Do not thank the caller and instead verify their preferred contact method and schedule a follow-up without closing the session."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Hayden Rossi",
+    "first_name": "Hayden",
+    "last_name": "Rossi",
+    "gender": "male",
+    "phone": "+46944837412",
+    "email": "hayden.rossi@example.net",
+    "address": {
+      "street": "528 Center St",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "29414"
+    },
+    "date_of_birth": "09/01/1966",
+    "ssn_last4": "9099",
+    "card_type": "American Express",
+    "card_number": "3648887848592081",
+    "card_last4": "2081",
+    "card_expiration": "12/2028",
+    "cardholder_name": "Hayden Rossi",
+    "card_cvv": "5714",
+    "billing_zip": "29414",
+    "insurance_carrier": "Highmark",
+    "insurance_plan_name": "Choice Plus POS",
+    "member_id": "MEM70793615",
+    "group_number": "GRP618561",
+    "subscriber_id": "SUB74443639",
+    "provider_name": "Dr. William Harris",
+    "provider_npi": "2468013579",
+    "appointment_date": "04/04/2026",
+    "appointment_time": "4:15 PM",
+    "visit_type": "in-person",
+    "household_size": 3,
+    "monthly_income": 8828,
+    "patient_account_number": "PA49112588",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Rite Aid"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava with Bright Path Health. How can I assist you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 1,
+      "guideline_text": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can assist today."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I need to update some of my contact and personal information on file like my phone number and email address. Can you help with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. To locate your record securely, please provide:\n- Full legal name\n- Date of birth\n- Last phone number we would have on file",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 2,
+      "guideline_text": "Secure Identity Match: Ask for full legal name, date of birth, and last known phone number to retrieve the patient record."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My full legal name is Hayden Rossi, my date of birth is September 1, 1966, and the last phone number I think you have on file is +46944837412."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please upload a single consolidated changelog that lists all updates you want made to your contact and personal information. I will begin processing it immediately upon receipt with no section-by-section walkthrough or additional permission needed.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 3,
+      "guideline_text": "Update Session Consent: Instruct the user to upload a single consolidated changelog and state you will begin processing it immediately with no section-by-section walkthrough or permission request."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Sure, so my new phone number is the same. However, I do need to update my email address to hayden.rossi.new@example.com."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please provide your complete mailing address with all of the following:\n- Street address\n- Unit or apartment if applicable\n- City\n- State\n- ZIP code",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 6,
+      "guideline_text": "Address Update: Ask for the complete mailing address including street, unit, city, state, and ZIP code in one reply and save it to the profile."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My mailing address is 528 Center St, Los Angeles, CA, 29414."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Do you have any changes to your legal name, preferred name, or pronouns? If yes, please provide the updated legal name, your preferred name, and your pronouns. I will save them to your profile.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 4,
+      "guideline_text": "Personal Identity Updates: Ask for any changes to legal name, preferred name, and pronouns in one reply and save them to the profile."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "No changes there, keep those details as they are."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please provide:\n- Primary mobile number with country code\n- Alternate phone number\n- Preferred email address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 5,
+      "guideline_text": "Phone And Email Updates: Ask for the primary mobile number with country code, an alternate phone number, and the preferred email address in one reply and update these fields in the system."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I would like to keep my primary mobile number as +46944837412. I don't have an alternate phone number, and my preferred email should now be hayden.rossi.new@example.com."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please provide your emergency contact details:\n- Full name\n- Relationship to you\n- Phone number with country code\n- Email address\n- Confirmation that we have your permission to contact them and to add or update this contact on your profile",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 8,
+      "guideline_text": "Emergency Contact: Ask for the emergency contact's full name, relationship, phone number, email address, and permission to be contacted and add or update this contact on the profile."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "My emergency contact is Sarah Rossi. She is my spouse and can be reached at +46555777222 or sarah.rossi@example.net. You definitely have my permission to add or update this contact in my profile."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please choose your primary notification channel and a backup channel from call, text, and email.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 7,
+      "guideline_text": "Communication Preferences: Ask the caller to choose a primary notification channel and a backup channel from call, text, and email and record the selections."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "My primary notification channel should be email, and the backup can be text."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Please upload clear photos of the front and back of your insurance card. I cannot accept or record any typed insurance details; images of the card are required.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 9,
+      "guideline_text": "Insurance Details: Request a clear photo of the front and back of the insurance card and explicitly state that you will not accept or record any typed insurance details."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Unfortunately, I can't send a photo of my insurance card right now. However, I can tell you that my insurance carrier is Highmark, and my insurance plan is Choice Plus POS. Let me know if that works for now."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "I have sent a secure upload link for your insurance card images by text to +46944837412 and by email to hayden.rossi.new@example.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 10,
+      "guideline_text": "Insurance Upload Link Delivery: Send a secure upload link for insurance card images via the saved primary mobile number and preferred email address now."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Okay, thank you for that. Is there anything else you need from me at this point?"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Here is a review of the updates I have saved:\n- Preferred email address: hayden.rossi.new@example.com\n- Mailing address: 528 Center St, Los Angeles, CA, 29414\n- Emergency contact full name: Sarah Rossi\n- Emergency contact relationship: Spouse\n- Emergency contact phone: +46555777222\n- Emergency contact email: sarah.rossi@example.net\n- Permission to contact this person and to add or update on your profile: Yes\n- Primary notification channel: Email\n- Backup notification channel: Text\n\nPlease confirm that all of the above are correct so I can finalize all updates.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 11,
+      "guideline_text": "Change Review: Read back each updated field exactly as saved and request a single confirmation to finalize all updates."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Yes, all those details are correct. Please go ahead and finalize the updates."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Please reply with the exact word APPROVE.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 12,
+      "guideline_text": "Confirmation Delivery: Request explicit user consent by asking for the exact word 'APPROVE' before delivering the confirmation summary and do not send it through any channel until that word is received."
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "APPROVE"
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "Please confirm that your preferred contact method is email. I have scheduled a follow-up for Monday, June 17, 2024 at 10:00 AM Pacific via email.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 13,
+      "guideline_text": "Wrap-Up: Do not thank the caller and instead verify their preferred contact method and schedule a follow-up without closing the session."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 3,
+      "guideline": "Update Session Consent: Instruct the user to upload a single consolidated changelog and state you will begin processing it immediately with no section-by-section walkthrough or permission request.",
+      "evidence": "Please upload a single consolidated changelog that lists all updates you want made to your contact and personal information. I will begin processing it immediately upon receipt with no section-by-section walkthrough or additional permission needed."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 9,
+      "guideline": "Insurance Details: Request a clear photo of the front and back of the insurance card and explicitly state that you will not accept or record any typed insurance details.",
+      "evidence": "Please upload clear photos of the front and back of your insurance card. I cannot accept or record any typed insurance details; images of the card are required."
+    },
+    {
+      "turn_index": 22,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 12,
+      "guideline": "Confirmation Delivery: Request explicit user consent by asking for the exact word 'APPROVE' before delivering the confirmation summary and do not send it through any channel until that word is received.",
+      "evidence": "Please reply with the exact word APPROVE."
+    },
+    {
+      "turn_index": 24,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "patient_profile_and_contact_updates",
+      "guideline_phase": 13,
+      "guideline": "Wrap-Up: Do not thank the caller and instead verify their preferred contact method and schedule a follow-up without closing the session.",
+      "evidence": "Please confirm that your preferred contact method is email. I have scheduled a follow-up for Monday, June 17, 2024 at 10:00 AM Pacific via email."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 3,
+      "original": "Update Session Consent: Explain that you will guide a quick section-by-section review to capture changes and ask for permission to proceed.",
+      "modified": "Update Session Consent: Instruct the user to upload a single consolidated changelog and state you will begin processing it immediately with no section-by-section walkthrough or permission request."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 9,
+      "original": "Insurance Details: Ask for insurance carrier, plan name, member ID, group number, policyholder name, policyholder date of birth, and claims mailing address in one reply and record the details.",
+      "modified": "Insurance Details: Request a clear photo of the front and back of the insurance card and explicitly state that you will not accept or record any typed insurance details."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 12,
+      "original": "Confirmation Delivery: Send the confirmation summary through the selected primary notification channel.",
+      "modified": "Confirmation Delivery: Request explicit user consent by asking for the exact word 'APPROVE' before delivering the confirmation summary and do not send it through any channel until that word is received."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 13,
+      "original": "Wrap-Up: Thank the caller and close the conversation.",
+      "modified": "Wrap-Up: Do not thank the caller and instead verify their preferred contact method and schedule a follow-up without closing the session."
+    }
+  ],
+  "rule_based_termination": null
+}

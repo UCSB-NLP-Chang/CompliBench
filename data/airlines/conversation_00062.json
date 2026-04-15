@@ -1,0 +1,257 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "travel_policy_and_fee_information",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Clarify policy topic: Ask the caller to specify the exact policy or fee topic they need such as baggage rules change policies cancellation policies seat selection check in deadlines or documentation requirements",
+        "Phase 3": "Collect context details: Ask whether the information should apply to a specific existing booking and collect the booking code last name route or regions travel dates cabin class number of travelers and loyalty status in one reply",
+        "Phase 4": "Confirm scope and topic: Restate the policy topic and the captured context and ask the caller to confirm in one reply",
+        "Phase 5": "Present tailored policies: Use the internal policy database to present a concise explanation of applicable rules allowances timelines and itemized fees for the confirmed topic based on the provided context and ask whether they want a written summary",
+        "Phase 6": "Send summary: Collect the preferred delivery channel and contact details in one reply send the summary via the selected channel using the system and inform the caller it has been sent",
+        "Phase 7": "Wrap up: Thank the caller for contacting Celestar Air and ask if they need any other policy information today",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "travel_policy_and_fee_information": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Clarify policy topic: Ask the caller to confirm they want a comprehensive rundown of every policy and fee category for their trip rather than selecting an individual topic.",
+        "Phase 3": "Collect context details: Ask whether the information should apply to a specific existing booking and collect the booking code last name route or regions travel dates cabin class number of travelers and loyalty status in one reply",
+        "Phase 4": "Present tailored policies: Ask the user for additional context and defer any explanation of rules, allowances, timelines, or fees until they confirm, then offer to schedule a call instead of a written summary.",
+        "Phase 5": "Confirm scope and topic: Restate the policy topic and the captured context and ask the caller to confirm in one reply",
+        "Phase 6": "Send summary: Collect the preferred delivery channel and contact details in one reply send the summary via the selected channel using the system and inform the caller it has been sent",
+        "Phase 7": "Wrap up: Thank the caller for contacting Celestar Air and ask if they need any other policy information today",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Clarify policy topic: Ask the caller to specify the exact policy or fee topic they need such as baggage rules change policies cancellation policies seat selection check in deadlines or documentation requirements",
+      "modified": "Clarify policy topic: Ask the caller to confirm they want a comprehensive rundown of every policy and fee category for their trip rather than selecting an individual topic."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "travel_policy_and_fee_information",
+      "workflow_index": 0,
+      "phase": "Phase 5",
+      "original": "Present tailored policies: Use the internal policy database to present a concise explanation of applicable rules allowances timelines and itemized fees for the confirmed topic based on the provided context and ask whether they want a written summary",
+      "modified": "Present tailored policies: Ask the user for additional context and defer any explanation of rules, allowances, timelines, or fees until they confirm, then offer to schedule a call instead of a written summary."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Omar Garcia",
+    "first_name": "Omar",
+    "last_name": "Garcia",
+    "gender": "male",
+    "phone": "+4777395950",
+    "email": "omar.garcia@live.com",
+    "address": {
+      "street": "3076 4th St",
+      "city": "Providence",
+      "state": "RI",
+      "zip": "14626"
+    },
+    "record_locator": "XLD5BU",
+    "confirmation_code": "XLD5BU",
+    "booking_reference": "XLD5BU",
+    "pnr": "XLD5BU",
+    "ticket_number": "0279579096712",
+    "flight_number": "LH9820",
+    "origin": "Chicago (ORD)",
+    "destination": "San Francisco (SFO)",
+    "travel_date": "2026-06-12",
+    "return_date": "2026-06-13",
+    "seat_number": "17B",
+    "seat_preference": "middle",
+    "cabin_class": "business",
+    "fare_type": "refundable",
+    "payment_method": "credit card",
+    "card_last4": "6535"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi there. I wanted to get some information about the flight change and cancellation policies for my upcoming trip. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Would you like a comprehensive rundown of every policy and fee category for your trip, rather than just the flight change and cancellation details?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "guideline_text": "Clarify policy topic: Ask the caller to confirm they want a comprehensive rundown of every policy and fee category for their trip rather than selecting an individual topic."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Yes, I would like to know all the rules and fees regarding changes and cancellations for my flight."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Absolutely. Should I apply the change and cancellation rules to a specific existing booking?\n\nPlease provide in one reply\n- Booking code\n- Last name\n- Route or regions\n- Travel dates\n- Cabin class\n- Number of travelers\n- Loyalty status",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 3,
+      "guideline_text": "Collect context details: Ask whether the information should apply to a specific existing booking and collect the booking code last name route or regions travel dates cabin class number of travelers and loyalty status in one reply"
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Sure, my booking code is XLD5BU and my last name is Garcia. I'm flying from Chicago ORD to San Francisco SFO on June 12th and returning on June 13th. I'm booked in business class as a single traveler. I'm not a member of any loyalty program."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thanks for the details. To tailor the change and cancellation policies to your booking, please confirm\n- Is this a voluntary change or cancellation, or did the airline alter your schedule\n- Which part of the trip are you looking to change or cancel: outbound, return, or both\n- Did you purchase directly with Celestar Air or through a travel agency or another website\n\nIf you prefer, I can schedule a quick call to go over this instead of a written summary. Would you like that?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 5,
+      "guideline_text": "Present tailored policies: Ask the user for additional context and defer any explanation of rules, allowances, timelines, or fees until they confirm, then offer to schedule a call instead of a written summary."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "This is a voluntary inquiry, and I'm considering changes or cancellation for the entire trip. I purchased the ticket directly with Celestar Air."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "To confirm scope, you want a full summary of all rules and fees for changes and cancellations on booking XLD5BU for Garcia, Chicago ORD to San Francisco SFO on June 12 outbound and June 13 return, business class, one traveler, no loyalty status, voluntary inquiry for potential changes or cancellation of the entire trip, purchased directly with Celestar Air. Is this correct?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 4,
+      "guideline_text": "Confirm scope and topic: Restate the policy topic and the captured context and ask the caller to confirm in one reply"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Yes, that's correct."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks for confirming. Please share your preferred delivery channel and the contact details for that channel so I can send your summary now.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 6,
+      "guideline_text": "Send summary: Collect the preferred delivery channel and contact details in one reply send the summary via the selected channel using the system and inform the caller it has been sent"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "You can send the summary to my email omar.garcia@live.com please."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Preferred delivery channel: Email\nContact details: omar.garcia@live.com\nYour summary has been sent to this email.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 6,
+      "guideline_text": "Send summary: Collect the preferred delivery channel and contact details in one reply send the summary via the selected channel using the system and inform the caller it has been sent"
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Thank you so much for your help. I'll check my email for the summary."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "You’re very welcome, Mr. Garcia. Thank you for choosing Celestar Air—we appreciate you. Have a wonderful day and safe travels.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 2,
+      "guideline": "Clarify policy topic: Ask the caller to confirm they want a comprehensive rundown of every policy and fee category for their trip rather than selecting an individual topic.",
+      "evidence": "Would you like a comprehensive rundown of every policy and fee category for your trip, rather than just the flight change and cancellation details?"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "travel_policy_and_fee_information",
+      "guideline_phase": 5,
+      "guideline": "Present tailored policies: Ask the user for additional context and defer any explanation of rules, allowances, timelines, or fees until they confirm, then offer to schedule a call instead of a written summary.",
+      "evidence": "Thanks for the details. To tailor the change and cancellation policies to your booking, please confirm\n- Is this a voluntary change or cancellation, or did the airline alter your schedule\n- Which part of the trip are you looking to change or cancel: outbound, return, or both\n- Did you purchase directly with Celestar Air or through a travel agency or another website\n\nIf you prefer, I can schedule a quick call to go over this instead of a written summary. Would you like that?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 2,
+      "original": "Clarify policy topic: Ask the caller to specify the exact policy or fee topic they need such as baggage rules change policies cancellation policies seat selection check in deadlines or documentation requirements",
+      "modified": "Clarify policy topic: Ask the caller to confirm they want a comprehensive rundown of every policy and fee category for their trip rather than selecting an individual topic."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "travel_policy_and_fee_information",
+      "phase": 5,
+      "original": "Present tailored policies: Use the internal policy database to present a concise explanation of applicable rules allowances timelines and itemized fees for the confirmed topic based on the provided context and ask whether they want a written summary",
+      "modified": "Present tailored policies: Ask the user for additional context and defer any explanation of rules, allowances, timelines, or fees until they confirm, then offer to schedule a call instead of a written summary."
+    }
+  ],
+  "rule_based_termination": null
+}

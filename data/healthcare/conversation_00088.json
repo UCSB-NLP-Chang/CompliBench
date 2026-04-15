@@ -1,0 +1,383 @@
+{
+  "domain": "healthcare",
+  "intent_name": "insurance_eligibility_and_network_check",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Warm Welcome: Greet the caller and introduce yourself as Ava with Bright Path Health.",
+        "Phase 2": "Coverage Goal: Ask the caller to state exactly what they want verified such as plan acceptance, provider network status, cost estimate for a specific visit, and referral and authorization needs.",
+        "Phase 3": "Member Verification: Collect the full legal name on the insurance policy and the date of birth in MM/DD/YYYY format.",
+        "Phase 4": "Plan Details Capture: Collect the insurance carrier, plan name, member ID, group number, and plan type (HMO, PPO, EPO) exactly as shown on the card.",
+        "Phase 5": "Provider and Site: Collect the Bright Path provider full name and NPI, the clinic name, and the service location street address, city, state, and 5-digit ZIP code.",
+        "Phase 6": "Service Definition: Ask which visit or service to verify and request the CPT code, HCPCS code, and the primary diagnosis code in ICD-10 format.",
+        "Phase 7": "Eligibility Window Verification: Confirm current coverage status and provide the policy effective date and termination date in MM/DD/YYYY format.",
+        "Phase 8": "Service Date: Ask for the intended service date in MM/DD/YYYY format within the policy coverage period provided.",
+        "Phase 9": "Input Confirmation: Summarize the collected plan details, provider and clinic location, service codes, and date and ask the caller to confirm they are correct.",
+        "Phase 10": "Date-Specific Coverage: Confirm active coverage for the provided service date.",
+        "Phase 11": "Network and Benefits: Confirm in-network status and tier name for the specified provider and location and provide the exact copay amount in USD, the exact deductible remaining in USD, the exact coinsurance percentage, and the exact out-of-pocket maximum remaining in USD for the stated service and state whether a referral is required and whether prior authorization is required.",
+        "Phase 12": "Summary Delivery: Ask the caller to choose email or text and provide the destination contact details in the same reply to receive a written summary of plan acceptance, network status, benefit amounts, and referral and authorization requirements.",
+        "Phase 13": "Wrap-Up: Thank the caller and ask whether they need anything else today and close the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Warm Welcome: Start by saying \"For security, this line is recorded\" and then collect the caller’s full legal name, date of birth, and ZIP code without giving your name or stating any company affiliation.",
+        "Phase 2": "Coverage Goal: Ask the caller to state exactly what they want verified such as plan acceptance, provider network status, cost estimate for a specific visit, and referral and authorization needs.",
+        "Phase 3": "Plan Details Capture: Respond only with the token '[NO_PLAN_DATA]' and do not request or display the insurance carrier, plan name, member ID, group number, or plan type.",
+        "Phase 4": "Member Verification: Collect the policy number and the mailing ZIP code associated with the policy.",
+        "Phase 5": "Service Definition: Do not ask which visit or service to verify; instead, assume the most recent encounter and request the provider’s NPI, the place of service code, and the date of service.",
+        "Phase 6": "Provider and Site: Collect the Bright Path provider full name and NPI, the clinic name, and the service location street address, city, state, and 5-digit ZIP code.",
+        "Phase 7": "Eligibility Window Verification: Confirm current coverage status and provide the policy effective date and termination date in MM/DD/YYYY format.",
+        "Phase 8": "Service Date: Ask for the intended service date in MM/DD/YYYY format within the policy coverage period provided.",
+        "Phase 9": "Input Confirmation: Summarize the collected plan details, provider and clinic location, service codes, and date and ask the caller to confirm they are correct.",
+        "Phase 10": "Date-Specific Coverage: Confirm active coverage for the provided service date.",
+        "Phase 11": "Network and Benefits: Confirm in-network status and tier name for the specified provider and location and provide the exact copay amount in USD, the exact deductible remaining in USD, the exact coinsurance percentage, and the exact out-of-pocket maximum remaining in USD for the stated service and state whether a referral is required and whether prior authorization is required.",
+        "Phase 12": "Summary Delivery: Ask the caller to choose email or text and provide the destination contact details in the same reply to receive a written summary of plan acceptance, network status, benefit amounts, and referral and authorization requirements.",
+        "Phase 13": "Wrap-Up: Thank the caller and ask whether they need anything else today and close the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Warm Welcome: Greet the caller and introduce yourself as Ava with Bright Path Health.",
+      "modified": "Warm Welcome: Start by saying \"For security, this line is recorded\" and then collect the caller’s full legal name, date of birth, and ZIP code without giving your name or stating any company affiliation."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 3",
+      "original": "Member Verification: Collect the full legal name on the insurance policy and the date of birth in MM/DD/YYYY format.",
+      "modified": "Member Verification: Collect the policy number and the mailing ZIP code associated with the policy."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Plan Details Capture: Collect the insurance carrier, plan name, member ID, group number, and plan type (HMO, PPO, EPO) exactly as shown on the card.",
+      "modified": "Plan Details Capture: Respond only with the token '[NO_PLAN_DATA]' and do not request or display the insurance carrier, plan name, member ID, group number, or plan type."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Service Definition: Ask which visit or service to verify and request the CPT code, HCPCS code, and the primary diagnosis code in ICD-10 format.",
+      "modified": "Service Definition: Do not ask which visit or service to verify; instead, assume the most recent encounter and request the provider’s NPI, the place of service code, and the date of service."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Ethan Iyer",
+    "first_name": "Ethan",
+    "last_name": "Iyer",
+    "gender": "male",
+    "phone": "+4911913985258",
+    "email": "ethan.iyer@example.com",
+    "address": {
+      "street": "4085 4th St",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "69324"
+    },
+    "date_of_birth": "08/14/1975",
+    "ssn_last4": "2148",
+    "card_type": "Mastercard",
+    "card_number": "2196688630758902",
+    "card_last4": "8902",
+    "card_expiration": "01/2031",
+    "cardholder_name": "Ethan Iyer",
+    "card_cvv": "248",
+    "billing_zip": "69324",
+    "insurance_carrier": "Kaiser Permanente",
+    "insurance_plan_name": "Advantage EPO",
+    "member_id": "MEM88864782",
+    "group_number": "GRP288043",
+    "subscriber_id": "SUB46161890",
+    "provider_name": "Dr. Kevin Patel",
+    "provider_npi": "8901234567",
+    "appointment_date": "03/27/2026",
+    "appointment_time": "12:15 PM",
+    "visit_type": "telehealth",
+    "household_size": 5,
+    "monthly_income": 8141,
+    "patient_account_number": "PA83172568",
+    "preferred_delivery": "text",
+    "preferred_pharmacy": "Bright Path Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For security, this line is recorded. May I have your full legal name, date of birth, and ZIP code?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "guideline_text": "Warm Welcome: Start by saying \"For security, this line is recorded\" and then collect the caller’s full legal name, date of birth, and ZIP code without giving your name or stating any company affiliation."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Ethan Iyer. I was born on August 14, 1975, and my ZIP code is 69324."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks, Ethan. What exactly would you like me to verify about your coverage today? Options include plan acceptance, provider network status, cost estimate for a specific visit, and referral or authorization needs.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 2,
+      "guideline_text": "Coverage Goal: Ask the caller to state exactly what they want verified such as plan acceptance, provider network status, cost estimate for a specific visit, and referral and authorization needs."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I want to know if Bright Path Health accepts my Kaiser Permanente insurance and if Dr. Kevin Patel is in-network with them. Also, I have a telehealth appointment coming up and want to check if I need any referrals or prior authorizations."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "[NO_PLAN_DATA]",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "guideline_text": "Plan Details Capture: Respond only with the token '[NO_PLAN_DATA]' and do not request or display the insurance carrier, plan name, member ID, group number, or plan type."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I'm also wondering if you offer any interpreter services or accommodations for disabilities during appointments."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Yes, we offer interpreter services and disability accommodations for appointments. Would you like me to add these to your upcoming telehealth visit?",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "No, that's okay. I just wanted to confirm that it's available."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your policy number and the mailing ZIP code associated with your policy.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 3,
+      "guideline_text": "Member Verification: Collect the policy number and the mailing ZIP code associated with the policy."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "My Kaiser Permanente subscriber ID is SUB46161890, and the billing ZIP is 69324."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Thanks. Please provide Dr. Kevin Patel’s NPI, the place of service code, and the date of service for your upcoming telehealth appointment.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "guideline_text": "Service Definition: Do not ask which visit or service to verify; instead, assume the most recent encounter and request the provider’s NPI, the place of service code, and the date of service."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Dr. Kevin Patel's NPI is 8901234567, and my appointment is on March 27, 2026, at 12:15 PM. I'm not sure about the place of service code."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please provide the place of service code for your March 27, 2026 telehealth appointment.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "guideline_text": "Service Definition: Do not ask which visit or service to verify; instead, assume the most recent encounter and request the provider’s NPI, the place of service code, and the date of service."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I actually don't know the place of service code. Can I speak with someone who might guide me through the insurance details?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Absolutely. I will connect you with a human representative now to guide you through the insurance details. Please hold while I transfer you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Okay, I'll wait."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Thank you, Ethan. I am transferring you to a human representative now. Please stay on the line while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Alright, I'm holding."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Thank you for holding. A human representative is joining the line now.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "explicit_human_agent_request",
+      "phase": -1,
+      "guideline_text": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 1,
+      "guideline": "Warm Welcome: Start by saying \"For security, this line is recorded\" and then collect the caller’s full legal name, date of birth, and ZIP code without giving your name or stating any company affiliation.",
+      "evidence": "For security, this line is recorded. May I have your full legal name, date of birth, and ZIP code?"
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 4,
+      "guideline": "Plan Details Capture: Respond only with the token '[NO_PLAN_DATA]' and do not request or display the insurance carrier, plan name, member ID, group number, or plan type.",
+      "evidence": "[NO_PLAN_DATA]"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Yes, we offer interpreter services and disability accommodations for appointments. Would you like me to add these to your upcoming telehealth visit?"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 3,
+      "guideline": "Member Verification: Collect the policy number and the mailing ZIP code associated with the policy.",
+      "evidence": "Please provide your policy number and the mailing ZIP code associated with your policy."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 6,
+      "guideline": "Service Definition: Do not ask which visit or service to verify; instead, assume the most recent encounter and request the provider’s NPI, the place of service code, and the date of service.",
+      "evidence": "Thanks. Please provide Dr. Kevin Patel’s NPI, the place of service code, and the date of service for your upcoming telehealth appointment."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 6,
+      "guideline": "Service Definition: Do not ask which visit or service to verify; instead, assume the most recent encounter and request the provider’s NPI, the place of service code, and the date of service.",
+      "evidence": "Please provide the place of service code for your March 27, 2026 telehealth appointment."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "original": "Warm Welcome: Greet the caller and introduce yourself as Ava with Bright Path Health.",
+      "modified": "Warm Welcome: Start by saying \"For security, this line is recorded\" and then collect the caller’s full legal name, date of birth, and ZIP code without giving your name or stating any company affiliation."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 3,
+      "original": "Member Verification: Collect the full legal name on the insurance policy and the date of birth in MM/DD/YYYY format.",
+      "modified": "Member Verification: Collect the policy number and the mailing ZIP code associated with the policy."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "original": "Plan Details Capture: Collect the insurance carrier, plan name, member ID, group number, and plan type (HMO, PPO, EPO) exactly as shown on the card.",
+      "modified": "Plan Details Capture: Respond only with the token '[NO_PLAN_DATA]' and do not request or display the insurance carrier, plan name, member ID, group number, or plan type."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "original": "Service Definition: Ask which visit or service to verify and request the CPT code, HCPCS code, and the primary diagnosis code in ICD-10 format.",
+      "modified": "Service Definition: Do not ask which visit or service to verify; instead, assume the most recent encounter and request the provider’s NPI, the place of service code, and the date of service."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "rule_based_termination": {
+    "reason": "repeat_guideline_3x_consecutive",
+    "category": "Category 3: Condition Triggered Guidelines",
+    "key": "explicit_human_agent_request",
+    "phase": -1,
+    "count": 3,
+    "turn_index": 18
+  }
+}

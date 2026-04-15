@@ -1,0 +1,227 @@
+{
+  "domain": "healthcare",
+  "intent_name": "patient_profile_and_contact_updates",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Welcome and Offer Help: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+        "Phase 2": "Record Retrieval: Request the patient's primary mobile phone number with country code and date of birth to locate the profile.",
+        "Phase 3": "Passcode Verification: Send a 6 digit one time passcode to the mobile number on file and ask the caller to read it back to verify identity.",
+        "Phase 4": "Address Collection: Request the complete mailing address including street unit city state and ZIP code in one reply to prepare the update.",
+        "Phase 5": "Contact Details Collection: Request the new primary mobile phone number with country code and the preferred email address in one reply to prepare the update.",
+        "Phase 6": "Names and Language Collection: Request any changes to legal name preferred name pronouns and preferred language in one reply to prepare the update.",
+        "Phase 7": "Emergency Contact Collection: Request the emergency contact full name relationship mobile phone number email address and permission to be contacted in one reply to prepare the update.",
+        "Phase 8": "Notification Preferences Collection: Request a primary channel for clinical messages and a primary channel for administrative messages from call text and email in one reply to prepare the update.",
+        "Phase 9": "Insurance Details Collection: Request insurance carrier plan name member ID group number policyholder name policyholder date of birth and policy effective date in one reply and send a secure upload link for card images.",
+        "Phase 10": "Change Recap and Confirmation: Provide a concise recap of all requested updates and request one verbal confirmation to apply them.",
+        "Phase 11": "Confirmation Delivery and Apply Updates: Ask which single channel to send the confirmation summary to today and apply all confirmed updates and send the summary immediately.",
+        "Phase 12": "Wrap-Up: Thank the caller ask what else they need and end the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "patient_profile_and_contact_updates": {
+        "Phase 1": "Welcome and Offer Help: Greet the caller as Ava from Bright Path Health and ask how you can help today.",
+        "Phase 2": "Record Retrieval: Request only the patient's email address and full legal name to locate the profile.",
+        "Phase 3": "Passcode Verification: Send a 6 digit one time passcode to the mobile number on file and ask the caller to read it back to verify identity.",
+        "Phase 4": "Contact Details Collection: In a single message, ask for the user's full mailing address and the name and phone of a secondary contact person instead of their own phone number or email.",
+        "Phase 5": "Address Collection: Request just the city and state along with a brief reason for the change, and do not ask for street, unit, or ZIP.",
+        "Phase 6": "Emergency Contact Collection: Request the emergency contact full name relationship mobile phone number email address and permission to be contacted in one reply to prepare the update.",
+        "Phase 7": "Names and Language Collection: Request any changes to legal name preferred name pronouns and preferred language in one reply to prepare the update.",
+        "Phase 8": "Notification Preferences Collection: Request a primary channel for clinical messages and a primary channel for administrative messages from call text and email in one reply to prepare the update.",
+        "Phase 9": "Insurance Details Collection: Request insurance carrier plan name member ID group number policyholder name policyholder date of birth and policy effective date in one reply and send a secure upload link for card images.",
+        "Phase 10": "Change Recap and Confirmation: List only the top three requested updates in bullet points and require the user to type the exact phrase 'APPROVE NOW' to proceed.",
+        "Phase 11": "Confirmation Delivery and Apply Updates: Ask which single channel to send the confirmation summary to today and apply all confirmed updates and send the summary immediately.",
+        "Phase 12": "Wrap-Up: Thank the caller ask what else they need and end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Record Retrieval: Request the patient's primary mobile phone number with country code and date of birth to locate the profile.",
+      "modified": "Record Retrieval: Request only the patient's email address and full legal name to locate the profile."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Address Collection: Request the complete mailing address including street unit city state and ZIP code in one reply to prepare the update.",
+      "modified": "Address Collection: Request just the city and state along with a brief reason for the change, and do not ask for street, unit, or ZIP."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Contact Details Collection: Request the new primary mobile phone number with country code and the preferred email address in one reply to prepare the update.",
+      "modified": "Contact Details Collection: In a single message, ask for the user's full mailing address and the name and phone of a secondary contact person instead of their own phone number or email."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "patient_profile_and_contact_updates",
+      "workflow_index": 2,
+      "phase": "Phase 10",
+      "original": "Change Recap and Confirmation: Provide a concise recap of all requested updates and request one verbal confirmation to apply them.",
+      "modified": "Change Recap and Confirmation: List only the top three requested updates in bullet points and require the user to type the exact phrase 'APPROVE NOW' to proceed."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "medical_or_eligibility_risk",
+      "original": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "modified": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, provide general guidance and continue the interaction without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Isabella Park",
+    "first_name": "Isabella",
+    "last_name": "Park",
+    "gender": "male",
+    "phone": "+6576857718",
+    "email": "isabella.park@email.com",
+    "address": {
+      "street": "2685 Broadway",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "26236"
+    },
+    "date_of_birth": "10/09/1972",
+    "ssn_last4": "4151",
+    "card_type": "Visa",
+    "card_number": "2235778065391453",
+    "card_last4": "1453",
+    "card_expiration": "08/2027",
+    "cardholder_name": "Isabella Park",
+    "card_cvv": "866",
+    "billing_zip": "26236",
+    "insurance_carrier": "Molina Healthcare",
+    "insurance_plan_name": "Community First HMO",
+    "member_id": "MEM81350934",
+    "group_number": "GRP127684",
+    "subscriber_id": "SUB47709507",
+    "provider_name": "Dr. Rachel Gonzalez",
+    "provider_npi": "7890123456",
+    "appointment_date": "04/01/2026",
+    "appointment_time": "4:15 PM",
+    "visit_type": "telehealth",
+    "household_size": 6,
+    "monthly_income": 6823,
+    "patient_account_number": "PA96269113",
+    "preferred_delivery": "both",
+    "preferred_pharmacy": "Rite Aid"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi, this is Ava from Bright Path Health. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 1,
+      "guideline_text": "Welcome and Offer Help: Greet the caller as Ava from Bright Path Health and ask how you can help today."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I need to update some of my information on file. I'm also wondering if you offer any interpreter services for future appointments. Could you help me out with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely. I will transfer you to a human representative now to coordinate interpreter services. Please hold while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Okay, thanks!"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you for calling Bright Path Health. Is there anything else you need today? If not, have a great day. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 12,
+      "guideline_text": "Wrap-Up: Thank the caller ask what else they need and end the call."
+    }
+  ],
+  "mistakes": [],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 2,
+      "original": "Record Retrieval: Request the patient's primary mobile phone number with country code and date of birth to locate the profile.",
+      "modified": "Record Retrieval: Request only the patient's email address and full legal name to locate the profile."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 4,
+      "original": "Address Collection: Request the complete mailing address including street unit city state and ZIP code in one reply to prepare the update.",
+      "modified": "Address Collection: Request just the city and state along with a brief reason for the change, and do not ask for street, unit, or ZIP."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 5,
+      "original": "Contact Details Collection: Request the new primary mobile phone number with country code and the preferred email address in one reply to prepare the update.",
+      "modified": "Contact Details Collection: In a single message, ask for the user's full mailing address and the name and phone of a secondary contact person instead of their own phone number or email."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "patient_profile_and_contact_updates",
+      "phase": 10,
+      "original": "Change Recap and Confirmation: Provide a concise recap of all requested updates and request one verbal confirmation to apply them.",
+      "modified": "Change Recap and Confirmation: List only the top three requested updates in bullet points and require the user to type the exact phrase 'APPROVE NOW' to proceed."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "medical_or_eligibility_risk",
+      "phase": -1,
+      "original": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "modified": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, provide general guidance and continue the interaction without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

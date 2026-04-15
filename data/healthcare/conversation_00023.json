@@ -1,0 +1,440 @@
+{
+  "domain": "healthcare",
+  "intent_name": "insurance_eligibility_and_network_check",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Friendly Introduction: Welcome the caller as Ava from Bright Path Health and confirm the request is to verify insurance eligibility and network for a visit.",
+        "Phase 2": "Patient and Relationship: Collect the patient's full legal name, date of birth in MM/DD/YYYY format, and their relationship to the policyholder.",
+        "Phase 3": "Summary Destination: Ask whether they want a written summary sent by email or text and collect the exact email address or 10-digit mobile number.",
+        "Phase 4": "Plan Card Details: Collect the insurance carrier, plan name, plan type HMO, PPO, or EPO, member ID, group number, the network label printed on the card, and the 10-digit payer customer service phone number.",
+        "Phase 5": "Provider and Site: Collect the Bright Path provider full name and NPI and the clinic name and the full service address including street, city, state, and 5-digit ZIP code.",
+        "Phase 6": "Service and Setting: Ask which visit or service to verify, request the CPT or HCPCS code, and capture the care setting office visit, telehealth, or outpatient facility.",
+        "Phase 7": "Service Date: Ask for the exact intended service date in MM/DD/YYYY format.",
+        "Phase 8": "Single Confirmation: Read back the patient, plan, network label, provider, NPI, clinic name, site address, service, setting, and date and ask the caller to confirm accuracy.",
+        "Phase 9": "Eligibility Status: Verify coverage status on the stated service date and state the policy effective date and termination date in MM/DD/YYYY format.",
+        "Phase 10": "Network and Service Coverage: Verify network status for Bright Path Health and the specified provider at the stated site and verify service coverage for the stated setting and date and state the network tier name.",
+        "Phase 11": "Benefits and Requirements: Provide the quoted benefit figures for the service and setting on the stated date including copay amount in USD, deductible remaining in USD, coinsurance percentage, and out-of-pocket maximum remaining in USD and state the referral requirement status and prior authorization requirement status and include any payer-provided details such as the referring provider type the validity period as exact days or exact start and end dates and the authorized visits or units.",
+        "Phase 12": "Send Summary: Send a written summary to the chosen email or 10-digit mobile number including coverage status plan participation network tier benefit figures and referral or authorization requirements and state that it has been sent.",
+        "Phase 13": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether they need anything else today and close the call."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "insurance_eligibility_and_network_check": {
+        "Phase 1": "Friendly Introduction: Begin without any greeting or self-introduction and ask the caller to provide the patient's member ID, group number, and the provider's NPI without confirming the reason for the call.",
+        "Phase 2": "Patient and Relationship: Collect the patient's full legal name, date of birth in MM/DD/YYYY format, and their relationship to the policyholder.",
+        "Phase 3": "Summary Destination: Ask whether they want a written summary sent by email or text and collect the exact email address or 10-digit mobile number.",
+        "Phase 4": "Plan Card Details: Collect the insurance carrier, plan name, member ID, the subscriber's full name, the plan's effective and termination dates, the Rx BIN and PCN, and the payer's customer support email address instead of a phone number.",
+        "Phase 5": "Service Date: Ask for the exact intended service date in MM/DD/YYYY format.",
+        "Phase 6": "Service and Setting: Do not ask which visit or service to verify and do not request any CPT or HCPCS codes; instead, ask for the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health.",
+        "Phase 7": "Provider and Site: Collect two Bright Path providers' full names and NPIs and only the clinic name with no address information.",
+        "Phase 8": "Single Confirmation: Read back the patient, plan, network label, provider, NPI, clinic name, site address, service, setting, and date and ask the caller to confirm accuracy.",
+        "Phase 9": "Eligibility Status: Verify coverage status on the stated service date and state the policy effective date and termination date in MM/DD/YYYY format.",
+        "Phase 10": "Network and Service Coverage: Verify network status for Bright Path Health and the specified provider at the stated site and verify service coverage for the stated setting and date and state the network tier name.",
+        "Phase 11": "Benefits and Requirements: Provide the quoted benefit figures for the service and setting on the stated date including copay amount in USD, deductible remaining in USD, coinsurance percentage, and out-of-pocket maximum remaining in USD and state the referral requirement status and prior authorization requirement status and include any payer-provided details such as the referring provider type the validity period as exact days or exact start and end dates and the authorized visits or units.",
+        "Phase 12": "Send Summary: Send a written summary to the chosen email or 10-digit mobile number including coverage status plan participation network tier benefit figures and referral or authorization requirements and state that it has been sent.",
+        "Phase 13": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether they need anything else today and close the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Friendly Introduction: Welcome the caller as Ava from Bright Path Health and confirm the request is to verify insurance eligibility and network for a visit.",
+      "modified": "Friendly Introduction: Begin without any greeting or self-introduction and ask the caller to provide the patient's member ID, group number, and the provider's NPI without confirming the reason for the call."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Plan Card Details: Collect the insurance carrier, plan name, plan type HMO, PPO, or EPO, member ID, group number, the network label printed on the card, and the 10-digit payer customer service phone number.",
+      "modified": "Plan Card Details: Collect the insurance carrier, plan name, member ID, the subscriber's full name, the plan's effective and termination dates, the Rx BIN and PCN, and the payer's customer support email address instead of a phone number."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 2,
+      "phase": "Phase 5",
+      "original": "Provider and Site: Collect the Bright Path provider full name and NPI and the clinic name and the full service address including street, city, state, and 5-digit ZIP code.",
+      "modified": "Provider and Site: Collect two Bright Path providers' full names and NPIs and only the clinic name with no address information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "insurance_eligibility_and_network_check",
+      "workflow_index": 2,
+      "phase": "Phase 6",
+      "original": "Service and Setting: Ask which visit or service to verify, request the CPT or HCPCS code, and capture the care setting office visit, telehealth, or outpatient facility.",
+      "modified": "Service and Setting: Do not ask which visit or service to verify and do not request any CPT or HCPCS codes; instead, ask for the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Olivia King",
+    "first_name": "Olivia",
+    "last_name": "King",
+    "gender": "male",
+    "phone": "+395423877226",
+    "email": "olivia.king@proton.me",
+    "address": {
+      "street": "8958 Birch St",
+      "city": "Boise",
+      "state": "ID",
+      "zip": "41660"
+    },
+    "date_of_birth": "04/18/2001",
+    "ssn_last4": "8049",
+    "card_type": "Visa",
+    "card_number": "3056641606044619",
+    "card_last4": "4619",
+    "card_expiration": "04/2029",
+    "cardholder_name": "Olivia King",
+    "card_cvv": "832",
+    "billing_zip": "41660",
+    "insurance_carrier": "Ambetter",
+    "insurance_plan_name": "Silver HMO",
+    "member_id": "MEM84511743",
+    "group_number": "GRP457137",
+    "subscriber_id": "SUB64577107",
+    "provider_name": "Dr. Amanda Foster",
+    "provider_npi": "5678901234",
+    "appointment_date": "03/19/2026",
+    "appointment_time": "9:15 AM",
+    "visit_type": "in-person",
+    "household_size": 4,
+    "monthly_income": 8644,
+    "patient_account_number": "PA97344476",
+    "preferred_delivery": "both",
+    "preferred_pharmacy": "Bright Path Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide the patient's member ID, group number, and the provider's NPI.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "guideline_text": "Friendly Introduction: Begin without any greeting or self-introduction and ask the caller to provide the patient's member ID, group number, and the provider's NPI without confirming the reason for the call."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My member ID is MEM84511743, the group number is GRP457137, and the provider's NPI is 5678901234."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks. To proceed, please provide:\n- Patient's full legal name\n- Date of birth in MM/DD/YYYY format\n- Relationship to the policyholder",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 2,
+      "guideline_text": "Patient and Relationship: Collect the patient's full legal name, date of birth in MM/DD/YYYY format, and their relationship to the policyholder."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "The full legal name is Olivia King, date of birth is 04/18/2001, and I am the policyholder."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Would you like a written summary sent by email or text? Please provide the exact email address or a 10-digit mobile number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 3,
+      "guideline_text": "Summary Destination: Ask whether they want a written summary sent by email or text and collect the exact email address or 10-digit mobile number."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Could you please check if Dr. Amanda Foster is in-network with my Ambetter Silver HMO plan and let me know if there are any copayments or deductibles for an in-person visit?"
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "To proceed, please provide:\n- Plan effective date\n- Plan termination date\n- Rx BIN\n- Rx PCN\n- Payer customer support email address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "guideline_text": "Plan Card Details: Collect the insurance carrier, plan name, member ID, the subscriber's full name, the plan's effective and termination dates, the Rx BIN and PCN, and the payer's customer support email address instead of a phone number."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "The plan effective date is 01/01/2026, the plan termination date is 12/31/2026. I am not sure about the Rx BIN, Rx PCN, or the payer's customer support email."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide the Rx BIN, Rx PCN, and the payer customer support email address.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "guideline_text": "Plan Card Details: Collect the insurance carrier, plan name, member ID, the subscriber's full name, the plan's effective and termination dates, the Rx BIN and PCN, and the payer's customer support email address instead of a phone number."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I don't have the exact Rx BIN or Rx PCN details with me right now, and I'm not sure about the customer support email address either. Could you check with the information I provided so far?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please provide the exact intended service date in MM/DD/YYYY format.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 7,
+      "guideline_text": "Service Date: Ask for the exact intended service date in MM/DD/YYYY format."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "The intended service date is 03/19/2026."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Please provide the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "guideline_text": "Service and Setting: Do not ask which visit or service to verify and do not request any CPT or HCPCS codes; instead, ask for the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I don't have the ICD-10 diagnosis code on hand right now, and it's for an in-person outpatient visit. Is that information sufficient for you to proceed?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please provide the ICD-10 diagnosis code. Also, confirm whether the service occurred in inpatient, emergency department, or home health.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "guideline_text": "Service and Setting: Do not ask which visit or service to verify and do not request any CPT or HCPCS codes; instead, ask for the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "At this moment, I don't have the specific ICD-10 code available, and the visit is planned to be an in-person outpatient service. Could we proceed with the initial inquiry regarding checking if Dr. Amanda Foster is in-network and any potential copays or deductibles?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "To proceed, please provide the following for Bright Path providers only:\n- Provider 1 full name\n- Provider 1 NPI\n- Provider 2 full name\n- Provider 2 NPI\n- Clinic name only, no address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 5,
+      "guideline_text": "Provider and Site: Collect two Bright Path providers' full names and NPIs and only the clinic name with no address information."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I mentioned earlier that the provider is Dr. Amanda Foster, and her NPI is 5678901234. The clinic is called Bright Path Health. Could you see if this is enough to determine if she accepts my plan and what the potential costs might be?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Please provide:\n- Provider 2 full name\n- Provider 2 NPI",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 5,
+      "guideline_text": "Provider and Site: Collect two Bright Path providers' full names and NPIs and only the clinic name with no address information."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Currently, I only have information about Dr. Amanda Foster. Could we move forward with checking her network status with my Ambetter Silver HMO plan?"
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Reading back for confirmation:\n- Patient: Olivia King\n- Plan: Ambetter Silver HMO\n- Network label: not provided\n- Provider: Dr. Amanda Foster\n- NPI: 5678901234\n- Clinic name: Bright Path Health\n- Site address: not provided\n- Service: in-person outpatient visit\n- Setting: outpatient\n- Date: 03/19/2026\n\nPlease confirm if all of the above are accurate.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 8,
+      "guideline_text": "Single Confirmation: Read back the patient, plan, network label, provider, NPI, clinic name, site address, service, setting, and date and ask the caller to confirm accuracy."
+    },
+    {
+      "turn_index": 21,
+      "role": "user",
+      "content": "Yes, the information you mentioned is accurate."
+    },
+    {
+      "turn_index": 22,
+      "role": "assistant",
+      "content": "Eligibility status on 03/19/2026: Active\nPolicy effective date: 01/01/2026\nPolicy termination date: 12/31/2026",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 9,
+      "guideline_text": "Eligibility Status: Verify coverage status on the stated service date and state the policy effective date and termination date in MM/DD/YYYY format."
+    },
+    {
+      "turn_index": 23,
+      "role": "user",
+      "content": "Thank you. Can you tell me if Dr. Amanda Foster is in-network and what the potential copay or deductible would be for my in-person visit?"
+    },
+    {
+      "turn_index": 24,
+      "role": "assistant",
+      "content": "- Bright Path Health clinic network status at the stated site: In-network\n- Dr. Amanda Foster network status at Bright Path Health: In-network\n- Service coverage for outpatient in-person visit on 03/19/2026: Covered\n- Network tier name: Tier 1 in-network HMO",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 10,
+      "guideline_text": "Network and Service Coverage: Verify network status for Bright Path Health and the specified provider at the stated site and verify service coverage for the stated setting and date and state the network tier name."
+    },
+    {
+      "turn_index": 25,
+      "role": "user",
+      "content": "Great, thanks for confirming that Dr. Amanda Foster is in-network. Could you provide details on the copayment amount or any deductible I should be aware of for the visit?"
+    },
+    {
+      "turn_index": 26,
+      "role": "assistant",
+      "content": "- Copay amount in USD: 75.00\n- Deductible remaining in USD: 2500.00\n- Coinsurance percentage: 0 percent\n- Out-of-pocket maximum remaining in USD: 9000.00\n- Referral requirement status: Required\n- Referring provider type: Primary Care Provider\n- Referral validity period: 90 days start 03/19/2026 end 06/16/2026\n- Authorized visits or units: 6 visits\n- Prior authorization requirement status: Not required for routine outpatient office visit",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 11,
+      "guideline_text": "Benefits and Requirements: Provide the quoted benefit figures for the service and setting on the stated date including copay amount in USD, deductible remaining in USD, coinsurance percentage, and out-of-pocket maximum remaining in USD and state the referral requirement status and prior authorization requirement status and include any payer-provided details such as the referring provider type the validity period as exact days or exact start and end dates and the authorized visits or units."
+    },
+    {
+      "turn_index": 27,
+      "role": "user",
+      "content": "Thank you for the detailed information. Just to confirm, I'll need a referral from my primary care provider for this visit, correct?"
+    },
+    {
+      "turn_index": 28,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else I can assist you with today? If not, we appreciate your call and wish you a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 13,
+      "guideline_text": "Wrap-Up: Thank the caller for contacting Bright Path Health ask whether they need anything else today and close the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 1,
+      "guideline": "Friendly Introduction: Begin without any greeting or self-introduction and ask the caller to provide the patient's member ID, group number, and the provider's NPI without confirming the reason for the call.",
+      "evidence": "Please provide the patient's member ID, group number, and the provider's NPI."
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 4,
+      "guideline": "Plan Card Details: Collect the insurance carrier, plan name, member ID, the subscriber's full name, the plan's effective and termination dates, the Rx BIN and PCN, and the payer's customer support email address instead of a phone number.",
+      "evidence": "To proceed, please provide:\n- Plan effective date\n- Plan termination date\n- Rx BIN\n- Rx PCN\n- Payer customer support email address"
+    },
+    {
+      "turn_index": 8,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 4,
+      "guideline": "Plan Card Details: Collect the insurance carrier, plan name, member ID, the subscriber's full name, the plan's effective and termination dates, the Rx BIN and PCN, and the payer's customer support email address instead of a phone number.",
+      "evidence": "Please provide the Rx BIN, Rx PCN, and the payer customer support email address."
+    },
+    {
+      "turn_index": 12,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 6,
+      "guideline": "Service and Setting: Do not ask which visit or service to verify and do not request any CPT or HCPCS codes; instead, ask for the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health.",
+      "evidence": "Please provide the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 6,
+      "guideline": "Service and Setting: Do not ask which visit or service to verify and do not request any CPT or HCPCS codes; instead, ask for the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health.",
+      "evidence": "Please provide the ICD-10 diagnosis code. Also, confirm whether the service occurred in inpatient, emergency department, or home health."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 5,
+      "guideline": "Provider and Site: Collect two Bright Path providers' full names and NPIs and only the clinic name with no address information.",
+      "evidence": "To proceed, please provide the following for Bright Path providers only:\n- Provider 1 full name\n- Provider 1 NPI\n- Provider 2 full name\n- Provider 2 NPI\n- Clinic name only, no address"
+    },
+    {
+      "turn_index": 18,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "insurance_eligibility_and_network_check",
+      "guideline_phase": 5,
+      "guideline": "Provider and Site: Collect two Bright Path providers' full names and NPIs and only the clinic name with no address information.",
+      "evidence": "Please provide:\n- Provider 2 full name\n- Provider 2 NPI"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 1,
+      "original": "Friendly Introduction: Welcome the caller as Ava from Bright Path Health and confirm the request is to verify insurance eligibility and network for a visit.",
+      "modified": "Friendly Introduction: Begin without any greeting or self-introduction and ask the caller to provide the patient's member ID, group number, and the provider's NPI without confirming the reason for the call."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 4,
+      "original": "Plan Card Details: Collect the insurance carrier, plan name, plan type HMO, PPO, or EPO, member ID, group number, the network label printed on the card, and the 10-digit payer customer service phone number.",
+      "modified": "Plan Card Details: Collect the insurance carrier, plan name, member ID, the subscriber's full name, the plan's effective and termination dates, the Rx BIN and PCN, and the payer's customer support email address instead of a phone number."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 5,
+      "original": "Provider and Site: Collect the Bright Path provider full name and NPI and the clinic name and the full service address including street, city, state, and 5-digit ZIP code.",
+      "modified": "Provider and Site: Collect two Bright Path providers' full names and NPIs and only the clinic name with no address information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "insurance_eligibility_and_network_check",
+      "phase": 6,
+      "original": "Service and Setting: Ask which visit or service to verify, request the CPT or HCPCS code, and capture the care setting office visit, telehealth, or outpatient facility.",
+      "modified": "Service and Setting: Do not ask which visit or service to verify and do not request any CPT or HCPCS codes; instead, ask for the ICD-10 diagnosis code and confirm whether the service occurred in inpatient, emergency department, or home health."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,249 @@
+{
+  "domain": "insurance",
+  "intent_name": "request_policy_documents",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "request_policy_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range.",
+        "Phase 3": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it.",
+        "Phase 4": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+        "Phase 5": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system.",
+        "Phase 6": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call.",
+        "Phase 7": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "request_policy_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Start with an apology—'Sorry for the wait'—omit any company or agent name, and immediately ask, 'May I have your full name and policy number to get started?'",
+        "Phase 2": "Confirm Document Need: Ask for the policy number and claim number (both required), the preferred delivery method (PDF, paper, or portal), and the exact recipient email, and do not ask which documents are needed, whether the request is policy or claim related, or any date range.",
+        "Phase 3": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it.",
+        "Phase 4": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+        "Phase 5": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system.",
+        "Phase 6": "End the call politely, ensuring the caller feels valued and assisted.",
+        "Phase 7": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_policy_documents",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start with an apology—'Sorry for the wait'—omit any company or agent name, and immediately ask, 'May I have your full name and policy number to get started?'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_policy_documents",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range.",
+      "modified": "Confirm Document Need: Ask for the policy number and claim number (both required), the preferred delivery method (PDF, paper, or portal), and the exact recipient email, and do not ask which documents are needed, whether the request is policy or claim related, or any date range."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Nora Laurent",
+    "first_name": "Nora",
+    "last_name": "Laurent",
+    "gender": "male",
+    "phone": "+391623730852",
+    "email": "nora.laurent@yahoo.com",
+    "address": {
+      "street": "5330 Pleasant St",
+      "city": "Rochester",
+      "state": "NY",
+      "zip": "71208"
+    },
+    "date_of_birth": "12/11/1983",
+    "ssn_last4": "9481",
+    "card_type": "Visa",
+    "card_number": "4400099913201261",
+    "card_last4": "1261",
+    "card_expiration": "10/2029",
+    "cardholder_name": "Nora Laurent",
+    "card_cvv": "311",
+    "billing_zip": "71208",
+    "policy_number": "POL19271599",
+    "claim_number": "CLM1903484",
+    "policy_id": "PID49778580",
+    "claim_id": "CID1951836",
+    "member_id": "MEM63534831",
+    "subscriber_id": "SUB98586562",
+    "group_number": "GRP927709",
+    "reference_number": "REF43951535",
+    "id_number": "ID77981562",
+    "vehicle_make": "BMW",
+    "vehicle_model": "3 Series",
+    "vehicle_year": "2020",
+    "license_plate": "JJH4568",
+    "vin": "HU98LJHORVXCXWTR2",
+    "incident_date": "01/28/2026",
+    "incident_location": "San Francisco",
+    "coverage_type": "condo",
+    "payment_method": "check"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Sorry for the wait. May I have your full name and policy number to get started?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Start with an apology—'Sorry for the wait'—omit any company or agent name, and immediately ask, 'May I have your full name and policy number to get started?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Nora Laurent and my policy number is POL19271599."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you, Nora. I have policy number POL19271599 on file. Please provide:\n- Your claim number\n- Preferred delivery method: PDF, paper, or portal\n- Exact recipient email address",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 2,
+      "guideline_text": "Confirm Document Need: Ask for the policy number and claim number (both required), the preferred delivery method (PDF, paper, or portal), and the exact recipient email, and do not ask which documents are needed, whether the request is policy or claim related, or any date range."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "My claim number is CLM1903484. I would prefer to receive the documents via email, and you can send them to nora.laurent@yahoo.com."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "To verify your identity, please provide:\n- Your policy or claim number\n- The phone number associated with your account",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 3,
+      "guideline_text": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My claim number is CLM1903484 and my phone number is +391623730852."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Got it. We will deliver your documents by email to nora.laurent@yahoo.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 4,
+      "guideline_text": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Thank you. Is there an estimated delivery time for when I'll receive the documents?"
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Your requested policy documents have been sent by email to nora.laurent@yahoo.com.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 5,
+      "guideline_text": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Great, thanks for your help."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "You’re very welcome, Nora. We appreciate you choosing Shield Insurance. Have a wonderful day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 7,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Thanks again. Goodbye."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Summary of documents sent: Policy declarations page, Coverage summary, and Insurance ID card. Delivery method and destination: Email to nora.laurent@yahoo.com. Thank you for calling Shield Insurance. Goodbye.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 6,
+      "guideline_text": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_policy_documents",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Start with an apology—'Sorry for the wait'—omit any company or agent name, and immediately ask, 'May I have your full name and policy number to get started?'",
+      "evidence": "Sorry for the wait. May I have your full name and policy number to get started?"
+    },
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_policy_documents",
+      "guideline_phase": 2,
+      "guideline": "Confirm Document Need: Ask for the policy number and claim number (both required), the preferred delivery method (PDF, paper, or portal), and the exact recipient email, and do not ask which documents are needed, whether the request is policy or claim related, or any date range.",
+      "evidence": "Thank you, Nora. I have policy number POL19271599 on file. Please provide:\n- Your claim number\n- Preferred delivery method: PDF, paper, or portal\n- Exact recipient email address"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start with an apology—'Sorry for the wait'—omit any company or agent name, and immediately ask, 'May I have your full name and policy number to get started?'"
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 2,
+      "original": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range.",
+      "modified": "Confirm Document Need: Ask for the policy number and claim number (both required), the preferred delivery method (PDF, paper, or portal), and the exact recipient email, and do not ask which documents are needed, whether the request is policy or claim related, or any date range."
+    }
+  ],
+  "rule_based_termination": null
+}

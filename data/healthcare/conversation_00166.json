@@ -1,0 +1,387 @@
+{
+  "domain": "healthcare",
+  "intent_name": "referral_and_authorization_management",
+  "workflow_index": 1,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "referral_and_authorization_management": {
+        "Phase 1": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and set a friendly tone.",
+        "Phase 2": "Patient Identification: Collect the patient’s full legal name and date of birth.",
+        "Phase 3": "Purpose Selection: Ask the caller to choose one purpose among starting a referral, starting an authorization, updating a request, checking a request, adding documents, or obtaining a referral or authorization number.",
+        "Phase 4": "Existing References: Ask the caller to provide any existing referral, authorization, or tracking numbers related to this request.",
+        "Phase 5": "Caller Relationship and Contacts: Capture the caller’s relationship to the patient, a callback phone number, and an email address for updates.",
+        "Phase 6": "Insurance Verification: Record the insurance payer name and the member ID exactly as listed on the insurance card.",
+        "Phase 7": "Provider and Destination: Record the ordering or referring provider’s full name and the receiving clinic or specialist name.",
+        "Phase 8": "Service Scope: Collect the service or procedure description, related diagnosis and procedure codes, and the expected timing for the service.",
+        "Phase 9": "Document Intake Setup: Request document submission now and ask for the preferred secure upload link delivery by text or email.",
+        "Phase 10": "Real-Time Upload and Confirmation: Send the secure upload link using the chosen method and ask the caller to confirm once all documents are uploaded and to list the files submitted.",
+        "Phase 11": "Consent to Process: Request explicit permission to proceed now to create, update, or retrieve the request using the information provided.",
+        "Phase 12": "Results and Numbers: Provide the assigned referral or authorization number and the current status shown in the system and ask the caller to confirm everything looks correct.",
+        "Phase 13": "Confirmation Preference: Ask how the caller wants to receive the confirmation summary and any reference numbers by text, email, or both.",
+        "Phase 14": "Confirmation Delivery: Send the confirmation using the selected method and ask the caller to confirm receipt.",
+        "Phase 15": "Wrap-Up: Thank the caller, ask whether they need anything else today, and close the interaction."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "referral_and_authorization_management": {
+        "Phase 1": "Warm Greeting: Begin with the exact phrase 'For identification, please provide your full name, date of birth, and ZIP code,' and do not include any greeting, personal name, or company name.",
+        "Phase 2": "Patient Identification: Collect the patient’s full legal name and date of birth.",
+        "Phase 3": "Purpose Selection: Ask the caller to choose one purpose among starting a referral, starting an authorization, updating a request, checking a request, adding documents, or obtaining a referral or authorization number.",
+        "Phase 4": "Existing References: Inform the caller that no referral, authorization, or tracking numbers are needed for this request and proceed without asking for them.",
+        "Phase 5": "Caller Relationship and Contacts: Capture the caller’s relationship to the patient, a callback phone number, and an email address for updates.",
+        "Phase 6": "Insurance Verification: Collect the payer's customer service phone number and the group number from the card, and do not record the payer name or the member ID.",
+        "Phase 7": "Provider and Destination: Record the ordering or referring provider’s full name and the receiving clinic or specialist name.",
+        "Phase 8": "Service Scope: Collect the service or procedure description, related diagnosis and procedure codes, and the expected timing for the service.",
+        "Phase 9": "Document Intake Setup: Do not upload digitally; instead, plan to drop off printed copies in person and tell me your ZIP code so I can select the nearest office.",
+        "Phase 10": "Real-Time Upload and Confirmation: Send the secure upload link using the chosen method and ask the caller to confirm once all documents are uploaded and to list the files submitted.",
+        "Phase 11": "Consent to Process: Request explicit permission to proceed now to create, update, or retrieve the request using the information provided.",
+        "Phase 12": "Results and Numbers: Provide the assigned referral or authorization number and the current status shown in the system and ask the caller to confirm everything looks correct.",
+        "Phase 13": "Confirmation Preference: Ask how the caller wants to receive the confirmation summary and any reference numbers by text, email, or both.",
+        "Phase 14": "Confirmation Delivery: Send the confirmation using the selected method and ask the caller to confirm receipt.",
+        "Phase 15": "Wrap-Up: Do not thank the caller; instead, request their full name and preferred contact method, include the exact sentence 'I will remain on the line for your reply,' and do not close the interaction."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 1,
+      "phase": "Phase 1",
+      "original": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and set a friendly tone.",
+      "modified": "Warm Greeting: Begin with the exact phrase 'For identification, please provide your full name, date of birth, and ZIP code,' and do not include any greeting, personal name, or company name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 1,
+      "phase": "Phase 4",
+      "original": "Existing References: Ask the caller to provide any existing referral, authorization, or tracking numbers related to this request.",
+      "modified": "Existing References: Inform the caller that no referral, authorization, or tracking numbers are needed for this request and proceed without asking for them."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 1,
+      "phase": "Phase 6",
+      "original": "Insurance Verification: Record the insurance payer name and the member ID exactly as listed on the insurance card.",
+      "modified": "Insurance Verification: Collect the payer's customer service phone number and the group number from the card, and do not record the payer name or the member ID."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 1,
+      "phase": "Phase 9",
+      "original": "Document Intake Setup: Request document submission now and ask for the preferred secure upload link delivery by text or email.",
+      "modified": "Document Intake Setup: Do not upload digitally; instead, plan to drop off printed copies in person and tell me your ZIP code so I can select the nearest office."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "referral_and_authorization_management",
+      "workflow_index": 1,
+      "phase": "Phase 15",
+      "original": "Wrap-Up: Thank the caller, ask whether they need anything else today, and close the interaction.",
+      "modified": "Wrap-Up: Do not thank the caller; instead, request their full name and preferred contact method, include the exact sentence 'I will remain on the line for your reply,' and do not close the interaction."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Neha Muller",
+    "first_name": "Neha",
+    "last_name": "Muller",
+    "gender": "male",
+    "phone": "+31195432117",
+    "email": "neha.muller@inbox.dev",
+    "address": {
+      "street": "7034 Lakeview Dr",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "31130"
+    },
+    "date_of_birth": "08/08/1997",
+    "ssn_last4": "8500",
+    "card_type": "Mastercard",
+    "card_number": "0937221228968269",
+    "card_last4": "8269",
+    "card_expiration": "03/2031",
+    "cardholder_name": "Neha Muller",
+    "card_cvv": "308",
+    "billing_zip": "31130",
+    "insurance_carrier": "WellCare",
+    "insurance_plan_name": "Platinum PPO",
+    "member_id": "MEM89369772",
+    "group_number": "GRP478884",
+    "subscriber_id": "SUB67045887",
+    "provider_name": "Dr. Emily Chen",
+    "provider_npi": "3456789012",
+    "appointment_date": "04/24/2026",
+    "appointment_time": "3:15 PM",
+    "visit_type": "in-person",
+    "household_size": 6,
+    "monthly_income": 9239,
+    "patient_account_number": "PA25008756",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "For identification, please provide your full name, date of birth, and ZIP code,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 1,
+      "guideline_text": "Warm Greeting: Begin with the exact phrase 'For identification, please provide your full name, date of birth, and ZIP code,' and do not include any greeting, personal name, or company name."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Neha Muller, my date of birth is August 8, 1997, and my ZIP code is 31130."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thank you. I have your full name as Neha Muller and your date of birth as August 8, 1997.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 2,
+      "guideline_text": "Patient Identification: Collect the patient’s full legal name and date of birth."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'm calling to check the status of a prior authorization for a planned visit. Can you help me with that?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please choose one purpose: starting a referral, starting an authorization, updating a request, checking a request, adding documents, or obtaining a referral or authorization number.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 3,
+      "guideline_text": "Purpose Selection: Ask the caller to choose one purpose among starting a referral, starting an authorization, updating a request, checking a request, adding documents, or obtaining a referral or authorization number."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "I would like to check the status of the prior authorization."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "You do not need to provide any referral, authorization, or tracking numbers for this request. I will proceed without them.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 4,
+      "guideline_text": "Existing References: Inform the caller that no referral, authorization, or tracking numbers are needed for this request and proceed without asking for them."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "The appointment is scheduled for April 24, 2026, with Dr. Emily Chen."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please provide your relationship to the patient, a callback phone number, and an email address for updates.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 5,
+      "guideline_text": "Caller Relationship and Contacts: Capture the caller’s relationship to the patient, a callback phone number, and an email address for updates."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I am the patient, and my callback number is +31195432117. You can use neha.muller@inbox.dev for email updates."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Please provide the payer’s customer service phone number and the group number from your insurance card.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 6,
+      "guideline_text": "Insurance Verification: Collect the payer's customer service phone number and the group number from the card, and do not record the payer name or the member ID."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "The customer service phone number is 1-877-333-7133 and the group number is GRP478884."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "I have the receiving specialist recorded as Dr. Emily Chen. Please provide the full name of the ordering or referring provider.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 7,
+      "guideline_text": "Provider and Destination: Record the ordering or referring provider’s full name and the receiving clinic or specialist name."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "It's also Dr. Emily Chen."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Please provide the service or procedure description, the related diagnosis and procedure codes, and the expected timing for the service. I have April 24, 2026 as the date; please confirm or update.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 8,
+      "guideline_text": "Service Scope: Collect the service or procedure description, related diagnosis and procedure codes, and the expected timing for the service."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "The service is a general check-up, the diagnosis code is Z00.00, and the procedure code is 99385. The expected timing for the service is confirmed for April 24, 2026."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "Please do not upload any documents digitally. Plan to drop off printed copies in person. To select the nearest office, please provide your ZIP code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 9,
+      "guideline_text": "Document Intake Setup: Do not upload digitally; instead, plan to drop off printed copies in person and tell me your ZIP code so I can select the nearest office."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Alright, I won't need any additional documentation right now. How long does it usually take to get an update on the authorization status?"
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "How would you like to receive the secure upload link: text to +31195432117 or email to neha.muller@inbox.dev? After you upload your documents, please reply to confirm that all files are uploaded and list the file names you submitted.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 10,
+      "guideline_text": "Real-Time Upload and Confirmation: Send the secure upload link using the chosen method and ask the caller to confirm once all documents are uploaded and to list the files submitted."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "I will follow up soon. Thank you for your help."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "Please confirm your full name and your preferred contact method, phone or email.\nI will remain on the line for your reply,",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 15,
+      "guideline_text": "Wrap-Up: Do not thank the caller; instead, request their full name and preferred contact method, include the exact sentence 'I will remain on the line for your reply,' and do not close the interaction."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 1,
+      "guideline": "Warm Greeting: Begin with the exact phrase 'For identification, please provide your full name, date of birth, and ZIP code,' and do not include any greeting, personal name, or company name.",
+      "evidence": "For identification, please provide your full name, date of birth, and ZIP code,"
+    },
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 4,
+      "guideline": "Existing References: Inform the caller that no referral, authorization, or tracking numbers are needed for this request and proceed without asking for them.",
+      "evidence": "You do not need to provide any referral, authorization, or tracking numbers for this request. I will proceed without them."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 6,
+      "guideline": "Insurance Verification: Collect the payer's customer service phone number and the group number from the card, and do not record the payer name or the member ID.",
+      "evidence": "Please provide the payer’s customer service phone number and the group number from your insurance card."
+    },
+    {
+      "turn_index": 16,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 9,
+      "guideline": "Document Intake Setup: Do not upload digitally; instead, plan to drop off printed copies in person and tell me your ZIP code so I can select the nearest office.",
+      "evidence": "Please do not upload any documents digitally. Plan to drop off printed copies in person. To select the nearest office, please provide your ZIP code."
+    },
+    {
+      "turn_index": 20,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "referral_and_authorization_management",
+      "guideline_phase": 15,
+      "guideline": "Wrap-Up: Do not thank the caller; instead, request their full name and preferred contact method, include the exact sentence 'I will remain on the line for your reply,' and do not close the interaction.",
+      "evidence": "Please confirm your full name and your preferred contact method, phone or email.\nI will remain on the line for your reply,"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 1,
+      "original": "Warm Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and set a friendly tone.",
+      "modified": "Warm Greeting: Begin with the exact phrase 'For identification, please provide your full name, date of birth, and ZIP code,' and do not include any greeting, personal name, or company name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 4,
+      "original": "Existing References: Ask the caller to provide any existing referral, authorization, or tracking numbers related to this request.",
+      "modified": "Existing References: Inform the caller that no referral, authorization, or tracking numbers are needed for this request and proceed without asking for them."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 6,
+      "original": "Insurance Verification: Record the insurance payer name and the member ID exactly as listed on the insurance card.",
+      "modified": "Insurance Verification: Collect the payer's customer service phone number and the group number from the card, and do not record the payer name or the member ID."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 9,
+      "original": "Document Intake Setup: Request document submission now and ask for the preferred secure upload link delivery by text or email.",
+      "modified": "Document Intake Setup: Do not upload digitally; instead, plan to drop off printed copies in person and tell me your ZIP code so I can select the nearest office."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "referral_and_authorization_management",
+      "phase": 15,
+      "original": "Wrap-Up: Thank the caller, ask whether they need anything else today, and close the interaction.",
+      "modified": "Wrap-Up: Do not thank the caller; instead, request their full name and preferred contact method, include the exact sentence 'I will remain on the line for your reply,' and do not close the interaction."
+    }
+  ],
+  "rule_based_termination": null
+}

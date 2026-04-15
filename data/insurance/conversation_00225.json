@@ -1,0 +1,227 @@
+{
+  "domain": "insurance",
+  "intent_name": "request_policy_documents",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "request_policy_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range.",
+        "Phase 3": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it.",
+        "Phase 4": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+        "Phase 5": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system.",
+        "Phase 6": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call.",
+        "Phase 7": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "human_agent_request": "If the caller requests a human agent, acknowledge the request and immediately transfer the call to a human agent.",
+      "verification_declined": "If the caller declines verification, immediately transfer the call to a human agent for further handling.",
+      "emergency_safety_priority": "If a customer reports an active emergency such as injuries, fire, or immediate danger, advise them to contact local emergency services (911 in the U.S.) immediately before continuing the insurance discussion.",
+      "self_harm_or_crisis_support": "If a customer expresses intent to self-harm or suicide, encourage them to seek immediate help from local emergency services or a crisis hotline (e.g., 988 in the U.S.).",
+      "third_party_privacy_protection": "If someone other than the named insured or an authorized representative requests policy or claim details, explicitly decline to share protected information to maintain privacy.",
+      "legal_tax_medical_advice_disclaimer": "If the customer asks for legal, tax, or medical advice or determinations, explain that you cannot provide that advice and restrict your response to general policy information.",
+      "repeated_question_no_response": "If the same question is asked three times without receiving a response from the caller, end the call by saying 'I'm ending the call now.'"
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "request_policy_documents": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'",
+        "Phase 2": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range.",
+        "Phase 3": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it.",
+        "Phase 4": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information.",
+        "Phase 5": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system.",
+        "Phase 6": "End the call politely, ensuring the caller feels valued and assisted.: Immediately transfer the caller to an automated menu without a farewell, instructing them to press 1 for a transcript and 2 for a receipt.",
+        "Phase 7": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_policy_documents",
+      "workflow_index": 0,
+      "phase": "Phase 4",
+      "original": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+      "modified": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "request_policy_documents",
+      "workflow_index": 0,
+      "phase": "Phase 7",
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Immediately transfer the caller to an automated menu without a farewell, instructing them to press 1 for a transcript and 2 for a receipt."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "insurance",
+    "name": "Lucia Morales",
+    "first_name": "Lucia",
+    "last_name": "Morales",
+    "gender": "male",
+    "phone": "+4942695390925",
+    "email": "lucia.morales@gmail.com",
+    "address": {
+      "street": "1554 1st Ave",
+      "city": "Boise",
+      "state": "ID",
+      "zip": "44295"
+    },
+    "date_of_birth": "03/22/1974",
+    "ssn_last4": "8151",
+    "card_type": "Discover",
+    "card_number": "5483439388697413",
+    "card_last4": "7413",
+    "card_expiration": "04/2029",
+    "cardholder_name": "Lucia Morales",
+    "card_cvv": "644",
+    "billing_zip": "44295",
+    "policy_number": "POL73662410",
+    "claim_number": "CLM1270360",
+    "policy_id": "PID58506605",
+    "claim_id": "CID7914039",
+    "member_id": "MEM97173414",
+    "subscriber_id": "SUB93284323",
+    "group_number": "GRP458783",
+    "reference_number": "REF58028266",
+    "id_number": "ID82414085",
+    "vehicle_make": "Toyota",
+    "vehicle_model": "Camry",
+    "vehicle_year": "2019",
+    "license_plate": "WVI0697",
+    "vin": "UNKR0ODNT2255TXAY",
+    "incident_date": "02/16/2026",
+    "incident_location": "Chicago",
+    "coverage_type": "life",
+    "payment_method": "credit card"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction. Use: 'Thank you for calling Shield Insurance. I'm Aria, your virtual insurance assistant. How can I help you today?'"
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Aria, I need copies of my policy documents. Could you email them to me?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "I can help with that. Which specific documents do you need? Is this request policy related or claim related? What date range should I include?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 2,
+      "guideline_text": "Confirm Document Need: Ask which documents they need, whether the request is policy related or claim related, and any relevant date range."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I need my full policy packet and the latest billing statement. It's policy related, covering up to the current date."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "To verify your identity, please provide your policy or claim number and the phone number associated with your account.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 3,
+      "guideline_text": "Verify Identity: Ask for exactly two identifiers—the policy or claim number and the phone number associated with the account—to locate it."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My policy number is POL73662410, and my phone number is +4942695390925."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Please confirm your delivery preference: email or SMS. To use your saved contact information, reply with the exact phrase 'Use saved details'.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 4,
+      "guideline_text": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Use saved details."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "All set. I have emailed your full policy packet and the latest billing statement covering through today to your email on file.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 5,
+      "guideline_text": "Send Documents: Retrieve the specified documents and send them via the chosen delivery method using the internal system."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "Thank you! I'll check my email for them."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Summary of documents sent:\n- Full policy packet\n- Coverage declarations page\n- Latest billing statement through today\n\nDelivery: Emailed to your email address on file.\n\nThank you for calling Shield Insurance. Have a great day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 6,
+      "guideline_text": "Summary and Close: Summarize exactly three documents sent, state the delivery method and destination, thank the caller, and end the call."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 6,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "request_policy_documents",
+      "guideline_phase": 4,
+      "guideline": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information.",
+      "evidence": "Please confirm your delivery preference: email or SMS. To use your saved contact information, reply with the exact phrase 'Use saved details'."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 4,
+      "original": "Collect Delivery Preference: Ask whether they prefer email or SMS delivery and capture exactly one destination email address or one mobile number.",
+      "modified": "Collect Delivery Preference: Ask if they want email or SMS but do not collect any contact details, instead instruct them to reply with the exact phrase 'Use saved details' to authorize using their account’s existing contact information."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "request_policy_documents",
+      "phase": 7,
+      "original": "End the call politely, ensuring the caller feels valued and assisted.",
+      "modified": "End the call politely, ensuring the caller feels valued and assisted.: Immediately transfer the caller to an automated menu without a farewell, instructing them to press 1 for a transcript and 2 for a receipt."
+    }
+  ],
+  "rule_based_termination": null
+}

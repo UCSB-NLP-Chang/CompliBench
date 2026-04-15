@@ -1,0 +1,201 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "file_service_complaint_or_feedback",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "file_service_complaint_or_feedback": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Identify feedback type and experience summary: Ask whether the caller wants to submit a complaint, compliment, or general feedback and request a concise description of the experience in one reply",
+        "Phase 3": "Gather experience specifics: Ask for the date, time, location, flight number, route, seat, and any staff names to precisely identify the experience",
+        "Phase 4": "Collect identification details: Ask for the caller’s full name, booking reference, and Stratos Rewards number to link the feedback to their record",
+        "Phase 5": "Set contact details and preference: Ask for the email address, country code and phone number, and the preferred contact channel for updates",
+        "Phase 6": "Confirm submission intent: Present a brief one-sentence summary of the feedback type and experience and ask the caller to confirm readiness to submit",
+        "Phase 7": "Create case and acknowledge: Submit the feedback in the system, provide the case reference number and expected response timeframe",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "file_service_complaint_or_feedback": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Begin by asking 'Please provide your full name and 6-character booking code to get started,' and include no greeting, company mention, or assistant name.",
+        "Phase 2": "Confirm submission intent: Present a brief one-sentence summary of the feedback type and experience and ask the caller to confirm readiness to submit",
+        "Phase 3": "Gather experience specifics: Ask only for the booking reference (PNR), the passenger's last name, and the exact phrase 'VERIFY-EXPERIENCE', and do not request date, time, location, flight number, route, seat, or staff names.",
+        "Phase 4": "Create case and acknowledge: Submit the feedback in the system, provide the case reference number and expected response timeframe",
+        "Phase 5": "Collect identification details: Ask for the caller’s full name, booking reference, and Stratos Rewards number to link the feedback to their record",
+        "Phase 6": "Set contact details and preference: Ask for the email address, country code and phone number, and the preferred contact channel for updates",
+        "Phase 7": "Identify feedback type and experience summary: Ask whether the caller wants to submit a complaint, compliment, or general feedback and request a concise description of the experience in one reply",
+        "Phase 8": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 0,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin by asking 'Please provide your full name and 6-character booking code to get started,' and include no greeting, company mention, or assistant name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "file_service_complaint_or_feedback",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Gather experience specifics: Ask for the date, time, location, flight number, route, seat, and any staff names to precisely identify the experience",
+      "modified": "Gather experience specifics: Ask only for the booking reference (PNR), the passenger's last name, and the exact phrase 'VERIFY-EXPERIENCE', and do not request date, time, location, flight number, route, seat, or staff names."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Aria Ferrari",
+    "first_name": "Aria",
+    "last_name": "Ferrari",
+    "gender": "male",
+    "phone": "+446236403633",
+    "email": "aria.ferrari@fastmail.com",
+    "address": {
+      "street": "6348 Birch St",
+      "city": "Memphis",
+      "state": "TN",
+      "zip": "31753"
+    },
+    "record_locator": "84VXQ0",
+    "confirmation_code": "84VXQ0",
+    "booking_reference": "84VXQ0",
+    "pnr": "84VXQ0",
+    "ticket_number": "0025315214492",
+    "flight_number": "B60564",
+    "origin": "Miami (MIA)",
+    "destination": "San Francisco (SFO)",
+    "travel_date": "2026-05-06",
+    "return_date": "2026-05-13",
+    "seat_number": "3D",
+    "seat_preference": "aisle",
+    "cabin_class": "premium economy",
+    "fare_type": "refundable",
+    "payment_method": "credit card",
+    "card_last4": "4948"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Please provide your full name and 6-character booking code to get started.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Begin by asking 'Please provide your full name and 6-character booking code to get started,' and include no greeting, company mention, or assistant name."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "My name is Aria Ferrari and my booking code is 84VXQ0."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Service complaint about a significant flight delay on your recent trip. Are you ready for me to submit this now?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 6,
+      "guideline_text": "Confirm submission intent: Present a brief one-sentence summary of the feedback type and experience and ask the caller to confirm readiness to submit"
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Actually, I wanted to provide some feedback about my last flight. The cabin crew was really attentive and made the journey quite pleasant, but the in-flight entertainment system wasn't working properly. Can you note this feedback?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Please reply with the exact phrase VERIFY-EXPERIENCE.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 3,
+      "guideline_text": "Gather experience specifics: Ask only for the booking reference (PNR), the passenger's last name, and the exact phrase 'VERIFY-EXPERIENCE', and do not request date, time, location, flight number, route, seat, or staff names."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "Thanks a lot."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you for your feedback, Aria. We truly appreciate you and look forward to welcoming you on board again. Have a wonderful day.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 8,
+      "guideline_text": "End the call politely, ensuring the caller feels valued and assisted."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "file_service_complaint_or_feedback",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Begin by asking 'Please provide your full name and 6-character booking code to get started,' and include no greeting, company mention, or assistant name.",
+      "evidence": "Please provide your full name and 6-character booking code to get started."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "file_service_complaint_or_feedback",
+      "guideline_phase": 3,
+      "guideline": "Gather experience specifics: Ask only for the booking reference (PNR), the passenger's last name, and the exact phrase 'VERIFY-EXPERIENCE', and do not request date, time, location, flight number, route, seat, or staff names.",
+      "evidence": "Please reply with the exact phrase VERIFY-EXPERIENCE."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Begin by asking 'Please provide your full name and 6-character booking code to get started,' and include no greeting, company mention, or assistant name."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "file_service_complaint_or_feedback",
+      "phase": 3,
+      "original": "Gather experience specifics: Ask for the date, time, location, flight number, route, seat, and any staff names to precisely identify the experience",
+      "modified": "Gather experience specifics: Ask only for the booking reference (PNR), the passenger's last name, and the exact phrase 'VERIFY-EXPERIENCE', and do not request date, time, location, flight number, route, seat, or staff names."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,298 @@
+{
+  "domain": "healthcare",
+  "intent_name": "verify_appointment_details_and_notifications",
+  "workflow_index": 0,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting and purpose confirmation: Greet the caller as Ava from Bright Path Health, introduce yourself, and confirm they want to verify details for an existing appointment.",
+        "Phase 2": "Patient verification: Ask for the caller's full name and date of birth in 2 digit month 2 digit day 4 digit year format to locate the record.",
+        "Phase 3": "Appointment identification: Ask for the exact appointment date in 2 digit month 2 digit day 4 digit year format to identify the correct booking.",
+        "Phase 4": "Appointment details: Retrieve and clearly state the exact appointment date, start time with time zone, visit type in person or telehealth, provider full name and credentials, and location name with full address as stored in the system.",
+        "Phase 5": "Details confirmation: Ask the caller to confirm that the stated appointment date, start time, time zone, visit type, provider, and location are correct.",
+        "Phase 6": "Notification selection and consent: Read the email on file and the last 4 digits of the mobile number on file, ask which notifications to send now from confirmation email, SMS reminder, and telehealth join link, ask which delivery channel to use for each selected item, and confirm consent to send now.",
+        "Phase 7": "Send and verify: Send the selected notifications immediately from the system, state the exact number of messages generated, and ask the caller to confirm receipt.",
+        "Phase 8": "Wrap up: Thank the caller for contacting Bright Path Health and ask what else they need today."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "verify_appointment_details_and_notifications": {
+        "Phase 1": "Greeting and purpose confirmation: Greet the caller as Ava from Bright Path Health, introduce yourself, and confirm they want to verify details for an existing appointment.",
+        "Phase 2": "Patient verification: Ask for the caller's patient ID number and current ZIP code to locate the record.",
+        "Phase 3": "Appointment identification: Ask for the customer's full name and the phone number used to book, and explicitly say you do not need the appointment date.",
+        "Phase 4": "Appointment details: Retrieve and clearly state the exact appointment date, start time with time zone, visit type in person or telehealth, provider full name and credentials, and location name with full address as stored in the system.",
+        "Phase 5": "Details confirmation: Ask the caller to confirm that the stated appointment date, start time, time zone, visit type, provider, and location are correct.",
+        "Phase 6": "Notification selection and consent: Read the email on file and the last 4 digits of the mobile number on file, ask which notifications to send now from confirmation email, SMS reminder, and telehealth join link, ask which delivery channel to use for each selected item, and confirm consent to send now.",
+        "Phase 7": "Send and verify: Send the selected notifications immediately from the system, state the exact number of messages generated, and ask the caller to confirm receipt.",
+        "Phase 8": "Wrap up: Thank the caller for contacting Bright Path Health and ask what else they need today."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 0,
+      "phase": "Phase 2",
+      "original": "Patient verification: Ask for the caller's full name and date of birth in 2 digit month 2 digit day 4 digit year format to locate the record.",
+      "modified": "Patient verification: Ask for the caller's patient ID number and current ZIP code to locate the record."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "verify_appointment_details_and_notifications",
+      "workflow_index": 0,
+      "phase": "Phase 3",
+      "original": "Appointment identification: Ask for the exact appointment date in 2 digit month 2 digit day 4 digit year format to identify the correct booking.",
+      "modified": "Appointment identification: Ask for the customer's full name and the phone number used to book, and explicitly say you do not need the appointment date."
+    }
+  ],
+  "cat3_overrides": [],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Daniel Chaudhary",
+    "first_name": "Daniel",
+    "last_name": "Chaudhary",
+    "gender": "male",
+    "phone": "+61587913124",
+    "email": "daniel.chaudhary@outlook.com",
+    "address": {
+      "street": "9692 Washington St",
+      "city": "New Orleans",
+      "state": "LA",
+      "zip": "40814"
+    },
+    "date_of_birth": "05/22/1988",
+    "ssn_last4": "6395",
+    "card_type": "American Express",
+    "card_number": "7938194891498504",
+    "card_last4": "8504",
+    "card_expiration": "04/2028",
+    "cardholder_name": "Daniel Chaudhary",
+    "card_cvv": "8239",
+    "billing_zip": "40814",
+    "insurance_carrier": "Molina Healthcare",
+    "insurance_plan_name": "Choice Plus POS",
+    "member_id": "MEM72286458",
+    "group_number": "GRP849516",
+    "subscriber_id": "SUB58117474",
+    "provider_name": "Dr. Emily Chen",
+    "provider_npi": "3456789012",
+    "appointment_date": "03/21/2026",
+    "appointment_time": "10:00 AM",
+    "visit_type": "telehealth",
+    "household_size": 4,
+    "monthly_income": 2774,
+    "patient_account_number": "PA54788103",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hello, this is Ava with Bright Path Health. Are you looking to verify details for an existing appointment?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 1,
+      "guideline_text": "Greeting and purpose confirmation: Greet the caller as Ava from Bright Path Health, introduce yourself, and confirm they want to verify details for an existing appointment."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Yes, I would like to confirm the details for my upcoming telehealth appointment. Can you let me know the date and time, and also resend the join link?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Certainly. To locate your record, please provide your patient ID number and your current ZIP code.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 2,
+      "guideline_text": "Patient verification: Ask for the caller's patient ID number and current ZIP code to locate the record."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, my patient account number is PA54788103 and my ZIP code is 40814."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thank you. To verify your appointment, please provide your full name and the phone number used to book. I do not need the appointment date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "guideline_text": "Appointment identification: Ask for the customer's full name and the phone number used to book, and explicitly say you do not need the appointment date."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My name is Daniel Chaudhary and my phone number is +61587913124."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Here are your appointment details as listed:\n\n- Appointment date: Tuesday, June 18, 2024\n- Start time: 9:30 AM ET\n- Visit type: Telehealth\n- Provider: Jonathan Kim, MD\n- Location: Bright Path Health Telehealth Clinic, 2550 Richmond Road, Suite 320, Lexington, KY 40509",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 4,
+      "guideline_text": "Appointment details: Retrieve and clearly state the exact appointment date, start time with time zone, visit type in person or telehealth, provider full name and credentials, and location name with full address as stored in the system."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "Could you please check again? My appointment is with Dr. Emily Chen, not Dr. Jonathan Kim."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Please confirm whether all of the following are correct:\n\n- Appointment date: Tuesday, June 18, 2024\n- Start time and time zone: 9:30 AM ET\n- Visit type: Telehealth\n- Provider: Jonathan Kim, MD\n- Location: Bright Path Health Telehealth Clinic, 2550 Richmond Road, Suite 320, Lexington, KY 40509\n\nAre these details correct?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 5,
+      "guideline_text": "Details confirmation: Ask the caller to confirm that the stated appointment date, start time, time zone, visit type, provider, and location are correct."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "There seems to be some confusion because the provider should be Dr. Emily Chen and the appointment should be on March 21, 2026, at 10:00 AM. Could you double-check that for me, please?"
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "To verify your appointment, please provide your full name and the phone number used to book. I do not need the appointment date.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "guideline_text": "Appointment identification: Ask for the customer's full name and the phone number used to book, and explicitly say you do not need the appointment date."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Yes, all of the details should be correct with Dr. Emily Chen on March 21, 2026, at 10:00 AM. Could you resend the join link for that appointment?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "- Appointment date: March 21, 2026\n- Start time: 10:00 AM ET\n- Visit type: Telehealth\n- Provider: Emily Chen, MD\n- Location: Bright Path Health Telehealth Clinic, 2550 Richmond Road, Suite 320, Lexington, KY 40509",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 4,
+      "guideline_text": "Appointment details: Retrieve and clearly state the exact appointment date, start time with time zone, visit type in person or telehealth, provider full name and credentials, and location name with full address as stored in the system."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "Great, thank you. Could you please resend the telehealth join link for that appointment to my email daniel.chaudhary@outlook.com?"
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "Thank you, Daniel.\n\nEmail on file: daniel.chaudhary@outlook.com\nMobile on file ending in 3124\n\nWhich notifications would you like me to send now:\n- Confirmation email\n- SMS reminder\n- Telehealth join link\n\nFor each selected item, which delivery channel should I use: email or SMS.\n\nDo I have your consent to send now?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 6,
+      "guideline_text": "Notification selection and consent: Read the email on file and the last 4 digits of the mobile number on file, ask which notifications to send now from confirmation email, SMS reminder, and telehealth join link, ask which delivery channel to use for each selected item, and confirm consent to send now."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "Please send the telehealth join link to my email. Thank you."
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "I have sent the telehealth join link now. Total messages sent: 1. Please confirm you received it.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 7,
+      "guideline_text": "Send and verify: Send the selected notifications immediately from the system, state the exact number of messages generated, and ask the caller to confirm receipt."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "I just checked my email, and I received the link. Thank you for your help."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "Thank you for contacting Bright Path Health. Is there anything else I can help you with today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 8,
+      "guideline_text": "Wrap up: Thank the caller for contacting Bright Path Health and ask what else they need today."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 2,
+      "guideline": "Patient verification: Ask for the caller's patient ID number and current ZIP code to locate the record.",
+      "evidence": "Certainly. To locate your record, please provide your patient ID number and your current ZIP code."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 3,
+      "guideline": "Appointment identification: Ask for the customer's full name and the phone number used to book, and explicitly say you do not need the appointment date.",
+      "evidence": "Thank you. To verify your appointment, please provide your full name and the phone number used to book. I do not need the appointment date."
+    },
+    {
+      "turn_index": 10,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "verify_appointment_details_and_notifications",
+      "guideline_phase": 3,
+      "guideline": "Appointment identification: Ask for the customer's full name and the phone number used to book, and explicitly say you do not need the appointment date.",
+      "evidence": "To verify your appointment, please provide your full name and the phone number used to book. I do not need the appointment date."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 2,
+      "original": "Patient verification: Ask for the caller's full name and date of birth in 2 digit month 2 digit day 4 digit year format to locate the record.",
+      "modified": "Patient verification: Ask for the caller's patient ID number and current ZIP code to locate the record."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "verify_appointment_details_and_notifications",
+      "phase": 3,
+      "original": "Appointment identification: Ask for the exact appointment date in 2 digit month 2 digit day 4 digit year format to identify the correct booking.",
+      "modified": "Appointment identification: Ask for the customer's full name and the phone number used to book, and explicitly say you do not need the appointment date."
+    }
+  ],
+  "rule_based_termination": null
+}

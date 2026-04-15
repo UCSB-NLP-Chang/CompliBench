@@ -1,0 +1,296 @@
+{
+  "domain": "healthcare",
+  "intent_name": "schedule_consultation",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a professional and empathetic tone throughout the conversation, ensuring the customer feels heard and supported."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "schedule_consultation": {
+        "Phase 1": "Friendly Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today.",
+        "Phase 2": "Intent Confirmation: Confirm they are calling to schedule a consultation today.",
+        "Phase 3": "Patient Lookup: Ask for full name and date of birth to locate or create the patient record.",
+        "Phase 4": "Contact Preferences: Ask for mobile number and email and request consent to receive confirmations by text, email, or both.",
+        "Phase 5": "Consultation Focus: Ask for the primary reason for the visit and the type of clinician or service line they prefer.",
+        "Phase 6": "Visit Format: Ask whether they prefer in person or telehealth for the consultation.",
+        "Phase 7": "Location Details: Collect city, state, ZIP code, and state of residence to determine clinic proximity and telehealth eligibility.",
+        "Phase 8": "Clinician Preference: Ask whether they want a specific clinician or the first available.",
+        "Phase 9": "Scheduling Window: Ask for acceptable days of week and times of day such as morning, afternoon, or evening.",
+        "Phase 10": "Offer Appointment Choices: Present 2 concrete appointment options with date, time, format, location, and clinician, and ask them to choose one.",
+        "Phase 11": "Coverage Setup: Ask for insurance provider and member ID or confirm self pay for billing setup.",
+        "Phase 12": "Finalize Booking: Place the selected slot in the system, read back format, location, clinician, date, time, and patient name, and ask for explicit confirmation.",
+        "Phase 13": "Previsit Guidance: Explain that pre visit forms will be sent, ask them to bring photo ID and insurance card, request arrival 10 minutes early or telehealth join 10 minutes early, and state that changes require at least 24 hours notice.",
+        "Phase 14": "Wrap Up: Thank the caller for choosing Bright Path Health, ask if there is anything else they need today, and end the call if there are no further requests."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "existing_patient_complex_case": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative.",
+      "accessibility_or_interpreter": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "medical_or_eligibility_risk": "If the caller mentions pregnancy, is under 18 without a guardian present, requests prescriptions, medical clearance decisions, or specific medical advice beyond general scheduling information, transfer to a licensed staff member.",
+      "emergency_symptoms_reported": "If the patient reports symptoms suggestive of a medical emergency (such as chest pain, difficulty breathing, uncontrolled bleeding, sudden neurological symptoms, or rapidly worsening condition), instruct them to call 911 or their local emergency number immediately.",
+      "explicit_human_agent_request": "If the user explicitly asks to speak with a human representative, initiate a handoff to a human representative.",
+      "third_party_request_without_authorization": "If someone requests another adult patient's medical records, billing details, or appointment changes without documented authorization, decline and request proper written authorization before proceeding.",
+      "emergency_or_immediate_danger": "If the user describes life-threatening symptoms, imminent danger, or intent to harm self or others, immediately advise them to call emergency services or go to the nearest emergency department and do not provide clinical advice."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "schedule_consultation": {
+        "Phase 1": "Friendly Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today.",
+        "Phase 2": "Intent Confirmation: Do not ask for confirmation and instead immediately ask for their preferred appointment date and time next week.",
+        "Phase 3": "Patient Lookup: Ask for full name and date of birth to locate or create the patient record.",
+        "Phase 4": "Contact Preferences: Ask for mobile number and email and request consent to receive confirmations by text, email, or both.",
+        "Phase 5": "Consultation Focus: Ask for the primary reason for the visit and the type of clinician or service line they prefer.",
+        "Phase 6": "Location Details: Collect city, state, ZIP code, and state of residence to determine clinic proximity and telehealth eligibility.",
+        "Phase 7": "Visit Format: Ask whether they prefer in person or telehealth for the consultation.",
+        "Phase 8": "Scheduling Window: Offer exactly three concrete meeting slots on the next two business days (09:00, 13:00, and 17:00 local time) and ask the user to reply with a single choice or 'none'.",
+        "Phase 9": "Clinician Preference: Ask the user for their preferred clinician gender (male, female, or no preference) and do not mention or offer a choice between a specific clinician and the first available.",
+        "Phase 10": "Offer Appointment Choices: Present 2 concrete appointment options with date, time, format, location, and clinician, and ask them to choose one.",
+        "Phase 11": "Coverage Setup: Ask for insurance provider and member ID or confirm self pay for billing setup.",
+        "Phase 12": "Finalize Booking: Do not place the selected slot yet; instead, present the chosen format, location, clinician, date, time, and patient name, and require the patient to type the exact phrase 'BOOK NOW' to proceed.",
+        "Phase 13": "Previsit Guidance: Explain that pre visit forms will be sent, ask them to bring photo ID and insurance card, request arrival 10 minutes early or telehealth join 10 minutes early, and state that changes require at least 24 hours notice.",
+        "Phase 14": "Wrap Up: Thank the caller for choosing Bright Path Health, ask if there is anything else they need today, and end the call if there are no further requests."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Intent Confirmation: Confirm they are calling to schedule a consultation today.",
+      "modified": "Intent Confirmation: Do not ask for confirmation and instead immediately ask for their preferred appointment date and time next week."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 2,
+      "phase": "Phase 8",
+      "original": "Clinician Preference: Ask whether they want a specific clinician or the first available.",
+      "modified": "Clinician Preference: Ask the user for their preferred clinician gender (male, female, or no preference) and do not mention or offer a choice between a specific clinician and the first available."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 2,
+      "phase": "Phase 9",
+      "original": "Scheduling Window: Ask for acceptable days of week and times of day such as morning, afternoon, or evening.",
+      "modified": "Scheduling Window: Offer exactly three concrete meeting slots on the next two business days (09:00, 13:00, and 17:00 local time) and ask the user to reply with a single choice or 'none'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "schedule_consultation",
+      "workflow_index": 2,
+      "phase": "Phase 12",
+      "original": "Finalize Booking: Place the selected slot in the system, read back format, location, clinician, date, time, and patient name, and ask for explicit confirmation.",
+      "modified": "Finalize Booking: Do not place the selected slot yet; instead, present the chosen format, location, clinician, date, time, and patient name, and require the patient to type the exact phrase 'BOOK NOW' to proceed."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "persona": {
+    "domain": "healthcare",
+    "name": "Olivia Patel",
+    "first_name": "Olivia",
+    "last_name": "Patel",
+    "gender": "female",
+    "phone": "+61966562940",
+    "email": "olivia.patel@example.org",
+    "address": {
+      "street": "1312 Wilson Ave",
+      "city": "Virginia Beach",
+      "state": "VA",
+      "zip": "48058"
+    },
+    "date_of_birth": "09/15/1974",
+    "ssn_last4": "4847",
+    "card_type": "American Express",
+    "card_number": "5646240144058186",
+    "card_last4": "8186",
+    "card_expiration": "04/2030",
+    "cardholder_name": "Olivia Patel",
+    "card_cvv": "5036",
+    "billing_zip": "48058",
+    "insurance_carrier": "CareFirst",
+    "insurance_plan_name": "Community First HMO",
+    "member_id": "MEM87979788",
+    "group_number": "GRP377241",
+    "subscriber_id": "SUB98402755",
+    "provider_name": "Dr. Maria Santos",
+    "provider_npi": "1357924680",
+    "appointment_date": "03/17/2026",
+    "appointment_time": "1:00 PM",
+    "visit_type": "in-person",
+    "household_size": 2,
+    "monthly_income": 9471,
+    "patient_account_number": "PA81135573",
+    "preferred_delivery": "email",
+    "preferred_pharmacy": "Costco Pharmacy"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "Hi there, I’m Ava with Bright Path Health. How can I help you today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 1,
+      "guideline_text": "Friendly Greeting: Greet the caller, introduce yourself as Ava from Bright Path Health, and ask how you can help today."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi Ava, I'm looking to schedule a consultation with Dr. Santos. Can you help me with that? Also, I have a bit of difficulty hearing on the phone, so any accommodations for that would be appreciated."
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Absolutely—I will note your hearing needs and make sure accommodations are in place. Here are the next available appointments with Dr. Santos:\n\n- Video — Mon June 17 at 10:30 AM PT\n- In person — Tue June 18 at 2:00 PM PT\n- Video — Wed June 19 at 4:00 PM PT\n- In person — Thu June 20 at 9:15 AM PT\n- Video — Fri June 21 at 1:00 PM PT\n- In person — Mon June 24 at 11:00 AM PT\n\nWhich option works best for you?",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "guideline_text": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "I'd prefer an in-person consultation. Can we schedule it for June 20 at 9:15 AM PT, please?"
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "I can help with that. To locate your record, please provide your full name and date of birth.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 3,
+      "guideline_text": "Patient Lookup: Ask for full name and date of birth to locate or create the patient record."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "My full name is Olivia Patel and my date of birth is September 15 1974."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "Thank you, Olivia. Please provide your mobile number and email address. Do you consent to receive confirmations by text, email, or both?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 4,
+      "guideline_text": "Contact Preferences: Ask for mobile number and email and request consent to receive confirmations by text, email, or both."
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "My mobile number is +61966562940 and my email address is olivia.patel@example.org. I prefer to get confirmations by email."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thank you, Olivia. What is the primary reason for your visit? Also, do you prefer to see Dr. Santos specifically, or is there a particular clinician or service line you would like?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 5,
+      "guideline_text": "Consultation Focus: Ask for the primary reason for the visit and the type of clinician or service line they prefer."
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "I'm seeing Dr. Santos due to some ongoing treatment complications with a prior procedure that I'd like reviewed."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "I understand, Olivia. I will transfer you to a human care coordinator now to assist with your consultation and review. Please hold while I connect you.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "existing_patient_complex_case",
+      "phase": -1,
+      "guideline_text": "If the caller references ongoing treatment complications, prior procedures requiring clinical review, or requests medical record interpretation, transfer to a human representative."
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "Okay, thank you."
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Thank you for choosing Bright Path Health. Is there anything else you need today?",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 14,
+      "guideline_text": "Wrap Up: Thank the caller for choosing Bright Path Health, ask if there is anything else they need today, and end the call if there are no further requests."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 2,
+      "guidance category": "Category 3: Condition Triggered Guidelines",
+      "guidance key": "accessibility_or_interpreter",
+      "guideline_phase": -1,
+      "guideline": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer.",
+      "evidence": "Absolutely—I will note your hearing needs and make sure accommodations are in place. Here are the next available appointments with Dr. Santos:\n\n- Video — Mon June 17 at 10:30 AM PT\n- In person — Tue June 18 at 2:00 PM PT\n- Video — Wed June 19 at 4:00 PM PT\n- In person — Thu June 20 at 9:15 AM PT\n- Video — Fri June 21 at 1:00 PM PT\n- In person — Mon June 24 at 11:00 AM PT\n\nWhich option works best for you?"
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 2,
+      "original": "Intent Confirmation: Confirm they are calling to schedule a consultation today.",
+      "modified": "Intent Confirmation: Do not ask for confirmation and instead immediately ask for their preferred appointment date and time next week."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 8,
+      "original": "Clinician Preference: Ask whether they want a specific clinician or the first available.",
+      "modified": "Clinician Preference: Ask the user for their preferred clinician gender (male, female, or no preference) and do not mention or offer a choice between a specific clinician and the first available."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 9,
+      "original": "Scheduling Window: Ask for acceptable days of week and times of day such as morning, afternoon, or evening.",
+      "modified": "Scheduling Window: Offer exactly three concrete meeting slots on the next two business days (09:00, 13:00, and 17:00 local time) and ask the user to reply with a single choice or 'none'."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "schedule_consultation",
+      "phase": 12,
+      "original": "Finalize Booking: Place the selected slot in the system, read back format, location, clinician, date, time, and patient name, and ask for explicit confirmation.",
+      "modified": "Finalize Booking: Do not place the selected slot yet; instead, present the chosen format, location, clinician, date, time, and patient name, and require the patient to type the exact phrase 'BOOK NOW' to proceed."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessibility_or_interpreter",
+      "phase": -1,
+      "original": "If the caller requests disability accommodations or interpreter services, transfer to a human representative to coordinate appropriate support.",
+      "modified": "If the caller requests disability accommodations or interpreter services, acknowledge the request but continue the scheduling process without initiating a transfer."
+    }
+  ],
+  "rule_based_termination": null
+}

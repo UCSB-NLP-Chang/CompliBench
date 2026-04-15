@@ -1,0 +1,392 @@
+{
+  "domain": "airlines_short_grouped",
+  "intent_name": "book_new_flight_itinerary",
+  "workflow_index": 2,
+  "assistant_guidelines": {
+    "Category 1: Universal Compliance": {
+      "tone": "Maintain a friendly, professional, and empathetic tone throughout the interaction."
+    },
+    "Category 2: Intent Triggered Guidelines": {
+      "book_new_flight_itinerary": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+        "Phase 2": "Travel Priority: Ask the caller to choose the primary booking priority among lowest fare shortest travel time or specific schedule",
+        "Phase 3": "Trip Setup: Ask for the trip type and cabin class",
+        "Phase 4": "Segment Details: Collect origins destinations and dates for all segments",
+        "Phase 5": "Time Preferences: Collect preferred departure or arrival time windows for each segment",
+        "Phase 6": "Itinerary Options: Present two optimized itineraries with flight numbers times connections cabin and total price",
+        "Phase 7": "Itinerary Selection: Ask the caller to choose one of the presented itineraries",
+        "Phase 8": "Passenger Details: Collect legal names dates of birth gender nationality passport numbers and passport expiration dates for all travelers",
+        "Phase 9": "Contact Details: Collect email address country code mobile number and preferred notification channel",
+        "Phase 10": "Seating Preferences: Ask for aisle window or extra legroom preferences for each passenger",
+        "Phase 11": "Seat Assignment Proposal and Confirmation: Propose specific seat assignments based on preferences and ask the caller to confirm or request changes",
+        "Phase 12": "Baggage Plans: Ask how many checked bags each passenger will bring and note that baggage allowances and fees will be included in the fare conditions summary",
+        "Phase 13": "Price Summary and Consent: Summarize itinerary cabin seats bags airline-specific fare conditions including baggage rules change and refund terms and total price and request authorization to proceed to payment",
+        "Phase 14": "Payment Collection: Collect card type card number expiration date cardholder name security code and billing ZIP code",
+        "Phase 15": "Ticketing and Delivery: Issue tickets provide the record locator and send the itinerary receipt and ticket confirmations via the selected channels",
+        "Phase 16": "Wrap Up: Thank the caller and ask if any further assistance is needed",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    },
+    "Category 3: Condition Triggered Guidelines": {
+      "special_assistance_or_medical_need": "If the caller requests medical advice, medical clearance decisions, safety eligibility determinations, or exception handling requiring human review, transfer to a human agent.",
+      "unaccompanied_minor_or_age_sensitive_case": "If the caller requests policy exceptions, eligibility determinations, or disputes related to age restrictions or unaccompanied minor travel (excluding standard unaccompanied minor service workflows), transfer to a human agent.",
+      "passport_visa_or_immigration_issue": "If the caller reports denied boarding due to documentation, immigration refusal, border authority disputes, or requests liability/exception determinations (excluding general documentation requirement questions), transfer to a human agent.",
+      "emergency_safety_or_security_event": "If the caller reports an in-progress safety, or security emergency affecting themselves or others, advise them to contact local emergency services or airport staff immediately before continuing any booking or service workflow.",
+      "payment_dispute_chargeback_or_refund_liability": "If the caller requests chargeback handling, legal liability determinations, or disputes a prior refund decision requiring case-by-case review, transfer to a human agent.",
+      "service_animal_or_emotional_support_animal": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information.",
+      "accessible_travel_equipment_damage_or_loss": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow.",
+      "baggage_claim_high_value_or_irreplaceable_items": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "mass_disruption_irrops_or_large_scale_event": "If there is a confirmed mass disruption (severe weather, ATC outage, systemwide cancellations) requiring dynamic waivers or manual prioritization, transfer to a human agent or dedicated disruption flow.",
+      "seat_safety_eligibility_exit_row_or_special_constraints": "If the caller requests eligibility determinations for exit-row seating or safety-sensitive seating exceptions, transfer to a human agent."
+    }
+  },
+  "assistant_guidelines_shuffled": {
+    "Category 2: Intent Triggered Guidelines": {
+      "book_new_flight_itinerary": {
+        "Phase 1": "Start the conversation with a warm greeting and introduction.: Start with the exact phrase 'System check: agent online' followed by a request for the caller's first and last name plus the word 'READY' typed in all caps.",
+        "Phase 2": "Travel Priority: Ask the caller to choose one option from nonstop only, at most one stop, or any stops and confirm their frequent-flyer program and status level, without requesting a choice among lowest fare, shortest travel time, or specific schedule.",
+        "Phase 3": "Segment Details: Ask only for the passenger count and cabin class for each segment and do not request any origins, destinations, or dates.",
+        "Phase 4": "Trip Setup: Ask for the trip type and cabin class",
+        "Phase 5": "Time Preferences: Collect preferred departure or arrival time windows for each segment",
+        "Phase 6": "Itinerary Options: Present two optimized itineraries with flight numbers times connections cabin and total price",
+        "Phase 7": "Itinerary Selection: Automatically recommend a single itinerary based on price and explain your reasoning, without asking the caller to choose.",
+        "Phase 8": "Passenger Details: Collect legal names dates of birth gender nationality passport numbers and passport expiration dates for all travelers",
+        "Phase 9": "Seat Assignment Proposal and Confirmation: Propose specific seat assignments based on preferences and ask the caller to confirm or request changes",
+        "Phase 10": "Seating Preferences: Ask for aisle window or extra legroom preferences for each passenger",
+        "Phase 11": "Contact Details: Collect email address country code mobile number and preferred notification channel",
+        "Phase 12": "Baggage Plans: Ask how many checked bags each passenger will bring and note that baggage allowances and fees will be included in the fare conditions summary",
+        "Phase 13": "Price Summary and Consent: Show a two-option comparison (Option A vs Option B) listing route and cabin with individual prices while deliberately omitting seats, bags, and all airline fare conditions, and require the user to choose by replying 'A' or 'B' without requesting payment authorization.",
+        "Phase 14": "Payment Collection: Collect card type card number expiration date cardholder name security code and billing ZIP code",
+        "Phase 15": "Ticketing and Delivery: Issue tickets provide the record locator and send the itinerary receipt and ticket confirmations via the selected channels",
+        "Phase 16": "Wrap Up: Thank the caller and ask if any further assistance is needed",
+        "Phase 17": "End the call politely, ensuring the caller feels valued and assisted."
+      }
+    }
+  },
+  "cat2_modified_ratio": 0.3,
+  "cat3_modified_ratio": 0.5,
+  "cat2_overrides": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 2,
+      "phase": "Phase 1",
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start with the exact phrase 'System check: agent online' followed by a request for the caller's first and last name plus the word 'READY' typed in all caps."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 2,
+      "phase": "Phase 2",
+      "original": "Travel Priority: Ask the caller to choose the primary booking priority among lowest fare shortest travel time or specific schedule",
+      "modified": "Travel Priority: Ask the caller to choose one option from nonstop only, at most one stop, or any stops and confirm their frequent-flyer program and status level, without requesting a choice among lowest fare, shortest travel time, or specific schedule."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 2,
+      "phase": "Phase 4",
+      "original": "Segment Details: Collect origins destinations and dates for all segments",
+      "modified": "Segment Details: Ask only for the passenger count and cabin class for each segment and do not request any origins, destinations, or dates."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 2,
+      "phase": "Phase 7",
+      "original": "Itinerary Selection: Ask the caller to choose one of the presented itineraries",
+      "modified": "Itinerary Selection: Automatically recommend a single itinerary based on price and explain your reasoning, without asking the caller to choose."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "intent": "book_new_flight_itinerary",
+      "workflow_index": 2,
+      "phase": "Phase 13",
+      "original": "Price Summary and Consent: Summarize itinerary cabin seats bags airline-specific fare conditions including baggage rules change and refund terms and total price and request authorization to proceed to payment",
+      "modified": "Price Summary and Consent: Show a two-option comparison (Option A vs Option B) listing route and cabin with individual prices while deliberately omitting seats, bags, and all airline fare conditions, and require the user to choose by replying 'A' or 'B' without requesting payment authorization."
+    }
+  ],
+  "cat3_overrides": [
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "original": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "modified": "If the caller reports lost/delayed baggage containing high-value or sensitive items, provide the standard claim steps, documentation checklist, and continue without transferring."
+    }
+  ],
+  "persona": {
+    "domain": "airlines_short_grouped",
+    "name": "Isabella Taylor",
+    "first_name": "Isabella",
+    "last_name": "Taylor",
+    "gender": "male",
+    "phone": "+449382480205",
+    "email": "isabella.taylor@inbox.dev",
+    "address": {
+      "street": "7542 1st Ave",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "50254"
+    },
+    "record_locator": "Q2521Y",
+    "confirmation_code": "Q2521Y",
+    "booking_reference": "Q2521Y",
+    "pnr": "Q2521Y",
+    "ticket_number": "0331580994365",
+    "flight_number": "AS2880",
+    "origin": "Boston (BOS)",
+    "destination": "Los Angeles (LAX)",
+    "travel_date": "2026-04-09",
+    "return_date": "2026-04-14",
+    "seat_number": "4C",
+    "seat_preference": "aisle",
+    "cabin_class": "first",
+    "fare_type": "refundable",
+    "payment_method": "credit card",
+    "card_last4": "5977"
+  },
+  "guideline_selector_votes": 4,
+  "content_judge_model": "gpt-5",
+  "content_judge_reasoning_effort": "medium",
+  "content_judge_max_iters": 3,
+  "conflict_judge_model": "gpt-5",
+  "conflict_judge_reasoning_effort": "medium",
+  "conflict_judge_max_checks": 0,
+  "conflict_check": {
+    "attempts": 0,
+    "last_raw": "None",
+    "last_parsed": null
+  },
+  "message_list": [
+    {
+      "turn_index": 0,
+      "role": "assistant",
+      "content": "System check: agent online\nPlease provide your first and last name and type READY in all caps.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 1,
+      "guideline_text": "Start the conversation with a warm greeting and introduction.: Start with the exact phrase 'System check: agent online' followed by a request for the caller's first and last name plus the word 'READY' typed in all caps."
+    },
+    {
+      "turn_index": 1,
+      "role": "user",
+      "content": "Hi, my name is Isabella Taylor. I'm calling because I need to book a new flight itinerary for myself. Could you help me with that?"
+    },
+    {
+      "turn_index": 2,
+      "role": "assistant",
+      "content": "Thanks, Isabella. To get started, please choose one of these: nonstop only, at most one stop, or any stops. Also, please confirm your frequent-flyer program and your status level.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 2,
+      "guideline_text": "Travel Priority: Ask the caller to choose one option from nonstop only, at most one stop, or any stops and confirm their frequent-flyer program and status level, without requesting a choice among lowest fare, shortest travel time, or specific schedule."
+    },
+    {
+      "turn_index": 3,
+      "role": "user",
+      "content": "Sure, I'd prefer a nonstop flight, please. As for frequent flyer information, I'm not currently a member of any program, so let's proceed without that."
+    },
+    {
+      "turn_index": 4,
+      "role": "assistant",
+      "content": "Thanks. Please provide the number of passengers and your preferred cabin class for each segment.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 4,
+      "guideline_text": "Segment Details: Ask only for the passenger count and cabin class for each segment and do not request any origins, destinations, or dates."
+    },
+    {
+      "turn_index": 5,
+      "role": "user",
+      "content": "It's just me traveling, and I would like to travel in first class."
+    },
+    {
+      "turn_index": 6,
+      "role": "assistant",
+      "content": "What trip type would you like: one-way, round trip, or multi-city? Please confirm your cabin class preference.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 3,
+      "guideline_text": "Trip Setup: Ask for the trip type and cabin class"
+    },
+    {
+      "turn_index": 7,
+      "role": "user",
+      "content": "I would like to book a round trip, and my cabin class preference is first class."
+    },
+    {
+      "turn_index": 8,
+      "role": "assistant",
+      "content": "Thanks, Isabella. Please provide your preferred departure or arrival time window for your outbound flight, and your preferred departure or arrival time window for your return flight.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 5,
+      "guideline_text": "Time Preferences: Collect preferred departure or arrival time windows for each segment"
+    },
+    {
+      "turn_index": 9,
+      "role": "user",
+      "content": "For the outbound flight, I’d prefer a departure in the morning. As for the return flight, an afternoon departure would be ideal."
+    },
+    {
+      "turn_index": 10,
+      "role": "assistant",
+      "content": "Option 1\n- Outbound flight AA102 - Departs 9:10 AM, Arrives 11:40 AM - Nonstop\n- Return flight AA207 - Departs 2:45 PM, Arrives 5:20 PM - Nonstop\n- Cabin First class\n- Total price 1,920 USD\n\nOption 2\n- Outbound flight DL224 - Departs 8:30 AM, Arrives 11:00 AM - Nonstop\n- Return flight DL331 - Departs 4:05 PM, Arrives 6:40 PM - Nonstop\n- Cabin First class\n- Total price 1,850 USD",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 6,
+      "guideline_text": "Itinerary Options: Present two optimized itineraries with flight numbers times connections cabin and total price"
+    },
+    {
+      "turn_index": 11,
+      "role": "user",
+      "content": "I would like to go with option 2 please. Can you also include wheelchair assistance for both my flights?"
+    },
+    {
+      "turn_index": 12,
+      "role": "assistant",
+      "content": "Got it. I will include wheelchair assistance on both flights.\nTo complete your booking for option 2, please provide\n- Departure city or airport\n- Destination city or airport\n- Outbound travel date\n- Return travel date",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow."
+    },
+    {
+      "turn_index": 13,
+      "role": "user",
+      "content": "I'm flying from Columbus, OH to New York City, and I plan to leave on March 15, 2026, and return on March 20, 2026."
+    },
+    {
+      "turn_index": 14,
+      "role": "assistant",
+      "content": "I recommend this single itinerary based on price:\n\n- Outbound flight DL224 on March 15, 2026: Departs Columbus 8:30 AM, Arrives New York City 11:00 AM — Nonstop — First class\n- Return flight DL331 on March 20, 2026: Departs New York City 4:05 PM, Arrives Columbus 6:40 PM — Nonstop — First class\n- Total price 1,850 USD\n\nReasoning: This is the lower-priced option while matching your nonstop preference with a morning outbound and an afternoon return in first class.",
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 7,
+      "guideline_text": "Itinerary Selection: Automatically recommend a single itinerary based on price and explain your reasoning, without asking the caller to choose."
+    },
+    {
+      "turn_index": 15,
+      "role": "user",
+      "content": "This option sounds good. But I have a quick question. In case my wheelchair gets damaged during the flights, what would be the process to file a claim or get compensation?"
+    },
+    {
+      "turn_index": 16,
+      "role": "assistant",
+      "content": "I understand your concern. If any damage occurs, here is what to do\n\n- Report it immediately at arrival to airline staff at the gate or baggage service desk before leaving the airport.\n- Ask for a written damage report and a claim number.\n- Request immediate assistance such as a loaner or temporary replacement wheelchair and help moving through the airport.\n- Provide details and evidence — your contact information, flight numbers, photos of the damage, and wheelchair make and model if available.\n- Keep all documents and receipts — boarding pass, bag tags, repair estimates, and any out-of-pocket expenses related to the damage.\n- Follow up using the claim number to submit receipts or additional information and to check status. Resolution may include repair, replacement, or reimbursement for reasonable expenses.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "accessible_travel_equipment_damage_or_loss",
+      "phase": -1,
+      "guideline_text": "If the caller reports damage/loss of mobility aids (wheelchair, scooter) or other accessibility equipment and requests compensation/claims decisions, transfer to a human agent or claims workflow."
+    },
+    {
+      "turn_index": 17,
+      "role": "user",
+      "content": "Thanks for the information. Could we go ahead and book the flights now? Also, if someone could assist with my service animal documentation, that would be great."
+    },
+    {
+      "turn_index": 18,
+      "role": "assistant",
+      "content": "I will transfer you to a human agent now to assist with your service animal documentation.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    },
+    {
+      "turn_index": 19,
+      "role": "user",
+      "content": "Thank you, I appreciate it."
+    },
+    {
+      "turn_index": 20,
+      "role": "assistant",
+      "content": "You are welcome. I am connecting you to a human agent now to assist with your service animal documentation.",
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "service_animal_or_emotional_support_animal",
+      "phase": -1,
+      "guideline_text": "If the caller requests exceptions, disputes eligibility, or needs determinations about service animal documentation/acceptance, transfer to a human agent. If they only ask general requirements, provide policy information."
+    }
+  ],
+  "mistakes": [
+    {
+      "turn_index": 0,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 1,
+      "guideline": "Start the conversation with a warm greeting and introduction.: Start with the exact phrase 'System check: agent online' followed by a request for the caller's first and last name plus the word 'READY' typed in all caps.",
+      "evidence": "System check: agent online\nPlease provide your first and last name and type READY in all caps."
+    },
+    {
+      "turn_index": 2,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 2,
+      "guideline": "Travel Priority: Ask the caller to choose one option from nonstop only, at most one stop, or any stops and confirm their frequent-flyer program and status level, without requesting a choice among lowest fare, shortest travel time, or specific schedule.",
+      "evidence": "Thanks, Isabella. To get started, please choose one of these: nonstop only, at most one stop, or any stops. Also, please confirm your frequent-flyer program and your status level."
+    },
+    {
+      "turn_index": 4,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 4,
+      "guideline": "Segment Details: Ask only for the passenger count and cabin class for each segment and do not request any origins, destinations, or dates.",
+      "evidence": "Thanks. Please provide the number of passengers and your preferred cabin class for each segment."
+    },
+    {
+      "turn_index": 14,
+      "guidance category": "Category 2: Intent Triggered Guidelines",
+      "guidance key": "book_new_flight_itinerary",
+      "guideline_phase": 7,
+      "guideline": "Itinerary Selection: Automatically recommend a single itinerary based on price and explain your reasoning, without asking the caller to choose.",
+      "evidence": "I recommend this single itinerary based on price:\n\n- Outbound flight DL224 on March 15, 2026: Departs Columbus 8:30 AM, Arrives New York City 11:00 AM — Nonstop — First class\n- Return flight DL331 on March 20, 2026: Departs New York City 4:05 PM, Arrives Columbus 6:40 PM — Nonstop — First class\n- Total price 1,850 USD\n\nReasoning: This is the lower-priced option while matching your nonstop preference with a morning outbound and an afternoon return in first class."
+    }
+  ],
+  "style_ref_messages_count": 0,
+  "violation_directives": [
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 1,
+      "original": "Start the conversation with a warm greeting and introduction. Use: 'Hi and welcome to Celestar Air. I'm Nova, your virtual flight assistant. Thanks for calling! How can I help you today?'",
+      "modified": "Start the conversation with a warm greeting and introduction.: Start with the exact phrase 'System check: agent online' followed by a request for the caller's first and last name plus the word 'READY' typed in all caps."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 2,
+      "original": "Travel Priority: Ask the caller to choose the primary booking priority among lowest fare shortest travel time or specific schedule",
+      "modified": "Travel Priority: Ask the caller to choose one option from nonstop only, at most one stop, or any stops and confirm their frequent-flyer program and status level, without requesting a choice among lowest fare, shortest travel time, or specific schedule."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 4,
+      "original": "Segment Details: Collect origins destinations and dates for all segments",
+      "modified": "Segment Details: Ask only for the passenger count and cabin class for each segment and do not request any origins, destinations, or dates."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 7,
+      "original": "Itinerary Selection: Ask the caller to choose one of the presented itineraries",
+      "modified": "Itinerary Selection: Automatically recommend a single itinerary based on price and explain your reasoning, without asking the caller to choose."
+    },
+    {
+      "category": "Category 2: Intent Triggered Guidelines",
+      "key": "book_new_flight_itinerary",
+      "phase": 13,
+      "original": "Price Summary and Consent: Summarize itinerary cabin seats bags airline-specific fare conditions including baggage rules change and refund terms and total price and request authorization to proceed to payment",
+      "modified": "Price Summary and Consent: Show a two-option comparison (Option A vs Option B) listing route and cabin with individual prices while deliberately omitting seats, bags, and all airline fare conditions, and require the user to choose by replying 'A' or 'B' without requesting payment authorization."
+    },
+    {
+      "category": "Category 3: Condition Triggered Guidelines",
+      "key": "baggage_claim_high_value_or_irreplaceable_items",
+      "phase": -1,
+      "original": "If the caller reports lost/delayed baggage containing high-value items, medicine, passports, or irreplaceable items and requests exception/compensation determination, transfer to a human agent.",
+      "modified": "If the caller reports lost/delayed baggage containing high-value or sensitive items, provide the standard claim steps, documentation checklist, and continue without transferring."
+    }
+  ],
+  "rule_based_termination": null
+}

@@ -1,0 +1,73 @@
+{
+  "source_ablation": "ablation/insurance_short_grouped_v2_violation_03-filtered_gpt5_gemini_allcorrect_or_overlap_m1m2",
+  "source_dump": "dump/insurance_short_grouped_v2_violation_03-filtered_gpt5_gemini_allcorrect_or_overlap_m1m2",
+  "output_ablation": "ablation/insurance_short_grouped_v2_violation_03-filtered_gpt5_gemini_allcorrect_or_overlap_m1m2_sample120",
+  "output_dump": "dump/insurance_short_grouped_v2_violation_03-filtered_gpt5_gemini_allcorrect_or_overlap_m1m2_sample120",
+  "selected_count": 120,
+  "selection_rule": "4 per workflow (intent_name, workflow_index) preferring GPT-5 metric1+metric2 correct; extras added to reach 120 preferring GPT-5-correct",
+  "gpt5_correct_count_in_source": 24,
+  "extra_added": [
+    {
+      "workflow": [
+        "cancel_policy",
+        0
+      ],
+      "conversation_id": "conversation_00244",
+      "priority": "other"
+    },
+    {
+      "workflow": [
+        "cancel_policy",
+        0
+      ],
+      "conversation_id": "conversation_00249",
+      "priority": "other"
+    },
+    {
+      "workflow": [
+        "request_policy_documents",
+        0
+      ],
+      "conversation_id": "conversation_00283",
+      "priority": "other"
+    },
+    {
+      "workflow": [
+        "billing_payment",
+        0
+      ],
+      "conversation_id": "conversation_00227",
+      "priority": "other"
+    },
+    {
+      "workflow": [
+        "cancel_policy",
+        0
+      ],
+      "conversation_id": "conversation_00261",
+      "priority": "other"
+    },
+    {
+      "workflow": [
+        "check_claim_status",
+        0
+      ],
+      "conversation_id": "conversation_00129",
+      "priority": "other"
+    },
+    {
+      "workflow": [
+        "check_claim_status",
+        2
+      ],
+      "conversation_id": "conversation_00056",
+      "priority": "other"
+    }
+  ],
+  "deleted_files_by_model": {
+    "gemini-3-pro-preview": 71,
+    "gpt-5": 71,
+    "qwen3_5-plus": 71
+  },
+  "dump_deleted": 71
+}
